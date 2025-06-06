@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Admin & Rights Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', -apple-system, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            color: #1a202c;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background: #2d3748;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            transition: width 0.3s ease;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar li:hover, .sidebar li.active {
+            background: #4299e1;
+        }
+
+        .main-content {
+            margin-left: 200px;
+            padding: 2rem;
+            width: calc(100% - 200px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2b6cb0;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h2 {
+            color: #c53030;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            max-width: 1000px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .quiz-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #edf2f7;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, #4299e1, #3182ce);
+            border-radius: 6px;
+            transition: width 0.4s ease-in-out;
+        }
+
+        #timer {
+            text-align: right;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #c53030;
+            font-weight: 600;
+        }
+
+        .question {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .question:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .option {
+            background: #ebf8ff;
+            padding: 0.75rem 1.25rem;
+            border: 2px solid #bee3f8;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .option:hover:not(.disabled) {
+            background: #bee3f8;
+            border-color: #90cdf4;
+            transform: translateX(4px);
+        }
+
+        .option:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+
+        .option.correct {
+            background: #c6f6d5 !important;
+            border-color: #68d391 !important;
+            color: #22543d;
+            animation: pulse 0.5s;
+        }
+
+        .option.wrong {
+            background: #fed7d7 !important;
+            border-color: #f56565 !important;
+            color: #742a2a;
+            animation: shake 0.3s;
+        }
+
+        .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .skip-button {
+            background: #fff3cd;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            width: 100%;
+            border: 2px solid #ffca28;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .skip-button:hover:not(.disabled) {
+            background: #ffecb3;
+            transform: translateY(-2px);
+        }
+
+        .skip-button.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .explanation {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #2d3748;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+        }
+
+        .explanation.show {
+            opacity: 1;
+            max-height: 300px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .pagination-button {
+            background: #4299e1;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .pagination-button:hover:not(:disabled) {
+            background: #3182ce;
+        }
+
+        .pagination-button:disabled {
+            background: #e2e8f0;
+            cursor: not-allowed;
+        }
+
+        .submit-button, .restart-button {
+            background: #4299e1;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .submit-button:hover:not(:disabled), .restart-button:hover:not(:disabled) {
+            background: #3182ce;
+            transform: translateY(-2px);
+        }
+
+        .submit-button:disabled {
+            background: #e2e8f0;
+            cursor: not-allowed;
+        }
+
+        #score, #results {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .results-table th, .results-table td {
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .results-table th {
+            background: #edf2f7;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .results-table td.correct { color: #2f855a; font-weight: 600; }
+        .results-table td.wrong { color: #c53030; font-weight: 600; }
+        .results-table td.skipped { color: #d69e2e; font-weight: 600; }
+        .results-table td.not-attempted { color: #718096; }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 180px;
+            }
+
+            .main-content {
+                margin-left: 180px;
+                width: calc(100% - 180px);
+                padding: 1rem;
+            }
+
+            .quiz-container {
+                padding: 1.5rem;
+            }
+
+            .question-text {
+                font-size: 1.1rem;
+            }
+
+            .option, .skip-button {
+                font-size: 0.95rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .results-table th, .results-table td {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .pagination-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header h2 {
+                font-size: 1.2rem;
+            }
+
+            .submit-button, .restart-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Topics</h2>
+        <ul>
+            <li class="active" onclick="selectTopic('Office Procedures')">Office Procedures</li>
+            <li onclick="selectTopic('Human Rights')">Human Rights</li>
+            <li onclick="selectTopic('Constitutional Rights')">Constitutional Rights</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Nepal Admin & Rights Quiz</h1>
+            <h2>परीक्षा अभ्यास गर्नुहोस्</h2>
+        </div>
+        <div class="quiz-container">
+            <div id="timer">Time: 00:00</div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div id="quiz" role="region" aria-live="polite"></div>
+            <div class="pagination">
+                <button class="pagination-button" id="prev-page" disabled aria-label="Previous page">Previous</button>
+                <button class="pagination-button" id="next-page" aria-label="Next page">Next</button>
+            </div>
+            <button class="submit-button" id="submit-button" disabled aria-label="Submit quiz">Submit Quiz</button>
+            <div id="score"></div>
+            <div id="results" class="hidden">
+                <h2>Quiz Results</h2>
+                <div class="overflow-x-auto">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Your Answer</th>
+                                <th>Correct Answer</th>
+                                <th>Status</th>
+                                <th>Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <button class="restart-button hidden" id="restart-button" aria-label="Restart quiz">Restart Quiz</button>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+        const questions = [
+            { id: 1, section: "Office Procedures", text: "कार्यालय सञ्चालनका लागि आवश्यक पर्ने कार्य तथा औपचारिक कियाकलापहरूको व्यवस्थित विधि तथा चरणलाई के भनिन्छ?", options: ["कार्यालय व्यवस्थापन", "पत्र व्यवहार", "कार्यालय कार्यविधि", "चलानी"], correct: "कार्यालय कार्यविधि", explanation: { en: "Office procedures refer to systematic methods for formal activities, distinct from management or correspondence.", np: "कार्यालय कार्यविधि भनेको औपचारिक कार्यहरूको व्यवस्थित विधि हो, जुन व्यवस्थापन वा पत्र व्यवहारभन्दा फरक छ।" }, tip: "Focus on 'systematic methods' (व्यवस्थित विधि)." },
+            { id: 2, section: "Office Procedures", text: "तलका मध्ये कुन कार्यालय कार्यविधिका कार्य होइन?", options: ["पत्रव्यवहार", "दर्ता र चलानी", "वित्तीय निर्णय", "परिपत्र र तोक आदेश"], correct: "वित्तीय निर्णय", explanation: { en: "Financial decisions are part of financial management, not office procedures.", np: "वित्तीय निर्णय वित्तीय व्यवस्थापनको हिस्सा हो, कार्यालय कार्यविधिको होइन।" }, tip: "Exclude finance tasks (वित्तीय कार्य)." },
+            { id: 3, section: "Office Procedures", text: "कार्यालय कार्यविधि सञ्चालन गर्दा एउटा आदर्श चिठीपत्रमा हुनुपर्ने गुणहरू तलकामध्ये कुन हो?", options: ["सरल भाषा र संक्षिप्तता", "पूर्णता र स्पष्टता", "मौलिकता र विनम्रता", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "An ideal letter is simple, clear, complete, original, and polite.", np: "आदर्श चिठी सरल, स्पष्ट, पूर्ण, मौलिक र विनम्र हुनुपर्छ।" }, tip: "Balance clarity and professionalism (स्पष्टता र व्यावसायिकता)." },
+            { id: 4, section: "Office Procedures", text: "चिठीपत्रको पहिलो भाग तलका मध्ये कुन हो?", options: ["शीर्षक", "बोधार्थ", "नाम र पद", "अभिवादन"], correct: "शीर्षक", explanation: { en: "The heading, with sender details and date, is the first part.", np: "शीर्षक, जसमा पठाउनेको विवरण र मिति हुन्छ, पहिलो भाग हो।" }, tip: "Heading sets context (सन्दर्भ)." },
+            { id: 5, section: "Office Procedures", text: "प्राथमिकताका आधारमा चिठीपत्रहरू कति किसिमका हुन्छन्? (गोपनीयताका आधारमा गोप्य र अति गोप्य)", options: ["2", "3", "4", "5"], correct: "4", explanation: { en: "Letters are ordinary, urgent, very urgent, and highly confidential.", np: "चिठीपत्रहरू साधारण, जरुरी, अति जरुरी र अति गोप्य गरी चार प्रकारका हुन्छन्।" }, tip: "Priority includes urgency (जरुरी)." },
+            { id: 6, section: "Office Procedures", text: "प्रयोगका आधारमा तलको मध्ये कुन चिठीको प्रकार होइन?", options: ["व्यक्तिगत चिठी", "व्यवसायिक चिठी", "साधारण", "सरकारी पत्र"], correct: "साधारण", explanation: { en: "'Ordinary' is a priority, not a type; letters are personal, business, or official.", np: "'साधारण' प्राथमिकता हो, प्रकार होइन; चिठी व्यक्तिगत, व्यवसायिक वा सरकारी हुन्छ।" }, tip: "Distinguish use from priority (प्रयोग र प्राथमिकता)." },
+            { id: 7, section: "Office Procedures", text: "कार्यालय सञ्चालनका लागि आवश्यक पर्ने लिखित औपचारिक चिठीपत्रहरूको आवानप्रदान गर्ने व्यवस्थित सञ्चाललाई के भनिन्छ?", options: ["कार्यालय व्यवस्थापन", "पत्र व्यवहार", "कार्यालय कार्यविधि", "दर्ता"], correct: "पत्र व्यवहार", explanation: { en: "Correspondence involves formal letter exchange.", np: "पत्र व्यवहारले औपचारिक चिठी आदानप्रदानलाई जनाउँछ।" }, tip: "Focus on letters (चिठी)." },
+            { id: 8, section: "Office Procedures", text: "साधारण पत्र मध्यम निकायमा पेश गर्नुपर्ने भए ७ दिनभित्र पेश गरी कार्यकारवाही गर्नुपर्छ भने आफैले फछ्र्योट गर्नुपर्ने भए कति दिनमा कार्य फछ्र्योट गर्नुपर्छ?", options: ["2 दिन", "7 दिन", "10 दिन", "12 दिन"], correct: "2 दिन", explanation: { en: "Internal resolution takes 2 days for efficiency.", np: "आन्तरिक फछ्र्योट २ दिनभित्र हुन्छ।" }, tip: "Internal tasks are faster (छिटो)." },
+            { id: 9, section: "Office Procedures", text: "कार्यालयमा पत्रव्यवहार गर्दा ध्यान दिनुपर्ने कुरा तलको मध्ये कुन पर्दैन?", options: ["पत्र कुन पदाधिकारी वा निकायलाई लेखिएको हो, सोही अनुरूपको सम्बोधन हुनुपर्छ।", "पत्रले भन्न खोजेको कुरा स्पष्ट र सहजै बुझिने खालको हुनुपर्छ।", "पत्रमा मिति, विषय, दर्ता र च.न. का साथै अन्य व्यक्तिको नाम समेत खुलाउनु हुँदैन।", "पत्रहरूको उद्देश्य र प्रकृति अनुसार उल्लेख गर्ने।"], correct: "पत्रमा मिति, विषय, दर्ता र च.न. का साथै अन्य व्यक्तिको नाम समेत खुलाउनु हुँदैन।", explanation: { en: "Letters should include date and subject; names can be included if relevant.", np: "चिठीमा मिति र विषय हुनुपर्छ; आवश्यक भए नाम समावेश गर्न सकिन्छ।" }, tip: "Ensure transparency (पारदर्शिता)." },
+            { id: 10, section: "Office Procedures", text: "सरकारी कार्यालयमा प्रयोग गरिने चिठीपत्रमा कुन कुरामा ध्यान दिनुपर्छ? i) पत्रसंख्या, चलानी न. र मिति ii) सम्बोधन, विषय र बोधार्थ iii) पदाधिकारीको नाम, पद र हस्ताक्षर iv) कार्यालयको छाप", options: ["i, ii र iv ठिक", "i, iv ठिक", "i बाहेक सबै ठिक", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Official letters need all elements for authenticity.", np: "सरकारी चिठीमा सबै विवरण आवश्यक हुन्छ।" }, tip: "Ensure formality (औपचारिकता)." },
+            { id: 11, section: "Office Procedures", text: "कार्यालयमा प्राप्त हुने चिठीको सुरु अभिलेख राख्ने कार्यलाई के भनिन्छ?", options: ["दर्ता", "चलानी", "टिप्पणी", "पत्रव्यवहार"], correct: "दर्ता", explanation: { en: "Registration records incoming letters.", np: "दर्ताले प्राप्त चिठीको अभिलेख राख्छ।" }, tip: "Registration for incoming (प्राप्त)." },
+            { id: 12, section: "Office Procedures", text: "दर्ता किताबमा कुन कुन कुराहरू उल्लेख गरिन्छ?", options: ["दर्ता न., दर्ता मिति, प्राप्त पत्रको च.न. र मिति", "चिठी पठाउने कार्यालयको नाम र ठेगाना, विषय", "बुझाइएको शाखा वा फाँट, बुझिलिनेको सहि र कैफियत", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Registers include all details for tracking.", np: "दर्ता किताबमा सबै विवरण समावेश हुन्छ।" }, tip: "Registers are comprehensive (विस्तृत)." },
+            { id: 13, section: "Office Procedures", text: "कार्यालयबाट बाहिर पठाउने पत्रहरूको अभिलेख राख्ने कार्यलाई के भनिन्छ?", options: ["दर्ता", "चलानी", "टिप्पणी", "पत्रव्यवहार"], correct: "चलानी", explanation: { en: "Dispatch records outgoing letters.", np: "चलानीले बाहिर पठाइने पत्रको अभिलेख राख्छ।" }, tip: "Dispatch for outgoing (बाहिर)." },
+            { id: 14, section: "Office Procedures", text: "चलानी किताबमा कुन कुन कुराहरू उल्लेख गरिन्छ?", options: ["चलानी न. र चलानी मिति, पाउने व्यक्ति वा कार्यालयको नाम ठेगाना", "पत्र संख्या, विषय", "पठाइएको साधन, कैफियत", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Dispatch registers include all details.", np: "चलानी किताबमा सबै विवरण समावेश हुन्छ।" }, tip: "Dispatch is detailed (विस्तृत)." },
+            { id: 15, section: "Office Procedures", text: "विश्वमा आधुनिक सञ्चारको पहिलो माध्यम तलकामध्ये केलाई मानिन्छ?", options: ["चिठीपत्र", "हुलाक", "पत्रव्यवहार", "इन्टरनेट"], correct: "हुलाक", explanation: { en: "The postal system was the first modern communication.", np: "हुलाक पहिलो आधुनिक सञ्चार माध्यम हो।" }, tip: "Postal predates internet (हुलाक)." },
+            { id: 16, section: "Office Procedures", text: "चिठीका भागहरूमा तलको कुन-कुन पर्छन्?", options: ["शीर्ष भाग", "मध्य भाग", "अन्तिम भाग", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Letters include heading, body, and closing.", np: "चिठीमा शीर्ष, मध्य र अन्तिम भाग हुन्छ।" }, tip: "Three main parts (तीन भाग)." },
+            { id: 17, section: "Office Procedures", text: "कुनै पनि सूचना, निर्देशन एकभन्दा बढी कार्यालयसँग सम्बन्ध रहन्छ भने त्यसलाई के भनिन्छ?", options: ["परिपत्र", "तोक आदेश", "टिप्पणी", "निर्देशन"], correct: "परिपत्र", explanation: { en: "Circulars are for multiple offices.", np: "परिपत्र धेरै कार्यालयका लागि हो।" }, tip: "Circulars for many (धेरैलाई)." },
+            { id: 18, section: "Office Procedures", text: "परिपत्रको उद्देश्य/आवश्यकता/महत्त्व तलको मध्ये कुन हो?", options: ["संगठनको नयाँ परिवर्तनबारे जानकारी दिन", "नयाँ नीतिहरूको कार्यान्वयन गर्न जानकारी दिन", "नयाँ शाखा वा कार्यालयहरू खुलेको जानकारी दिन र विशेष समारोहमा आमन्त्रण गर्न", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Circulars inform about changes, policies, and events.", np: "परिपत्रले परिवर्तन, नीति र समारोहबारे जानकारी दिन्छ।" }, tip: "Multi-purpose (बहुउद्देश्य)." },
+            { id: 19, section: "Office Procedures", text: "टिप्पणी लेखनका उद्देश्य तलको मध्ये कुन हो?", options: ["सहभागितापूर्ण निर्णय प्रक्रियालाई जवाफदेही गर्न", "स्वेच्छाचारिता र अनियमितताको नियन्त्रण गर्न", "नीति, नियम र प्रक्रियामा विशेषताको अधिकतम उपयोग गर्न", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Notes ensure accountability and policy use.", np: "टिप्पणीले जवाफदेहिता र नीतिको उपयोग सुनिश्चित गर्छ।" }, tip: "Notes for accountability (जवाफदेहिता)." },
+            { id: 20, section: "Office Procedures", text: "परिपत्रका प्रकारहरू तलका मध्ये कुन हो? i) सिधा पठाइएको परिपत्र ii) तहतह हुँदै पठाइएको परिपत्र iii) व्यापारिक परिपत्र iv) गैरव्यापारिक परिपत्र", options: ["i, ii र iv ठिक", "i, iv ठिक", "i बाहेक सबै ठिक", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Circulars can be direct, hierarchical, commercial, or non-commercial.", np: "परिपत्र सिधा, तहतह, व्यापारिक वा गैरव्यापारिक हुन सक्छ।" }, tip: "Vary by distribution (वितरण)." },
+            { id: 21, section: "Office Procedures", text: "कुनै विषय वा निवेदन माथि अधिकार प्राप्त अधिकारीले के कस्तो कारवाही गर्न हो सोबारेमा त्यसै पत्रमा लिखित रूपमा दिने निवेदनलाई के भनिन्छ?", options: ["परिपत्र", "तोक आदेश", "टिप्पणी", "निर्देशन"], correct: "टिप्पणी", explanation: { en: "A note recommends actions for petitions.", np: "टिप्पणीले निवेदनमा कारवाहीको सुझाव दिन्छ।" }, tip: "Notes recommend (सुझाव)." },
+            { id: 22, section: "Office Procedures", text: "तोक आदेशको उद्देश्य/आवश्यकता/महत्त्व तलका मध्ये कुन हो?", options: ["कार्यको प्राथमिकता अनुसार कार्य सञ्चालन गर्न", "कार्यालयका कार्यलाई निर्दिष्ट समयमा पूरा गर्न", "मातहतका निकाय वा व्यक्तिलाई जिम्मेवार बनाउन", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Orders prioritize tasks and ensure accountability.", np: "तोक आदेशले कार्य प्राथमिकता र जवाफदेहिता सुनिश्चित गर्छ।" }, tip: "Orders for efficiency (दक्षता)." },
+            { id: 23, section: "Office Procedures", text: "कुनै पनि निर्णय गर्नका लागि रायसहित तल्लो निकायबाट माथिल्लो निकायमा प्रस्तुत गरि निर्णय गराइने औपचारिक दस्तावेजलाई के भनिन्छ?", options: ["परिपत्र", "तोक आदेश", "टिप्पणी", "निर्देशन"], correct: "टिप्पणी", explanation: { en: "Notes are formal documents for decision-making.", np: "टिप्पणी निर्णयका लागि औपचारिक दस्तावेज हो।" }, tip: "Notes for decisions (निर्णय)." },
+            { id: 24, section: "Office Procedures", text: "कार्यालयमा प्राप्त भएको पत्रको खाममा गोप्य भनी उल्लेख भए आएको पत्रलाई दर्ता गर्न उपयुक्त प्रक्रिया कुन हो?", options: ["दर्ता नगरी सोझै कार्यालय प्रमुख समक्ष पेश गर्न", "कार्यालय प्रमुखको तोक आदेशपछि दर्ता गर्न", "खाममा नै दर्ता न. उल्लेख गरेर कार्यालय प्रमुख समक्ष पेश गर्न", "छुट्टै रजिस्टर खडा गरेर दर्ता गर्न"], correct: "छुट्टै रजिस्टर खडा गरेर दर्ता गर्न", explanation: { en: "Confidential letters use a separate register.", np: "गोप्य पत्र छुट्टै रजिस्टरमा दर्ता गरिन्छ।" }, tip: "Special handling for confidentiality (गोपनीयता)." },
+            { id: 25, section: "Office Procedures", text: "कार्यालयमा पत्रव्यवहार गर्दा ध्यान दिनुपर्ने कुराहरू तलका मध्ये कुन हो/हुन्?", options: ["पत्र चलानी गर्दा सम्बन्धित दस्तखत छ कि छैन जाँच गर्नुपर्छ", "पठाउने कार्यालयको नाम र ठेगाना, विषय", "आदेश अनुसारको गोप्य, जरुरी लगायत छ कि छैन जाँच गर्नुपर्छ", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Verify signatures, sender details, and priority.", np: "दस्तखत, पठाउने विवरण र प्राथमिकता जाँच गर्नुपर्छ।" }, tip: "Verify details (विवरण)." },
+            { id: 26, section: "Office Procedures", text: "चिठीको प्राथमिकता निर्धारण गर्दा तलका मध्ये कुन-कुन पर्छ?", options: ["साधारण", "अति जरुरी", "जरुरी", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Priorities include ordinary, urgent, and very urgent.", np: "प्राथमिकतामा साधारण, जरुरी र अति जरुरी पर्छ।" }, tip: "Guide urgency (जरुरी)." },
+            { id: 27, section: "Office Procedures", text: "कार्यालयमा पत्रव्यवहार गर्दा तलका मध्ये कुन कुरामा ध्यान दिनुपर्छ?", options: ["स्पष्ट र सरल भाषा प्रयोग गर्नुपर्छ", "कार्यालयको छाप र हस्ताक्षर हुनुपर्छ", "पत्रको गोप्यता र जरुरी स्तर स्पष्ट हुनुपर्छ", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Use clear language, seals, and clear priority.", np: "स्पष्ट भाषा, छाप र प्राथमिकता स्तर आवश्यक छ।" }, tip: "Clarity and formality (स्पष्टता)." },
+            { id: 1, section: "Human Rights", text: "विश्वको पहिलो मानव अधिकार बडापत्र सन् १२१५ जुन १५ मा म्याग्नाकार्टा बेलायतमा जारी भएको थियो भने सर्वप्रथम संयुक्त राष्ट्रसंघको प्रयासमा विश्वव्यापी मानव अधिकार घोषणापत्र कहिले जारी भएको थियो?", options: ["सन् १९४५ डिसेम्बर १", "सन् १९४८ डिसेम्बर १०", "सन् १९५६ डिसेम्बर १", "सन् १९६६ डिसेम्बर १०"], correct: "सन् १९४८ डिसेम्बर १०", explanation: { en: "UDHR was adopted by the UN on December 10, 1948.", np: "विश्वव्यापी मानव अधिकार घोषणापत्र सन् १९४८ डिसेम्बर १० मा अंगीकार भएको थियो।" }, tip: "Recall 1948 for UDHR." },
+            { id: 2, section: "Human Rights", text: "विश्वव्यापीरूपमा मानव अधिकार सम्बन्धी कार्य गर्न संस्था Amnesty International को स्थापना सन् १९६१ मा भएको हो भने उक्त संस्थाको स्थापना गर्ने बेलायती कानूनविद को हुन्?", options: ["ए.भी. डाइसी", "पिटर बेन्सन", "जुल कोनेसन", "जोन आस्थिन"], correct: "पिटर बेन्सन", explanation: { en: "Peter Benenson founded Amnesty in 1961.", np: "पिटर बेन्सनले सन् १९६१ मा एम्नेस्टी स्थापना गरे।" }, tip: "Benenson for Amnesty (1961)." },
+            { id: 3, section: "Human Rights", text: "नेपालमा सूचनाको हक सम्बन्धी तलका भनाइहरूमध्ये कुन भनाइ ठिक छ? १) सूचनाको हक व्यक्ति र नागरिकलाई दुवैलाई प्राप्त छ। २) सूचनाको हक नागरिकलाई मात्र प्राप्त छ।", options: ["१ मात्र ठिक", "२ मात्र ठिक", "दुवै ठिक", "दुवै बेठिक"], correct: "२ मात्र ठिक", explanation: { en: "Right to information is for citizens only.", np: "सूचनाको हक नागरिकलाई मात्र प्राप्त छ।" }, tip: "Citizen-specific (नागरिक)." },
+            { id: 4, section: "Human Rights", text: "सूचनाको हक मानव अधिकारको विश्वव्यापी घोषणापत्र १९४८ को धारा १९ सँग सम्बन्धित छ भने विश्वमा सर्वप्रथम सन् १७६६ मा सूचनाको हक सम्बन्धी कानून बनाउने पहिलो देश कुन हो?", options: ["स्विट्जरल्यान्ड", "स्वीडेन", "क्यानडा", "अमेरिका"], correct: "स्वीडेन", explanation: { en: "Sweden passed the first information law in 1766.", np: "स्वीडेनले सन् १७६६ मा पहिलो सूचनाको हक कानून बनायो।" }, tip: "Sweden 1766." },
+            { id: 5, section: "Human Rights", text: "नेपाल संविधानमा सूचनाको हक समावेश भएको कुन धारा हो?", options: ["पहिलो", "दोस्रो", "तेस्रो", "चौथो"], correct: "तेस्रो", explanation: { en: "Article 27 covers the right to information.", np: "धारा २७ मा सूचनाको हक समावेश छ।" }, tip: "Article 27 (धारा २७)." },
+            { id: 6, section: "Human Rights", text: "सन् २०२२ मा सूचना सम्बन्धी कानून बनाउने दक्षिण एसियाको पहिलो देश कुन हो?", options: ["भारत", "पाकिस्तान", "अफगानिस्तान", "नेपाल"], correct: "नेपाल", explanation: { en: "Nepal enacted RTI in 2007, first in South Asia.", np: "नेपालले सन् २००७ मा सूचनाको हक कानून बनायो।" }, tip: "Nepal 2007." },
+            { id: 7, section: "Human Rights", text: "राष्ट्रिय सूचना आयोगको प्रमुख आयुक्त र अन्य आयुक्तको कार्यकाल कति वर्षको हुन्छ?", options: ["२ वर्ष", "३ वर्ष", "४ वर्ष", "५ वर्ष"], correct: "४ वर्ष", explanation: { en: "Commissioners serve a 4-year term.", np: "आयुक्तहरूको कार्यकाल ४ वर्षको हुन्छ।" }, tip: "4 years (४ वर्ष)." },
+            { id: 8, section: "Human Rights", text: "राष्ट्रिय सूचना आयोगको स्थापना कहिले भएको हो?", options: ["वि.सं. २०६४ वैशाख २२", "वि.सं. २०६४ असोज २२", "वि.सं. २०६५ वैशाख २२", "वि.सं. २०६५ असोज २२"], correct: "वि.सं. २०६४ वैशाख २२", explanation: { en: "Established on Baisakh 22, 2064 BS (2007).", np: "वि.सं. २०६४ वैशाख २२ मा स्थापना भएको।" }, tip: "2064 BS (2007)." },
+            { id: 9, section: "Human Rights", text: "नेपालमा सुशासनको सन्दर्भमा विकास भएका नवीनतम विधिहरू कुन कुन हुन्?", options: ["सामाजिक परीक्षण", "सार्वजनिक परीक्षण", "सार्वजनिक सुनुवाइ", "माथिका सबै"], correct: "माथिका सबै", explanation: { en: "Includes social audits, public audits, and hearings.", np: "सामाजिक परीक्षण, सार्वजनिक परीक्षण र सुनुवाइ समावेश छ।" }, tip: "Public engagement (जनसहभागिता)." },
+            { id: 10, section: "Human Rights", text: "नेपालमा पहिलो पटक सूचनाको हक नेपाल अधिराज्यको संविधान, २०४७ को कुन धारामा उल्लेख थियो?", options: ["धारा १६", "धारा २७", "धारा ३७", "धारा २९"], correct: "धारा १६", explanation: { en: "Article 16 of the 1990 Constitution.", np: "२०४७ को संविधानको धारा १६ मा।" }, tip: "Article 16 (धारा १६)." },
+            { id: 1, section: "Constitutional Rights", text: "नेपालको संविधान (२०७२) अनुसार संघ, प्रदेश र स्थानीय तहको अधिकारको साझा सूचीमा तलका मध्ये कुन पर्छ?", options: ["शिक्षा र खेलकुद", "आधारभूत, माध्यमिक र उच्च शिक्षा", "शिक्षा, प्राविधिक तथा व्यावसायिक तालिम र उच्च शिक्षा", "शिक्षा, खेलकुद र पत्रपत्रिका"], correct: "शिक्षा र खेलकुद", explanation: { en: "Education and sports are concurrent powers.", np: "शिक्षा र खेलकुद साझा अधिकारमा पर्छ।" }, tip: "Shared powers (साझा)." },
+            { id: 2, section: "Constitutional Rights", text: "दलित विद्यार्थीलाई प्राथमिकतासहित उच्च शिक्षासम्म कानुनबमोजिम छात्रवृत्तिसहित निःशुल्क शिक्षाको व्यवस्था गरिने छ। यो हक कुन मौलिक हकमा उल्लेख छ?", options: ["शिक्षा सम्बन्धी हक", "दलितको हक", "बालबालिकाको हक", "सामाजिक न्यायको हक"], correct: "दलितको हक", explanation: { en: "Free education for Dalits under Dalit rights.", np: "दलितको हकअन्तर्गत निःशुल्क शिक्षा।" }, tip: "Dalit-specific (दलित)." },
+            { id: 3, section: "Constitutional Rights", text: "कुनै पनि व्यक्तिलाई पक्राउ भएको कारणसहितको सूचना नदिई कुनै ठाउँमा राखिने छैन। यो हक कुन मौलिक हकअन्तर्गत पर्छ?", options: ["न्याय सम्बन्धी हक", "निवारक नजरबन्दविरुद्धको हक", "अपराध पीडितको हक", "यातनाविरुद्धको हक"], correct: "न्याय सम्बन्धी हक", explanation: { en: "Informed arrest under justice rights.", np: "न्याय सम्बन्धी हकअन्तर्गत सूचना।" }, tip: "Justice for fairness (न्याय)." },
+            { id: 4, section: "Constitutional Rights", text: "कसैलाई पनि निजको इच्छाविरुद्ध काममा लगाइनेछैन। यो प्रावधान कुन मौलिक हकअन्तर्गत छ?", options: ["स्वतन्त्रताको हक", "सम्मानपूर्वक बाँच्ने हक", "शोषणविरुद्धको हक", "न्याय सम्बन्धी हक"], correct: "शोषणविरुद्धको हक", explanation: { en: "Against forced labor under exploitation rights.", np: "शोषणविरुद्धको हकअन्तर्गत।" }, tip: "Exploitation (शोषण)." },
+            { id: 5, section: "Constitutional Rights", text: "संविधानबमोजिम कसलाई आधारभूत शिक्षामा पहुँचको हक हुनेछ?", options: ["प्रत्येक व्यक्तिलाई", "प्रत्येक नागरिकलाई", "प्रत्येक बालकलाई", "सबै नेपालीलाई"], correct: "प्रत्येक नागरिकलाई", explanation: { en: "Basic education for every citizen.", np: "प्रत्येक नागरिकलाई आधारभूत शिक्षा।" }, tip: "Citizen-focused (नागरिक)." },
+            { id: 6, section: "Constitutional Rights", text: "सम्मानपूर्वक बाँच्ने हक कसलाई प्राप्त छ?", options: ["प्रत्येक व्यक्तिलाई", "प्रत्येक नागरिकलाई", "प्रत्येक नेपाली नागरिकलाई", "प्रत्येक नेपालीलाई"], correct: "प्रत्येक नागरिकलाई", explanation: { en: "Dignity for every citizen.", np: "प्रत्येक नागरिकलाई सम्मानपूर्वक बाँच्ने हक।" }, tip: "Citizen’s right (नागरिक)." },
+            { id: 7, section: "Constitutional Rights", text: "सम्पत्ति तथा पारिवारिक मामिलामा दम्पतीको समान हक हुने व्यवस्था कुन हकले गरेको छ?", options: ["समानताको हक", "महिलाको हक", "सम्पत्तिको हक", "न्याय सम्बन्धी हक"], correct: "महिलाको हक", explanation: { en: "Equal rights under women’s rights.", np: "महिलाको हकअन्तर्गत समान हक।" }, tip: "Women’s rights (महिला)." },
+            { id: 8, section: "Constitutional Rights", text: "नेपालको संविधान अनुसार कुन तहसम्मको शिक्षा अनिवार्य र निःशुल्क हुने व्यवस्था छ?", options: ["प्राथमिक शिक्षा", "आधारभूत शिक्षा", "माध्यमिक शिक्षा", "विद्यालय शिक्षा"], correct: "आधारभूत शिक्षा", explanation: { en: "Basic education is mandatory and free.", np: "आधारभूत शिक्षा अनिवार्य र निःशुल्क छ।" }, tip: "Basic education (आधारभूत)." }
+        ];
+
+        let score = 0;
+        let userAnswers = Array(questions.length).fill(null);
+        let skipped = [];
+        let timerSeconds = 0;
+        let timerInterval;
+        let shuffledQuestions = [];
+        let currentPage = 0;
+        const questionsPerPage = 20;
+        let currentTopic = 'Office Procedures';
+
+        const quizEl = document.getElementById("quiz");
+        const scoreEl = document.getElementById("score");
+        const resultsEl = document.getElementById("results");
+        const resultsBody = document.getElementById("results-body");
+        const progressEl = document.getElementById("progress");
+        const timerEl = document.getElementById("timer");
+        const submitButton = document.getElementById("submit-button");
+        const restartButton = document.getElementById("restart-button");
+        const prevPageButton = document.getElementById("prev-page");
+        const nextPageButton = document.getElementById("next-page");
+        const correctSound = document.getElementById("correct-sound");
+        const wrongSound = document.getElementById("wrong-sound");
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function shuffleOptions(questions) {
+            return questions.map(q => {
+                const correct = q.options[q.options.indexOf(q.correct)];
+                const shuffled = [...q.options].sort(() => Math.random() - 0.5);
+                return {
+                    ...q,
+                    options: shuffled,
+                    correct: shuffled.indexOf(correct)
+                };
+            });
+        }
+
+        function startTimer() {
+            const minutes = Math.floor(timerSeconds / 60);
+            const seconds = timerSeconds % 60;
+            timerEl.textContent = `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const minutes = Math.floor(timerSeconds / 60);
+                const seconds = timerSeconds % 60;
+                timerEl.textContent = `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function updateProgress() {
+            const answered = userAnswers.filter(answer => answer !== null).length;
+            const filteredQuestions = questions.filter(q => q.section === currentTopic);
+            const percentage = (answered / filteredQuestions.length) * 100;
+            progressEl.style.width = `${percentage}%`;
+            checkAllAnswered();
+        }
+
+        function showPage(pageIndex) {
+            currentPage = pageIndex;
+            const filteredQuestions = questions.filter(q => q.section === currentTopic);
+            const startIndex = pageIndex * questionsPerPage;
+            const endIndex = Math.min(startIndex + questionsPerPage, filteredQuestions.length);
+            const fragment = document.createDocumentFragment();
+            const pageQuestions = shuffledQuestions.filter(q => q.section === currentTopic).slice(startIndex, endIndex);
+            pageQuestions.forEach((q, index) => {
+                const globalIndex = filteredQuestions.indexOf(questions.find(ques => ques.id === q.id && ques.section === q.section));
+                const isAnswered = userAnswers[globalIndex] !== null;
+                const selectedAnswer = userAnswers[globalIndex];
+                const correctAnswer = q.options[q.correct];
+                const isSkipped = skipped.some(skippedQ => skippedQ.id === q.id && skippedQ.section === q.section);
+                const options = q.options.map((opt, j) => {
+                    let buttonClass = 'option';
+                    if (isAnswered) {
+                        buttonClass += opt === correctAnswer ? ' correct' :
+                                      opt === selectedAnswer && selectedAnswer !== correctAnswer ? ' wrong' : '';
+                        buttonClass += ' disabled';
+                    }
+                    return `<button class="${buttonClass}" data-index="${j}" data-id="${q.id}" data-section="${q.section}" aria-label="Option ${escapeHtml(opt)}" ${isAnswered ? 'disabled' : ''}>${escapeHtml(opt)}</button>`;
+                }).join('');
+                const div = document.createElement('div');
+                div.className = 'question';
+                div.dataset.index = globalIndex;
+                div.innerHTML = `
+                    <div class="question-text">${q.id}. ${escapeHtml(q.text)}</div>
+                    <div class="options">${options}</div>
+                    <button class="skip-button" id="skip-btn-${globalIndex}" ${isAnswered || isSkipped ? 'disabled' : ''}>Skip</button>
+                    <div class="explanation ${isAnswered ? 'show' : ''}" id="explanation-${globalIndex}">
+                        ${isAnswered ? `Tip: ${escapeHtml(q.tip)}<br>${escapeHtml(q.explanation.en)} (${escapeHtml(q.explanation.np)})` : ''}
+                    </div>
+                `;
+                fragment.appendChild(div);
+            });
+            quizEl.innerHTML = '';
+            quizEl.appendChild(fragment);
+
+            quizEl.querySelectorAll('.option').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const questionDiv = e.target.closest('.question');
+                    const questionIndex = parseInt(questionDiv.dataset.index);
+                    const selected = parseInt(e.target.dataset.index);
+                    const selectedText = e.target.textContent;
+                    checkAnswer(e.target, questionIndex, selected, selectedText);
+                });
+            });
+
+            quizEl.querySelectorAll('.skip-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const questionIndex = parseInt(e.target.id.replace('skip-btn-', ''));
+                    skipQuestion(questionIndex);
+                });
+            });
+
+            prevPageButton.disabled = currentPage === 0;
+            nextPageButton.disabled = (currentPage + 1) * questionsPerPage >= filteredQuestions.length;
+            updateProgress();
+        }
+
+        function checkAnswer(button, questionIndex, selected, selectedText) {
+            if (userAnswers[questionIndex] !== null) return;
+            const filteredQuestions = questions.filter(q => q.section === currentTopic);
+            const q = shuffledQuestions.find(ques => ques.id === filteredQuestions[questionIndex].id && ques.section === filteredQuestions[questionIndex].section);
+            const correct = q.correct;
+            const buttons = button.parentElement.querySelectorAll(".option");
+            const skipBtn = document.getElementById(`skip-btn-${questionIndex}`);
+            const explanationEl = document.getElementById(`explanation-${questionIndex}`);
+
+            buttons.forEach((btn, j) => {
+                btn.disabled = true;
+                btn.classList.add('disabled');
+                if (j === correct) btn.classList.add("correct");
+                if (btn === button && selected !== correct) btn.classList.add("wrong");
+            });
+            skipBtn.disabled = true;
+            skipBtn.classList.add('disabled');
+
+            userAnswers[questionIndex] = selectedText;
+            if (selected === correct) {
+                score++;
+                correctSound.play().catch(() => console.log("Correct sound playback failed"));
+            } else {
+                wrongSound.play().catch(() => console.log("Wrong sound playback failed"));
+            }
+
+            explanationEl.innerHTML = `Tip: ${escapeHtml(q.tip)}<br>${escapeHtml(q.explanation.en)} (${escapeHtml(q.explanation.np)})`;
+            explanationEl.classList.add('show');
+            saveProgress();
+            updateProgress();
+        }
+
+        function skipQuestion(questionIndex) {
+            if (userAnswers[questionIndex] !== null) return;
+            const filteredQuestions = questions.filter(q => q.section === currentTopic);
+            const q = shuffledQuestions.find(ques => ques.id === filteredQuestions[questionIndex].id && ques.section === filteredQuestions[questionIndex].section);
+            if (!skipped.some(skippedQ => skippedQ.id === q.id && skippedQ.section === q.section)) {
+                skipped.push(q);
+                userAnswers[questionIndex] = "Skipped";
+            }
+            const questionEl = quizEl.querySelector(`.question[data-index="${questionIndex}"]`);
+            const buttons = questionEl.querySelectorAll(".option");
+            const skipBtn = document.getElementById(`skip-btn-${questionIndex}`);
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('disabled');
+            });
+            skipBtn.disabled = true;
+            skipBtn.classList.add('disabled');
+
+            saveProgress();
+            updateProgress();
+        }
+
+        function checkAllAnswered() {
+            const filteredQuestions = questions.filter(q => q.section === currentTopic);
+            const allAnswered = userAnswers.slice(0, filteredQuestions.length).every(answer => answer !== null);
+            submitButton.disabled = !allAnswered;
+        }
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            quizEl.innerHTML = '';
+            prevPageButton.classList.add("hidden");
+            nextPageButton.classList.add("hidden");
+            submitButton.classList.add("hidden");
+            const filteredQuestions = questions.filter(q => q.section === currentTopic);
+            scoreEl.innerHTML = `Your score: ${score} / ${filteredQuestions.length} (${((score / filteredQuestions.length) * 100).toFixed(2)}%)`;
+            resultsEl.classList.remove("hidden");
+            restartButton.classList.remove("hidden");
+
+            resultsBody.innerHTML = filteredQuestions.map((q, i) => {
+                const userAnswer = userAnswers[i] === null ? "Not attempted" :
+                                  userAnswers[i] === "Skipped" ? "Skipped" :
+                                  escapeHtml(userAnswers[i]);
+                const correctAnswer = escapeHtml(q.options[q.options.indexOf(q.correct)]);
+                const status = userAnswers[i] === q.options[q.options.indexOf(q.correct)] ? "Correct" :
+                              userAnswers[i] === "Skipped" ? "Skipped" :
+                              userAnswers[i] === null ? "Not attempted" : "Wrong";
+                return `
+                    <tr>
+                        <td>${q.id}. ${escapeHtml(q.text)}</td>
+                        <td>${userAnswer}</td>
+                        <td>${correctAnswer}</td>
+                        <td class="${status.toLowerCase()}">${status}</td>
+                        <td>Tip: ${escapeHtml(q.tip)}<br>${escapeHtml(q.explanation.en)} (${escapeHtml(q.explanation.np)})</td>
+                    </tr>
+                `;
+            }).join('');
+            localStorage.removeItem("adminRightsQuizProgress");
+        }
+
+        function restartQuiz() {
+            score = 0;
+            userAnswers = Array(questions.length).fill(null);
+            skipped = [];
+            timerSeconds = 0;
+            currentPage = 0;
+            shuffledQuestions = shuffleOptions(questions);
+            resultsEl.classList.add("hidden");
+            prevPageButton.classList.remove("hidden");
+            nextPageButton.classList.remove("hidden");
+            submitButton.classList.remove("hidden");
+            scoreEl.innerHTML = "";
+            clearInterval(timerInterval);
+            startTimer();
+            showPage(0);
+        }
+
+        function selectTopic(topic) {
+            currentTopic = topic;
+            currentPage = 0;
+            score = 0;
+            userAnswers = Array(questions.length).fill(null);
+            skipped = [];
+            document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
+            document.querySelector(`.sidebar li[onclick="selectTopic('${topic}')"]`).classList.add('active');
+            showPage(0);
+            updateProgress();
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem("adminRightsQuizProgress");
+            if (saved) {
+                const { score: savedScore, answers: savedAnswers, skipped: savedSkipped, time: savedTime, topic: savedTopic } = JSON.parse(saved);
+                score = savedScore || 0;
+                userAnswers = savedAnswers && savedAnswers.length === questions.length ? savedAnswers : Array(questions.length).fill(null);
+                skipped = savedSkipped || [];
+                timerSeconds = savedTime || 0;
+                currentTopic = savedTopic || 'Office Procedures';
+                document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
+                document.querySelector(`.sidebar li[onclick="selectTopic('${currentTopic}')"]`).classList.add('active');
+            }
+        }
+
+        function saveProgress() {
+            localStorage.setItem("adminRightsQuizProgress", JSON.stringify({
+                score,
+                answers: userAnswers,
+                skipped,
+                time: timerSeconds,
+                topic: currentTopic
+            }));
+        }
+
+        // Initialize
+        shuffledQuestions = shuffleOptions(questions);
+        loadProgress();
+        startTimer();
+        showPage(0);
+
+        // Event listeners
+        submitButton.addEventListener("click", endQuiz);
+        restartButton.addEventListener("click", restartQuiz);
+        prevPageButton.addEventListener("click", () => {
+            if (currentPage > 0) showPage(currentPage - 1);
+        });
+        nextPageButton.addEventListener("click", () => {
+            const filteredQuestions = questions.filter(q => q.section === currentTopic);
+            if ((currentPage + 1) * questionsPerPage < filteredQuestions.length) showPage(currentPage + 1);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !submitButton.disabled) {
+                submitButton.click();
+            } else if (e.key === 'ArrowLeft' && !prevPageButton.disabled) {
+                prevPageButton.click();
+            } else if (e.key === 'ArrowRight' && !nextPageButton.disabled) {
+                nextPageButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
