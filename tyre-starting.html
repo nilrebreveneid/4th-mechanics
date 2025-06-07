@@ -334,132 +334,131 @@
     <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
 
     <script>
-        const questions = [
-            // Starting System Questions (10)
-            {
-                q: "Which components are part of a vehicle’s starting system?",
-                options: ["Battery, starter, ignition switch", "Battery, alternator"],
-                answer: 0,
-                explanation: "The starting system includes the battery, starter motor, and ignition switch to crank the engine."
-            },
-            {
-                q: "What does a tachometer measure in a vehicle?",
-                options: ["Vehicle speed", "Engine RPM"],
-                answer: 1,
-                explanation: "A tachometer measures the engine’s rotational speed in revolutions per minute (RPM)."
-            },
-            {
-                q: "Which component is NOT part of a vehicle’s starting system?",
-                options: ["Ignition switch", "Timing belt"],
-                answer: 1,
-                explanation: "The timing belt is part of the engine’s timing system, not the starting system."
-            },
-            {
-                q: "गाडी स्टार्ट गर्ने प्रणालीमा कुन कम्पोनेन्ट प्रयोग हुन्छ?",
-                options: ["अल्टरनेटर", "स्टार्टर मोटर"],
-                answer: 1,
-                explanation: "The starter motor cranks the engine to initiate combustion."
-            },
-            {
-                q: "In a starting system, contact breaker points are closed by:",
-                options: ["Cam", "Spring tension"],
-                answer: 1,
-                explanation: "Spring tension closes the contact breaker points after the cam opens them."
-            },
-            {
-                q: "Which motor type has high starting torque in a vehicle’s starting system?",
-                options: ["AC motor", "DC series motor"],
-                answer: 1,
-                explanation: "DC series motors provide high starting torque, ideal for starter motors."
-            },
-            {
-                q: "Why is starting a cold engine often difficult?",
-                options: ["Increased oil viscosity", "Low fuel pressure"],
-                answer: 0,
-                explanation: "Cold engines have thicker oil, increasing resistance and making starting harder."
-            },
-            {
-                q: "What is the role of the ignition switch in the starting system?",
-                options: ["To generate power", "To activate the starter circuit"],
-                answer: 1,
-                explanation: "The ignition switch completes the circuit to engage the starter motor."
-            },
-            {
-                q: "What component supplies electrical power to the starter motor?",
-                options: ["Alternator", "Battery"],
-                answer: 1,
-                explanation: "The battery provides the electrical energy needed to power the starter motor."
-            },
-            {
-                q: "What indicates a weak battery in the starting system?",
-                options: ["Slow cranking speed", "Overheating engine"],
-                answer: 0,
-                explanation: "A weak battery causes slow or weak cranking, indicating insufficient power."
-            },
+   const questions = [
+    // Starting System Questions (10)
+    {
+        q: "Which components are part of a vehicle’s starting system?",
+        options: ["Battery, starter, ignition switch", "Battery, alternator, radiator", "Fuel pump, clutch, battery", "Alternator, carburetor, ignition coil"],
+        answer: 0,
+        explanation: "The starting system includes the battery, starter motor, and ignition switch to crank the engine."
+    },
+    {
+        q: "What does a tachometer measure in a vehicle?",
+        options: ["Vehicle speed", "Engine RPM", "Fuel level", "Oil pressure"],
+        answer: 1,
+        explanation: "A tachometer measures the engine’s rotational speed in revolutions per minute (RPM)."
+    },
+    {
+        q: "Which component is NOT part of a vehicle’s starting system?",
+        options: ["Ignition switch", "Timing belt", "Starter motor", "Battery"],
+        answer: 1,
+        explanation: "The timing belt is part of the engine’s timing system, not the starting system."
+    },
+    {
+        q: "गाडी स्टार्ट गर्ने प्रणालीमा कुन कम्पोनेन्ट प्रयोग हुन्छ? (Which component is used in a vehicle’s starting system?)",
+        options: ["अल्टरनेटर (Alternator)", "स्टार्टर मोटर (Starter motor)", "रेडिएटर (Radiator)", "क्लच (Clutch)"],
+        answer: 1,
+        explanation: "स्टार्टर मोटरले इन्जिनलाई क्र्यांक गर्छ। (The starter motor cranks the engine to initiate combustion.)"
+    },
+    {
+        q: "In a starting system, contact breaker points are closed by:",
+        options: ["Cam", "Spring tension", "Solenoid", "Distributor cap"],
+        answer: 1,
+        explanation: "Spring tension closes the contact breaker points after the cam opens them."
+    },
+    {
+        q: "Which motor type has high starting torque in a vehicle’s starting system?",
+        options: ["AC motor", "DC series motor", "DC shunt motor", "Brushless motor"],
+        answer: 1,
+        explanation: "DC series motors provide high starting torque, ideal for starter motors."
+    },
+    {
+        q: "Why is starting a cold engine often difficult?",
+        options: ["Increased oil viscosity", "Low fuel pressure", "Worn spark plugs", "High battery voltage"],
+        answer: 0,
+        explanation: "Cold engines have thicker oil, increasing resistance and making starting harder."
+    },
+    {
+        q: "What is the role of the ignition switch in the starting system?",
+        options: ["To generate power", "To activate the starter circuit", "To cool the engine", "To regulate fuel flow"],
+        answer: 1,
+        explanation: "The ignition switch completes the circuit to engage the starter motor."
+    },
+    {
+        q: "What component supplies electrical power to the starter motor?",
+        options: ["Alternator", "Battery", "Fuse box", "Ignition coil"],
+        answer: 1,
+        explanation: "The battery provides the electrical energy needed to power the starter motor."
+    },
+    {
+        q: "What indicates a weak battery in the starting system?",
+        options: ["Slow cranking speed", "Overheating engine", "Dim headlights", "High fuel consumption"],
+        answer: 0,
+        explanation: "A weak battery causes slow or weak cranking, indicating insufficient power."
+    },
 
-            // Tyre and Wheel Questions (10)
-            {
-                q: "What is the primary purpose of tyres on a vehicle?",
-                options: ["To enhance engine power", "To provide grip and absorb shocks"],
-                answer: 1,
-                explanation: "Tyres provide traction, support the vehicle’s weight, and absorb minor road shocks."
-            },
-            {
-                q: "A tyre is marked as 175/65 R14 82 S. What does 65 represent?",
-                options: ["Rim diameter", "Aspect ratio"],
-                answer: 1,
-                explanation: "The number 65 is the aspect ratio, indicating sidewall height as 65% of the tyre’s width."
-            },
-            {
-                q: "Which wheel type is incompatible with tubeless tyres?",
-                options: ["Alloy wheel", "Wire wheel"],
-                answer: 1,
-                explanation: "Wire wheels cannot maintain an airtight seal required for tubeless tyres."
-            },
-            {
-                q: "In a truck tyre marked 10.00x20-14 ply, what does 20 indicate?",
-                options: ["Tyre width in cm", "Rim diameter in inches"],
-                answer: 1,
-                explanation: "The number 20 denotes the rim diameter in inches."
-            },
-            {
-                q: "What is the purpose of tyre rotation on a vehicle?",
-                options: ["To prevent ply separation", "To equalize wear"],
-                answer: 1,
-                explanation: "Tyre rotation ensures even wear across all tyres, extending their lifespan."
-            },
-            {
-                q: "गाडीको टायरको दाब मापन गर्न कुन उपकरण प्रयोग गरिन्छ?",
-                options: ["टायर प्रेसर गेज", "स्पीडोमिटर"],
-                answer: 0,
-                explanation: "A tyre pressure gauge measures the air pressure inside the tyre."
-            },
-            {
-                q: "गाडीको टायर चिप्लिन नदिन के गर्नुपर्छ?",
-                options: ["टायरमा ब्रेक लगाउनु", "टायरको अवस्था राम्रो राख्नु"],
-                answer: 1,
-                explanation: "Maintaining proper tyre tread and pressure prevents slipping."
-            },
-            {
-                q: "What does the ‘R’ in a tyre designation like 205/55 R16 indicate?",
-                options: ["Radial construction", "Rim width"],
-                answer: 0,
-                explanation: "The ‘R’ indicates the tyre has a radial construction."
-            },
-            {
-                q: "What is a common cause of uneven tyre wear?",
-                options: ["Misaligned wheels", "Low battery voltage"],
-                answer: 0,
-                explanation: "Wheel misalignment causes uneven tyre wear, reducing tyre life."
-            },
-            {
-                q: "Which maintenance task ensures optimal tyre performance?",
-                options: ["Checking tyre pressure regularly", "Changing engine oil"],
-                answer: 0,
-                explanation: "Regular tyre pressure checks maintain grip, fuel efficiency, and tyre longevity."
-            }
-        ];
-
+    // Tyre and Wheel Questions (10)
+    {
+        q: "What is the primary purpose of tyres on a vehicle?",
+        options: ["To enhance engine power", "To provide grip and absorb shocks", "To cool the brakes", "To increase vehicle weight"],
+        answer: 1,
+        explanation: "Tyres provide traction, support the vehicle’s weight, and absorb minor road shocks."
+    },
+    {
+        q: "A tyre is marked as 175/65 R14 82 S. What does 65 represent?",
+        options: ["Rim diameter", "Aspect ratio", "Load index", "Speed rating"],
+        answer: 1,
+        explanation: "The number 65 is the aspect ratio, indicating sidewall height as 65% of the tyre’s width."
+    },
+    {
+        q: "Which wheel type is incompatible with tubeless tyres?",
+        options: ["Alloy wheel", "Wire wheel", "Steel wheel", "Magnesium wheel"],
+        answer: 1,
+        explanation: "Wire wheels cannot maintain an airtight seal required for tubeless tyres."
+    },
+    {
+        q: "In a truck tyre marked 10.00x20-14 ply, what does 20 indicate?",
+        options: ["Tyre width in cm", "Rim diameter in inches", "Ply rating", "Load capacity"],
+        answer: 1,
+        explanation: "The number 20 denotes the rim diameter in inches."
+    },
+    {
+        q: "What is the purpose of tyre rotation on a vehicle?",
+        options: ["To prevent ply separation", "To equalize wear", "To increase speed", "To reduce noise"],
+        answer: 1,
+        explanation: "Tyre rotation ensures even wear across all tyres, extending their lifespan."
+    },
+    {
+        q: "गाडीको टायरको दाब मापन गर्न कुन उपकरण प्रयोग गरिन्छ? (Which device is used to measure tyre pressure?)",
+        options: ["टायर प्रेसर गेज (Tyre pressure gauge)", "स्पीडोमिटर (Speedometer)", "ट्याकोमिटर (Tachometer)", "थर्मोमिटर (Thermometer)"],
+        answer: 0,
+        explanation: "टायर प्रेसर गेजले टायरको हावाको चाप मापन गर्छ। (A tyre pressure gauge measures the air pressure inside the tyre.)"
+    },
+    {
+        q: "गाडीको टायर चिप्लिन नदिन के गर्नुपर्छ? (What should be done to prevent tyre slipping?)",
+        options: ["टायरमा ब्रेक लगाउनु (Apply brakes on tyre)", "टायरको अवस्था राम्रो राख्नु (Maintain good tyre condition)", "इन्जिन तेल फेर्नु (Change engine oil)", "ब्याट्री चार्ज गर्नु (Charge battery)"],
+        answer: 1,
+        explanation: "उचित टायर ट्रेड र चाप राख्नाले चिप्लिनबाट बचिन्छ। (Maintaining proper tyre tread and pressure prevents slipping.)"
+    },
+    {
+        q: "What does the ‘R’ in a tyre designation like 205/55 R16 indicate?",
+        options: ["Radial construction", "Rim width", "Reinforced tyre", "Run-flat tyre"],
+        answer: 0,
+        explanation: "The ‘R’ indicates the tyre has a radial construction."
+    },
+    {
+        q: "What is a common cause of uneven tyre wear?",
+        options: ["Misaligned wheels", "Low battery voltage", "Dirty air filter", "Worn brake pads"],
+        answer: 0,
+        explanation: "Wheel misalignment causes uneven tyre wear, reducing tyre life."
+    },
+    {
+        q: "Which maintenance task ensures optimal tyre performance?",
+        options: ["Checking tyre pressure regularly", "Changing engine oil", "Replacing spark plugs", "Cleaning fuel injectors"],
+        answer: 0,
+        explanation: "Regular tyre pressure checks maintain grip, fuel efficiency, and tyre longevity."
+    }
+];
         let currentPage = 0;
         let score = 0;
         let skipped = [];
