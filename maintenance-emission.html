@@ -21,7 +21,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maintenance System Mock Test</title>
+    <title>Logsewa Maintenance System Mock Test</title>
     <style>
         * {
             margin: 0;
@@ -341,7 +341,7 @@
                             <th>Explanation</th>
                         </tr>
                     </thead>
-                    <tbody id="answers"></tbody>
+                    <tbody id="results-body"></tbody>
                 </table>
                 <button class="restart-button" onclick="restartQuiz()">Restart Quiz</button>
             </div>
@@ -352,7 +352,7 @@
     <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
 
     <script>
-     const questions = [
+        const questions = [
     // Maintenance
     {
         q: "Predictive maintenance involves:",
@@ -582,7 +582,9 @@
         answer: 0,
         explanation: "ब्रेक चिसो अवस्थामा सबैभन्दा राम्रो काम गर्छ, किनभने तातो अवस्थामा प्रभावकारिता कम हुन सक्छ। (Brakes perform best when cold, as overheating can reduce effectiveness.)"
     }
-];
+                
+        ];
+
         let currentPage = 0;
         let score = 0;
         let skipped = [];
@@ -595,25 +597,21 @@
         const quizEl = document.getElementById("quiz");
         const scoreEl = document.getElementById("score");
         const resultsEl = document.getElementById("results");
-        const resultsBody = document.getElementById("answers");
+        const resultsBody = document.getElementById("results-body");
         const progressEl = document.getElementById("progress");
         const timerEl = document.getElementById("timer");
         const currentScoreEl = document.getElementById("current-score");
         const correctSound = document.getElementById("correct-sound");
         const wrongSound = document.getElementById("wrong-sound");
 
-        // Load progress from localStorage
-        function loadProgress() {
-            const saved = localStorage.getItem("quizProgressMaintenance");
-            if (saved) {
-                const { currentPage: savedPage, score: savedScore, skipped: savedSkipped, answers: savedAnswers, time: savedTime } = JSON.parse(saved);
-                currentPage = savedPage;
-                score = savedScore;
-                skipped = savedSkipped;
-                userAnswers = savedAnswers || Array(questions.length).fill(null);
-                timerSeconds = savedTime || 0;
-                updateCurrentScore();
-            }
+        // Clear progress to start fresh
+        function clearProgress() {
+            localStorage.removeItem("quizProgressMaintenance");
+            currentPage = 0;
+            score = 0;
+            skipped = [];
+            userAnswers = Array(questions.length).fill(null);
+            timerSeconds = 0;
         }
 
         // Save progress to localStorage
@@ -865,23 +863,24 @@
 
         // Restart quiz
         function restartQuiz() {
-            currentPage = 0;
-            score = 0;
-            skipped = [];
-            userAnswers = Array(questions.length).fill(null);
-            timerSeconds = 0;
+            clearProgress();
             resultsEl.classList.add('hidden');
             scoreEl.textContent = '';
-            localStorage.removeItem('quizProgressMaintenance');
             startTimer();
             showQuestions(currentPage);
             updateCurrentScore();
         }
 
-        // Initialize
-        loadProgress();
-        startTimer();
-        showQuestions(currentPage);
+        // Initialize quiz
+        function initialize() {
+            clearProgress();
+            startTimer();
+            showQuestions(currentPage);
+            updateCurrentScore();
+        }
+
+        // Start quiz on page load
+        initialize();
     </script>
 </body>
 </html>
