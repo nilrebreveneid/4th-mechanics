@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logsewa Comprehensive Mock Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #c3dafe);
+            margin: 0;
+            padding: 2rem;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #1e3a8a;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin: 1rem 0;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .timer {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #d81b60;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .question {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            animation: fadeIn 0.5s;
+            transition: transform 0.2s ease;
+        }
+
+        .question:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .question p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            color: #374151;
+        }
+
+        .options button:hover:not(:disabled) {
+            background: #f3f4f6;
+            border-color: #3b82f6;
+            transform: translateX(4px);
+        }
+
+        .options button.correct {
+            background: #bbf7d0;
+            border-color: #22c55e;
+            color: #166534;
+            animation: pulse 0.5s;
+        }
+
+        .options button.wrong {
+            background: #fecaca;
+            border-color: #ef4444;
+            color: #991b1b;
+            animation: shake 0.3s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .options button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #eff6ff;
+            border-radius: 8px;
+            color: #1e3a8a;
+            font-size: 0.95rem;
+        }
+
+        .skip-button {
+            background: #fff3cd;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            width: 100%;
+            border: 1px solid #ffca28;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .skip-button:hover {
+            background: #ffecb3;
+        }
+
+        .next-button {
+            background: #3b82f6;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .next-button:hover:not(:disabled) {
+            background: #2563eb;
+        }
+
+        .next-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .results-table th, .results-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .results-table th {
+            background: #f8fafc;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .results-table .correct {
+            color: #166534;
+            font-weight: bold;
+        }
+
+        .results-table .wrong {
+            color: #991b1b;
+            font-weight: bold;
+        }
+
+        .results-table .skipped, .results-table .not-attempted {
+            color: #d97706;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .restart-button {
+            background: #22c55e;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 1rem auto;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .restart-button:hover {
+            background: #16a34a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .question p {
+                font-size: 1rem;
+            }
+
+            .options button, .skip-button, .next-button, .restart-button {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+
+            .results-table th, .results-table td {
+                padding: 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Logsewa Comprehensive Mock Test</h1>
+        <div class="quiz-header">
+            <div class="timer" id="timer">Time: 00:00</div>
+            <div class="score" id="current-score">Score: 0/50</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="quiz"></div>
+        <div class="score-container">
+            <div class="score" id="score"></div>
+            <div id="results" class="hidden">
+                <h2>Quiz Results</h2>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                            <th>Status</th>
+                            <th>Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+                <button class="restart-button" onclick="restartQuiz()">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+        const questions = [
+            // Page 1 (Key D)
+            { q: "Riboflavin ले कुन Vitamin को रूपमा जानेको छ?", options: ["Vitamin B1", "Vitamin B2", "Vitamin B6", "Vitamin B12"], answer: 1, explanation: "Riboflavin is Vitamin B2." },
+            { q: "नेपालको संविधानमा 'प्रजातन्त्रको क' कुन वर्णमा रहेको छ?", options: ["र", "३", "३", "४"], answer: 2, explanation: "'प्रजातन्त्र' has 'त्र' (3 strokes)." },
+            { q: "संयुक्त राष्ट्र संघ वातावरण कार्यक्रम को मुख्यालय कहाँ?", options: ["न्युयोर्क", "पेरिस", "नयरोबी", "रोम"], answer: 2, explanation: "UNEP is in Nairobi." },
+            { q: "तालिका माथि कुन देशिय संगठन संगमा साझा सहमति?", options: ["EU", "SAARC", "बिमस्टेक", "BIMPSTEC"], answer: 1, explanation: "Nepal collaborates with SAARC." },
+            { q: "HICDP कुन देशको साझेदारीमा?", options: ["भ्रातृ", "चीन", "फ्रान्स", "संयुक्त राज्य अमेरिका"], answer: 3, explanation: "USA supports HICDP." },
+            { q: "कायमियत व्यवसायको विकासमा कुन हो?", options: ["निजी लघु", "कम्पनी व्यवसाय", "व्यवसायिक कायम", "माथिका सबै"], answer: 3, explanation: "All are valid." },
+            { q: "निजामति सेवा पदपूर्ति कति प्रतीशत?", options: ["२४%", "४%", "६%", "१२%"], answer: 0, explanation: "24% is a common quota." },
+            { q: "कम्पनी प्रशासन संगनारी कोनको निकाय?", options: ["राजधानी", "स्याङ्जा", "निजामति", "निजामति"], answer: 0, explanation: "Capital hosts administration." },
+            { q: "संविधानिक निकायको पहिचानको लागि कति बर्ष?", options: ["४५", "२५", "३४", "४%"], answer: 0, explanation: "45+ years required." },
+            { q: "शुक्तावत कुन देशवाट?", options: ["अमेरिका", "बेलायत", "फ्रान्स", "भारत"], answer: 1, explanation: "Britain influenced laws." },
+            { q: "मानव अधिकारको विश्वव्यापी घोषणा मा कति धारा?", options: ["४४", "२०", "२४", "३०"], answer: 3, explanation: "UDHR has 30 articles." },
+            // Page 2 (Key A)
+            { q: "निजामति सेवाको पदपूर्ति गर्न सावधिक राजपत्र अनुसार?", options: ["रु४%", "रु४%", "रु४%", "रु४%"], answer: 0, explanation: "Quota context." },
+            { q: "कम्पनी प्रशासन संगनारी कन्द्रिय निकाय?", options: ["प्राज्ञमति", "स्याङ्जा", "गुह्मनालाय", "निजामति"], answer: 0, explanation: "Learned council." },
+            { q: "संविधानिक निकायको पहिचानको लागि कति बर्ष?", options: ["रु४५", "रु२५", "रु३४", "रु४%"], answer: 0, explanation: "45+ years." },
+            { q: "शुक्तावत कुन देशवाट?", options: ["अमेरिका", "बेलायत", "फ्रान्स", "भारत"], answer: 0, explanation: "Possible USA influence." },
+            { q: "मानव अधिकारको विश्वव्यापी घोषणा मा कति धारा?", options: ["रु४४", "रु२०", "रु२४", "रु३०"], answer: 3, explanation: "30 articles." },
+            { q: "सुचनाको हकिमा तालिका माथे कुन?", options: ["संविधानिक महलको", "संविधानिक निकायमा", "संविधानिक महलको", "अमृतमानको"], answer: 0, explanation: "Constitutional rights." },
+            { q: "सुचनामा (व्यवस्थापन ताथा संचालन) मध्ये?", options: ["सेवा ग्राम", "सेवा ग्राम", "सेवा ग्राम", "सेवाग्रहले"], answer: 0, explanation: "Service records." },
+            { q: "ERG सिद्धान्तको प्रतीवादको को हो?", options: ["Frederick Herzberg", "David McClelland", "McGregor", "Clayton Alderfer"], answer: 3, explanation: "ERG by Alderfer." },
+            { q: "धारा ४६ मा उल्लेखित नागरिकको पहिलो कर्तव्य?", options: ["संविधानिक सम्पत्तिको", "संविधान र कानुनको", "राष्ट्रिय निशानको", "राजाले"], answer: 0, explanation: "Constitutional duty." },
+            // Page 3 (Key A)
+            { q: "A ring gauge is used to", options: ["check the diameter of shafts or studs", "test the accuracy of holes", "check the clearance", "all of the above"], answer: 0, explanation: "Checks diameter." },
+            { q: "A neutral flame in oxy-acetylene welding means", options: ["1:1", "1:1.5", "1:2", "2:1"], answer: 0, explanation: "Equal ratio." },
+            { q: "Which part of the lathe machine is called Live Centre?", options: ["Carriage", "Tail stock", "Head stock", "None"], answer: 2, explanation: "Head stock." },
+            { q: "Brazing is used for joining metal pieces by", options: ["heating", "arc", "beating", "all"], answer: 0, explanation: "Uses heat." },
+            // Page 4 (Key A)
+            { q: "What is the name of joint if two members welded in the same plane?", options: ["Lap joint", "Butt joint", "Tee joint", "Edge joint"], answer: 0, explanation: "Lap joint." },
+            { q: "Gray cast iron is best welded by", options: ["TIG", "ARC", "MIG", "Oxy-acetylene"], answer: 3, explanation: "Oxy-acetylene preferred." },
+            { q: "Which metal forming process is best for wires?", options: ["Forging", "Extrusion", "Drawing", "Rolling"], answer: 2, explanation: "Drawing for wires." },
+            { q: "Idler is a component of", options: ["wheel loader", "motor grader", "tipper truck", "track excavator"], answer: 3, explanation: "Track excavator." },
+            { q: "A …… is used to level and spread loose material.", options: ["tractor", "excavator", "grader", "roller"], answer: 2, explanation: "Grader levels." },
+            { q: "Which is not present in petrol engine?", options: ["Spark plug", "Fuel injector", "Carburetor", "None"], answer: 1, explanation: "Fuel injector in diesel." },
+            { q: "In two stroke cycle engine, operations in", options: ["1", "2", "3", "4"], answer: 0, explanation: "One revolution." },
+            { q: "Power for mechanical fuel pump from", options: ["Camshaft", "Crankshaft", "Distributor shaft", "Propeller shaft"], answer: 0, explanation: "Camshaft drives." },
+            { q: "Fuel delivery varies by", options: ["plunger", "control sleeve", "control rack", "injection"], answer: 2, explanation: "Control rack adjusts." },
+            { q: "A radiator cap contains", options: ["pressure valve", "thermostat valve", "blow-off valve", "pressure and vacuum valve"], answer: 3, explanation: "Both valves." },
+            { q: "Main purpose of cooling system", options: ["To cool down", "To warm up", "To maintain", "To prolong"], answer: 2, explanation: "Maintains temperature." },
+            { q: "What is meant by ABS?", options: ["Avoid brake system", "Anti-lock braking system", "Actual brake system", "Automatic brake system"], answer: 1, explanation: "Anti-lock braking." },
+            { q: "Air bleeder valve at", options: ["master cylinder", "wheel cylinder", "master and wheel", "any where"], answer: 0, explanation: "Master cylinder." },
+            { q: "In leaf spring, other end attached to", options: ["V-bolt", "I-bolt", "Shackle", "Axle shaft"], answer: 2, explanation: "Shackle allows movement." },
+            { q: "Not a component of suspension system?", options: ["Coil spring", "Leaf spring", "Shock absorber", "Connecting rod"], answer: 3, explanation: "Connecting rod." },
+            { q: "Tilting of front wheels away called", options: ["caster", "camber", "toe-in", "toe-out"], answer: 1, explanation: "Camber is tilting." },
+            // Page 5 (Key A)
+            { q: "Possible cause for hard steering", options: ["tight tie rod", "bent wheel spindle", "low tyre pressure", "none"], answer: 0, explanation: "Tight tie rod." },
+            { q: "Hard shifting of gears due to", options: ["leakage of oil", "worn out splines", "high speed", "over loading"], answer: 0, explanation: "Oil leakage." },
+            { q: "Known as poppet valve", options: ["Seat valves", "Slide valves", "Pressure reducing", "Directional control"], answer: 0, explanation: "Seat valves." },
+            { q: "Overinflated tyre results in", options: ["more wear on center than on edges", "more wear on center than on center", "equal wear", "none"], answer: 0, explanation: "Center wear." },
+            { q: "Which is multigrade engine oil?", options: ["SAE 30", "SAE 40", "SAE 15W-40", "SAE 80W"], answer: 2, explanation: "15W-40 is multigrade." },
+            { q: "Initial charging after", options: ["filling with acid", "filling with water", "filling with oil", "none"], answer: 0, explanation: "Acid required." },
+            { q: "Not recorded in maintenance job card", options: ["types and quantity of spare parts", "types of lubricants", "types of consumables", "purchase cost"], answer: 3, explanation: "Purchase cost excluded." },
+            { q: "Not considered PPE", options: ["Safety goggles", "Ear protection", "Machine guards", "Safety gloves"], answer: 2, explanation: "Machine guards." },
+            { q: "Type of lubricant is grease", options: ["Semi-solid type", "Solid type", "Liquid type", "Gas type"], answer: 0, explanation: "Grease is semi-solid." },
+            { q: "Not related to human comfort in AC", options: ["Air temperature", "Rooms lighting", "Air speed", "Humidity"], answer: 1, explanation: "Lighting not a factor." }
+        ];
+
+        let currentPage = 0;
+        let score = 0;
+        let skipped = [];
+        let userAnswers = Array(questions.length).fill(null);
+        let timerSeconds = 0;
+        let timerInterval;
+        const QUESTIONS_PER_PAGE = 5;
+        const ANSWER_DELAY = 1000;
+
+        const quizEl = document.getElementById("quiz");
+        const scoreEl = document.getElementById("score");
+        const resultsEl = document.getElementById("results");
+        const resultsBody = document.getElementById("results-body");
+        const progressEl = document.getElementById("progress");
+        const timerEl = document.getElementById("timer");
+        const currentScoreEl = document.getElementById("current-score");
+        const correctSound = document.getElementById("correct-sound");
+        const wrongSound = document.getElementById("wrong-sound");
+
+        // Clear progress to start fresh
+        function clearProgress() {
+            localStorage.removeItem("quizProgressComprehensiveTest");
+            currentPage = 0;
+            score = 0;
+            skipped = [];
+            userAnswers = Array(questions.length).fill(null);
+            timerSeconds = 0;
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem("quizProgressComprehensiveTest", JSON.stringify({
+                currentPage,
+                score,
+                skipped,
+                answers: userAnswers,
+                time: timerSeconds
+            }));
+        }
+
+        // Update current score display
+        function updateCurrentScore() {
+            currentScoreEl.textContent = `Score: ${score}/${questions.length}`;
+        }
+
+        // Shuffle array
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Start timer
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const minutes = Math.floor(timerSeconds / 60);
+                const seconds = timerSeconds % 60;
+                timerEl.textContent = `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                saveProgress();
+            }, 1000);
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            progressEl.style.width = `${percentage}%`;
+        }
+
+        // Show questions for the current page
+        function showQuestions(page) {
+            quizEl.innerHTML = '';
+            const startIndex = page * QUESTIONS_PER_PAGE;
+            const endIndex = Math.min(startIndex + QUESTIONS_PER_PAGE, questions.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const q = questions[i];
+                const shuffledOptions = shuffle([...q.options].map((opt, j) => ({ text: opt, index: j })));
+                const optionsHtml = shuffledOptions
+                    .map(opt => `<button onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')">${opt.text}</button>`)
+                    .join('');
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.dataset.index = i;
+                questionDiv.innerHTML = `
+                    <p>Q${i + 1}. ${q.q}</p>
+                    <div class="options">${optionsHtml}</div>
+                    <button class="skip-button" onclick="skipQuestion(${i})">Skip</button>
+                    <div class="explanation">${q.explanation}</div>
+                `;
+                quizEl.appendChild(questionDiv);
+            }
+
+            if (endIndex < questions.length || skipped.length > 0) {
+                const nextButton = document.createElement('button');
+                nextButton.classList.add('next-button');
+                nextButton.textContent = endIndex < questions.length ? 'Next' : 'Review Skipped Questions';
+                nextButton.onclick = nextPage;
+                nextButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                quizEl.appendChild(nextButton);
+            } else {
+                const submitButton = document.createElement('button');
+                submitButton.classList.add('next-button');
+                submitButton.textContent = 'Submit Quiz';
+                submitButton.onclick = endQuiz;
+                submitButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                quizEl.appendChild(submitButton);
+            }
+
+            updateProgress();
+            saveProgress();
+        }
+
+        // Restore answers for the current page (only for in-session navigation)
+        function restoreAnswers(startIndex, endIndex) {
+            for (let i = startIndex; i < endIndex; i++) {
+                if (userAnswers[i] !== null && userAnswers[i] !== 'Skipped') {
+                    const questionDiv = document.querySelector(`.question[data-index="${i}"]`);
+                    const buttons = questionDiv.querySelectorAll('.options button');
+                    const q = questions[i];
+                    buttons.forEach(btn => {
+                        btn.disabled = true;
+                        if (btn.textContent === q.options[q.answer]) {
+                            btn.classList.add('correct');
+                        }
+                        if (btn.textContent === userAnswers[i] && userAnswers[i] !== q.options[q.answer]) {
+                            btn.classList.add('wrong');
+                        }
+                    });
+                    questionDiv.querySelector('.explanation').style.display = 'block';
+                    questionDiv.querySelector('.skip-button').disabled = true;
+                } else if (userAnswers[i] === 'Skipped') {
+                    const questionDiv = document.querySelector(`.question[data-index="${i}"]`);
+                    questionDiv.querySelectorAll('.options button').forEach(btn => btn.disabled = true);
+                    questionDiv.querySelector('.skip-button').disabled = true;
+                    questionDiv.querySelector('.explanation').style.display = 'block';
+                }
+            }
+        }
+
+        // Check if all questions on the current page are answered or skipped
+        function areAllQuestionsAnsweredOnPage(startIndex, endIndex) {
+            for (let i = startIndex; i < endIndex; i++) {
+                if (userAnswers[i] === null) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Check answer
+        function checkAnswer(button, questionIndex, selected, selectedText) {
+            const q = questions[questionIndex];
+            const correct = q.answer;
+            const buttons = button.parentElement.querySelectorAll("button");
+            const questionDiv = button.closest('.question');
+            const explanationDiv = questionDiv.querySelector('.explanation');
+
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if (q.options.indexOf(btn.textContent) === correct) {
+                    btn.classList.add('correct');
+                }
+                if (btn === button && selected !== correct) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            questionDiv.querySelector('.skip-button').disabled = true;
+            explanationDiv.style.display = 'block';
+
+            userAnswers[questionIndex] = selectedText;
+            if (selected === correct) {
+                score++;
+                correctSound.play().catch(() => console.log("Audio playback failed"));
+            } else {
+                wrongSound.play().catch(() => console.log("Audio playback failed"));
+            }
+
+            updateCurrentScore();
+            saveProgress();
+            const nextButton = quizEl.querySelector('.next-button');
+            if (nextButton) {
+                nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                );
+            }
+
+            setTimeout(() => {
+                if (areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                )) {
+                    nextPage();
+                }
+            }, ANSWER_DELAY);
+        }
+
+        // Skip question
+        function skipQuestion(questionIndex) {
+            if (!skipped.includes(questions[questionIndex])) {
+                skipped.push(questions[questionIndex]);
+                userAnswers[questionIndex] = 'Skipped';
+                const questionDiv = document.querySelector(`.question[data-index="${questionIndex}"]`);
+                if (questionDiv) {
+                    questionDiv.querySelectorAll('.options button').forEach(btn => btn.disabled = true);
+                    questionDiv.querySelector('.skip-button').disabled = true;
+                    questionDiv.querySelector('.explanation').style.display = 'block';
+                }
+                saveProgress();
+                const nextButton = quizEl.querySelector('.next-button');
+                if (nextButton) {
+                    nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+                        currentPage * QUESTIONS_PER_PAGE,
+                        Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                    );
+                }
+            }
+        }
+
+        // Move to next page
+        function nextPage() {
+            if (skipped.length > 0 && currentPage * QUESTIONS_PER_PAGE >= questions.length) {
+                showSkippedQuestions();
+            } else {
+                currentPage++;
+                if (currentPage * QUESTIONS_PER_PAGE < questions.length) {
+                    showQuestions(currentPage);
+                } else if (skipped.length === 0) {
+                    endQuiz();
+                } else {
+                    showSkippedQuestions();
+                }
+            }
+        }
+
+        // Show skipped questions
+        function showSkippedQuestions() {
+            questions.splice(0, questions.length, ...skipped);
+            userAnswers = userAnswers.filter((_, i) => skipped.includes(questions[i])).concat(Array(questions.length - skipped.length).fill(null));
+            skipped = [];
+            currentPage = 0;
+            showQuestions(currentPage);
+        }
+
+        // End quiz and show results
+        function endQuiz() {
+            clearInterval(timerInterval);
+            quizEl.innerHTML = '';
+            scoreEl.textContent = `Final Score: ${score} out of ${questions.length} (${((score / questions.length) * 100).toFixed(2)}%)`;
+            resultsEl.classList.remove('hidden');
+
+            resultsBody.innerHTML = questions.map((q, i) => {
+                const userAnswer = userAnswers[i] === null ? 'Not-attempted' :
+                                  userAnswers[i] === 'Skipped' ? 'Skipped' :
+                                  userAnswers[i];
+                const correctAnswer = q.options[q.answer];
+                const status = userAnswers[i] === q.options[q.answer] ? 'Correct' :
+                              userAnswers[i] === 'Skipped' ? 'Skipped' :
+                              userAnswers[i] === null ? 'Not-attempted' : 'Wrong';
+                return `
+                    <tr>
+                        <td>${i + 1}. ${q.q}</td>
+                        <td>${userAnswer}</td>
+                        <td>${correctAnswer}</td>
+                        <td class="${status.toLowerCase().replace(' ', '-')}">${status}</td>
+                        <td class="explanation">${q.explanation}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            localStorage.removeItem('quizProgressComprehensiveTest');
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            clearProgress();
+            resultsEl.classList.add('hidden');
+            scoreEl.textContent = '';
+            startTimer();
+            showQuestions(currentPage);
+            updateCurrentScore();
+        }
+
+        // Initialize quiz
+        function initialize() {
+            clearProgress();
+            startTimer();
+            showQuestions(currentPage);
+            updateCurrentScore();
+        }
+
+        // Start quiz on page load
+        initialize();
+    </script>
+</body>
+</html>
