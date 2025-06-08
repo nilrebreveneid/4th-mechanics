@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logsewa Fuel System of I.C. Engine Mock Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #c3dafe);
+            margin: 0;
+            padding: 2rem;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #1e3a8a;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin: 1rem 0;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .timer {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #d81b60;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .question {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            animation: fadeIn 0.5s;
+            transition: transform 0.2s ease;
+        }
+
+        .question:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .question p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            color: #374151;
+        }
+
+        .options button:hover:not(:disabled) {
+            background: #f3f4f6;
+            border-color: #3b82f6;
+            transform: translateX(4px);
+        }
+
+        .options button.correct {
+            background: #bbf7d0;
+            border-color: #22c55e;
+            color: #166534;
+            animation: pulse 0.5s;
+        }
+
+        .options button.wrong {
+            background: #fecaca;
+            border-color: #ef4444;
+            color: #991b1b;
+            animation: shake 0.3s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .options button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #eff6ff;
+            border-radius: 8px;
+            color: #1e3a8a;
+            font-size: 0.95rem;
+        }
+
+        .skip-button {
+            background: #fff3cd;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            width: 100%;
+            border: 1px solid #ffca28;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .skip-button:hover {
+            background: #ffecb3;
+        }
+
+        .next-button {
+            background: #3b82f6;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .next-button:hover:not(:disabled) {
+            background: #2563eb;
+        }
+
+        .next-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .results-table th, .results-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .results-table th {
+            background: #f8fafc;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .results-table .correct {
+            color: #166534;
+            font-weight: bold;
+        }
+
+        .results-table .wrong {
+            color: #991b1b;
+            font-weight: bold;
+        }
+
+        .results-table .skipped, .results-table .not-attempted {
+            color: #d97706;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .restart-button {
+            background: #22c55e;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 1rem auto;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .restart-button:hover {
+            background: #16a34a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .question p {
+                font-size: 1rem;
+            }
+
+            .options button, .skip-button, .next-button, .restart-button {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+
+            .results-table th, .results-table td {
+                padding: 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Logsewa Fuel System of I.C. Engine Mock Test</h1>
+        <div class="quiz-header">
+            <div class="timer" id="timer">Time: 00:00</div>
+            <div class="score" id="current-score">Score: 0/40</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="quiz"></div>
+        <div class="score-container">
+            <div class="score" id="score"></div>
+            <div id="results" class="hidden">
+                <h2>Quiz Results</h2>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Your Answer</th>
+                            <th>Correct Answer</th>
+                            <th>Status</th>
+                            <th>Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+                <button class="restart-button" onclick="restartQuiz()">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+        const questions = [
+            // 5.1 Function of Fuel Injection Pump (8 MCQs)
+            {
+                q: "What is the primary function of a fuel injection pump in a diesel engine?",
+                options: ["Cool the engine", "Pressurize and deliver fuel to injectors", "Mix air and fuel", "Control ignition timing"],
+                answer: 1,
+                explanation: "The fuel injection pump pressurizes fuel and delivers it to injectors for precise combustion timing."
+            },
+            {
+                q: "What does the fuel injection pump control in an I.C. engine?",
+                options: ["Air intake volume", "Fuel quantity and timing", "Exhaust emissions", "Engine cooling"],
+                answer: 1,
+                explanation: "It meters fuel quantity and times injection to match engine needs."
+            },
+            {
+                q: "How does a fuel injection pump ensure efficient combustion?",
+                options: ["By increasing air pressure", "By delivering fuel at high pressure", "By cooling the fuel", "By reducing fuel density"],
+                answer: 1,
+                explanation: "High-pressure fuel delivery ensures fine atomization for efficient burning."
+            },
+            {
+                q: "इन्टर्नल कम्बसन इन्जिनमा इंधन इंजेक्शन पम्पको मुख्य कार्य के हो? (What is the main function of a fuel injection pump in an I.C. engine?)",
+                options: ["इंधनलाई चिसो राख्नु (Cool the fuel)", "इंधनलाई उच्च दबाबमा पठाउनु (Deliver fuel at high pressure)", "हावालाई फिल्टर गर्नु (Filter air)", "इग्निशन नियन्त्रण गर्नु (Control ignition)"],
+                answer: 1,
+                explanation: "इंधन इंजेक्शन पम्पले इंधनलाई उच्च दबाबमा इंजेक्टरमा पठाउँछ। (It delivers fuel at high pressure to injectors.)"
+            },
+            {
+                q: "What is the role of the fuel injection pump in a common rail system?",
+                options: ["Supply low-pressure fuel", "Maintain high-pressure fuel in the rail", "Mix fuel with air", "Control throttle valve"],
+                answer: 1,
+                explanation: "It pressurizes fuel for the common rail, ensuring consistent injection pressure."
+            },
+            {
+                q: "Why is timing critical in a fuel injection pump’s function?",
+                options: ["To reduce fuel consumption", "To synchronize injection with engine stroke", "To cool the injectors", "To increase air intake"],
+                answer: 1,
+                explanation: "Precise timing ensures fuel injection aligns with the intake stroke for optimal combustion."
+            },
+            {
+                q: "What does the fuel injection pump achieve by pressurizing fuel?",
+                options: ["Reduces fuel volume", "Atomizes fuel for combustion", "Increases fuel temperature", "Filters fuel impurities"],
+                answer: 1,
+                explanation: "Pressurization atomizes fuel into fine droplets for better mixing with air."
+            },
+            {
+                q: "What parameter does a fuel injection pump regulate besides pressure?",
+                options: ["Air temperature", "Fuel injection timing", "Exhaust flow", "Engine speed"],
+                answer: 1,
+                explanation: "It controls timing to ensure fuel is injected at the right moment."
+            },
+
+            // 5.2 Types of Fuel Injection Pump and Their Parts (8 MCQs)
+            {
+                q: "Which type of fuel injection pump uses a single plunger for all cylinders?",
+                options: ["Inline pump", "Distributor pump", "Common rail pump", "Unit injector"],
+                answer: 1,
+                explanation: "Distributor pumps use one plunger to distribute fuel to all cylinders via a rotor."
+            },
+            {
+                q: "What is a key component of an inline fuel injection pump?",
+                options: ["Throttle valve", "Plunger and barrel", "Venturi tube", "Float chamber"],
+                answer: 1,
+                explanation: "The plunger and barrel assembly pressurizes fuel in inline pumps."
+            },
+            {
+                q: "Which fuel injection pump is common in modern diesel engines?",
+                options: ["Distributor pump", "Common rail pump", "Inline pump", "Rotary pump"],
+                answer: 1,
+                explanation: "Common rail pumps provide high-pressure fuel for precise injection."
+            },
+            {
+                q: "इंधन इंजेक्शन पम्पको कुन प्रकारले सबै सिलिन्डरमा एकै पम्पले इंधन वितरण गर्छ? (Which type of fuel injection pump distributes fuel to all cylinders with one pump?)",
+                options: ["इनलाइन पम्प (Inline pump)", "डिस्ट्रिब्युटर पम्प (Distributor pump)", "कमन रेल पम्प (Common rail pump)", "युनिट इंजेक्टर (Unit injector)"],
+                answer: 1,
+                explanation: "डिस्ट्रिब्युटर पम्पले एक प्लन्जरले सबै सिलिन्डरमा इंधन पठाउँछ। (It uses one plunger to distribute fuel.)"
+            },
+            {
+                q: "What part of a distributor pump controls fuel delivery to injectors?",
+                options: ["Rotor", "Throttle valve", "Float needle", "Choke valve"],
+                answer: 0,
+                explanation: "The rotor distributes fuel to each injector in sequence."
+            },
+            {
+                q: "Which pump type integrates the pump and injector into one unit?",
+                options: ["Common rail", "Inline", "Unit injector", "Distributor"],
+                answer: 2,
+                explanation: "Unit injectors combine pumping and injection functions."
+            },
+            {
+                q: "What is the function of the delivery valve in a fuel injection pump?",
+                options: ["Mix fuel with air", "Prevent backflow of fuel", "Cool the pump", "Adjust air intake"],
+                answer: 1,
+                explanation: "Delivery valves ensure fuel flows only toward injectors."
+            },
+            {
+                q: "Which component in a common rail pump maintains high pressure?",
+                options: ["Accumulator", "Plunger", "Nozzle", "Venturi"],
+                answer: 0,
+                explanation: "The accumulator (rail) stores high-pressure fuel for injectors."
+            },
+
+            // 5.3 Components of Fuel Injection System (8 MCQs)
+            {
+                q: "Which component stores fuel before it reaches the fuel pump?",
+                options: ["Fuel injector", "Fuel tank", "Fuel rail", "Fuel filter"],
+                answer: 1,
+                explanation: "The fuel tank holds fuel until it is drawn by the pump."
+            },
+            {
+                q: "What is the role of the fuel filter in a fuel injection system?",
+                options: ["Pressurize fuel", "Remove contaminants", "Atomize fuel", "Control timing"],
+                answer: 1,
+                explanation: "Fuel filters remove dirt and water to protect the system."
+            },
+            {
+                q: "Which component controls fuel injection in an electronic fuel injection system?",
+                options: ["Carburetor", "Electronic Control Unit (ECU)", "Float valve", "Venturi tube"],
+                answer: 1,
+                explanation: "The ECU regulates fuel delivery based on sensor inputs."
+            },
+            {
+                q: "इंधन इंजेक्शन प्रणालीमा इंधन फिल्टरको कार्य के हो? (What is the function of a fuel filter in a fuel injection system?)",
+                options: ["इंधनलाई दबाब दिनु (Pressurize fuel)", "फोहोर हटाउनु (Remove contaminants)", "इंधनलाई मिश्रण गर्नु (Mix fuel)", "इग्निशन समय नियन्त्रण गर्नु (Control ignition timing)"],
+                answer: 1,
+                explanation: "इंधन फिल्टरले फोहोर र पानी हटाउँछ। (It removes dirt and water.)"
+            },
+            {
+                q: "What is the function of the fuel injector in a diesel engine?",
+                options: ["Mix air and fuel", "Atomize fuel into the combustion chamber", "Store fuel", "Filter fuel"],
+                answer: 1,
+                explanation: "Injectors atomize fuel for efficient combustion."
+            },
+            {
+                q: "Which component supplies low-pressure fuel to the high-pressure pump?",
+                options: ["Fuel injector", "Lift pump", "Common rail", "Nozzle"],
+                answer: 1,
+                explanation: "The lift pump delivers fuel from the tank to the high-pressure pump."
+            },
+            {
+                q: "What is the purpose of the fuel rail in a common rail system?",
+                options: ["Filter fuel", "Store high-pressure fuel", "Cool fuel", "Mix fuel with air"],
+                answer: 1,
+                explanation: "The fuel rail holds pressurized fuel for injectors."
+            },
+            {
+                q: "Which sensor helps the ECU adjust the air-fuel ratio in a fuel injection system?",
+                options: ["Oxygen sensor", "Temperature sensor", "Pressure sensor", "Speed sensor"],
+                answer: 0,
+                explanation: "The oxygen sensor monitors exhaust to optimize the air-fuel mixture."
+            },
+
+            // 5.4 Function of Carburetor (8 MCQs)
+            {
+                q: "What is the primary function of a carburetor in a petrol engine?",
+                options: ["Pressurize fuel", "Mix air and fuel", "Filter fuel", "Control ignition"],
+                answer: 1,
+                explanation: "The carburetor mixes air and fuel for combustion using the venturi effect."
+            },
+            {
+                q: "How does a carburetor create a vacuum to draw fuel?",
+                options: ["Using a plunger", "Through the venturi effect", "By pressurizing air", "With a solenoid valve"],
+                answer: 1,
+                explanation: "The venturi narrows airflow, creating a vacuum to pull fuel."
+            },
+            {
+                q: "What component in a carburetor regulates air intake during cold starts?",
+                options: ["Throttle valve", "Choke valve", "Main jet", "Float valve"],
+                answer: 1,
+                explanation: "The choke valve restricts air to enrich the mixture for cold starts."
+            },
+            {
+                q: "कार्बुरेटरको मुख्य कार्य के हो? (What is the main function of a carburetor?)",
+                options: ["इंधनलाई दबाब दिनु (Pressurize fuel)", "हावा र इंधन मिश्रण गर्नु (Mix air and fuel)", "इंधन फिल्टर गर्नु (Filter fuel)", "इग्निशन नियन्त्रण गर्नु (Control ignition)"],
+                answer: 1,
+                explanation: "कार्बुरेटरले हावा र इंधनलाई मिश्रण गर्छ। (It mixes air and fuel for combustion.)"
+            },
+            {
+                q: "What is the role of the throttle valve in a carburetor?",
+                options: ["Control fuel pressure", "Regulate air-fuel mixture flow", "Filter air", "Cool the mixture"],
+                answer: 1,
+                explanation: "The throttle valve controls the amount of air-fuel mixture entering the engine."
+            },
+            {
+                q: "Which part of a carburetor maintains a constant fuel level?",
+                options: ["Venturi tube", "Float chamber", "Main jet", "Accelerator pump"],
+                answer: 1,
+                explanation: "The float chamber uses a float valve to keep fuel levels steady."
+            },
+            {
+                q: "What does the accelerator pump in a carburetor do?",
+                options: ["Cool the engine", "Supply extra fuel during acceleration", "Filter fuel", "Reduce air intake"],
+                answer: 1,
+                explanation: "It injects extra fuel to prevent a lean mixture during sudden throttle opening."
+            },
+            {
+                q: "How does a carburetor differ from a fuel injection system?",
+                options: ["Uses electronic sensors", "Relies on mechanical vacuum", "Pressurizes fuel", "Controls ignition"],
+                answer: 1,
+                explanation: "Carburetors use vacuum to mix fuel and air, unlike electronic fuel injection."
+            },
+
+            // 5.5 Troubleshooting and Maintenance of Fuel Injection Pump and Carburetor (8 MCQs)
+            {
+                q: "What is a common symptom of a clogged fuel injector?",
+                options: ["Overheating engine", "Rough idling", "High fuel pressure", "Low emissions"],
+                answer: 1,
+                explanation: "Clogged injectors disrupt fuel flow, causing rough idling."
+            },
+            {
+                q: "How can a fuel injection pump’s low pressure be diagnosed?",
+                options: ["Check spark plugs", "Use a pressure gauge", "Inspect air filter", "Measure exhaust temperature"],
+                answer: 1,
+                explanation: "A pressure gauge checks if the pump delivers adequate pressure."
+            },
+            {
+                q: "What maintenance practice prevents fuel injector clogging?",
+                options: ["Regular oil changes", "Cleaning injectors periodically", "Adjusting ignition timing", "Replacing air filters"],
+                answer: 1,
+                explanation: "Periodic cleaning removes deposits from injectors."
+            },
+            {
+                q: "कार्बुरेटरमा इंधन र हावाको मिश्रण किन असन्तुलित हुन्छ? (Why does the air-fuel mixture become unbalanced in a carburetor?)",
+                options: ["उच्च इंधन दबाबले (Due to high fuel pressure)", "मुख्य जेटमा अवरोधले (Due to main jet blockage)", "इग्निशन तारले (Due to ignition wire)", "नोजल लिकले (Due to nozzle leak)"],
+                answer: 1,
+                explanation: "मुख्य जेटमा अवरोधले मिश्रण असन्तुलित हुन्छ। (Blockage in the main jet causes imbalance.)"
+            },
+            {
+                q: "What indicates a faulty fuel injection pump?",
+                options: ["Excessive fuel economy", "Engine misfiring", "High exhaust temperature", "Smooth idling"],
+                answer: 1,
+                explanation: "A faulty pump causes uneven fuel delivery, leading to misfiring."
+            },
+            {
+                q: "How should a carburetor be maintained to avoid flooding?",
+                options: ["Clean the float valve regularly", "Increase fuel pressure", "Replace the venturi", "Adjust the throttle"],
+                answer: 0,
+                explanation: "Cleaning the float valve prevents excess fuel flow."
+            },
+            {
+                q: "What is a common cause of fuel injection system leaks?",
+                options: ["Worn injector seals", "Dirty air filter", "Faulty spark plug", "Low oil pressure"],
+                answer: 0,
+                explanation: "Worn seals allow fuel to leak from injectors."
+            },
+            {
+                q: "What tool is used to check the injection pressure of a fuel pump?",
+                options: ["Voltmeter", "Pressure gauge", "Screwdriver", "Feeler gauge"],
+                answer: 1,
+                explanation: "A pressure gauge measures the pump’s injection pressure."
+            }
+        ];
+
+        let currentPage = 0;
+        let score = 0;
+        let skipped = [];
+        let userAnswers = Array(questions.length).fill(null);
+        let timerSeconds = 0;
+        let timerInterval;
+        const QUESTIONS_PER_PAGE = 5;
+        const ANSWER_DELAY = 1000;
+
+        const quizEl = document.getElementById("quiz");
+        const scoreEl = document.getElementById("score");
+        const resultsEl = document.getElementById("results");
+        const resultsBody = document.getElementById("results-body");
+        const progressEl = document.getElementById("progress");
+        const timerEl = document.getElementById("timer");
+        const currentScoreEl = document.getElementById("current-score");
+        const correctSound = document.getElementById("correct-sound");
+        const wrongSound = document.getElementById("wrong-sound");
+
+        // Clear progress to start fresh
+        function clearProgress() {
+            localStorage.removeItem("quizProgressFuelSystem");
+            currentPage = 0;
+            score = 0;
+            skipped = [];
+            userAnswers = Array(questions.length).fill(null);
+            timerSeconds = 0;
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem("quizProgressFuelSystem", JSON.stringify({
+                currentPage,
+                score,
+                skipped,
+                answers: userAnswers,
+                time: timerSeconds
+            }));
+        }
+
+        // Update current score display
+        function updateCurrentScore() {
+            currentScoreEl.textContent = `Score: ${score}/${questions.length}`;
+        }
+
+        // Shuffle array
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Start timer
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const minutes = Math.floor(timerSeconds / 60);
+                const seconds = timerSeconds % 60;
+                timerEl.textContent = `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                saveProgress();
+            }, 1000);
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            progressEl.style.width = `${percentage}%`;
+        }
+
+        // Show questions for the current page
+        function showQuestions(page) {
+            quizEl.innerHTML = '';
+            const startIndex = page * QUESTIONS_PER_PAGE;
+            const endIndex = Math.min(startIndex + QUESTIONS_PER_PAGE, questions.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const q = questions[i];
+                const shuffledOptions = shuffle([...q.options].map((opt, j) => ({ text: opt, index: j })));
+                const optionsHtml = shuffledOptions
+                    .map(opt => `<button onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')">${opt.text}</button>`)
+                    .join('');
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.dataset.index = i;
+                questionDiv.innerHTML = `
+                    <p>Q${i + 1}. ${q.q}</p>
+                    <div class="options">${optionsHtml}</div>
+                    <button class="skip-button" onclick="skipQuestion(${i})">Skip</button>
+                    <div class="explanation">${q.explanation}</div>
+                `;
+                quizEl.appendChild(questionDiv);
+            }
+
+            if (endIndex < questions.length || skipped.length > 0) {
+                const nextButton = document.createElement('button');
+                nextButton.classList.add('next-button');
+                nextButton.textContent = endIndex < questions.length ? 'Next' : 'Review Skipped Questions';
+                nextButton.onclick = nextPage;
+                nextButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                quizEl.appendChild(nextButton);
+            } else {
+                const submitButton = document.createElement('button');
+                submitButton.classList.add('next-button');
+                submitButton.textContent = 'Submit Quiz';
+                submitButton.onclick = endQuiz;
+                submitButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                quizEl.appendChild(submitButton);
+            }
+
+            updateProgress();
+            saveProgress();
+        }
+
+        // Restore answers for the current page (only for in-session navigation)
+        function restoreAnswers(startIndex, endIndex) {
+            for (let i = startIndex; i < endIndex; i++) {
+                if (userAnswers[i] !== null && userAnswers[i] !== 'Skipped') {
+                    const questionDiv = document.querySelector(`.question[data-index="${i}"]`);
+                    const buttons = questionDiv.querySelectorAll('.options button');
+                    const q = questions[i];
+                    buttons.forEach(btn => {
+                        btn.disabled = true;
+                        if (btn.textContent === q.options[q.answer]) {
+                            btn.classList.add('correct');
+                        }
+                        if (btn.textContent === userAnswers[i] && userAnswers[i] !== q.options[q.answer]) {
+                            btn.classList.add('wrong');
+                        }
+                    });
+                    questionDiv.querySelector('.explanation').style.display = 'block';
+                    questionDiv.querySelector('.skip-button').disabled = true;
+                } else if (userAnswers[i] === 'Skipped') {
+                    const questionDiv = document.querySelector(`.question[data-index="${i}"]`);
+                    questionDiv.querySelectorAll('.options button').forEach(btn => btn.disabled = true);
+                    questionDiv.querySelector('.skip-button').disabled = true;
+                    questionDiv.querySelector('.explanation').style.display = 'block';
+                }
+            }
+        }
+
+        // Check if all questions on the current page are answered or skipped
+        function areAllQuestionsAnsweredOnPage(startIndex, endIndex) {
+            for (let i = startIndex; i < endIndex; i++) {
+                if (userAnswers[i] === null) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Check answer
+        function checkAnswer(button, questionIndex, selected, selectedText) {
+            const q = questions[questionIndex];
+            const correct = q.answer;
+            const buttons = button.parentElement.querySelectorAll("button");
+            const questionDiv = button.closest('.question');
+            const explanationDiv = questionDiv.querySelector('.explanation');
+
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if (q.options.indexOf(btn.textContent) === correct) {
+                    btn.classList.add('correct');
+                }
+                if (btn === button && selected !== correct) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            questionDiv.querySelector('.skip-button').disabled = true;
+            explanationDiv.style.display = 'block';
+
+            userAnswers[questionIndex] = selectedText;
+            if (selected === correct) {
+                score++;
+                correctSound.play().catch(() => console.log("Audio playback failed"));
+            } else {
+                wrongSound.play().catch(() => console.log("Audio playback failed"));
+            }
+
+            updateCurrentScore();
+            saveProgress();
+            const nextButton = quizEl.querySelector('.next-button');
+            if (nextButton) {
+                nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                );
+            }
+
+            setTimeout(() => {
+                if (areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                )) {
+                    nextPage();
+                }
+            }, ANSWER_DELAY);
+        }
+
+        // Skip question
+        function skipQuestion(questionIndex) {
+            if (!skipped.includes(questions[questionIndex])) {
+                skipped.push(questions[questionIndex]);
+                userAnswers[questionIndex] = 'Skipped';
+                const questionDiv = document.querySelector(`.question[data-index="${questionIndex}"]`);
+                if (questionDiv) {
+                    questionDiv.querySelectorAll('.options button').forEach(btn => btn.disabled = true);
+                    questionDiv.querySelector('.skip-button').disabled = true;
+                    questionDiv.querySelector('.explanation').style.display = 'block';
+                }
+                saveProgress();
+                const nextButton = quizEl.querySelector('.next-button');
+                if (nextButton) {
+                    nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+                        currentPage * QUESTIONS_PER_PAGE,
+                        Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                    );
+                }
+            }
+        }
+
+        // Move to next page
+        function nextPage() {
+            if (skipped.length > 0 && currentPage * QUESTIONS_PER_PAGE >= questions.length) {
+                showSkippedQuestions();
+            } else {
+                currentPage++;
+                if (currentPage * QUESTIONS_PER_PAGE < questions.length) {
+                    showQuestions(currentPage);
+                } else if (skipped.length === 0) {
+                    endQuiz();
+                } else {
+                    showSkippedQuestions();
+                }
+            }
+        }
+
+        // Show skipped questions
+        function showSkippedQuestions() {
+            questions.splice(0, questions.length, ...skipped);
+            userAnswers = userAnswers.filter((_, i) => skipped.includes(questions[i])).concat(Array(questions.length - skipped.length).fill(null));
+            skipped = [];
+            currentPage = 0;
+            showQuestions(currentPage);
+        }
+
+        // End quiz and show results
+        function endQuiz() {
+            clearInterval(timerInterval);
+            quizEl.innerHTML = '';
+            scoreEl.textContent = `Final Score: ${score} out of ${questions.length} (${((score / questions.length) * 100).toFixed(2)}%)`;
+            resultsEl.classList.remove('hidden');
+
+            resultsBody.innerHTML = questions.map((q, i) => {
+                const userAnswer = userAnswers[i] === null ? 'Not-attempted' :
+                                  userAnswers[i] === 'Skipped' ? 'Skipped' :
+                                  userAnswers[i];
+                const correctAnswer = q.options[q.answer];
+                const status = userAnswers[i] === q.options[q.answer] ? 'Correct' :
+                              userAnswers[i] === 'Skipped' ? 'Skipped' :
+                              userAnswers[i] === null ? 'Not-attempted' : 'Wrong';
+                return `
+                    <tr>
+                        <td>${i + 1}. ${q.q}</td>
+                        <td>${userAnswer}</td>
+                        <td>${correctAnswer}</td>
+                        <td class="${status.toLowerCase().replace(' ', '-')}">${status}</td>
+                        <td class="explanation">${q.explanation}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            localStorage.removeItem('quizProgressFuelSystem');
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            clearProgress();
+            resultsEl.classList.add('hidden');
+            scoreEl.textContent = '';
+            startTimer();
+            showQuestions(currentPage);
+            updateCurrentScore();
+        }
+
+        // Initialize quiz
+        function initialize() {
+            clearProgress();
+            startTimer();
+            showQuestions(currentPage);
+            updateCurrentScore();
+        }
+
+        // Start quiz on page load
+        initialize();
+    </script>
+</body>
+</html>
