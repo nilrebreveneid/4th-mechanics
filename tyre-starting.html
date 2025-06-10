@@ -334,6 +334,183 @@
     <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
 
     <script>
+
+//         const questions = [
+//   {
+//     q: "What is the primary purpose of tyres on a vehicle?",
+//     options: ["To enhance engine power", "To provide grip and absorb shocks", "To cool the brakes", "To increase vehicle weight"],
+//     answer: 1,
+//     explanation: "Tyres provide traction, support vehicle load, absorb road shocks, and help in maintaining road grip."
+//   },
+//   {
+//     q: "A tyre is marked as 175/65 R14 82 S. What does 65 represent?",
+//     options: ["Rim diameter", "Aspect ratio", "Load index", "Speed rating"],
+//     answer: 1,
+//     explanation: "The aspect ratio is the height of the sidewall expressed as a percentage of the tyre's width. Here, 65 means the sidewall height is 65% of 175mm."
+//   },
+//   {
+//     q: "Which wheel type is incompatible with tubeless tyres?",
+//     options: ["Alloy wheel", "Wire wheel", "Steel wheel", "Magnesium wheel"],
+//     answer: 1,
+//     explanation: "Tubeless tyres require an airtight rim, which wire wheels cannot provide due to their spoke construction."
+//   },
+//   {
+//     q: "In a truck tyre marked 10.00x20-14 ply, what does 20 signify?",
+//     options: ["Tyre width in cm", "Rim diameter in inches", "Ply rating", "Load capacity"],
+//     answer: 1,
+//     explanation: "In this format, '20' represents the rim diameter in inches on which the tyre must be mounted."
+//   },
+//   {
+//     q: "What is the purpose of tyre rotation on a vehicle?",
+//     options: ["To prevent ply separation", "To equalize wear", "To increase speed", "To reduce noise"],
+//     answer: 1,
+//     explanation: "Rotating tyres periodically ensures even wear across all tyres, extending tyre life and maintaining handling."
+//   },
+//   {
+//     q: "गाडीको टायरको दाब मापन गर्न कुन उपकरण प्रयोग गरिन्छ?",
+//     options: ["टायर इन्फ्लेटर", "प्रेशर गेज", "हाईड्रोलिक पंप", "स्पीडोमीटर"],
+//     answer: 1,
+//     explanation: "टायरको दाब जाँच गर्न प्रेशर गेज प्रयोग गरिन्छ जसले हावाको दाब देखाउँछ।"
+//   },
+//   {
+//     q: "गाडीको टायर चिप्लिन नदिन के गर्नुपर्छ?",
+//     options: ["तेल हाल्नु", "हावा घटाउनु", "ग्रिप राम्रो बनाउने", "ब्रेक खोल्नु"],
+//     answer: 2,
+//     explanation: "टायरको ग्रिप राम्रो बनाउन टायर डिजाइन र कम्पाउन्ड सुधार्नु पर्छ ताकि चिप्लिने सम्भावना कम होस्।"
+//   },
+//   {
+//     q: "What does the ‘R’ in a tyre designation like 205/55 R16 signify?",
+//     options: ["Radial construction", "Rim width", "Rolling resistance", "Road suitability"],
+//     answer: 0,
+//     explanation: "‘R’ stands for Radial construction, which means the tyre’s internal ply cords are arranged radially from the center."
+//   },
+//   {
+//     q: "Why are tubeless tyres preferred in modern vehicles?",
+//     options: ["They are cheaper", "They allow lower inflation pressure", "They resist sudden air loss during puncture", "They require inner tubes"],
+//     answer: 2,
+//     explanation: "Tubeless tyres do not deflate suddenly when punctured, improving safety by allowing more controlled stops."
+//   },
+//   {
+//     q: "What is the function of the tread pattern on a tyre?",
+//     options: ["Reduce fuel consumption", "Improve aesthetics", "Channel water away", "Increase tyre temperature"],
+//     answer: 2,
+//     explanation: "Tread patterns are designed to expel water from under the tyre, preventing hydroplaning and improving grip on wet roads."
+//   },
+//   {
+//     q: "What happens if tyres are overinflated?",
+//     options: ["Improved comfort", "Increased tread wear in the center", "Reduced fuel efficiency", "Better traction"],
+//     answer: 1,
+//     explanation: "Overinflated tyres bulge in the center, causing uneven tread wear and reducing grip."
+//   },
+//   {
+//     q: "What does the 'ply rating' of a tyre indicate?",
+//     options: ["Number of steel belts", "Tyre’s load carrying capacity", "Speed rating", "Rim compatibility"],
+//     answer: 1,
+//     explanation: "Ply rating reflects the strength of the tyre and how much load it can safely support."
+//   },
+//   {
+//     q: "Which of the following tyre defects is caused by underinflation?",
+//     options: ["Center tread wear", "Sidewall cracks", "Shoulder wear", "Tread delamination"],
+//     answer: 2,
+//     explanation: "Underinflated tyres cause more wear on the shoulders (edges) of the tyre due to excess flexing."
+//   },
+//   {
+//     q: "Tyre balancing is important to:",
+//     options: ["Increase acceleration", "Prevent steering vibration", "Enhance braking", "Reduce emissions"],
+//     answer: 1,
+//     explanation: "Unbalanced tyres can cause vibrations in the steering and reduce comfort and control."
+//   },
+//   {
+//     q: "What type of tyre is most commonly used in passenger vehicles?",
+//     options: ["Bias-ply", "Cross-ply", "Radial-ply", "Solid rubber"],
+//     answer: 2,
+//     explanation: "Radial-ply tyres are preferred for passenger vehicles due to better ride comfort and fuel economy."
+//   },
+//   {
+//     q: "Tyre tread depth should be checked to ensure:",
+//     options: ["Better fuel efficiency", "Correct load rating", "Proper grip and safety", "Silent operation"],
+//     answer: 2,
+//     explanation: "Worn tread reduces grip, especially on wet roads, leading to safety issues like skidding."
+//   },
+//   {
+//     q: "In tyre code 185/70 R14 88T, what does 88 indicate?",
+//     options: ["Speed rating", "Tyre pressure", "Load index", "Tread depth"],
+//     answer: 2,
+//     explanation: "The load index 88 indicates the maximum load the tyre can support, which is 560 kg in this case."
+//   },
+//   {
+//     q: "What is the ideal method to repair a tubeless tyre puncture?",
+//     options: ["Filling with water", "Using tube", "Patch from inside", "String plug repair"],
+//     answer: 3,
+//     explanation: "For quick roadside repairs, string plug kits are commonly used for tubeless tyres."
+//   },
+//   {
+//     q: "What could be a reason for one-sided tyre wear?",
+//     options: ["Overinflation", "Underinflation", "Improper wheel alignment", "Balanced wheels"],
+//     answer: 2,
+//     explanation: "Misalignment causes tyres to wear unevenly, typically more on one side of the tread."
+//   },
+//   {
+//     q: "The tyre pressure of a car is measured in which unit?",
+//     options: ["Newton", "Bar", "Pascal", "Pound"],
+//     answer: 1,
+//     explanation: "Tyre pressure is commonly measured in bar or psi; 1 bar ≈ 14.5 psi."
+//   },
+//   {
+//     q: "In cold weather, tyre pressure usually:",
+//     options: ["Increases", "Decreases", "Remains constant", "Becomes unstable"],
+//     answer: 1,
+//     explanation: "Air contracts in cold weather, reducing tyre pressure."
+//   },
+//   {
+//     q: "What is the legal minimum tread depth in most countries for car tyres?",
+//     options: ["1.0 mm", "1.6 mm", "2.5 mm", "3.0 mm"],
+//     answer: 1,
+//     explanation: "1.6 mm is the standard minimum tread depth legally required for safe driving in most countries."
+//   },
+//   {
+//     q: "For maximum safety and performance, tyres should be checked:",
+//     options: ["Yearly", "Every 10,000 km", "Weekly", "Before every long journey"],
+//     answer: 3,
+//     explanation: "It is safest to inspect tyre pressure and condition before any long trip to avoid failure."
+//   },
+//   {
+//     q: "Tyre sidewall bulges may indicate:",
+//     options: ["Overuse", "Internal damage", "Worn treads", "Improper inflation"],
+//     answer: 1,
+//     explanation: "Sidewall bulges indicate structural damage due to impact or manufacturing defect—tyre replacement is needed."
+//   },
+//   {
+//     q: "Retreading of tyres is done to:",
+//     options: ["Increase load capacity", "Improve wet grip", "Extend tyre life", "Reduce weight"],
+//     answer: 2,
+//     explanation: "Retreading involves applying a new tread layer on the worn tyre to reuse it safely and economically."
+//   },
+//   {
+//     q: "Bias-ply tyres differ from radial tyres mainly in:",
+//     options: ["Rubber compound", "Tread design", "Internal ply orientation", "Size"],
+//     answer: 2,
+//     explanation: "In bias-ply tyres, plies are crisscrossed diagonally; in radial tyres, plies run perpendicularly across."
+//   },
+//   {
+//     q: "What causes cupping or scalloping on tyres?",
+//     options: ["Balanced wheels", "Worn suspension", "Correct inflation", "New tyres"],
+//     answer: 1,
+//     explanation: "Cupping is caused by worn or faulty suspension components leading to bouncing and uneven wear."
+//   },
+//   {
+//     q: "A tyre marked 'T' in its rating (e.g., 88T) indicates:",
+//     options: ["Tube type", "Tread width", "Speed rating", "Temperature range"],
+//     answer: 2,
+//     explanation: "'T' indicates a speed rating of up to 190 km/h as per tyre speed rating chart."
+//   },
+//   {
+//     q: "What is the best practice after fitting new tyres?",
+//     options: ["Drive at high speed", "Immediate braking test", "Check alignment and balancing", "Inflate to max pressure"],
+//     answer: 2,
+//     explanation: "After new tyres are installed, wheel alignment and balancing should be checked to ensure performance and safety."
+//   }
+// ];
         const questions = [
             {
                 q: "Which components are part of a vehicle’s starting system?",
