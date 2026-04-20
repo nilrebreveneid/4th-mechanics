@@ -3,288 +3,1493 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Junior Mechanics (L4)  All topics MCQs</title>
-    <script src="https://cdn.counter.dev/script.js" data-id="3df7cf84-4941-413b-8c83-1c2d4cbeb35a" data-utcoffset="6"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" defer crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Junior Mechanics Level 4 preparation portal with topic-wise MCQs, mock tests, public management practice, and GK quizzes.">
+    <meta name="theme-color" content="#07111f">
+    <title>Junior Mechanics (L4) Preparation Portal</title>
+    <script src="https://cdn.counter.dev/script.js" data-id="3df7cf84-4941-413b-8c83-1c2d4cbeb35a" data-utcoffset="6" defer></script>
     <style>
+        :root {
+            --bg: #07111f;
+            --bg-soft: #0d1b30;
+            --panel: rgba(11, 25, 44, 0.78);
+            --panel-strong: rgba(9, 21, 38, 0.9);
+            --line: rgba(138, 201, 255, 0.18);
+            --text: #edf7ff;
+            --muted: #9db6cf;
+            --accent: #53e5ff;
+            --accent-2: #ff9f5a;
+            --accent-3: #7ef0b8;
+            --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+            --radius: 24px;
+            --radius-sm: 16px;
+            --max-width: 1240px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
-            color: #fff;
-            min-height: 100vh;
             margin: 0;
-            padding: 1rem;
-            position: relative;
+            min-height: 100vh;
+            font-family: "Trebuchet MS", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(83, 229, 255, 0.2), transparent 30%),
+                radial-gradient(circle at top right, rgba(255, 159, 90, 0.18), transparent 28%),
+                linear-gradient(180deg, #030814 0%, #07111f 42%, #0a1c30 100%);
             overflow-x: hidden;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(110, 178, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(110, 178, 255, 0.06) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 90%);
+            pointer-events: none;
+            z-index: 0;
         }
-        header {
-            text-align: center;
-            padding: 2rem 0;
-            background: rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        header p {
-            font-size: 1.1rem;
-            color: #e0f7fa;
-        }
-        .category {
-            margin-bottom: 2rem;
-        }
-        .category-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 0.5rem;
-            transition: background 0.3s ease;
-        }
-        .category-header:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        .category-header h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #e0f7fa;
-        }
-        .category-content {
-            display: none;
-            padding: 1rem;
-        }
-        .category-content.active {
-            display: block;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        .card a {
+
+        a {
+            color: inherit;
             text-decoration: none;
-            color: #e0f7fa;
-            font-size: 1.1rem;
-            font-weight: 600;
+        }
+
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        .page-shell {
+            position: relative;
+            z-index: 1;
+            width: min(calc(100% - 2rem), var(--max-width));
+            margin: 0 auto;
+            padding: 1rem 0 4rem;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0.75rem;
+            z-index: 20;
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 1.25rem;
+            background: rgba(8, 19, 35, 0.72);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            backdrop-filter: blur(18px);
+            box-shadow: var(--shadow);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            min-width: 0;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background:
+                linear-gradient(135deg, rgba(83, 229, 255, 0.25), rgba(83, 229, 255, 0.04)),
+                linear-gradient(135deg, #0f2f49, #09162a);
+            border: 1px solid rgba(83, 229, 255, 0.32);
+            box-shadow: inset 0 0 20px rgba(83, 229, 255, 0.16);
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+
+        .brand-copy {
+            min-width: 0;
+        }
+
+        .eyebrow {
+            margin: 0;
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .brand-copy strong {
+            display: block;
+            font-size: 0.98rem;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .topbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-link,
+        .button-link {
+            padding: 0.72rem 1rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .nav-link {
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            color: var(--text);
+            border-color: rgba(83, 229, 255, 0.28);
+            background: rgba(83, 229, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .button-link {
+            background: linear-gradient(135deg, var(--accent), #0bd3ff);
+            color: #03131f;
+            font-weight: 800;
+            box-shadow: 0 12px 28px rgba(83, 229, 255, 0.24);
+        }
+
+        .button-link:hover,
+        .button-link:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 32px rgba(83, 229, 255, 0.3);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+            gap: 1.35rem;
+            align-items: stretch;
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-card,
+        .side-panel,
+        .controls,
+        .section-shell {
+            background: linear-gradient(180deg, rgba(14, 30, 52, 0.88), rgba(8, 20, 36, 0.88));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+        }
+
+        .hero-card {
+            padding: clamp(1.5rem, 2.4vw, 2.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            right: -70px;
+            top: -70px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(83, 229, 255, 0.28), transparent 68%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 0.85rem;
+            border-radius: 999px;
+            color: var(--accent);
+            background: rgba(83, 229, 255, 0.09);
+            border: 1px solid rgba(83, 229, 255, 0.18);
+            font-size: 0.88rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero h1 {
+            margin: 1rem 0 0.8rem;
+            font-size: clamp(2.2rem, 5vw, 4.3rem);
+            line-height: 0.97;
+            letter-spacing: -0.04em;
+            max-width: 11ch;
+        }
+
+        .hero p {
+            max-width: 62ch;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-top: 1.4rem;
+        }
+
+        .primary-action,
+        .secondary-action {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.65rem;
+            padding: 0.98rem 1.2rem;
+            border-radius: 16px;
+            font-weight: 800;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
         }
-        .card a i {
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
+
+        .primary-action {
+            color: #03131f;
+            background: linear-gradient(135deg, var(--accent), #69f7e7);
+            box-shadow: 0 16px 30px rgba(83, 229, 255, 0.26);
         }
-        .card:hover a i {
-            transform: scale(1.2);
+
+        .secondary-action {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(157, 182, 207, 0.22);
         }
-        .explore-btn {
-            display: block;
-            margin: 3rem auto;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: #fff;
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            text-align: center;
-            transition: transform 0.3s ease;
+
+        .primary-action:hover,
+        .secondary-action:hover,
+        .primary-action:focus-visible,
+        .secondary-action:focus-visible {
+            transform: translateY(-2px);
         }
-        .explore-btn:hover {
-            transform: scale(1.05);
+
+        .secondary-action:hover,
+        .secondary-action:focus-visible {
+            border-color: rgba(83, 229, 255, 0.3);
+            background: rgba(83, 229, 255, 0.08);
         }
-        .explore-btn a {
-            text-decoration: none;
-            color: white;
-            display: block;
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-top: 1.4rem;
         }
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #2193b0;
-            color: #fff;
-            padding: 0.75rem 1rem;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        #back-to-top:hover {
-            background: #1e88e5;
-            transform: scale(1.1);
-        }
-        footer {
-            text-align: center;
+
+        .stat {
             padding: 1rem;
-            color: #e0f7fa;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .side-panel {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .side-panel h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .side-panel p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .priority-list {
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .priority-item {
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .priority-item strong {
+            display: inline-block;
+            margin-bottom: 0.35rem;
+        }
+
+        .priority-item span {
+            display: block;
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+
+        .status-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.15rem;
+            margin-bottom: 1.3rem;
+            border-radius: 20px;
+            background: linear-gradient(90deg, rgba(126, 240, 184, 0.14), rgba(83, 229, 255, 0.08));
+            border: 1px solid rgba(126, 240, 184, 0.2);
+        }
+
+        .status-strip strong {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .status-strip p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 0.95rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .controls {
+            padding: 1.15rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .controls-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .controls-top h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .controls-top p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.85rem 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .search-wrap input {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            color: var(--text);
+        }
+
+        .search-wrap input::placeholder {
+            color: #7d95ac;
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.72rem 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--muted);
+            cursor: pointer;
+            transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn:focus-visible {
+            transform: translateY(-1px);
+            color: var(--text);
+            border-color: rgba(83, 229, 255, 0.24);
+        }
+
+        .filter-btn.active {
+            color: #04131f;
+            background: linear-gradient(135deg, var(--accent), #8ed9ff);
+            border-color: transparent;
+            font-weight: 800;
+        }
+
+        .sections {
+            display: grid;
+            gap: 1.3rem;
+        }
+
+        .section-shell {
+            padding: 1.25rem;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .section-head h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.45rem;
+        }
+
+        .section-head p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 62ch;
+        }
+
+        .count-chip {
+            padding: 0.62rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .topic-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 100%;
+            padding: 1.1rem;
+            border-radius: 22px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+                linear-gradient(180deg, rgba(8, 17, 30, 0.85), rgba(6, 13, 23, 0.92));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .topic-card:hover,
+        .topic-card:focus-within {
+            transform: translateY(-4px);
+            border-color: rgba(83, 229, 255, 0.22);
+            box-shadow: 0 20px 34px rgba(0, 0, 0, 0.26);
+        }
+
+        .topic-top {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+
+        .number-tag {
+            display: inline-flex;
+            min-width: 2.1rem;
+            height: 2.1rem;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0.55rem;
+            border-radius: 12px;
+            color: #03131f;
+            background: linear-gradient(135deg, var(--accent), #7ef0b8);
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 2rem;
+            font-weight: 900;
         }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            .category-header h2 {
-                font-size: 1.5rem;
-            }
-            .card {
-                padding: 1rem;
-            }
-            .card a {
-                font-size: 1rem;
-            }
-            .explore-btn {
-                font-size: 1.2rem;
-                padding: 1rem 1.5rem;
-            }
+
+        .track-tag {
+            padding: 0.38rem 0.62rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            color: var(--accent-2);
+            border: 1px solid rgba(255, 159, 90, 0.18);
+            background: rgba(255, 159, 90, 0.08);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.75rem;
-            }
-            header p {
-                font-size: 0.9rem;
-            }
-            .grid-container {
+
+        .topic-card h4 {
+            margin: 0;
+            font-size: 1.08rem;
+            line-height: 1.45;
+        }
+
+        .topic-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+
+        .meta-row {
+            display: flex;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.46rem 0.64rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .meta-chip strong {
+            color: var(--text);
+        }
+
+        .open-link {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border-radius: 16px;
+            background: rgba(83, 229, 255, 0.08);
+            border: 1px solid rgba(83, 229, 255, 0.18);
+            color: var(--accent);
+            font-weight: 800;
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .open-link:hover,
+        .open-link:focus-visible {
+            background: rgba(83, 229, 255, 0.14);
+            border-color: rgba(83, 229, 255, 0.32);
+            transform: translateY(-1px);
+        }
+
+        .explore-banner {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.25rem;
+            margin-top: 1.35rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(255, 159, 90, 0.18), rgba(83, 229, 255, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow);
+        }
+
+        .explore-banner h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.35rem;
+        }
+
+        .explore-banner p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .banner-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.98rem 1.2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-2), #ffd166);
+            color: #1d1204;
+            font-weight: 800;
+            white-space: nowrap;
+            box-shadow: 0 14px 28px rgba(255, 159, 90, 0.22);
+            transition: transform 0.25s ease;
+        }
+
+        .banner-link:hover,
+        .banner-link:focus-visible {
+            transform: translateY(-2px);
+        }
+
+        .empty-state {
+            display: none;
+            padding: 1.2rem;
+            border-radius: 22px;
+            margin-top: 1rem;
+            border: 1px dashed rgba(255, 255, 255, 0.14);
+            color: var(--muted);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.4rem;
+            padding: 1.2rem 0.2rem 0;
+            color: var(--muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-note {
+            max-width: 58ch;
+            line-height: 1.6;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 52px;
+            height: 52px;
+            border: 0;
+            border-radius: 50%;
+            color: #04131f;
+            background: linear-gradient(135deg, var(--accent), #7ef0b8);
+            box-shadow: 0 12px 28px rgba(83, 229, 255, 0.28);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+            z-index: 30;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        @media (max-width: 980px) {
+            .hero {
                 grid-template-columns: 1fr;
             }
-            .category-header h2 {
-                font-size: 1.25rem;
+
+            .hero-stats {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .explore-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .banner-link {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .page-shell {
+                width: min(calc(100% - 1rem), var(--max-width));
+                padding-top: 0.75rem;
+            }
+
+            .topbar {
+                position: static;
+                border-radius: 24px;
+                padding: 1rem;
+            }
+
+            .topbar-nav {
+                width: 100%;
+                justify-content: stretch;
+            }
+
+            .nav-link,
+            .button-link {
+                flex: 1 1 140px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                max-width: none;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .status-strip,
+            footer {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .controls-top {
+                align-items: start;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card,
+            .side-panel,
+            .controls,
+            .section-shell {
+                border-radius: 20px;
+            }
+
+            .filter-row {
+                gap: 0.55rem;
+            }
+
+            .filter-btn {
+                width: calc(50% - 0.28rem);
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📚 Junior Mechanics (L4)  All topics MCQs Quiz Portal</h1>
-            <p>Select a Topic to Start Your Practice</p>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">L4</div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Mechanics Preparation Portal</p>
+                    <strong>Junior Mechanics Fourth Level Practice Hub</strong>
+                </div>
+            </div>
+            <nav class="topbar-nav" aria-label="Quick navigation">
+                <a class="nav-link" href="#topics">Core Topics</a>
+                <a class="nav-link" href="#mocks">Mock Zone</a>
+                <a class="button-link" href="mock-page.html">All Mock Tests</a>
+            </nav>
         </header>
-         <div class="category">
-            <div class="category-header" onclick="toggleCategory(this)">
-                <h2>Junior Mechanics</h2>
-                <span class="text-blue-200">▼</span>
+
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-card">
+                    <div class="hero-badge">Fast interface. Clear structure. Future-ready revision.</div>
+                    <h1 id="hero-title">Prepare smarter for Junior Mechanics L4.</h1>
+                    <p>
+                        Practice topic-wise MCQs, jump into full mock tests, and focus on the sections that matter most in the exam.
+                        This homepage is built to stay light, fast, mobile-friendly, and easy to scan even during quick revision sessions.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="primary-action" href="#topics">Start Topic Practice</a>
+                        <a class="secondary-action" href="#mocks">Open Mock Tests</a>
+                    </div>
+                    <div class="hero-stats" aria-label="Portal stats">
+                        <div class="stat">
+                            <strong>32</strong>
+                            <span>Practice sets and topic pages</span>
+                        </div>
+                        <div class="stat">
+                            <strong>18</strong>
+                            <span>Core mechanics subjects</span>
+                        </div>
+                        <div class="stat">
+                            <strong>14</strong>
+                            <span>Mock, GK, and public management sets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="side-panel" aria-labelledby="strategy-title">
+                    <h2 id="strategy-title">Best way to use this portal</h2>
+                    <p>
+                        Move from topic practice to timed mocks. Start with weak areas, then use mixed tests to improve speed and retention.
+                    </p>
+                    <div class="priority-list">
+                        <div class="priority-item">
+                            <strong>Step 1: Build fundamentals</strong>
+                            <span>Use the core topic cards below to revise one system at a time and cover the expected exam-weight sections.</span>
+                        </div>
+                        <div class="priority-item">
+                            <strong>Step 2: Test recall</strong>
+                            <span>Switch to mixed AI sets, past-paper style quizzes, and public management practice once concepts feel stable.</span>
+                        </div>
+                        <div class="priority-item">
+                            <strong>Step 3: Repeat fast</strong>
+                            <span>Use search and filters to jump directly to the exact chapter or mock test you want without wasting time.</span>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="status-strip" aria-label="Portal overview">
+                <div>
+                    <strong>Designed for quick revision on phone and desktop</strong>
+                    <p>Lightweight code, responsive cards, clear labels, and zero UI clutter.</p>
+                </div>
+                <div class="pill">Reliable navigation across all topic links</div>
+            </section>
+
+            <section class="controls" aria-labelledby="controls-title">
+                <div class="controls-top">
+                    <div>
+                        <h2 id="controls-title">Find your next practice set fast</h2>
+                        <p>Search by topic, system, mock test, public management, or GK.</p>
+                    </div>
+                    <div class="pill" id="result-count">Showing 32 sets</div>
+                </div>
+
+                <label class="search-wrap" for="topic-search">
+                    <span aria-hidden="true">Search</span>
+                    <input id="topic-search" type="search" placeholder="Try: engine, hydraulic, gk, mock, public">
+                </label>
+
+                <div class="filter-row" role="group" aria-label="Quick filters">
+                    <button class="filter-btn active" type="button" data-filter="all">All</button>
+                    <button class="filter-btn" type="button" data-filter="core">Core Topics</button>
+                    <button class="filter-btn" type="button" data-filter="mock">Mock Tests</button>
+                    <button class="filter-btn" type="button" data-filter="public">Public Management</button>
+                    <button class="filter-btn" type="button" data-filter="gk">GK</button>
+                </div>
+
+                <div class="empty-state" id="empty-state">
+                    No matching practice set found. Try a different keyword or switch the filter back to All.
+                </div>
+            </section>
+
+            <div class="sections">
+                <section class="section-shell" id="topics" aria-labelledby="topics-title">
+                    <div class="section-head">
+                        <div>
+                            <h3 id="topics-title">Core Mechanics Topics</h3>
+                            <p>Topic-wise MCQs for the technical sections of the Junior Mechanics Level 4 exam.</p>
+                        </div>
+                        <div class="count-chip">18 technical topics</div>
+                    </div>
+
+                    <div class="card-grid">
+                        <article class="topic-card" data-group="core" data-tags="workshop practice mechanics tools exam">
+                            <div class="topic-top">
+                                <span class="number-tag">01</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Workshop Practices</h4>
+                            <p>Strengthen basic workshop concepts and tool-handling MCQs before moving to system-based topics.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>40</strong> MCQs</span>
+                                <span class="meta-chip"><strong>3</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="workshop-practice.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="welding sheet metal fabrication">
+                            <div class="topic-top">
+                                <span class="number-tag">02</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Welding and Sheet Metal Works</h4>
+                            <p>Revise welding processes, sheet work terms, and common fabrication-related exam questions.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>30</strong> MCQs</span>
+                                <span class="meta-chip"><strong>4</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="welding-sheet.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="construction equipment machine types">
+                            <div class="topic-top">
+                                <span class="number-tag">03</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Construction Equipment Types</h4>
+                            <p>Cover machine classifications, common uses, and introductory knowledge of construction equipment.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>30</strong> MCQs</span>
+                                <span class="meta-chip"><strong>2</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="construction-equipment.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="engine ic engine combustion thermo">
+                            <div class="topic-top">
+                                <span class="number-tag">04</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Internal Combustion Engine</h4>
+                            <p>Build confidence in engine principles, cycle basics, and I.C. engine-focused MCQs.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>50</strong> MCQs</span>
+                                <span class="meta-chip"><strong>2</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="ic-engine-thermo.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="fuel engine injection supply">
+                            <div class="topic-top">
+                                <span class="number-tag">05</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Fuel System of I.C. Engine</h4>
+                            <p>Practice questions on fuel delivery, injection concepts, and system components.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>40</strong> MCQs</span>
+                                <span class="meta-chip"><strong>2</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="fuel-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="cooling radiator thermostat">
+                            <div class="topic-top">
+                                <span class="number-tag">06</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Cooling System</h4>
+                            <p>Review radiator flow, overheating causes, coolant circulation, and related maintenance MCQs.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>32</strong> MCQs</span>
+                                <span class="meta-chip"><strong>2</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="cooling-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="braking brake safety stopping">
+                            <div class="topic-top">
+                                <span class="number-tag">07</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Braking System</h4>
+                            <p>Sharpen your understanding of brake parts, operation, and safety-related exam questions.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>28</strong> MCQs</span>
+                                <span class="meta-chip"><strong>2</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="braking-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="suspension shock absorber chassis">
+                            <div class="topic-top">
+                                <span class="number-tag">08</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Suspension System</h4>
+                            <p>Study ride control, suspension components, and common trouble-shooting MCQs.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>20</strong> MCQs</span>
+                                <span class="meta-chip"><strong>2</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="suspension-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="steering clutch control direction">
+                            <div class="topic-top">
+                                <span class="number-tag">09</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Steering System</h4>
+                            <p>Practice steering control, directional mechanisms, and system fault basics.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>30</strong> MCQs</span>
+                                <span class="meta-chip"><strong>2</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="steering-clutch.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="transmission gear power flow">
+                            <div class="topic-top">
+                                <span class="number-tag">10</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Transmission System</h4>
+                            <p>Focus on gears, power transfer, clutch relation, and transmission system functions.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>25</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="transmission-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="hydraulic pressure fluid">
+                            <div class="topic-top">
+                                <span class="number-tag">11</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Hydraulic System</h4>
+                            <p>Revise hydraulic principles, pressure flow, and fluid power questions for quick scoring.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>18</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="hydraulic.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="track wheel tyre tires">
+                            <div class="topic-top">
+                                <span class="number-tag">12</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Track, Wheel and Tyres</h4>
+                            <p>Cover wheels, tracks, tyre types, and usage-based questions commonly asked in practice sets.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>20</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="tyre-starting.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="servicing maintenance inspection">
+                            <div class="topic-top">
+                                <span class="number-tag">13</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Servicing and Maintenance of Equipment</h4>
+                            <p>Strengthen periodic service knowledge, preventive maintenance, and inspection-related MCQs.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>39</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="maintenance-emission.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="electrical battery starter wiring">
+                            <div class="topic-top">
+                                <span class="number-tag">14</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Electrical System</h4>
+                            <p>Revise batteries, charging, starting, and wiring fundamentals through focused MCQs.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>33</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="electrical-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="record keeping documentation logbook">
+                            <div class="topic-top">
+                                <span class="number-tag">15</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Record Keeping</h4>
+                            <p>Prepare for documentation, reporting, and logbook-style questions that support operational accuracy.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>35</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="record-keeping.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="safety practices workshop ppe">
+                            <div class="topic-top">
+                                <span class="number-tag">16</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Safety Practices</h4>
+                            <p>Review PPE, accident prevention, and workshop safety rules that often appear in the exam.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>40</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="safety-practices.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="fuel lubrication coolant lubricants oil">
+                            <div class="topic-top">
+                                <span class="number-tag">17</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Coolants, Lubricants and Fuel System</h4>
+                            <p>Use this mixed set to revise fuel quality, lubricants, coolants, and maintenance-focused theory.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>49</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="fuel-lubrication.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="air conditioning ac refrigeration">
+                            <div class="topic-top">
+                                <span class="number-tag">18</span>
+                                <span class="track-tag">Core Topic</span>
+                            </div>
+                            <h4>Air Conditioning</h4>
+                            <p>Practice A/C components, cooling cycles, and machine comfort system basics for final revision.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>40</strong> MCQs</span>
+                                <span class="meta-chip"><strong>1</strong> likely in exam</span>
+                            </div>
+                            <a class="open-link" href="air-condition.html">Open Practice Set</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section-shell" id="mocks" aria-labelledby="mocks-title">
+                    <div class="section-head">
+                        <div>
+                            <h3 id="mocks-title">Mock Tests, Public Management and GK</h3>
+                            <p>Use these sets for mixed revision, public management practice, GK coverage, and past-style mock preparation.</p>
+                        </div>
+                        <div class="count-chip">14 mixed revision sets</div>
+                    </div>
+
+                    <div class="card-grid">
+                        <article class="topic-card" data-group="public" data-tags="public management summary">
+                            <div class="topic-top">
+                                <span class="number-tag">19</span>
+                                <span class="track-tag">Public</span>
+                            </div>
+                            <h4>Public Management Summarized</h4>
+                            <p>Quickly revise condensed public management notes before starting full mock practice.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>Fast</strong> review</span>
+                                <span class="meta-chip"><strong>Public</strong> focus</span>
+                            </div>
+                            <a class="open-link" href="public-management.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="public gk mock" data-tags="public management gk mock test">
+                            <div class="topic-top">
+                                <span class="number-tag">20</span>
+                                <span class="track-tag">Mock Test</span>
+                            </div>
+                            <h4>Public Management and GK Mock Test</h4>
+                            <p>Practice public management and general knowledge in a combined exam-style set.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>Mixed</strong> set</span>
+                                <span class="meta-chip"><strong>GK</strong> included</span>
+                            </div>
+                            <a class="open-link" href="public2.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="public gk mock" data-tags="latest public gk mock test">
+                            <div class="topic-top">
+                                <span class="number-tag">21</span>
+                                <span class="track-tag">Mock Test</span>
+                            </div>
+                            <h4>Latest Public and GK Mock Test</h4>
+                            <p>Use this updated mixed set to improve accuracy on public and GK sections together.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>Latest</strong> mix</span>
+                                <span class="meta-chip"><strong>Speed</strong> practice</span>
+                            </div>
+                            <a class="open-link" href="publics.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="public mock" data-tags="all topic public management mcqs 84">
+                            <div class="topic-top">
+                                <span class="number-tag">22</span>
+                                <span class="track-tag">Public</span>
+                            </div>
+                            <h4>All Topic Public Management MCQs</h4>
+                            <p>Mixed 2 to 3 MCQs from multiple areas with a strong focus on public management coverage.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>84</strong> MCQs</span>
+                                <span class="meta-chip"><strong>Mixed</strong> topics</span>
+                            </div>
+                            <a class="open-link" href="public-mock.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="mock" data-tags="2081 mechanics paper mock past paper">
+                            <div class="topic-top">
+                                <span class="number-tag">23</span>
+                                <span class="track-tag">Mock Test</span>
+                            </div>
+                            <h4>2081 Mechanics Paper Mock Test</h4>
+                            <p>Attempt a past-style mechanics mock to test timing, topic balance, and exam readiness.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>Past</strong> style</span>
+                                <span class="meta-chip"><strong>Mechanics</strong> focus</span>
+                            </div>
+                            <a class="open-link" href="2081-4th.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="public gk mock" data-tags="public management gk mock">
+                            <div class="topic-top">
+                                <span class="number-tag">24</span>
+                                <span class="track-tag">Mock Test</span>
+                            </div>
+                            <h4>Public Management and GK</h4>
+                            <p>Combined practice set for public management and GK revision in one place.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>Public</strong> review</span>
+                                <span class="meta-chip"><strong>GK</strong> review</span>
+                            </div>
+                            <a class="open-link" href="mock-test16.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="gk mock" data-tags="gk general knowledge practice">
+                            <div class="topic-top">
+                                <span class="number-tag">25</span>
+                                <span class="track-tag">GK</span>
+                            </div>
+                            <h4>GK Practice Set</h4>
+                            <p>Use this set for focused general knowledge revision outside the core mechanics syllabus.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>GK</strong> only</span>
+                                <span class="meta-chip"><strong>Quick</strong> drill</span>
+                            </div>
+                            <a class="open-link" href="mock-test17.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="gk mock" data-tags="gk mock test latest">
+                            <div class="topic-top">
+                                <span class="number-tag">26</span>
+                                <span class="track-tag">GK</span>
+                            </div>
+                            <h4>GK Mock Test</h4>
+                            <p>Strengthen recent general knowledge performance with a dedicated mock test format.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>GK</strong> mock</span>
+                                <span class="meta-chip"><strong>Exam</strong> mode</span>
+                            </div>
+                            <a class="open-link" href="mock-test18.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="mock" data-tags="2081 mechanics quiz mock">
+                            <div class="topic-top">
+                                <span class="number-tag">27</span>
+                                <span class="track-tag">Mock Test</span>
+                            </div>
+                            <h4>2081 Mechanics Quiz</h4>
+                            <p>Use this mechanics-only quiz to check recall speed after topic-wise revision.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>2081</strong> set</span>
+                                <span class="meta-chip"><strong>Speed</strong> quiz</span>
+                            </div>
+                            <a class="open-link" href="mock-test20.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="mock" data-tags="ai generated mechanics mixed all topics 70 mcqs">
+                            <div class="topic-top">
+                                <span class="number-tag">28</span>
+                                <span class="track-tag">AI Mixed</span>
+                            </div>
+                            <h4>AI Generated Mixed Mechanics Set 1</h4>
+                            <p>Mixed technical revision set covering many mechanics topics in one longer practice session.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>70</strong> MCQs</span>
+                                <span class="meta-chip"><strong>Mixed</strong> topics</span>
+                            </div>
+                            <a class="open-link" href="ai1.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="mock" data-tags="ai generated mechanics mixed 65 mcqs">
+                            <div class="topic-top">
+                                <span class="number-tag">29</span>
+                                <span class="track-tag">AI Mixed</span>
+                            </div>
+                            <h4>AI Generated Mixed Mechanics Set 2</h4>
+                            <p>Second mixed mechanics paper for repeat testing and broader question exposure.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>65</strong> MCQs</span>
+                                <span class="meta-chip"><strong>Mixed</strong> topics</span>
+                            </div>
+                            <a class="open-link" href="ai2.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="public" data-tags="past exam public management part 1 45">
+                            <div class="topic-top">
+                                <span class="number-tag">30</span>
+                                <span class="track-tag">Public</span>
+                            </div>
+                            <h4>Past Public Management MCQs Part 1</h4>
+                            <p>Revise public management questions that have appeared in exams using a focused first set.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>45</strong> MCQs</span>
+                                <span class="meta-chip"><strong>Past</strong> exam</span>
+                            </div>
+                            <a class="open-link" href="main-public0.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="public" data-tags="past exam public management part 2 45">
+                            <div class="topic-top">
+                                <span class="number-tag">31</span>
+                                <span class="track-tag">Public</span>
+                            </div>
+                            <h4>Past Public Management MCQs Part 2</h4>
+                            <p>Continue public management revision with a second set based on previously asked questions.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>45</strong> MCQs</span>
+                                <span class="meta-chip"><strong>Past</strong> exam</span>
+                            </div>
+                            <a class="open-link" href="main-public.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="gk" data-tags="past exam gk latest 55">
+                            <div class="topic-top">
+                                <span class="number-tag">32</span>
+                                <span class="track-tag">GK</span>
+                            </div>
+                            <h4>Past GK MCQs Latest Set</h4>
+                            <p>Finish your prep with recent exam-style general knowledge practice in one focused session.</p>
+                            <div class="meta-row">
+                                <span class="meta-chip"><strong>55</strong> MCQs</span>
+                                <span class="meta-chip"><strong>Latest</strong> GK set</span>
+                            </div>
+                            <a class="open-link" href="main-gk.html">Open Practice Set</a>
+                        </article>
+                    </div>
+                </section>
             </div>
-            <div class="category-content active">
-             <div class="grid-container">
-  <div class="card"><a href="workshop-practice.html"><i class="fas fa-wrench"></i>1. Workshop Practices (40 MCQs)(3 MCQS will come in exam)</a></div>
-  <div class="card"><a href="welding-sheet.html"><i class="fas fa-welding-torch"></i>2. Welding and Sheet Metal Works (30 MCQs)(4 MCQS will come in exam)</a></div>
-  <div class="card"><a href="construction-equipment.html"><i class="fas fa-tractor"></i>3. Introduction to Construction Equipment Types (30 MCQs)(2 MCQS will come in exam)</a></div>
-<!--   <div class="card"><a href="thermodynamics.html"><i class="fas fa-thermometer"></i>4.1 Internal Combustion (I.C.) Engine (40 MCQs)</a></div> -->
-  <div class="card"><a href="ic-engine-thermo.html"><i class="fas fa-engine"></i>4 Internal Combustion (I.C.) Engine (50 MCQs)(2 MCQS will come in exam)</a></div>
-  <div class="card"><a href="fuel-system.html"><i class="fas fa-fan"></i>5. Fuel system of I.C. Engine (40 MCQs)(2 MCQS will come in exam))</a></div>
-  <div class="card"><a href="cooling-system.html"><i class="fas fa-fan"></i>6. Cooling System (32 MCQs) (2 MCQS will come in exam))</a></div>
-  <div class="card"><a href="braking-system.html"><i class="fas fa-brake-warning"></i>7. Braking System (28 MCQs)(2 MCQS will come in exam)</a></div>
-  <div class="card"><a href="suspension-system.html"><i class="fas fa-shock-absorber"></i>8. Suspension System (20 MCQs)(2 MCQS will come in exam)</a></div>
-  <div class="card"><a href="steering-clutch.html"><i class="fas fa-steering-wheel"></i>9. Steering System (30 MCQs)(2 MCQS will come in exam)</a></div>
-  <div class="card"><a href="transmission-system.html"><i class="fas fa-cogs"></i>10. Transmission System (25 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="hydraulic.html"><i class="fas fa-water"></i>11. Hydraulic System (18 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="tyre-starting.html"><i class="fas fa-tire"></i>12. Track, Wheel and Tyres (20 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="maintenance-emission.html"><i class="fas fa-tools"></i>13. Servicing and Maintenance of Equipment (39 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="electrical-system.html"><i class="fas fa-bolt"></i>14. Electrical System (33 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="record-keeping.html"><i class="fas fa-book"></i>15. Record Keeping (35 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="safety-practices.html"><i class="fas fa-shield-alt"></i>16. Safety Practices (40 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="fuel-lubrication.html"><i class="fas fa-oil-can"></i>17. Coolants and Lubricants & 5. Fuel System (49 MCQs)(1 MCQS will come in exam)</a></div>
-  <div class="card"><a href="air-condition.html"><i class="fas fa-snowflake"></i>18. Air Conditioning (40 MCQs)(1 MCQS will come in exam)</a></div>
 
-<div class="card"><a href="public-management.html"><i class="fas fa-shield-alt"></i>19. Public management summeized</a></div>
-  <div class="card"><a href="public2.html"><i class="fas fa-oil-can"></i> 20. Public management and gk mcqs mock test</a></div>
-  <div class="card"><a href="publics.html"><i class="fas fa-snowflake"></i>21. Latest Public and gk mock test</a></div>
-<div class="card"><a href="public-mock.html"><i class="fas fa-snowflake"></i>22. All topic 2-3 mcqs for public management (84 MCQs)</a></div>
-
-                   <div class="card"><a href="2081-4th.html"><i class="fas fa-snowflake"></i>23. 2081 Mechanics paper MOck test</a></div>
-
-                 <div class="card"><a href="mock-test16.html"><i class="fas fa-shield-alt"></i>24. Public management & gk</a></div>
-  <div class="card"><a href="mock-test17.html"><i class="fas fa-oil-can"></i> 25. gk </a></div>
-  <div class="card"><a href="mock-test18.html"><i class="fas fa-snowflake"></i>26 gk mock test</a></div>
-<div class="card"><a href="mock-test20.html"><i class="fas fa-snowflake"></i>27 2081 mechanics quiz</a></div>
-                 <div class="card"><a href="ai1.html"><i class="fas fa-snowflake"></i>28 AI GEN MECHA 70 MCQS FROM ALL TOPICS MIXED</a></div>
-                 <div class="card"><a href="ai2.html"><i class="fas fa-snowflake"></i>29 AI GEN MECHA 65 MCQS</a></div>
-
-                  <div class="card"><a href="main-public0.html"><i class="fas fa-snowflake"></i>30: Part 1: Exam ma aako public management ko mcqs 45 ota</a></div>
-                  <div class="card"><a href="main-public.html"><i class="fas fa-snowflake"></i>31: Part 2: Exam ma aako public management ko mcqs 45 ota</a></div>
-                 <div class="card"><a href="main-gk.html"><i class="fas fa-snowflake"></i>32:Exam ma aako GK ko mcqs 55 ota latest</a></div>
-
-             
-
-</div>
-            </div>
-        </div>
-
-     
-
-        <div class="explore-btn">
-            <a href="mock-page.html">
-                🎯 <span>Click here to Explore All Mock Tests (All Most Test)</span> 🧪
-            </a>
-        </div>
+            <section class="explore-banner" aria-labelledby="explore-all-title">
+                <div>
+                    <h3 id="explore-all-title">Need every mock test in one place?</h3>
+                    <p>Jump straight to the complete mock-test page when you want full revision mode without browsing topic cards one by one.</p>
+                </div>
+                <a class="banner-link" href="mock-page.html">Explore All Mock Tests</a>
+            </section>
+        </main>
 
         <footer>
-            © 2025 BerlinNeverDie | Designed for all screen sizes 🌐
+            <div class="footer-note">
+                Junior Mechanics Level 4 preparation portal built for fast revision, clear navigation, and reliable use on all screen sizes.
+            </div>
+            <div>© 2025 BerlinNeverDie</div>
         </footer>
     </div>
 
-    <div id="back-to-top" aria-label="Back to Top">
-        <i class="fas fa-chevron-up"></i>
-    </div>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        ↑
+    </button>
 
     <script>
-        function toggleCategory(header) {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('span');
-            const isActive = content.classList.contains('active');
-            content.classList.toggle('active');
-            icon.textContent = isActive ? '▼' : '▲';
+        const cards = Array.from(document.querySelectorAll(".topic-card"));
+        const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+        const searchInput = document.getElementById("topic-search");
+        const resultCount = document.getElementById("result-count");
+        const emptyState = document.getElementById("empty-state");
+        const backToTop = document.getElementById("backToTop");
+
+        let activeFilter = "all";
+
+        function matchesFilter(card, filter) {
+            if (filter === "all") return true;
+
+            const groups = (card.dataset.group || "").split(" ");
+            return groups.includes(filter);
         }
 
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
+        function matchesSearch(card, query) {
+            if (!query) return true;
+            const searchableText = `${card.textContent} ${card.dataset.tags || ""}`.toLowerCase();
+            return searchableText.includes(query);
+        }
+
+        function updateCards() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            cards.forEach((card) => {
+                const shouldShow = matchesFilter(card, activeFilter) && matchesSearch(card, query);
+                card.classList.toggle("hide", !shouldShow);
+                if (shouldShow) visibleCount += 1;
+            });
+
+            resultCount.textContent = `Showing ${visibleCount} set${visibleCount === 1 ? "" : "s"}`;
+            emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                activeFilter = button.dataset.filter;
+                filterButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+                updateCards();
+            });
         });
 
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        searchInput.addEventListener("input", updateCards);
+
+        window.addEventListener("scroll", () => {
+            backToTop.classList.toggle("show", window.scrollY > 420);
         });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        updateCards();
     </script>
 </body>
 </html>
