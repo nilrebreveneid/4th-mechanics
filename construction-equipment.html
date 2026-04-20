@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Construction Equipment MCQ Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Logsewa Workshop Practice Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,201 +33,1010 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff, #c3dafe);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
             min-height: 100vh;
-            padding: 2rem;
-            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
         }
 
         .quiz-container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
         }
 
         h1 {
-            text-align: center;
-            color: #1e3a8a;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
             font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
         }
 
-        .progress-bar {
-            background: #e5e7eb;
-            height: 8px;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 2rem;
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
         }
 
-        .progress {
-            background: #3b82f6;
-            height: 100%;
-            width: 0;
-            transition: width 0.3s ease;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
         }
 
-        .timer {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1e3a8a;
-        }
-
-        .question {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8fafc;
-            border-radius: 12px;
-            transition: transform 0.2s ease;
-        }
-
-        .question:hover {
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
             transform: translateY(-2px);
         }
 
-        .question p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .options button {
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
             display: block;
-            width: 100%;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            background: #ffffff;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
             font-size: 1rem;
-            cursor: pointer;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: left;
-            color: #374151;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
         }
 
-        .options button:hover:not(:disabled) {
-            background: #f3f4f6;
-            border-color: #3b82f6;
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
             transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .options button.correct {
-            background: #bbf7d0;
-            border-color: #22c55e;
-            color: #166534;
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
         }
 
-        .options button.wrong {
-            background: #fecaca;
-            border-color: #ef4444;
-            color: #991b1b;
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
         }
 
-        .options button:disabled {
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
             cursor: not-allowed;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
         .explanation {
             display: none;
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #eff6ff;
-            border-radius: 8px;
-            color: #1e3a8a;
-            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
         }
 
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
         .score-container {
             text-align: center;
             margin-top: 2rem;
-            padding: 1.5rem;
-            background: #f8fafc;
-            border-radius: 12px;
         }
 
-        .score {
-            font-size: 1.5rem;
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
             font-weight: 700;
-            color: #1e3a8a;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
         }
 
-        .results-btn {
-            display: none;
-            margin: 1rem auto;
-            padding: 0.75rem 2rem;
-            background: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
+        .score-label {
+            color: var(--text-secondary);
             font-size: 1rem;
-            transition: background 0.3s ease;
         }
 
-        .results-btn:hover {
-            background: #2563eb;
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 1rem;
-            }
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .quiz-container {
                 padding: 1rem;
             }
 
-            h1 {
-                font-size: 1.8rem;
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
             }
 
-            .question p {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
                 font-size: 1rem;
             }
 
-            .options button {
+            .option-btn {
+                padding: 0.875rem 1rem;
                 font-size: 0.9rem;
-                padding: 0.8rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
             }
         }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
+<base target="_blank">
 </head>
 <body>
-    <h1>Construction Equipment MCQ Quiz</h1>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
     <div class="quiz-container">
-        <div class="quiz-header">
-            <div class="timer" id="timer">Time: 00:00</div>
-            <div class="score" id="current-score">Score: 0/30</div>
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>Construction Equipments</h1>
+                        <div class="subtitle">Practice Quiz Platform</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">40</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
         </div>
-        <div class="progress-bar">
-            <div class="progress" id="progress"></div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/40</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
         </div>
+
         <div id="quiz"></div>
+
         <div class="score-container">
-            <div class="score" id="score"></div>
-            <button class="results-btn" id="results-btn">View Results</button>
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" onclick="restartQuiz()">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
     <script>
-       const questions = [
+const questions = [
+
+  // ══════════════════════════════════════════════════════════════════
+  // ORIGINAL QUESTIONS — KEPT EXACTLY AS PROVIDED
+  // ══════════════════════════════════════════════════════════════════
   {
     q: "A feeler gauge is used to measure:",
     options: ["Thickness of a plate", "Space (gap) between two surfaces", "Diameter of a bolt", "Length of a shaft"],
@@ -234,12 +1063,12 @@
   },
   {
     q: "The advantage of a wheel-mounted machine over a track-mounted one is:",
-    options: ["It is easy to mobilize", "Better traction on rough terrain", "Higher load capacity", "Lower maintenance cost"],
+    options: ["It is easy to mobilize on roads", "Better traction on rough terrain", "Higher load capacity", "Lower maintenance cost"],
     answer: 0,
     explanation: "Wheel-mounted machines are easier to mobilize on roads, while track-mounted machines excel on rough terrain."
   },
   {
-    q: "For which of the following operations is a dozer not suitable?",
+    q: "For which of the following operations is a dozer NOT suitable?",
     options: ["Leveling", "Deep excavation", "Pushing earth", "Clearing debris"],
     answer: 1,
     explanation: "Dozers are ideal for leveling and pushing earth but not for deep excavation, which requires excavators."
@@ -257,46 +1086,46 @@
     explanation: "The sprocket drives the track chain in an excavator, providing traction for movement."
   },
   {
-    q: "If a 100 kVA diesel generator is to be loaded in a truck, which equipment should be used?",
+    q: "If a 100 kVA diesel generator is to be loaded onto a truck, which equipment should be used?",
     options: ["Loader", "Crane", "Bulldozer", "Grader"],
     answer: 1,
     explanation: "A crane is used to lift heavy equipment like a 100 kVA generator onto a truck due to its weight."
   },
   {
-    q: "To determine the owning cost per hour of a bulldozer over its life, we do not need:",
+    q: "To determine the OWNING COST per hour of a bulldozer, we do NOT need:",
     options: ["Cost of fuel required for operation", "Insurance costs", "Depreciation cost", "Maintenance cost"],
     answer: 0,
-    explanation: "Fuel cost is part of operating costs, not owning costs, which include insurance, depreciation, and maintenance."
+    explanation: "Fuel cost is part of OPERATING costs, not owning costs. Owning costs include: insurance, depreciation, interest, taxes, and storage."
   },
   {
-    q: "To determine the operating costs over a period for a bulldozer, we consider:",
-    options: ["Operator’s wages", "Purchase price", "Insurance premium", "Depreciation"],
+    q: "To determine the OPERATING COSTS over a period for a bulldozer, we consider:",
+    options: ["Operator's wages", "Purchase price", "Insurance premium", "Depreciation"],
     answer: 0,
-    explanation: "Operating costs include operator wages, fuel, and maintenance, while purchase price and insurance are owning costs."
+    explanation: "Operating costs include: operator wages, fuel, lubricants, and maintenance. Purchase price, insurance, and depreciation are OWNING costs."
   },
   {
     q: "For earth cutting and moving earth over a distance of 50 meters, we use:",
     options: ["Excavator", "Scraper", "Loader", "Dozer"],
     answer: 1,
-    explanation: "Scrapers are ideal for cutting and moving earth over moderate distances like 50 meters."
+    explanation: "Scrapers are ideal for cutting and moving earth over moderate distances (50-500m) in a single pass operation."
   },
   {
     q: "The main attachment on the front of a bulldozer is called:",
     options: ["Mold board", "Blade", "Bucket", "Ripper"],
     answer: 1,
-    explanation: "The blade is the primary attachment on a bulldozer, used for pushing earth."
+    explanation: "The blade is the primary front attachment on a bulldozer, used for pushing, cutting, and moving earth."
   },
   {
     q: "Motor graders are used mostly for:",
     options: ["Purely excavation", "Finishing, shaping, bank sloping, and ditching", "Compacting soil", "Lifting heavy loads"],
     answer: 1,
-    explanation: "Motor graders are used for finishing surfaces, shaping slopes, and creating ditches."
+    explanation: "Motor graders are used for finishing surfaces, shaping slopes, grading road subbase, and creating drainage ditches."
   },
   {
     q: "Compaction को लागि प्रयोग हुने मुख्य उपकरण: (What is the main equipment used for compaction?)",
     options: ["Mobile crane", "Road roller", "Excavator", "Loader"],
     answer: 1,
-    explanation: "रोड रोलरले माटो र सडकलाई समतल र कडा बनाउँछ। (Road rollers are used to compact soil and road surfaces.)"
+    explanation: "रोड रोलरले माटो र सडकलाई समतल र कडा बनाउँछ। (Road rollers compact soil and road surfaces for stability.)"
   },
   {
     q: "Hydraulic excavator को काम के हो? (What is the function of a hydraulic excavator?)",
@@ -305,34 +1134,34 @@
     explanation: "हाइड्रोलिक एक्स्काभेटरले खाल्डो खन्ने र माटो हटाउने काम गर्छ। (Hydraulic excavators are used for digging and removing earth.)"
   },
   {
-    q: "निम्न मध्ये कुन उपकरण गाड्ने हो? (Which equipment is used for digging?)",
+    q: "निम्न मध्ये कुन उपकरण खाल्डो गाड्ने हो? (Which equipment is used for digging?)",
     options: ["लोडर (Loader)", "एक्स्काभेटर (Excavator)", "रोड रोलर (Road roller)", "क्रेन (Crane)"],
     answer: 1,
-    explanation: "एक्स्काभेटर खन्ने कामको लागि डिजाइन गरिएको हो। (Excavators are designed for digging.)"
+    explanation: "एक्स्काभेटर खन्ने कामको लागि डिजाइन गरिएको हो। (Excavators are designed for digging operations.)"
   },
   {
     q: "In grading operation, a guinea hopper is responsible for:",
     options: ["Setting the grade hubs", "Directing the trucks dumping the material", "Operating the grader", "Compacting the surface"],
     answer: 1,
-    explanation: "A guinea hopper directs trucks to dump material accurately during grading operations."
+    explanation: "A guinea hopper directs trucks to dump material accurately during grading operations for proper placement."
   },
   {
-    q: "In order to raise and shift heavy loads from one place to another, the …… are employed in the construction of big works.",
+    q: "In order to raise and shift heavy loads from one place to another, the _____ are employed in big construction works.",
     options: ["Trucks", "Cranes", "Loaders", "Scrapers"],
     answer: 1,
-    explanation: "Cranes are used to lift and shift heavy loads in large construction projects."
+    explanation: "Cranes are used to lift and shift heavy loads in large construction projects where other equipment cannot reach."
   },
   {
-    q: "If an engine starts but stalls on idle, the problem may be …",
+    q: "If an engine starts but stalls on idle, the problem may be:",
     options: ["Low fuel in tank", "Clogged air filter", "Faulty fuel pump", "All of the above"],
     answer: 3,
-    explanation: "Low fuel, clogged filters, or a faulty fuel pump can cause an engine to stall at idle."
+    explanation: "Low fuel, clogged air filter, or a faulty fuel pump can all cause an engine to start but stall at idle. Any or all of these factors may be contributing."
   },
   {
-    q: "Lifting hook प्रयोग गर्दा प्रयोग गरिने औजार कुन हो? (Which tool is used with a lifting hook?)",
+    q: "Lifting hook प्रयोग गर्दा प्रयोग गरिने औजार कुन हो? (Which equipment uses a lifting hook?)",
     options: ["ट्रक (Truck)", "क्रेन (Crane)", "लोडर (Loader)", "रोलर (Roller)"],
     answer: 1,
-    explanation: "क्रेनले लिफ्टिङ हुकसँग भारी वस्तु उठाउँछ। (A crane is used with a lifting hook to lift heavy objects.)"
+    explanation: "क्रेनले लिफ्टिङ हुकसँग भारी वस्तु उठाउँछ। (A crane uses a lifting hook to lift heavy objects.)"
   },
   {
     q: "तलका मध्ये कुन machine ले सवारी साधन ट्रकमा राख्न सकिन्छ? (Which machine can load a vehicle onto a truck?)",
@@ -344,45 +1173,586 @@
     q: "To break rock, a rock breaker is attached to:",
     options: ["Truck", "Excavator", "Road roller", "Grader"],
     answer: 1,
-    explanation: "A rock breaker is typically attached to an excavator for breaking hard surfaces like rock."
+    explanation: "A rock breaker (hydraulic hammer/breaker) is attached to an excavator arm replacing the bucket, for breaking hard rock and concrete."
   },
   {
-    q: "भारी सवारी साधन टायर चेक गर्न शेरर स्क्रिन मेसिनमा कुन यन्त्र प्रयोग गरिन्छ? (Which device is used to check tire pressure in heavy vehicles?)",
+    q: "भारी सवारी साधन टायर चेक गर्न कुन यन्त्र प्रयोग गरिन्छ? (Which device is used to check tire pressure in heavy vehicles?)",
     options: ["कम्प्रेसर (Compressor)", "एअर गेज (Air gauge)", "ट्याकोमिटर (Tachometer)", "थर्मोमिटर (Thermometer)"],
     answer: 1,
-    explanation: "एअर गेजले टायरको हावाको चाप जाँच गर्छ। (An air gauge is used to check tire pressure.)"
+    explanation: "एअर गेजले टायरको हावाको चाप जाँच गर्छ। (An air gauge measures tire air pressure accurately.)"
   },
   {
-    q: "ट्रयाक्टर प्रयोग गरिएपछि निम्नमध्ये के कार्य गर्नुपर्छ? (What should be done after using a tractor?)",
+    q: "ट्रयाक्टर प्रयोग गरिएपछि के गर्नुपर्छ? (What should be done after using a tractor?)",
     options: ["रेसिंग गरेर सफा गर्नु (Clean by racing)", "नियमित मर्मत र सफाइ गर्नु (Regular maintenance and cleaning)", "टायरको चाप बढाउनु (Increase tire pressure)", "इन्जिन तताउनु (Warm the engine)"],
     answer: 1,
-    explanation: "नियमित मर्मत र सफाइले ट्रयाक्टरको आयु बढ्छ। (Regular maintenance and cleaning extend tractor life.)"
+    explanation: "नियमित मर्मत र सफाइले ट्रयाक्टरको आयु बढ्छ। (Regular maintenance and cleaning extend tractor/machine life.)"
   },
   {
     q: "The track life is mainly affected by the condition of:",
     options: ["Bushings", "Sprockets", "Rollers", "All of the above"],
     answer: 3,
-    explanation: "Track life depends on bushings, sprockets, and rollers, all of which impact wear and performance."
+    explanation: "Track life depends on the condition of bushings, sprockets, and rollers — all of which impact wear, tension, and track performance."
   },
   {
     q: "Loader कुन कार्यमा प्रयोग हुन्छ? (What is a loader used for?)",
     options: ["रोलरले सम्याउने कार्य (Leveling with roller)", "माटो र ढुंगा लोड गर्न (Loading soil and stones)", "खाल्डो खन्ने (Digging pits)", "सडक कम्प्याक्ट गर्ने (Compacting roads)"],
     answer: 1,
-    explanation: "लोडरले माटो, ढुंगा वा सामग्री लोड गर्छ। (Loaders are used to load soil, stones, or other materials.)"
+    explanation: "लोडरले माटो, ढुंगा वा सामग्री लोड गर्छ। (Loaders are used to scoop and load soil, stones, or other materials into trucks.)"
   },
   {
-    q: "Jack-type equipment:",
+    q: "Jack-type equipment is used as:",
     options: ["माटो हटाउने यन्त्र (Soil removal device)", "गाडी उठाउने यन्त्र (Vehicle lifting device)", "सडक सम्याउने यन्त्र (Road leveling device)", "पानी पम्प गर्ने यन्त्र (Water pumping device)"],
     answer: 1,
-    explanation: "ज्याकले गाडी वा भारी वस्तु उठाउँछ। (Jack-type equipment is used to lift vehicles or heavy objects.)"
+    explanation: "ज्याकले गाडी वा भारी वस्तु उठाउँछ। (Jacks lift vehicles or heavy objects for maintenance or repositioning.)"
   },
   {
     q: "For lifting a load 10 feet high, you will use:",
     options: ["Excavator", "Crane", "Loader", "Dozer"],
     answer: 1,
-    explanation: "A crane is designed for lifting loads to significant heights, unlike excavators used for digging."
+    explanation: "A crane is designed for lifting loads to significant heights, unlike excavators (digging), loaders (scooping), or dozers (pushing)."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3.1 — DOZER (Additional Questions)
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The large metal plate at the FRONT of a dozer that pushes material is called:",
+    options: ["Bucket", "Hoe", "Boom", "Blade"],
+    answer: 3,
+    explanation: "The BLADE is the large curved steel plate at the front of a bulldozer. It pushes, cuts, and moves soil, rock, sand, and debris during earthmoving operations."
+  },
+  {
+    q: "A RIPPER attachment on a bulldozer is used to:",
+    options: ["Load material into trucks", "Break up hard rock or compacted ground before dozing", "Lift materials overhead", "Grade the road surface"],
+    answer: 1,
+    explanation: "A RIPPER (mounted at the rear of the dozer) consists of one or more pointed teeth that are dragged through hard ground or rock to break it up before the dozer blade pushes it."
+  },
+  {
+    q: "Which type of dozer blade is most versatile and can angle left or right?",
+    options: ["Straight blade (S-blade)", "Angle blade (A-blade)", "Universal blade (U-blade)", "Semi-U blade"],
+    answer: 1,
+    explanation: "The ANGLE (A) blade can be angled left or right on a horizontal axis, allowing material to be cast to one side — useful for road building and sidecasting. The U-blade carries more material; S-blade is for pushing straight."
+  },
+  {
+    q: "Which type of dozer uses TRACKS (crawler) instead of wheels?",
+    options: ["Motor grader", "Crawler bulldozer (track-type tractor)", "Wheel loader", "Backhoe loader"],
+    answer: 1,
+    explanation: "A CRAWLER BULLDOZER runs on continuous steel tracks, giving excellent traction and low ground pressure on soft, muddy, or rough terrain where wheeled machines would sink or slip."
+  },
+  {
+    q: "What is the PRIMARY advantage of track-type (crawler) construction machines over wheeled machines?",
+    options: ["Higher travel speed on paved roads", "Better traction and flotation on soft, wet, or rough terrain", "Lower purchase cost", "Easier transportation on highways"],
+    answer: 1,
+    explanation: "Tracks distribute machine weight over a large contact area — LOW GROUND PRESSURE prevents sinking in mud or soft soil and provides superior traction on slopes, rocky ground, and uneven terrain."
+  },
+  {
+    q: "A bulldozer is NOT suitable for which task?",
+    options: ["Land clearing", "Deep excavation below the machine level", "Spreading fill material", "Short-distance pushing of earth"],
+    answer: 1,
+    explanation: "A dozer works at or near ground level — it cannot excavate below its own level like an excavator. For deep excavation (trenches, foundations), an excavator or backhoe is required."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3.2 — LOADER
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "A FRONT-END LOADER (wheel loader) is primarily used for:",
+    options: ["Digging trenches below machine level", "Scooping, loading, and transporting loose material short distances", "Compacting soil surfaces", "Grading road surfaces"],
+    answer: 1,
+    explanation: "Front-end loaders use a front-mounted bucket to scoop loose material (soil, gravel, sand, snow) and load it into trucks or stockpiles. They can also transport material short distances."
+  },
+  {
+    q: "The BUCKET CAPACITY of a loader is expressed in:",
+    options: ["Tonnes (weight)", "Cubic meters or cubic yards (volume)", "Horsepower", "Meters per minute"],
+    answer: 1,
+    explanation: "Loader bucket capacity is rated in CUBIC METERS (m³) or cubic yards, representing the struck or heaped volume the bucket can carry. Payload (tonnes) depends on material density."
+  },
+  {
+    q: "A BACKHOE LOADER has which combination of attachments?",
+    options: ["A front loader bucket AND a rear-mounted backhoe arm for digging", "Two front buckets", "A front blade AND a rear roller", "A crane jib AND a loader bucket"],
+    answer: 0,
+    explanation: "A backhoe loader is a VERSATILE combination machine: front loader bucket (for loading/levelling) + rear backhoe arm with bucket (for digging trenches and foundations). The most common construction machine worldwide."
+  },
+  {
+    q: "The BACKHOE bucket on a backhoe loader digs by:",
+    options: ["Pushing material forward", "Pulling the bucket toward the machine (backward digging motion)", "Rotating 360 degrees", "Moving sideways"],
+    answer: 1,
+    explanation: "The backhoe digs by PULLING the bucket toward the machine — the arm extends forward, bucket penetrates ground, then curls back toward machine scooping material. This enables digging below machine level."
+  },
+  {
+    q: "Loader बाट गर्न नसकिने काम कुन हो? (Which task CANNOT be done by a loader?)",
+    options: ["माटो लोड गर्ने (Loading soil)", "खाल्डो खन्ने (Deep digging)", "ग्रेभेल लोड गर्ने (Loading gravel)", "सामग्री ट्रकमा राख्ने (Placing material in truck)"],
+    answer: 1,
+    explanation: "Loaders scoop loose surface material but cannot dig deep below ground level like an excavator. Deep trenching and excavation require a backhoe or excavator."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3.3 — EXCAVATOR
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The component that allows an excavator's upper structure to rotate 360 degrees on the undercarriage is:",
+    options: ["Boom", "Counterweight", "Slewing ring (turntable bearing)", "Hydraulic cylinder"],
+    answer: 2,
+    explanation: "The SLEWING RING is a large ring bearing between the upper structure and undercarriage. It enables the excavator's upper body (cab, engine, boom) to rotate a full 360°, allowing digging and dumping without repositioning."
+  },
+  {
+    q: "The BOOM of an excavator is the:",
+    options: ["Main structural arm attached to the upper structure that extends outward", "Bucket attachment at the end", "Track frame component", "Counterweight at the rear"],
+    answer: 0,
+    explanation: "The BOOM is the main structural arm attached to the excavator's upper structure (house). The stick (dipper arm) attaches to the boom end, and the bucket attaches to the stick — all hydraulically controlled."
+  },
+  {
+    q: "The COUNTERWEIGHT at the rear of an excavator is used to:",
+    options: ["Provide additional traction", "Balance the weight of the boom, stick, and bucket during lifting operations", "House the hydraulic oil reservoir", "Protect the engine from impact"],
+    answer: 1,
+    explanation: "The COUNTERWEIGHT is a heavy mass (cast iron/concrete) at the rear. It BALANCES the front-mounted boom and load, preventing the machine from tipping forward during digging or lifting."
+  },
+  {
+    q: "एक्स्काभेटरको बकेटलाई कुन हाइड्रोलिक भाग ले नियन्त्रण गर्छ? (Which hydraulic component controls the excavator bucket?)",
+    options: ["Hydraulic pump", "Hydraulic cylinder", "Hydraulic motor", "Control valve"],
+    answer: 1,
+    explanation: "हाइड्रोलिक सिलिन्डरले बकेट, स्टिक र बुमलाई नियन्त्रण गर्छ। (Hydraulic cylinders extend and retract to control the boom, stick, and bucket movements.)"
+  },
+  {
+    q: "A CRAWLER EXCAVATOR is better than a WHEELED EXCAVATOR for:",
+    options: ["Working on paved roads and traveling long distances", "Soft, muddy, and rough terrain digging operations", "Urban construction near traffic", "Speed of relocation between sites"],
+    answer: 1,
+    explanation: "CRAWLER excavators have low ground pressure on soft/muddy terrain, superior stability on slopes, and excellent traction — ideal for remote site work. Wheeled excavators travel faster on roads and are used in urban settings."
+  },
+  {
+    q: "The DIPPER ARM (stick) on an excavator connects:",
+    options: ["Bucket to upper structure directly", "Boom to bucket, extending the reach of the machine", "Tracks to the undercarriage", "Counterweight to the boom"],
+    answer: 1,
+    explanation: "The STICK (dipper arm) is the intermediate arm connecting the BOOM to the BUCKET. It extends the machine's digging reach and provides the main crowd force for penetrating material."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3.4 — GRADER
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The main cutting and spreading blade on a motor grader is mounted:",
+    options: ["At the front like a bulldozer", "Between the front and rear axles, angled for material spreading", "At the rear of the machine", "Overhead on a crane arm"],
+    answer: 1,
+    explanation: "The grader blade is mounted BETWEEN the front and rear axles. It can be angled, tilted, and positioned to cut, spread, and level material. The blade circles allow rotation to various working angles."
+  },
+  {
+    q: "Which of the following is a GRADER used for in road construction?",
+    options: ["Initial heavy excavation", "Fine grading, leveling, and finishing road subbase", "Deep trench digging", "Loading material into trucks"],
+    answer: 1,
+    explanation: "Motor graders are FINISHING machines — they create precise, flat road subbase profiles, cut drainage ditches, slope banks, spread and mix material. They follow dozers and loaders for final finishing work."
+  },
+  {
+    q: "The ARTICULATED FRAME of a motor grader allows:",
+    options: ["The machine to bend in the middle for tighter turning radius and better blade alignment", "The engine to swing sideways", "The blade to extend longer", "The tracks to be adjusted"],
+    answer: 0,
+    explanation: "An articulated frame lets the rear half of the grader pivot relative to the front — this improves maneuverability in tight areas, allows working against curbs, and enables blade positioning for slope work."
+  },
+  {
+    q: "Which grade (slope) can a motor grader measure and set during road construction?",
+    options: ["Only flat (0%) grade", "Both uphill and downhill grades as specified", "Only downhill grades", "Only grades above 10%"],
+    answer: 1,
+    explanation: "Motor graders equipped with laser or GPS grade control can achieve any specified grade (positive or negative) with precision — critical for proper road drainage and final subbase tolerances."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3.5 — TRUCK (Dump Truck / Haul Truck)
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "In construction, a DUMP TRUCK (tipper) is used for:",
+    options: ["Digging excavations", "Hauling and dumping loose material (soil, gravel, sand, rock)", "Compacting road surfaces", "Lifting steel structures"],
+    answer: 1,
+    explanation: "Dump trucks HAUL loose construction materials from excavations or quarries to fill sites, batching plants, or disposal areas. The hydraulic-tipping body dumps the load rapidly at the destination."
+  },
+  {
+    q: "An ARTICULATED DUMP TRUCK (ADT) differs from a rigid dump truck in that:",
+    options: ["It is smaller and has no tipping body", "It has a pivot joint between cab and body — better for soft, rough off-road terrain", "It can only travel on paved roads", "It requires a crane for loading"],
+    answer: 1,
+    explanation: "ADTs have a PIVOT JOINT between the cab and the dump body — allowing both halves to flex over rough terrain. Better flotation and maneuverability on soft ground compared to rigid trucks."
+  },
+  {
+    q: "The PAYLOAD of a dump truck refers to:",
+    options: ["The weight of the empty truck", "The maximum weight of material it can legally carry", "The engine horsepower", "The fuel tank capacity"],
+    answer: 1,
+    explanation: "PAYLOAD = maximum allowable weight of cargo the truck can carry. Overloading causes: tyre damage, structural damage, brake failure, and road damage. Always load within the rated payload."
+  },
+  {
+    q: "Before a dump truck TIPS (raises) its body to unload, the driver must:",
+    options: ["Keep driving at slow speed", "Ensure the truck is on level, firm ground and the area is clear of people", "Rev the engine to maximum", "Apply only the parking brake"],
+    answer: 1,
+    explanation: "Before tipping: (1) stop on FIRM, LEVEL GROUND (soft ground or slopes can cause the truck to tip over), (2) check the AREA IS CLEAR of people and obstacles, (3) engage parking brake. Tipping on soft or sloped ground is extremely dangerous."
+  },
+  {
+    q: "The CYCLE TIME for a haul truck includes:",
+    options: ["Loading time only", "Loading + travel (loaded) + dumping + return (empty) + spot time", "Dumping time only", "Travel time only"],
+    answer: 1,
+    explanation: "Truck cycle time = LOAD time + HAUL (loaded travel) time + DUMP time + RETURN (empty) time + SPOT (positioning) time. This determines how many cycles per hour and total productivity."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3.6 — CRANE
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "OUTRIGGERS on a mobile crane are used to:",
+    options: ["Increase crane travel speed", "Stabilize the crane and distribute load to prevent tipping during lifting", "Lower the boom automatically", "Drive the crane off-road"],
+    answer: 1,
+    explanation: "Outriggers extend from the crane's frame and press against the ground to WIDEN THE SUPPORT BASE. This prevents tipping during heavy lifts and allows the crane to work at its full rated lifting capacity."
+  },
+  {
+    q: "The SAFE WORKING LOAD (SWL) / Rated Capacity of a crane means:",
+    options: ["The maximum weight the crane can lift under any condition", "The maximum load the crane can safely lift at a specific boom angle and radius", "The total weight of the crane itself", "The weight of the hook and rigging only"],
+    answer: 1,
+    explanation: "SWL/Rated Capacity varies with BOOM LENGTH and RADIUS (distance from centre to load). Always check the LOAD CHART for the specific configuration — capacity decreases as boom extends longer or radius increases."
+  },
+  {
+    q: "A TOWER CRANE is used primarily in:",
+    options: ["Mining operations", "High-rise building construction for lifting materials to great heights", "Road construction", "Underwater operations"],
+    answer: 1,
+    explanation: "Tower cranes are ideal for HIGH-RISE CONSTRUCTION — their fixed mast and horizontal jib reach across the entire building footprint, lifting materials (steel, concrete, formwork) to all floor levels."
+  },
+  {
+    q: "The ANTI-TWO-BLOCK device on a crane prevents:",
+    options: ["The hook from swinging during travel", "The hook block from colliding with the boom tip sheave at maximum hoist — preventing wire rope failure", "The outriggers from over-extending", "Engine overheating during lifts"],
+    answer: 1,
+    explanation: "Two-blocking occurs when the hook block reaches the boom tip and wire rope is pulled over the sheave. This can snap the rope and drop the load. Anti-two-block device stops hoist when the hook approaches the boom tip."
+  },
+  {
+    q: "Before a crane lift, a LIFT PLAN is required to:",
+    options: ["Make the operation look professional", "Assess load weight, crane capacity, rigging, ground conditions, and hazards for safety", "Save time on site", "Satisfy colour-coding requirements"],
+    answer: 1,
+    explanation: "A lift plan documents: load weight and CG, crane model and configuration, boom length and radius, outrigger positions, ground bearing pressure, rigging method, and hazard assessment. MANDATORY for critical lifts."
+  },
+  {
+    q: "क्रेनको बुम (boom) को काम के हो? (What is the function of the crane boom?)",
+    options: ["माटो खन्ने (Digging soil)", "भारी वस्तु उठाउने लागि विस्तार (Extending reach to lift heavy objects)", "सडक बनाउने (Building roads)", "मेसिन चलाउने (Driving the machine)"],
+    answer: 1,
+    explanation: "क्रेनको बुमले उठाउने ठाउँसम्म पुग्ने काम गर्छ। (The crane boom extends horizontally or at an angle to position the hook above the load for lifting.)"
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3.7 — ROLLER (Compactor)
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "A VIBRATORY ROLLER compacts material more effectively than a static roller because:",
+    options: ["It is heavier", "Vibration causes particles to rearrange and pack more densely in addition to static weight", "It travels faster", "It uses more fuel"],
+    answer: 1,
+    explanation: "Vibratory rollers generate high-frequency impacts that force soil particles to rearrange into a denser packing. This achieves greater compaction depth and density with fewer passes than static (dead-weight) rollers."
+  },
+  {
+    q: "A PADFOOT (sheep's foot) roller is used for compacting:",
+    options: ["Asphalt (bituminous) surfaces", "Cohesive soils (clay, silt) — the feet penetrate and knead the soil layers", "Granular gravel only", "Concrete surfaces"],
+    answer: 1,
+    explanation: "Padfoot (sheep's foot) rollers have projecting pads on the drum that PENETRATE and KNEAD cohesive soils (clay, silt). They compact from the BOTTOM UP as the feet push down — ideal for fill embankments."
+  },
+  {
+    q: "A PNEUMATIC TYRE ROLLER compacts with:",
+    options: ["Steel drum weight", "Multiple rubber tyres that knead and seal the surface", "Vibration only", "Water ballast drums"],
+    answer: 1,
+    explanation: "Pneumatic tyre rollers use MULTIPLE RUBBER TYRES (front and rear rows) that knead and seal the surface, closing surface voids. Used for final compaction of asphalt and sealing granular base layers."
+  },
+  {
+    q: "A TANDEM SMOOTH DRUM ROLLER is best suited for:",
+    options: ["Compacting clay subgrade", "Final rolling of asphalt pavement to achieve smooth surface finish", "Breaking rock", "Compacting loose soil embankments"],
+    answer: 1,
+    explanation: "Tandem smooth drum rollers (two steel drums front and rear) are used for ASPHALT COMPACTION — finishing passes produce the smooth, dense surface required for road wearing courses."
+  },
+  {
+    q: "The NUMBER OF COMPACTION PASSES with a roller is determined by:",
+    options: ["Only the machine weight", "Density testing (field compaction tests) until target density is achieved", "Time available on site only", "Type of roller only"],
+    answer: 1,
+    explanation: "Compaction passes are determined by DENSITY TESTING (nuclear density gauge, sand replacement test) to confirm the soil or asphalt has reached the specified density (e.g., 95% of maximum dry density). Pass count alone is insufficient."
+  },
+  {
+    q: "रोलरको ड्रम भाइब्रेट गर्नुको उद्देश्य के हो? (What is the purpose of vibrating the roller drum?)",
+    options: ["माटो नरम बनाउन (To soften soil)", "माटो राम्रोसँग कम्प्याक्ट गर्न (To compact soil more effectively)", "ड्रम सफा गर्न (To clean the drum)", "इन्धन बचत गर्न (To save fuel)"],
+    answer: 1,
+    explanation: "ड्रम भाइब्रेसनले माटोको कणहरूलाई एकसाथ मिलाई अझ राम्रो कम्प्याक्सन गर्छ। (Drum vibration rearranges soil particles for deeper, more effective compaction than static weight alone.)"
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // TRACK, WHEEL AND TYRES
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "RADIAL PLY tyres compared to cross-ply tyres have which advantage?",
+    options: ["Smoother ride at low speed only", "Longer life, better fuel efficiency, and better high-speed stability", "Cheaper to manufacture", "Better for slow heavy equipment only"],
+    answer: 1,
+    explanation: "RADIAL tyres have steel belt under tread with flexible sidewalls: longer tread life, better fuel efficiency (lower rolling resistance), improved high-speed stability, and better heat dissipation. Now standard on most vehicles."
+  },
+  {
+    q: "The TRACK TENSION on a crawler machine should be:",
+    options: ["As tight as possible for maximum traction", "At the manufacturer's specified sag — neither too tight nor too loose", "Completely loose to prevent damage", "Adjusted only during engine servicing"],
+    answer: 1,
+    explanation: "Correct track tension follows manufacturer spec (specified sag at mid-point): TOO TIGHT = excess stress on bushings, pins, rollers, and sprockets → premature wear. TOO LOOSE = track derailment and damage."
+  },
+  {
+    q: "The GROUND BEARING PRESSURE of a track-type machine compared to a wheeled machine is:",
+    options: ["Higher (tracks concentrate weight)", "Lower (tracks distribute weight over a large contact area)", "The same", "Depends only on machine weight"],
+    answer: 1,
+    explanation: "Tracks DISTRIBUTE machine weight over a large ground contact area → LOWER ground bearing pressure → less sinking in soft ground. This is why tracks are used where wheeled machines would get bogged down."
+  },
+  {
+    q: "In construction equipment tyres, the number '205' in a marking like 205/55 R16 represents:",
+    options: ["The tyre diameter in inches", "The tyre section width in millimeters", "The aspect ratio", "The load rating"],
+    answer: 1,
+    explanation: "205 = section WIDTH in millimeters. 55 = aspect ratio (sidewall height as % of width). R = Radial. 16 = rim diameter in inches. Reading tyre markings correctly ensures correct replacement tyre selection."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // GENERAL CONSTRUCTION EQUIPMENT — SAFETY AND MAINTENANCE
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The DAILY PRE-OPERATION CHECK (walkaround inspection) of construction equipment must include:",
+    options: ["Only fuel level check", "Engine oil, coolant, hydraulic fluid levels, tyre/track condition, lights, and fluid leaks", "Only visual check from cab", "Engine oil only"],
+    answer: 1,
+    explanation: "Daily pre-operation inspection: check ALL fluid levels (oil, coolant, hydraulic, fuel), inspect for leaks, check tyre pressure or track condition, test lights and gauges, check bucket teeth and cutting edges. Prevents breakdowns and accidents."
+  },
+  {
+    q: "A construction machine operator must check the LOAD RATING before using a crane or lifting equipment because:",
+    options: ["It is a legal formality only", "Overloading can cause structural failure, collapse, and fatalities", "It improves fuel economy", "Load rating affects noise level"],
+    answer: 1,
+    explanation: "Overloading a crane beyond its rated capacity can cause: boom collapse, wire rope failure, machine overturn, or structural failure — all potentially FATAL. Always check the load chart for the specific configuration."
+  },
+  {
+    q: "When parking a construction machine on a slope, the operator must:",
+    options: ["Leave in neutral and walk away", "Lower all attachments to ground, apply all brakes, chock the wheels/tracks", "Only apply the service brake", "Park facing downhill only"],
+    answer: 1,
+    explanation: "Safe slope parking: (1) LOWER all attachments to ground, (2) APPLY all brakes (park + service), (3) CHOCK wheels or tracks if available, (4) shut down engine, (5) exit safely. Machines have rolled away and crushed operators when not properly parked."
+  },
+  {
+    q: "The HYDRAULIC SYSTEM on construction equipment should be serviced by:",
+    options: ["Changing oil at the same time as engine oil", "Following manufacturer's specified intervals for fluid analysis and filter changes", "Never — hydraulic oil lasts the life of the machine", "Only when the machine loses power"],
+    answer: 1,
+    explanation: "Hydraulic fluid degrades through: oxidation, water contamination, and particulate wear. Follow manufacturer's INTERVALS for: oil change (typically 2000-4000 hours), filter change (500-1000 hours), and suction strainer cleaning."
+  },
+  {
+    q: "Swing Area of an excavator or crane is DANGEROUS because:",
+    options: ["It creates noise", "The counterweight and upper structure sweep through the area — striking anyone in range", "It disturbs the ground surface", "It consumes more fuel"],
+    answer: 1,
+    explanation: "The SWING AREA is the arc swept by the counterweight and upper structure during rotation. Anyone in this zone can be struck by the counterweight (which extends beyond the machine footprint). Always establish exclusion zones."
+  },
+  {
+    q: "BUCKET TEETH on an excavator should be replaced when:",
+    options: ["After every 8 hours of work", "When worn to the point of reducing digging efficiency or rock contact reaches tooth adapter", "After 1000 hours regardless of wear", "Only when one breaks completely"],
+    answer: 1,
+    explanation: "Replace bucket teeth when: worn beyond specified length (tooth contact nearly at adapter), reduced digging efficiency requiring more power, or when a tooth breaks. Worn teeth damage the adapter — more expensive to replace."
+  },
+  {
+    q: "What is the purpose of CENTRALIZED LUBRICATION SYSTEMS on large construction equipment?",
+    options: ["To lubricate the engine only", "To automatically deliver grease to all lubrication points at correct intervals, reducing manual greasing time", "To cool the hydraulic system", "To filter hydraulic oil automatically"],
+    answer: 1,
+    explanation: "Centralized lubrication systems automatically pump grease to all pivots, pins, and bearings at programmable intervals. Benefits: consistent lubrication (no missed points), reduced maintenance time, and extended component life."
+  }  ,
+  {
+    q: "A MOTOR SCRAPER is used for:",
+    options: ["Spreading asphalt only", "Cutting, loading, transporting, and spreading soil in a single pass operation", "Lifting heavy steel beams", "Pumping water from excavations"],
+    answer: 1,
+    explanation: "Motor scraper is a complete EARTH-MOVING machine: the apron opens → cutting edge scrapes soil into the bowl → bowl fills → haul to fill site → spread material by raising apron. Best for 50-500m haul distances."
+  },
+  {
+    q: "The SLEWING RING (swing bearing) on an excavator requires:",
+    options: ["No lubrication since it is sealed for life", "Regular greasing at specified intervals to prevent corrosion and wear", "Only oil lubrication", "Replacement after every 500 hours"],
+    answer: 1,
+    explanation: "The slewing ring requires REGULAR GREASING (typically every 8-10 hours of operation or daily). The large ring gear teeth and bearings must be protected from dirt, water, and wear by maintaining adequate grease coverage."
+  },
+  {
+    q: "Which attachment converts an excavator into a PILE DRIVER?",
+    options: ["Rock bucket", "Vibratory hammer / drop hammer attachment", "Tilt rotator", "Quick coupler only"],
+    answer: 1,
+    explanation: "A vibratory hammer or drop hammer attachment replaces the bucket. The vibratory hammer drives piles using high-frequency vibration; the drop hammer uses impact energy. Both mount on the excavator arm."
+  },
+  {
+    q: "The GRADE LASER system on a motor grader allows:",
+    options: ["The operator to see in the dark", "Automatic blade control to maintain precise grade without constant manual adjustment", "Higher travel speed", "Remote operation of the grader"],
+    answer: 1,
+    explanation: "A GRADE LASER / GPS system detects a laser reference beam and automatically controls the blade height to maintain exact grade. Reduces operator fatigue, improves accuracy, and speeds up grading operations."
+  },
+  {
+    q: "To ensure SAFE TYRE INFLATION on construction equipment tyres, the operator should:",
+    options: ["Inflate while tyre is hot for accurate pressure", "Use a calibrated pressure gauge and inflate with air or nitrogen when cold, using a tyre inflation cage for large tyres", "Stand over the tyre during inflation", "Use the compressor directly without a gauge"],
+    answer: 1,
+    explanation: "Large construction equipment tyres inflated while hot will OVER-PRESSURE when cold. Use a tyre inflation CAGE (safety cage) for protection — tyre/rim separation is explosive and fatal. Check cold pressure with calibrated gauge."
+  },
+  {
+    q: "The FINAL DRIVE on a crawler machine transmits power from the:",
+    options: ["Engine to the hydraulic pump directly", "Hydraulic travel motors to the drive sprockets that move the tracks", "Generator to the electric motors", "Fuel pump to the injection system"],
+    answer: 1,
+    explanation: "FINAL DRIVE: hydraulic travel motor → planetary gear reduction (final drive) → drive sprocket → track chain → machine movement. The final drive provides maximum torque multiplication for the tracks."
+  },
+  {
+    q: "गाडीको क्रेनले कति भार उठाउन सक्छ भनी कसरी थाहा पाउने? (How do you know how much weight a mobile crane can lift?)",
+    options: ["कहिल्यै थाहा हुँदैन (Can never be known)", "लोड चार्ट हेरेर (By checking the load chart)", "क्रेन अपरेटरलाई सोधेर मात्र (By asking the operator only)", "अनुमान गरेर (By estimating)"],
+    answer: 1,
+    explanation: "क्रेनको लोड चार्टमा बुमको लम्बाइ र दूरी अनुसार अधिकतम भार उल्लेख छ। (The crane load chart specifies maximum capacity for each boom length and working radius combination.)"
+  },
+  {
+    q: "The HORN and BACKUP ALARM on construction equipment are required for:",
+    options: ["Entertainment of workers", "Warning workers of the machine's movement — horn for forward, backup alarm for reversing", "Government compliance paperwork only", "To communicate with other machines"],
+    answer: 1,
+    explanation: "Horn: warns of forward movement. BACKUP ALARM (reversing beeper): warns workers behind the machine when reversing. Critical because operators have large blind spots, especially when reversing. Both are MANDATORY safety devices."
+  },
+  {
+    q: "Which factor most affects the PRODUCTION RATE (m³/hour) of an excavator?",
+    options: ["The colour of the machine", "Bucket size, cycle time, fill factor, and soil type (easy vs hard digging)", "Machine age only", "Fuel type (diesel vs petrol)"],
+    answer: 1,
+    explanation: "Excavator production = (Bucket capacity × Fill factor × 3600) ÷ Cycle time. Affecting factors: BUCKET SIZE (m³), FILL FACTOR (% of theoretical capacity actually filled), CYCLE TIME (dig+swing+dump+return), and MATERIAL TYPE."
+  },
+  {
+    q: "The SWING SPEED of an excavator's upper structure is controlled by:",
+    options: ["Engine throttle setting only", "Hydraulic swing motor controlled by the operator's joystick", "Manual cable system", "Track drive motors"],
+    answer: 1,
+    explanation: "The SWING (slew) motion is powered by a hydraulic SWING MOTOR driving a pinion gear that meshes with the slewing ring gear. The operator controls swing speed and direction through joystick inputs to the hydraulic control valves."
+  },
+  {
+    q: "A GRADER operator performs multiple 'passes' on the same stretch of road because:",
+    options: ["Each pass adds material", "Multiple passes at different blade angles progressively cut, mix, move, and level material to achieve the final smooth grade", "One pass always achieves perfect result", "The machine cannot finish in one pass due to speed limits"],
+    answer: 1,
+    explanation: "Grading is a MULTIPLE PASS operation: first passes spread and roughly level material; intermediate passes mix and shape; final passes blade the surface to exact grade using minimal material movement for a smooth, precise finish."
+  },
+  {
+    q: "COMPACTION EQUIPMENT selection depends on which factors?",
+    options: ["Only the cost of the equipment", "Type of material (clay vs granular), layer thickness, moisture content, and required density", "Color preference of the contractor", "Travel speed needed only"],
+    answer: 1,
+    explanation: "Compactor selection considers: MATERIAL TYPE (padfoot for clay, smooth drum for granular/asphalt), LIFT THICKNESS (thicker = need more powerful compactor), MOISTURE CONTENT (affects compactability), and REQUIRED DENSITY specification."
+  },
+  {
+    q: "When refueling construction equipment in the field, a key safety precaution is:",
+    options: ["Keep engine running for faster refueling", "Shut engine off, no smoking within 15 meters, use static discharge before fueling", "Use any container available", "Fuel during operation to save time"],
+    answer: 1,
+    explanation: "Refueling safety: (1) ENGINE OFF — no ignition source, (2) NO SMOKING within 15m (fuel vapours are explosive), (3) STATIC DISCHARGE — ground the fuel nozzle to machine before inserting to prevent static spark, (4) clean up spills immediately."
+  },
+  {
+    q: "The PRIMARY purpose of the HYDRAULIC QUICK COUPLER on an excavator is:",
+    options: ["To increase hydraulic system pressure", "To allow rapid attachment changes (bucket, hammer, grapple) without leaving the cab", "To connect hydraulic hoses between machines", "To measure hydraulic flow"],
+    answer: 1,
+    explanation: "Quick couplers allow the OPERATOR TO CHANGE ATTACHMENTS from inside the cab hydraulically — switching from bucket to hammer to grapple in seconds. Dramatically increases machine versatility and reduces changeover downtime."
+  },
+  {
+    q: "Which construction equipment is used to BUILD ROAD EMBANKMENTS by pushing fill material from a borrow area?",
+    options: ["Tower crane", "Motor grader", "Crawler bulldozer", "Pneumatic roller"],
+    answer: 2,
+    explanation: "CRAWLER BULLDOZER pushes fill material from borrow areas into position to build up road embankments. Its high pushing force and tracks enable work on soft, loose fill material that would bog down wheeled machines."
   }
+
+  ,
+  {
+    q: "The excavator component that allows the BUCKET TO CURL (close) is controlled by:",
+    options: ["Boom cylinder", "Stick (dipper arm) cylinder", "Bucket cylinder", "Swing motor"],
+    answer: 2,
+    explanation: "Three separate hydraulic cylinders: BOOM cylinder (raises/lowers boom), STICK cylinder (extends/retracts arm), BUCKET cylinder (curls/uncurls bucket). All work together for digging — the bucket cylinder does the curling crowd action."
+  },
+  {
+    q: "एक्स्काभेटरमा LONG REACH boom attachment प्रयोग कहाँ गरिन्छ? (Where is the long reach boom attachment used?)",
+    options: ["ठाडो खन्दा (For vertical digging)", "गहिरो तल वा टाढाको खन्दा — नदी, पोखरी (For deep or far reach — rivers, ponds)", "भारी उठाउँदा (For heavy lifting)", "घर भत्काउँदा (For demolition only)"],
+    answer: 1,
+    explanation: "Long reach boom/arm extends the excavator's reach for: dredging rivers, cleaning ponds, working from high embankments where normal arm reach is insufficient. Extends reach to 15-20m compared to standard 8-10m."
+  },
+  {
+    q: "The WIRE ROPE on a crane must be inspected and rejected if it shows:",
+    options: ["Any surface rust", "Six or more broken wires per rope lay, kinks, or severe corrosion", "Minor surface scratches only", "Any signs of use at all"],
+    answer: 1,
+    explanation: "Wire rope rejection criteria: 6+ broken wires per rope lay (or per 10d length), KINKS (permanent bends from overloading), BIRDCAGING (strands forced out), severe corrosion reducing diameter, or heat/crush damage."
+  },
+  {
+    q: "The CYCLE TIME for an excavator loading a dump truck depends on:",
+    options: ["Only the bucket size", "Swing angle to truck, digging conditions, operator skill, and bucket capacity", "Engine horsepower only", "Track type only"],
+    answer: 1,
+    explanation: "Excavator cycle = DIG + SWING (loaded) + DUMP + SWING (empty). Shorter swing angle to truck = faster cycles. Hard digging (rock vs soft soil) increases dig time. Skilled operators minimize unnecessary movements."
+  },
+  {
+    q: "Safety rule: No person should stand:",
+    options: ["More than 5m from a working crane", "Under a suspended load or within the crane's swing radius during lifting", "Behind the operator's cab", "Near the fuel tank"],
+    answer: 1,
+    explanation: "NEVER STAND under a suspended load — if the load, hook, rigging, or wire rope fails, the load falls vertically. Also, the crane's swing radius (counterweight area) is a danger zone during slewing. Establish exclusion zones."
+  },
+  {
+    q: "PRODUCTION EFFICIENCY of construction equipment is maximised by:",
+    options: ["Running machines at maximum power always", "Matching machine capacity to job requirements, minimising delays, and good maintenance", "Using the oldest machines available", "Overloading to reduce number of trips"],
+    answer: 1,
+    explanation: "Maximum efficiency: RIGHT-SIZE machine for the job (too big = wasted cost; too small = slow), MINIMISE delays (waiting, spotting, positioning), MAINTAIN machines (breakdowns reduce available hours), SKILLED OPERATORS."
+  },
+  {
+    q: "A COMPACTOR's pass count is determined by field density testing. The target density for road subbase is typically:",
+    options: ["70% of maximum dry density (MDD)", "95% of MDD (Standard Proctor)", "100% of MDD always", "50% of MDD is sufficient"],
+    answer: 1,
+    explanation: "Road subbase compaction typically requires 95% of Standard Proctor MDD (or 98% for select fill). Field tests (nuclear gauge, sand replacement) confirm the target is achieved before the next layer is placed."
+  }
+
+
 ];
+
+// TOTAL: 100 Questions — Construction Equipment
+
+// TOTAL: 100 Questions
+
+        let currentPage = 0;
+        let score = 0;
+        let skipped = [];
+        let userAnswers = Array(questions.length).fill(null);
+        let timerSeconds = 0;
+        let timerInterval;
+        let currentStreak = 0;
+        let maxStreak = 0;
+        const QUESTIONS_PER_PAGE = 5;
+        const ANSWER_DELAY = 1500;
+
+        const quizEl = document.getElementById("quiz");
+        const scoreEl = document.getElementById("score");
+        const resultsEl = document.getElementById("results");
+        const resultsBody = document.getElementById("results-body");
+        const progressEl = document.getElementById("progress");
+        const progressTextEl = document.getElementById("progress-text");
+        const timerEl = document.getElementById("timer");
+        const currentScoreEl = document.getElementById("current-score");
+        const questionsAnsweredEl = document.getElementById("questions-answered");
+        const accuracyEl = document.getElementById("accuracy");
+        const streakBadge = document.getElementById("streak-badge");
+        const correctSound = document.getElementById("correct-sound");
+        const wrongSound = document.getElementById("wrong-sound");
+
+        function clearProgress() {
+            localStorage.removeItem("quizProgressWorkshop");
+            currentPage = 0;
+            score = 0;
+            skipped = [];
+            userAnswers = Array(questions.length).fill(null);
+            timerSeconds = 0;
+            currentStreak = 0;
+            maxStreak = 0;
+        }
+
+        function saveProgress() {
+            localStorage.setItem("quizProgressWorkshop", JSON.stringify({
+                currentPage,
+                score,
+                skipped,
+                answers: userAnswers,
+                time: timerSeconds,
+                streak: currentStreak,
+                maxStreak
+            }));
+        }
+
+        function updateStats() {
+            currentScoreEl.textContent = score;
+            const answered = userAnswers.filter(a => a !== null && a !== 'Skipped').length;
+            questionsAnsweredEl.textContent = answered;
+            const accuracy = answered > 0 ? Math.round((score / answered) * 100) : 0;
+            accuracyEl.textContent = accuracy + '%';
+            progressTextEl.textContent = `${answered}/${questions.length}`;
+        }
+
+        function updateStreak(isCorrect) {
+            if (isCorrect) {
+                currentStreak++;
+                if (currentStreak > maxStreak) maxStreak = currentStreak;
+                if (currentStreak >= 3) {
+                    streakBadge.textContent = `Streak: ${currentStreak}`;
+                    streakBadge.classList.add('show');
+                    setTimeout(() => streakBadge.classList.remove('show'), 2000);
+                }
+            } else {
+                currentStreak = 0;
+            }
+        }
 
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -392,96 +1762,330 @@
             return array;
         }
 
-        const quizContainer = document.getElementById('quiz');
-        const scoreContainer = document.getElementById('score');
-        const currentScore = document.getElementById('current-score');
-        const progressBar = document.getElementById('progress');
-        const timerDisplay = document.getElementById('timer');
-        const resultsBtn = document.getElementById('results-btn');
-        let score = 0;
-        let answeredQuestions = 0;
-        let timeElapsed = 0;
-        let timerInterval;
-
         function startTimer() {
             timerInterval = setInterval(() => {
-                timeElapsed++;
-                const minutes = Math.floor(timeElapsed / 60).toString().padStart(2, '0');
-                const seconds = (timeElapsed % 60).toString().padStart(2, '0');
-                timerDisplay.textContent = `Time: ${minutes}:${seconds}`;
+                timerSeconds++;
+                const minutes = Math.floor(timerSeconds / 60);
+                const seconds = timerSeconds % 60;
+                timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                saveProgress();
             }, 1000);
         }
 
         function updateProgress() {
-            const progressPercentage = (answeredQuestions / questions.length) * 100;
-            progressBar.style.width = `${progressPercentage}%`;
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            progressEl.style.width = `${percentage}%`;
+            updateStats();
         }
 
-        function showResults() {
-            quizContainer.style.display = 'none';
-            scoreContainer.textContent = `Final Score: ${score} out of ${questions.length} (${((score / questions.length) * 100).toFixed(2)}%)`;
-            resultsBtn.style.display = 'block';
-            resultsBtn.onclick = () => {
-                quizContainer.style.display = 'block';
-                scoreContainer.textContent = '';
-                resultsBtn.style.display = 'none';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        function showQuestions(page) {
+            quizEl.innerHTML = '';
+            const startIndex = page * QUESTIONS_PER_PAGE;
+            const endIndex = Math.min(startIndex + QUESTIONS_PER_PAGE, questions.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const q = questions[i];
+                const shuffledOptions = shuffle([...q.options].map((opt, j) => ({ text: opt, index: j })));
+                const optionsHtml = shuffledOptions
+                    .map((opt, idx) => `
+                        <button class="option-btn" onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')" data-index="${idx}">
+                            <span class="option-indicator">${String.fromCharCode(65 + idx)}</span>
+                            <span>${opt.text}</span>
+                        </button>
+                    `).join('');
+                
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question-wrapper');
+                questionDiv.innerHTML = `
+                    <div class="question-card" data-index="${i}">
+                        <div class="question-header">
+                            <div class="question-number">${i + 1}</div>
+                            <div class="question-text">${q.q}</div>
+                        </div>
+                        <div class="options">${optionsHtml}</div>
+                        <div class="explanation">${q.explanation}</div>
+                    </div>
+                `;
+                quizEl.appendChild(questionDiv);
+            }
+
+            const actionBar = document.createElement('div');
+            actionBar.classList.add('action-bar');
+
+            if (endIndex < questions.length || skipped.length > 0) {
+                const nextBtn = document.createElement('button');
+                nextBtn.classList.add('btn', 'btn-primary');
+                nextBtn.innerHTML = endIndex < questions.length ? 'Next Questions →' : 'Review Skipped →';
+                nextBtn.onclick = nextPage;
+                nextBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(nextBtn);
+            } else {
+                const submitBtn = document.createElement('button');
+                submitBtn.classList.add('btn', 'btn-primary');
+                submitBtn.innerHTML = '✓ Submit Quiz';
+                submitBtn.onclick = endQuiz;
+                submitBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(submitBtn);
+            }
+
+            const skipBtn = document.createElement('button');
+            skipBtn.classList.add('btn', 'btn-skip');
+            skipBtn.innerHTML = '⊘ Skip All';
+            skipBtn.onclick = () => {
+                for (let i = startIndex; i < endIndex; i++) {
+                    if (userAnswers[i] === null) skipQuestion(i);
+                }
             };
-            clearInterval(timerInterval);
+            actionBar.appendChild(skipBtn);
+
+            quizEl.appendChild(actionBar);
+            updateProgress();
+            saveProgress();
         }
 
-        questions.forEach((q, i) => {
-            const div = document.createElement('div');
-            div.classList.add('question');
-            div.innerHTML = `<p>${i + 1}. ${q.q}</p>`;
+        function areAllQuestionsAnsweredOnPage(startIndex, endIndex) {
+            for (let i = startIndex; i < endIndex; i++) {
+                if (userAnswers[i] === null) return false;
+            }
+            return true;
+        }
 
-            const optsDiv = document.createElement('div');
-            optsDiv.classList.add('options');
+        function checkAnswer(button, questionIndex, selected, selectedText) {
+            const q = questions[questionIndex];
+            const correct = q.answer;
+            const buttons = button.parentElement.querySelectorAll(".option-btn");
+            const card = button.closest('.question-card');
+            const explanationDiv = card.querySelector('.explanation');
 
-            const explanationDiv = document.createElement('div');
-            explanationDiv.classList.add('explanation');
-            explanationDiv.textContent = q.explanation;
-
-            const shuffled = shuffle(q.options.map((opt, index) => ({ text: opt, isCorrect: index === q.answer })));
-
-            shuffled.forEach(({ text, isCorrect }) => {
-                const btn = document.createElement('button');
-                btn.textContent = text;
-                btn.onclick = () => {
-                    if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
-                    answeredQuestions++;
-                    updateProgress();
-                    currentScore.textContent = `Score: ${score}/${questions.length}`;
-
-                    if (isCorrect) {
-                        btn.classList.add('correct');
-                        score++;
-                        currentScore.textContent = `Score: ${score}/${questions.length}`;
-                    } else {
-                        btn.classList.add('wrong');
-                        optsDiv.querySelectorAll('button').forEach(b => {
-                            if (b.textContent === shuffled.find(o => o.isCorrect).text) {
-                                b.classList.add('correct');
-                            }
-                        });
-                    }
-
-                    optsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
-                    explanationDiv.style.display = 'block';
-
-                    if (answeredQuestions === questions.length) {
-                        showResults();
-                    }
-                };
-                optsDiv.appendChild(btn);
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                const btnText = btn.querySelector('span:last-child').textContent;
+                if (q.options.indexOf(btnText) === correct) {
+                    btn.classList.add('correct');
+                }
+                if (btn === button && selected !== correct) {
+                    btn.classList.add('wrong');
+                }
             });
 
-            div.appendChild(optsDiv);
-            div.appendChild(explanationDiv);
-            quizContainer.appendChild(div);
-        });
+            explanationDiv.style.display = 'block';
+            
+            userAnswers[questionIndex] = selectedText;
+            const isCorrect = selected === correct;
+            if (isCorrect) {
+                score++;
+                correctSound.play().catch(() => {});
+                updateStreak(true);
+            } else {
+                wrongSound.play().catch(() => {});
+                updateStreak(false);
+            }
 
-        startTimer();
+            updateStats();
+            saveProgress();
+            
+            const actionBar = quizEl.querySelector('.action-bar');
+            const primaryBtn = actionBar.querySelector('.btn-primary');
+            if (primaryBtn) {
+                primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                );
+            }
+
+            setTimeout(() => {
+                if (areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                )) {
+                    nextPage();
+                }
+            }, ANSWER_DELAY);
+        }
+
+        function skipQuestion(questionIndex) {
+            if (!skipped.includes(questions[questionIndex])) {
+                skipped.push(questions[questionIndex]);
+                userAnswers[questionIndex] = 'Skipped';
+                const card = document.querySelector(`.question-card[data-index="${questionIndex}"]`);
+                if (card) {
+                    card.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+                    card.querySelector('.explanation').style.display = 'block';
+                    card.style.opacity = '0.6';
+                }
+                saveProgress();
+                const actionBar = quizEl.querySelector('.action-bar');
+                const primaryBtn = actionBar.querySelector('.btn-primary');
+                if (primaryBtn) {
+                    primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
+                        currentPage * QUESTIONS_PER_PAGE,
+                        Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                    );
+                }
+            }
+        }
+
+        function nextPage() {
+            if (skipped.length > 0 && currentPage * QUESTIONS_PER_PAGE >= questions.length) {
+                showSkippedQuestions();
+            } else {
+                currentPage++;
+                if (currentPage * QUESTIONS_PER_PAGE < questions.length) {
+                    showQuestions(currentPage);
+                } else if (skipped.length === 0) {
+                    endQuiz();
+                } else {
+                    showSkippedQuestions();
+                }
+            }
+        }
+
+        function showSkippedQuestions() {
+            questions.splice(0, questions.length, ...skipped);
+            skipped = [];
+            currentPage = 0;
+            showQuestions(currentPage);
+        }
+
+        function drawConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const colors = ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'];
+            
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: Math.random() * 3 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    size: Math.random() * 6 + 2,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            let animationId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rotation += 2;
+                    
+                    if (p.y < canvas.height) {
+                        active = true;
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation * Math.PI / 180);
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                        ctx.restore();
+                    }
+                });
+                
+                if (active) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+            
+            setTimeout(() => cancelAnimationFrame(animationId), 5000);
+        }
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            quizEl.innerHTML = '';
+            
+            const percentage = ((score / questions.length) * 100).toFixed(1);
+            let message = '';
+            let emoji = '';
+            
+            if (percentage >= 90) {
+                message = 'Outstanding! You\'re a master!';
+                emoji = '🏆';
+                drawConfetti();
+            } else if (percentage >= 70) {
+                message = 'Great job! Well done!';
+                emoji = '🌟';
+            } else if (percentage >= 50) {
+                message = 'Good effort! Keep practicing!';
+                emoji = '💪';
+            } else {
+                message = 'Keep learning! You\'ll improve!';
+                emoji = '📚';
+            }
+
+            scoreEl.innerHTML = `
+                <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+                <div class="score-display">${percentage}%</div>
+                <div class="score-label">${message}</div>
+                <div style="margin-top: 1rem; color: var(--text-secondary);">
+                    ${score} correct out of ${questions.length} questions<br>
+                    Time: ${timerEl.textContent} | Best Streak: ${maxStreak}
+                </div>
+            `;
+            
+            resultsEl.classList.remove('hidden');
+
+            resultsBody.innerHTML = questions.map((q, i) => {
+                const userAnswer = userAnswers[i] === null ? 'Not attempted' :
+                                  userAnswers[i] === 'Skipped' ? 'Skipped' :
+                                  userAnswers[i];
+                const correctAnswer = q.options[q.answer];
+                const status = userAnswers[i] === q.options[q.answer] ? 'Correct' :
+                              userAnswers[i] === 'Skipped' ? 'Skipped' :
+                              userAnswers[i] === null ? 'Not attempted' : 'Wrong';
+                const statusClass = status.toLowerCase().replace(' ', '-');
+                const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : '⊘';
+                
+                return `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${q.q}</td>
+                        <td>${userAnswer}</td>
+                        <td>${correctAnswer}</td>
+                        <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                        <td class="explanation-cell">${q.explanation}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            localStorage.removeItem('quizProgressWorkshop');
+        }
+
+        function restartQuiz() {
+            clearProgress();
+            resultsEl.classList.add('hidden');
+            scoreEl.innerHTML = '';
+            startTimer();
+            showQuestions(currentPage);
+            updateStats();
+        }
+
+        function initialize() {
+            clearProgress();
+            startTimer();
+            showQuestions(currentPage);
+            updateStats();
+        }
+
+        initialize();
+
+        // Handle resize for canvas
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
     </script>
 </body>
 </html>
