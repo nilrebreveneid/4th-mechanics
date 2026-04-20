@@ -1,92 +1,30 @@
-<!-- //     { q: "What is the magnitude of taper of keys?", options: ["1:10", "1:500"], answer: 0 },
-        //     { q: "The short dashed medium line is used for:", options: ["Centre line", "Hidden outlines and edges"], answer: 1 },
-        //     { q: "A job costing system accumulates the following information:", options: ["Direct labour and overhead", "Direct material and overhead"], answer: 1 },
-        //     { q: "Individual stock ledger card shall be updated:", options: ["Every month", "Every time part is issued or received"], answer: 1 },
-        //     { q: "Unit “Pound” is the unit to measure:", options: ["Time", "Weight"], answer: 1 },
-        //     { q: "The commonly used material for the insulator of spark plug is:", options: ["Bakelite", "Asbestos"], answer: 1 },
-        //     { q: "Which of the following statements is false?", options: ["Cutting fluid should be acidic in nature", "Cutting fluid should be non-corrosive"], answer: 0 },
-        //     { q: "Predictive maintenance involves:", options: ["Performing maintenance in predictive manner", "Performing maintenance using expert methods"], answer: 0 },
-        //     { q: "Facing is an operation of:", options: ["Beveling the extreme end of a workpiece", "Machining ends of workpiece to produce flat surface"], answer: 1 },
-        //     { q: "Segmental chips are formed during machining of:", options: ["Mild steel", "Cast iron"], answer: 1 },
-        //     { q: "Brazing is the joining of metals:", options: ["Without melting the base metal", "Both A and B"], answer: 1 },
-        //     { q: "Function of cutting fluid is", options: ["Lubricating the cutting process", "All of the above"], answer: 1 },
-        //     { q: "Which of the following is not a cutting fluid?", options: ["Mineral oil", "Gasoline"], answer: 1 },
-        //     { q: "Arc welding मा कुन प्रकारको Electrode Coating Material हो?", options: ["Flux", "Slag"], answer: 0 },
-        //     { q: "Excavator को हाइड्रोलिक खोच खनेर गर्ने कार्यमा कुन प्रकारको वेल्डिङ प्रयोग गरिन्छ?", options: ["Gas Welding", "Arc Welding"], answer: 1 },
-        //     { q: "निम्नमध्ये कुन Personal safety device हो?", options: ["गलबन्दी", "जुत्ता"], answer: 1 },
-        //     { q: "Metal plate मा चाल गर्न प्रयोग गरिने उपकरण कुन हो?", options: ["ब्रश", "ग्राफाइट पेन्सिल"], answer: 1 },
-        //     { q: "गाडीको कुन टुल हुन्छ?", options: ["टप्स", "स्प्यानर"], answer: 1 },
-        //     { q: "कुन उपकरण Welding tools मा पर्दैन?", options: ["Electrode", "Radiator"], answer: 1 },
-        //     { q: "The edge of sheet metal made by folding is called", options: ["hem", "seam"], answer: 1 },
-        //     { q: "TIG Welding मा कुन ग्यास प्रयोग हुन्छ?", options: ["हाइड्रोजन र अक्सिजन", "आर्गन र हाइड्रोजन"], answer: 1 },
-        //     { q: "Radiator is usually made of:", options: ["Aluminium", "Copper"], answer: 1 },
-        //     { q: "Specific gravity of a battery is checked by:", options: ["Manometer", "Hydrometer"], answer: 1 },
-        //     { q: "Tool used to measure valve tappet clearance:", options: ["Vernier caliper", "Feeler gauge"], answer: 1 },
-        //     { q: "Fast moving parts shall be stored:", options: ["At the ground level", "At the convenient height"], answer: 1 },
-        //     { q: "Goods transferred from another office shall have:", options: ["Transfer form", "Requisition form"], answer: 1 },
-        //     { q: "A fuel tank of wheel loader has:", options: ["One opening – outlet", "Two opening – outlet and inlet"], answer: 1 },
-        //     { q: "Change of engine oil is done:", options: ["When oil filter is changed", "When engine oil level is low"], answer: 1 },
-        //     { q: "The ply rating of an earth-moving equipment’s tyre gives:", options: ["Diameter of the rim", "Number of plies in the tyre"], answer: 1 },
-        //     { q: "Starter motor runs the flywheel of an engine using:", options: ["Chain drive", "Gear drive"], answer: 1 },
-        //     { q: "The facing is an operation of:", options: ["Beveling the extreme end", "Reducing the diameter of a workpiece"], answer: 1 },
-        //     { q: "During scheduled maintenance, dry type air filter is cleaned by:", options: ["By dipping it in a detergent solution", "Blowing air from inside of the filter"], answer: 1 },
-        //     { q: "End play of gears and oil pump may be checked by using:", options: ["Vernier caliper and feeler gauge", "Straight edge and feeler gauge"], answer: 1 },
-        //     { q: "A maintenance-free battery:", options: ["Has lead-antimony plate grid", "Does not contain water"], answer: 1 },
-        //     { q: "The warpage of cylinder head is checked with a:", options: ["Metal rule", "Dial gauge"], answer: 1 },
-        //     { q: "बिट ‘Bit’ बनाउन कुन धातु प्रयोग गरिन्छ?", options: ["Tin", "Copper"], answer: 1 },
-        //     { q: "तस्बिरमा देखिएको उपकरण कुन किसिमको उपकरण हो?", options: ["टायर हब", "रिङ्ग स्प्यानर (Ring Spanner)"], answer: 1 },
-        //     { q: "FPS प्रणाली अनुसार लामखुट्टेगाडि … भनिन्छ", options: ["इन्च", "यार्ड"], answer: 0 },
-        //     { q: "निम्नमध्ये कुन वेल्डिंग उपकरण इलेक्ट्रोड हटाउन प्रयोग गरिन्छ?", options: ["चिपिङ हथौडा", "ग्यास वेल्डर"], answer: 0 },
-        //     { q: "In arc welding with DC current, greater heat is generated at", options: ["Positive pole of arc", "Negative pole of arc"], answer: 0 },
-        //     { q: "तलमध्ये कुन वेल्डिंग टूल हो?", options: ["Electrode", "Radiator"], answer: 0 },
-        //     { q: "The edge of sheet metal made by folding is called", options: ["Hem", "All of the above"], answer: 0 },
-        //     { q: "Which equipment is used to create flat surface before asphalt pavement in the road?", options: ["Grader", "Roller"], answer: 0 },
-        //     { q: "TIG Welding मा कुन ग्यास प्रयोग हुन्छ?", options: ["Argon and Helium", "CO₂ and H₂"], answer: 0 },
-        //     { q: "स्क्रु फल्ने बेलामा प्रयोग गरिने औजार कुन हो?", options: ["स्क्रु ड्राइभर", "फिलर गेज"], answer: 0 },
-        //     { q: "सवारी साधनको जानकारी Vehicle Operation log sheet मा लेखिने विवरण कुन हो?", options: ["गाडी निस्केको समय, गन्तब्य, गाडीको टंकी, odometer रीडिङ", "गाडी निस्केको समय, गाडी फर्केको समय, गाडीको गन्तब्य, गाडीको टंकी"], answer: 0 },
-        //     { q: "Which of the following is not a cutting fluid?", options: ["Gasoline", "Mineral oil"], answer: 0 },
-        //     { q: "Function of cutting fluid is", options: ["All of the above", "Lubricating the cutting process"], answer: 0 },
-        //     { q: "What is the accuracy of metric outside micrometer?", options: ["0.001 mm", "0.02 mm"], answer: 0 },
-        //     { q: "Which of the following gauge is used to measure diameter of shaft?", options: ["Ring gauge", "Snap gauge"], answer: 0 },
-        //     { q: "The instrument used to measure external and internal diameter of shafts is:", options: ["Inside micrometer", "Outside micrometer"], answer: 0 },
-        //     { q: "A …… is used for holding and rotating the workpiece in a lathe:", options: ["Centers", "Mandrel"], answer: 0 },
-        //     { q: "What is the magnitude of taper of keys?", options: ["1:10", "1:500"], answer: 0 },
-        //     { q: "The short dashed medium line is used for:", options: ["Hidden outlines and edges", "Centre line"], answer: 0 },
-        //     { q: "A feeler gauge is used to measure:", options: ["Space (gap) between two surfaces", "Thickness of a plate"], answer: 0 },
-        //     { q: "The accuracy of micrometer, caliper, and dial indicator can be checked by:", options: ["Slip gauge", "Feeler gauge"], answer: 0 },
-        //     { q: "A twist drill is specified by:", options: ["A number specifying hole size", "An alphabet specifying hole size"], answer: 0 },
-        //     { q: "फिलर गेज कुन कार्यका लागि प्रयोग गरिन्छ?", options: ["क्लियरेन्स मापन", "ग्याप मापन"], answer: 0 },
-        //     { q: "The feeler gauge is used to check", options: ["clearance between two mating surface", "external diameter"], answer: 0 },
-        //     { q: "Which of the following is not one of the fundamental quantities in physics?", options: ["Volume", "Length"], answer: 0 },
-        //     { q: "_____ is the Non-SI unit accepted for use with the SI units.", options: ["Henry", "Gray"], answer: 0 },
-        //     { q: "The process extensively used for making bolts and units is:", options: ["Cold heading", "Cold peening"], answer: 0 },
-        //     { q: "Grinding is a ___________ operation.", options: ["Surface finishing", "Facing"], answer: 0 },
-        //     { q: "पिच, पाउण्ड, सिष्टम कुनसँग सम्बन्धित छ?", options: ["Free, power system", "Fluid system"], answer: 0 },
-        //     { q: "Diameter नाप्ने tool कुन हो?", options: ["Vernier calliper", "Micrometer"], answer: 0 },
-        //     { q: "CNC मेशिनमा कुन प्रक्रिया हुँदैन?", options: ["चिप हटाउने क्रिया हुँदैन", "लम्बाइ नाप"], answer: 0 },
-        //     { q: "Lathe मेशिन प्रयोग गरिन्छ:", options: ["घुमाउने कार्यका लागि", "Milling कार्यका लागि"], answer: 0 },
-        //     { q: "Surface finish is more affected by:", options: ["Cutting speed", "Depth of cut"], answer: 0 },
-        //     { q: "The commonly used material for the insulator of spark plug is:", options: ["Asbestos", "Bakelite"], answer: 0 },
-        //     { q: "The size of 10mm digital spanner is represented by:", options: ["M10", "M*10"], answer: 0 },
-        //     { q: "Which of the following is not part of a shaper?", options: ["Taper box", "Table"], answer: 0 },
-        //     { q: "Which of the following gauges is used to test accuracy of holes?", options: ["Plug gauge", "Ring gauge"], answer: 0 },
-        //     { q: "To take measurement of the height of store rack, you will use:", options: ["Try square", "Vernier caliper"], answer: 0 },
-        //     { q: "Which of the following operations can’t be performed on the lathe?", options: ["Drilling", "Chamfering"], answer: 0 },
-        //     { q: "Lathe spindle has:", options: ["External threads", "Internal threads"], answer: 0 },
-        //     { q: "A cylinder is drilled with two holes of same size top to bottom. What is the minimum number of hidden lines seen from front view?", options: ["2", "0"], answer: 0 },
-        //     { q: "The turning process is done by:", options: ["Lathe machine", "Drilling machine"], answer: 0 },
-        //     { q: "Multiple teeth cutter is used in:", options: ["Milling machine", "Planer"], answer: 0 },
-        //     { q: "If the workpiece is stationary, the tool reciprocates and cuts in one direction only. Such operation is called:", options: ["Shaping", "Slotting"], answer: 0 },
-        //     { q: "Drilling machines are employed for producing:", options: ["Circular holes", "Hexagonal holes"], answer: 0 }
-        // ]; -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Logsewa Workshop Practice Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -95,319 +33,997 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff, #c3dafe);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
             margin: 0;
-            padding: 2rem;
-            color: #333;
+            padding: 0;
+            color: var(--text-primary);
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
         }
 
         .quiz-container {
             max-width: 900px;
-            margin: auto;
-            background: #fff;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
             padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #1e3a8a;
-            font-size: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
             font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
         }
 
-        h2 {
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
             text-align: center;
-            color: #1e3a8a;
-            margin: 1rem 0;
+            transition: all 0.3s ease;
         }
 
-        .quiz-header {
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
 
         .timer {
-            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
             font-weight: 600;
-            color: #d81b60;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .progress-bar {
             width: 100%;
             height: 8px;
-            background: #e5e7eb;
-            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
             overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
             margin-bottom: 1.5rem;
         }
 
-        .progress {
-            height: 100%;
-            background: #3b82f6;
-            transition: width 0.3s ease;
-        }
-
-        .question {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8fafc;
-            border-radius: 12px;
-            animation: fadeIn 0.5s;
-            transition: transform 0.2s ease;
-        }
-
-        .question:hover {
-            transform: translateY(-2px);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .question p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .options button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            background: #ffffff;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: left;
-            color: #374151;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
         }
 
-        .options button:hover:not(:disabled) {
-            background: #f3f4f6;
-            border-color: #3b82f6;
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
             transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .options button.correct {
-            background: #bbf7d0;
-            border-color: #22c55e;
-            color: #166534;
-            animation: pulse 0.5s;
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
         }
 
-        .options button.wrong {
-            background: #fecaca;
-            border-color: #ef4444;
-            color: #991b1b;
-            animation: shake 0.3s;
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
         }
 
-        .options button:disabled {
-            cursor: not-allowed;
-            opacity: 0.7;
-        }
-
+        /* Explanation */
         .explanation {
             display: none;
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #eff6ff;
-            border-radius: 8px;
-            color: #1e3a8a;
-            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
         }
 
-        .skip-button {
-            background: #fff3cd;
-            margin-top: 1rem;
-            padding: 0.75rem;
-            width: 100%;
-            border: 1px solid #ffca28;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease;
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .skip-button:hover {
-            background: #ffecb3;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .next-button {
-            background: #3b82f6;
-            color: #fff;
-            padding: 1rem;
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
             cursor: pointer;
-            margin-top: 1rem;
-            display: block;
-            width: 100%;
-            text-align: center;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .next-button:hover:not(:disabled) {
-            background: #2563eb;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
 
-        .next-button:disabled {
-            background: #ccc;
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
             cursor: not-allowed;
+            transform: none !important;
         }
 
+        /* Score Container */
         .score-container {
             text-align: center;
             margin-top: 2rem;
-            padding: 1.5rem;
-            background: #f8fafc;
-            border-radius: 12px;
         }
 
-        .score {
-            font-size: 1.5rem;
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
             font-weight: 700;
-            color: #1e3a8a;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
         }
 
         .results-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .results-table th, .results-table td {
-            border: 1px solid #e5e7eb;
-            padding: 0.75rem;
-            text-align: left;
+            font-size: 0.9rem;
+            min-width: 600px;
         }
 
         .results-table th {
-            background: #f8fafc;
-            color: #1e3a8a;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
             font-weight: 600;
         }
 
-        .results-table .correct {
-            color: #166534;
-            font-weight: bold;
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
         }
 
-        .results-table .wrong {
-            color: #991b1b;
-            font-weight: bold;
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
         }
 
-        .results-table .skipped, .results-table .not-attempted {
-            color: #d97706;
-            font-weight: bold;
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
         }
 
-        .hidden {
-            display: none;
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
         }
 
-        .restart-button {
-            background: #22c55e;
-            color: #fff;
-            padding: 1rem;
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
-            margin: 1rem auto;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
             display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            text-align: center;
-            transition: background 0.3s ease;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
         }
 
-        .restart-button:hover {
-            background: #16a34a;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 1rem;
-            }
-
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .quiz-container {
                 padding: 1rem;
             }
 
-            h1 {
-                font-size: 1.8rem;
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
             }
 
-            .question p {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
                 font-size: 1rem;
             }
 
-            .options button, .skip-button, .next-button, .restart-button {
+            .option-btn {
+                padding: 0.875rem 1rem;
                 font-size: 0.9rem;
-                padding: 0.8rem;
             }
 
-            .results-table th, .results-table td {
-                padding: 0.5rem;
-                font-size: 0.85rem;
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
             }
         }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
+<base target="_blank">
 </head>
 <body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
     <div class="quiz-container">
-        <h1>Logsewa Workshop Practice Quiz</h1>
-        <div class="quiz-header">
-            <div class="timer" id="timer">Time: 00:00</div>
-            <div class="score" id="current-score">Score: 0/40</div>
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>Logsewa Workshop</h1>
+                        <div class="subtitle">Practice Quiz Platform</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">40</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
         </div>
-        <div class="progress-bar">
-            <div class="progress" id="progress"></div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/40</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
         </div>
+
         <div id="quiz"></div>
+
         <div class="score-container">
-            <div class="score" id="score"></div>
+            <div class="score-display" id="score"></div>
             <div id="results" class="hidden">
-                <h2>Quiz Results</h2>
-                <table class="results-table">
-                    <thead>
-                        <tr>
-                            <th>Question</th>
-                            <th>Your Answer</th>
-                            <th>Correct Answer</th>
-                            <th>Status</th>
-                            <th>Explanation</th>
-                        </tr>
-                    </thead>
-                    <tbody id="results-body"></tbody>
-                </table>
-                <button class="restart-button" onclick="restartQuiz()">Restart Quiz</button>
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" onclick="restartQuiz()">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -416,8 +1032,12 @@
     <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
 
     <script>
-            const questions = [
-  // 1.1 Basic Knowledge of Measuring Instruments
+const questions = [
+  // ══════════════════════════════════════════════════════════════════
+  // 1.1 BASIC KNOWLEDGE OF MEASURING INSTRUMENTS
+  // Scale, Tri-square, Bevel Protractor, Vernier Caliper,
+  // Micrometer, Gauges, Feeler Gauge
+  // ══════════════════════════════════════════════════════════════════
   {
     q: "Which tool is used to measure valve tappet clearance?",
     options: ["Vernier caliper", "Feeler gauge", "Micrometer", "Dial indicator"],
@@ -490,8 +1110,46 @@
     answer: 0,
     explanation: "Plug gauges check the accuracy of internal hole diameters."
   },
+  {
+    q: "A bevel protractor is used to measure:",
+    options: ["External diameters", "Angles between surfaces", "Length of a workpiece", "Surface roughness"],
+    answer: 1,
+    explanation: "A bevel protractor measures angles between surfaces. Its vernier scale gives accuracy of 5 minutes (1/12 of a degree)."
+  },
+  {
+    q: "What is the least count of a standard Vernier caliper?",
+    options: ["0.1 mm", "0.02 mm", "0.001 mm", "1 mm"],
+    answer: 1,
+    explanation: "Standard Vernier calipers have a least count of 0.02 mm. The least count determines the smallest measurement that can be read."
+  },
+  {
+    q: "A tri-square (engineer's square) is used to check:",
+    options: ["Diameter of shafts", "90° squareness of a workpiece to a reference surface", "Surface roughness", "Depth of holes"],
+    answer: 1,
+    explanation: "A tri-square checks that surfaces are at exactly 90° (square) to each other. Any gap between the blade and surface indicates the workpiece is out of square."
+  },
+  {
+    q: "The part of a micrometer that is rotated to bring the spindle toward the anvil for measurement is:",
+    options: ["Frame", "Thimble", "Ratchet stop", "Sleeve"],
+    answer: 1,
+    explanation: "The thimble is the rotating barrel of the micrometer. Rotating it moves the spindle via a precision screw thread. The sleeve shows the main scale; the thimble shows the fractional reading."
+  },
+  {
+    q: "Metrology is the science of:",
+    options: ["Study of weather patterns", "Precise and accurate measurement of physical quantities", "Study of metals and alloys", "Study of machine tools"],
+    answer: 1,
+    explanation: "Metrology covers length, mass, temperature, and other physical measurement standards. It ensures instruments are accurate and traceable to international standards."
+  },
+  {
+    q: "A snap gauge (gap gauge) is used to:",
+    options: ["Measure internal hole diameters", "Quickly check if an external dimension is within tolerance (go/no-go)", "Measure surface roughness", "Check angles"],
+    answer: 1,
+    explanation: "A snap gauge checks external dimensions using the go/no-go principle. If the part fits the 'go' side but not the 'no-go' side, it is within tolerance. Used for fast inspection in production."
+  },
 
-  // 1.2 Basic Knowledge of Metric, FPS, and SI Unit
+  // ══════════════════════════════════════════════════════════════════
+  // 1.2 BASIC KNOWLEDGE OF METRIC, FPS AND SI UNIT
+  // ══════════════════════════════════════════════════════════════════
   {
     q: "What does the unit 'Pound' measure?",
     options: ["Time", "Weight", "Length", "Temperature"],
@@ -516,8 +1174,46 @@
     answer: 0,
     explanation: "Liter is a non-SI unit accepted for volume measurement alongside SI units."
   },
+  {
+    q: "In the FPS (Foot-Pound-Second) system, the unit of length is:",
+    options: ["Meter", "Centimeter", "Foot", "Kilometer"],
+    answer: 2,
+    explanation: "FPS system uses: Foot (length), Pound (mass/force), Second (time). The metric/SI system uses: Meter, Kilogram, Second."
+  },
+  {
+    q: "Which of the following is NOT an SI unit?",
+    options: ["Inch", "Meter", "Kelvin", "Kilogram"],
+    answer: 0,
+    explanation: "Inch belongs to the Imperial/FPS system, NOT the SI system. SI base units include: meter (length), kilogram (mass), second (time), Kelvin (temperature)."
+  },
+  {
+    q: "The metric system unit for length is:",
+    options: ["Foot", "Meter", "Inch", "Yard"],
+    answer: 1,
+    explanation: "The meter is the SI unit for length in the metric system."
+  },
+  {
+    q: "1 horsepower (HP) is equivalent to:",
+    options: ["467 watts", "746 watts", "1000 watts", "500 watts"],
+    answer: 1,
+    explanation: "1 HP equals 746 watts, a standard unit of power conversion between FPS and SI systems."
+  },
+  {
+    q: "The unit of speed in aeronautics is:",
+    options: ["Km/hr", "Knot", "Meter/sec", "Mile/hr"],
+    answer: 1,
+    explanation: "Knots (nautical miles per hour) are used to measure speed in aeronautics and maritime navigation."
+  },
+  {
+    q: "Which of the following is a derived (not fundamental) SI unit?",
+    options: ["Meter", "Kilogram", "Second", "Newton"],
+    answer: 3,
+    explanation: "Newton (force = mass × acceleration) is a derived unit. Meter, kilogram, and second are fundamental SI base units."
+  },
 
-  // 1.3 Basic Knowledge of Hand Tools and Their Applications
+  // ══════════════════════════════════════════════════════════════════
+  // 1.3 BASIC KNOWLEDGE OF HAND TOOLS AND THEIR APPLICATIONS
+  // ══════════════════════════════════════════════════════════════════
   {
     q: "गाडीको लागि कुन टूल प्रयोग गरिन्छ? (Which tool is used for vehicles?)",
     options: ["टप्स (Taps)", "स्प्यानर (Spanner)", "फाइल (File)", "ह्यामर (Hammer)"],
@@ -525,7 +1221,7 @@
     explanation: "स्प्यानरले गाडीमा नट र बोल्ट कस्न वा खोल्न प्रयोग गरिन्छ। (Spanners are used to tighten or loosen nuts and bolts in vehicles.)"
   },
   {
-    q: "The size of a 10mm digital spanner is represented as:",
+    q: "The size of a 10mm metric spanner is represented as:",
     options: ["M10", "M*10", "10M", "MM10"],
     answer: 0,
     explanation: "M10 denotes a metric spanner size of 10 mm for bolts or nuts."
@@ -542,8 +1238,46 @@
     answer: 0,
     explanation: "स्क्रू ड्राइभरले स्क्रू हटाउन वा राख्न प्रयोग गरिन्छ। (A screwdriver is used to drive or remove screws.)"
   },
+  {
+    q: "A tap is used in the workshop to:",
+    options: ["Cut external threads on a rod", "Cut internal (female) threads inside a drilled hole", "Measure thread pitch", "Remove broken bolts only"],
+    answer: 1,
+    explanation: "A TAP cuts internal threads inside a drilled hole. A DIE cuts external threads on a rod or bolt. Both are used in pairs for matching threaded connections."
+  },
+  {
+    q: "A cold chisel is made of which material?",
+    options: ["High speed steel (HSS)", "High carbon steel", "Aluminium alloy", "Cast iron"],
+    answer: 1,
+    explanation: "Cold chisels are made of HIGH CARBON STEEL, hardened and tempered. The cutting edge is hardened while the striking head is left soft to prevent shattering from hammer blows."
+  },
+  {
+    q: "A torque wrench is used to:",
+    options: ["Remove very tight bolts with extra force", "Tighten fasteners to a specified torque value", "Measure the length of bolts", "Cut bolts to required length"],
+    answer: 1,
+    explanation: "Torque wrench tightens bolts to an EXACT specified torque (Nm or ft-lb). Under-tightened bolts work loose; over-tightened bolts stretch or snap or crush gaskets."
+  },
+  {
+    q: "During filing, metal is cut on the:",
+    options: ["Return stroke", "Forward stroke", "Side stroke", "Circular stroke"],
+    answer: 1,
+    explanation: "Files cut only on the FORWARD stroke. Teeth are angled so they cut when pushed forward and slide over the work on the return stroke. Pressing down on return stroke damages file teeth."
+  },
+  {
+    q: "A hacksaw blade is typically mounted with teeth pointing:",
+    options: ["Toward the handle (cutting on pull stroke)", "Away from the handle (cutting on push/forward stroke)", "In both directions", "Perpendicular to the frame"],
+    answer: 1,
+    explanation: "Hacksaw teeth point FORWARD (away from handle) — cutting happens on the PUSH stroke. Apply downward pressure on the forward stroke and lift slightly on the back stroke to prevent tooth damage."
+  },
+  {
+    q: "A centre punch has a point angle of:",
+    options: ["30°", "60°", "90°", "120°"],
+    answer: 1,
+    explanation: "A centre punch has a 60° point angle. A prick punch used for initial marking has 30° point. The centre punch (60°) creates a starting indentation before drilling to prevent drill bit wandering."
+  },
 
-  // 1.4 Basic Knowledge of Lathe, Milling, Shaper, Grinding, and Drilling Machine
+  // ══════════════════════════════════════════════════════════════════
+  // 1.4 BASIC KNOWLEDGE OF LATHE, MILLING, SHAPER, GRINDING, DRILLING
+  // ══════════════════════════════════════════════════════════════════
   {
     q: "What is facing in machining?",
     options: ["Beveling the workpiece end", "Producing a flat surface on workpiece ends", "Cutting threads", "Drilling holes"],
@@ -554,7 +1288,7 @@
     q: "What does the facing operation achieve?",
     options: ["Beveling the end", "Flat surface on workpiece ends", "Cylindrical shaping", "Surface texturing"],
     answer: 1,
-    explanation: "Facing machines the ends of a workpiece to produce a smooth, flat surface."
+    explanation: "Facing machines the ends of a workpiece to produce a smooth, flat surface perpendicular to the axis."
   },
   {
     q: "What is used to hold and rotate the workpiece in a lathe?",
@@ -622,205 +1356,343 @@
     answer: 0,
     explanation: "Twist drills are specified by numbers or sizes indicating the hole diameter they produce."
   },
+  {
+    q: "In a milling machine, which component ROTATES to cut material?",
+    options: ["Workpiece", "Both tool and workpiece", "Milling cutter (tool)", "Arbor only"],
+    answer: 2,
+    explanation: "In milling, the milling CUTTER (tool) rotates while the workpiece is fed into it. This is opposite to a lathe where the workpiece rotates."
+  },
+  {
+    q: "The quick return mechanism in a shaper machine converts:",
+    options: ["Reciprocating to oscillatory motion", "Oscillatory to reciprocating motion", "Rotary to reciprocating motion", "Linear to circular motion"],
+    answer: 2,
+    explanation: "The quick return mechanism converts rotary motion (from motor) into the reciprocating motion of the tool. The return stroke is faster than the cutting stroke to save time."
+  },
+  {
+    q: "Which part is NOT related to a shaper machine?",
+    options: ["Tool post", "Tailstock", "Ram", "Clapper box"],
+    answer: 1,
+    explanation: "Tailstock is part of a lathe machine, not a shaper machine. Shaper components: ram, table, tool head, clapper box, stroke adjustment."
+  },
+  {
+    q: "BORING on a lathe machine is done to:",
+    options: ["Create external cylindrical surfaces", "Enlarge and improve the accuracy of an existing internal hole", "Cut external threads", "Create flat face surfaces"],
+    answer: 1,
+    explanation: "Boring enlarges an existing hole using a single-point boring bar, improving the hole's accuracy, straightness, and surface finish."
+  },
+  {
+    q: "In a drilling machine, COUNTERSINKING creates:",
+    options: ["A cylindrical flat-bottomed recess for socket head screws", "A conical (V-shaped) recess for flat-head screws to sit flush", "An enlarged hole of same depth", "Internal threads"],
+    answer: 1,
+    explanation: "COUNTERSINKING creates a CONICAL recess at the top of a hole for countersunk (flat-head) screws to sit flush with or below the surface. Included angle is typically 90° for metric screws."
+  },
+  {
+    q: "REAMING a drilled hole is done to:",
+    options: ["Significantly increase hole diameter", "Create a thread in the hole", "Improve accuracy, roundness, and surface finish to precise dimensions", "Drill a second parallel hole"],
+    answer: 2,
+    explanation: "Reaming follows drilling to achieve precise hole DIAMETER, ROUNDNESS, and SURFACE FINISH. A reamer removes only 0.1-0.3mm — drilling is rough, reaming gives H7 tolerance and fine finish."
+  },
+  {
+    q: "Tool life in machining is MOST affected by:",
+    options: ["Cutting speed", "Feed rate", "Depth of cut", "Tool geometry"],
+    answer: 0,
+    explanation: "Cutting SPEED has the greatest effect on tool life. Doubling cutting speed typically reduces tool life by 60-80% (Taylor's tool life equation: VT^n = C). Speed generates the most heat."
+  },
 
-  // 1.5 Basic Knowledge of Arc Welding and Oxy-Acetylene Welding
+  // ══════════════════════════════════════════════════════════════════
+  // 1.5 BASIC KNOWLEDGE OF ARC WELDING AND OXY-ACETYLENE WELDING
+  // ══════════════════════════════════════════════════════════════════
   {
     q: "What is the electrode coating material in arc welding?",
     options: ["Flux", "Slag", "Solder", "Paint"],
     answer: 0,
-    explanation: "Flux coats the electrode to protect the weld pool from contamination and stabilize the arc."
+    explanation: "Flux coats the electrode to protect the weld pool from contamination, stabilize the arc, and form protective slag over the weld."
   },
   {
     q: "Which welding is used for hydraulic excavator arm fabrication?",
     options: ["Gas welding", "Arc welding", "TIG welding", "Spot welding"],
     answer: 1,
-    explanation: "Arc welding is robust and suitable for heavy-duty applications like excavator arm fabrication."
+    explanation: "Arc welding is robust and suitable for heavy-duty structural applications like excavator arm fabrication."
   },
   {
     q: "Which is not a welding tool?",
     options: ["Electrode", "Radiator", "Chipping hammer", "Welding torch"],
     answer: 1,
-    explanation: "Radiators are not used in welding; electrodes, chipping hammers, and torches are essential."
+    explanation: "Radiators are not used in welding; electrodes, chipping hammers, and torches are essential welding equipment."
   },
   {
     q: "Which gas is used in TIG welding?",
     options: ["Argon and helium", "CO₂ and H₂", "Oxygen and acetylene", "Nitrogen and CO₂"],
     answer: 0,
-    explanation: "Argon and helium are inert gases used as shielding gases in TIG welding."
+    explanation: "Argon and helium are inert gases used as shielding gases in TIG (GTAW) welding to protect the weld pool."
   },
   {
-    q: "Which tool is used to remove slag in welding?",
+    q: "Which tool is used to remove slag after arc welding?",
     options: ["Chipping hammer", "Gas welder", "Wire brush", "Screwdriver"],
     answer: 0,
-    explanation: "A chipping hammer removes slag from welds to ensure a clean surface."
+    explanation: "A chipping hammer removes slag from welds. After chipping, a wire brush cleans remaining residue to expose a clean weld surface."
   },
   {
     q: "In arc welding with DC current, where is greater heat generated?",
     options: ["Positive pole (anode)", "Negative pole (cathode)", "Workpiece only", "Electrode tip only"],
     answer: 0,
-    explanation: "In DC arc welding, the positive pole (anode) generates more heat due to electron flow."
+    explanation: "In DC arc welding, approximately 2/3 of heat is generated at the POSITIVE pole (anode) due to electron flow. DCEP (electrode positive) puts more heat at the electrode."
   },
   {
     q: "Which is a welding tool?",
     options: ["Electrode", "Radiator", "Fuel pump", "Battery"],
     answer: 0,
-    explanation: "Electrodes are used in arc welding to create the weld, unlike radiators or fuel pumps."
+    explanation: "Electrodes are used in arc welding to create the weld, unlike radiators, fuel pumps, or batteries."
+  },
+  {
+    q: "A neutral flame in gas welding is obtained by supplying:",
+    options: ["More oxygen than acetylene", "Equal volumes of oxygen and acetylene", "More acetylene than oxygen", "Only oxygen"],
+    answer: 1,
+    explanation: "Neutral flame = equal volumes of O2 and C2H2. Most commonly used for general welding of steel, copper, and aluminium. Neither oxidizing nor carburizing effect."
+  },
+  {
+    q: "A gas flame with MORE oxygen than acetylene is called:",
+    options: ["Carburizing flame", "Neutral flame", "Oxidizing flame", "Reducing flame"],
+    answer: 2,
+    explanation: "Oxidizing flame has excess oxygen. Burns hotter with a shorter inner cone. Used for welding brass and bronze. Identified by a hissing sound."
+  },
+  {
+    q: "The flux used in BRAZING is:",
+    options: ["Zinc chloride", "Ammonium chloride", "Resin", "Borax"],
+    answer: 3,
+    explanation: "Borax (sodium tetraborate) is the flux used in brazing. It prevents oxide formation on metal surfaces during heating, ensuring a clean joint for the filler metal."
+  },
+  {
+    q: "The arc welding temperature is approximately:",
+    options: ["500-1000°C", "1000-2000°C", "2000-3000°C", "3500-4000°C"],
+    answer: 3,
+    explanation: "The electric arc in arc welding reaches approximately 3500-4000°C — hot enough to melt most metals and create fusion welds."
+  },
+  {
+    q: "Porosity in a weld is caused by:",
+    options: ["Excessive welding current", "Gas entrapment in the solidifying weld metal", "Too slow welding speed", "Correct electrode angle"],
+    answer: 1,
+    explanation: "Porosity = gas bubbles trapped in weld as it solidifies. Causes: moisture on electrode/base metal, contaminated surfaces, incorrect shielding gas flow, or arc length too long."
+  },
+  {
+    q: "MIG welding uses a ___ electrode?",
+    options: ["Non-consumable tungsten", "Carbon rod", "Consumable wire electrode", "Flux-coated rod"],
+    answer: 2,
+    explanation: "MIG (Metal Inert Gas) welding uses a continuously fed CONSUMABLE wire electrode. The wire melts and becomes part of the weld deposit, unlike TIG welding's non-consumable tungsten electrode."
+  },
+  {
+    q: "The acetylene cylinder used in gas welding is usually painted:",
+    options: ["Black", "White", "Maroon (dark red)", "Yellow"],
+    answer: 2,
+    explanation: "Acetylene cylinders are painted MAROON (dark red) in standard colour coding. Oxygen cylinders are BLACK. This colour coding prevents connecting hoses to wrong cylinders."
+  },
+  {
+    q: "In gas welding, the part of the equipment through which the flame ejects is called:",
+    options: ["Burner", "Torch (blowpipe)", "Electrode", "Nozzle tip"],
+    answer: 1,
+    explanation: "The torch (blowpipe) mixes oxygen and fuel gas and directs the flame. It has valves to control gas flow and mixing ratios for different flame types."
   },
 
-  // 1.6 Basic Knowledge of Power Transmission in Workshop
+  // ══════════════════════════════════════════════════════════════════
+  // 1.6 BASIC KNOWLEDGE OF POWER TRANSMISSION IN WORKSHOP
+  // Belt, Gear, Chain drives; Power transmission concepts
+  // ══════════════════════════════════════════════════════════════════
   {
     q: "How does a starter motor run the flywheel of an engine?",
     options: ["Chain drive", "Gear drive", "Belt drive", "Shaft drive"],
     answer: 1,
-    explanation: "A gear drive connects the starter motor to the flywheel for engine cranking."
+    explanation: "A gear drive connects the starter motor pinion to the ring gear on the flywheel for engine cranking."
+  },
+  {
+    q: "V-belt drives are generally used for:",
+    options: ["Low-speed applications only", "Power transmission between parallel shafts", "Cooling system water pumps only", "Fuel delivery only"],
+    answer: 1,
+    explanation: "V-belts efficiently transmit power in automotive and industrial applications between parallel shafts. They grip the sides of the pulley grooves — NOT the bottom."
+  },
+  {
+    q: "The best fit for a V-belt drive is when the belt:",
+    options: ["Touches at the bottom of the groove", "Touches at the sides of the groove only", "Could touch anywhere", "Both sides and bottom"],
+    answer: 1,
+    explanation: "V-belt must contact only the SIDES (flanks) of the groove — NOT the bottom. Side contact provides grip by wedging action. If the belt rides on the bottom, it loses grip and slips under load."
+  },
+  {
+    q: "Which type of drive has NO SLIP and transmits exact speed ratio?",
+    options: ["V-belt drive", "Flat belt drive", "Gear drive", "Rope drive"],
+    answer: 2,
+    explanation: "GEAR drives have no slip between meshing teeth — they transmit exact speed ratios and torque. Belt drives can slip under overload. This is why gears are used where precise synchronization is needed."
+  },
+  {
+    q: "If one V-belt in a multiple V-belt drive system breaks, what is required?",
+    options: ["Replace only the broken belt", "Replace all belts", "Adjust tension only", "Lubricate the pulley"],
+    answer: 1,
+    explanation: "ALL belts should be replaced when one breaks. Belts in a set stretch at the same rate — installing one new belt with worn old ones creates unequal tension, causing the new belt to carry all load and fail prematurely."
+  },
+  {
+    q: "Crowning of a pulley is done to:",
+    options: ["Increase belt tension", "Prevent the belt from slipping off the pulley", "Increase the angle of contact", "Reduce pulley weight"],
+    answer: 1,
+    explanation: "Crowned pulleys (slightly convex, larger diameter at centre) cause the belt to naturally track (align) to the centre of the pulley, preventing the belt from slipping off the edge during operation."
+  },
+  {
+    q: "Which power transmission method is used when shafts are at 90° and not intersecting?",
+    options: ["Spur gear", "Helical gear", "Worm and worm wheel", "Bevel gear"],
+    answer: 2,
+    explanation: "Worm and worm wheel: used for NON-PARALLEL, NON-INTERSECTING shafts at 90°. Provides large speed reduction in compact space. Also self-locking — used in hoists, winches, and elevators."
+  },
+  {
+    q: "Power transmission in a workshop can be achieved through:",
+    options: ["Belt and pulley system only", "Gear drive system only", "Chain and sprocket system only", "All of the above"],
+    answer: 3,
+    explanation: "Workshop power transmission can use ALL three: Belt-pulley (smooth, slips if overloaded), Gear drive (precise, no slip), Chain-sprocket (strong, where exact speed ratio needed)."
   },
 
+  // ══════════════════════════════════════════════════════════════════
+  // ADDITIONAL WORKSHOP / GENERAL KNOWLEDGE (from supplied papers)
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Muffler (साइलेन्सर) को मुख्य काम के हो? (What is the main function of a muffler?)",
+    options: ["इञ्जिनको ताप कम गर्ने (Reduce engine heat)", "इञ्जिनको ध्वनि नियन्त्रण गर्ने (Control engine noise)", "इन्धन बचत गर्ने (Save fuel)", "इञ्जिनको शक्ति बढाउने (Increase engine power)"],
+    answer: 1,
+    explanation: "मफ्लरले इन्जिनको निकासको ध्वनि कम गर्छ। (The muffler reduces engine exhaust noise to acceptable levels using chambers, baffles, and resonators.)"
+  },
+  {
+    q: "What is the function of cutting fluids in machining?",
+    options: ["Increase friction", "Reduce friction and cool the workpiece and tool", "Increase tool hardness", "Prevent rust only"],
+    answer: 1,
+    explanation: "Cutting fluids perform THREE functions: (1) COOLING — removes heat from cutting zone, (2) LUBRICATING — reduces friction at tool-chip interface, (3) FLUSHING — clears chips from cutting zone."
+  },
+  {
+    q: "Which is NOT a cutting fluid?",
+    options: ["Soluble oil", "Gasoline", "Mineral oil", "Water-based coolant"],
+    answer: 1,
+    explanation: "Gasoline is not a cutting fluid — it is a fuel and fire hazard. Cutting fluids are: soluble oils, mineral oils, synthetic coolants, water-based coolants, and cutting pastes."
+  },
+  {
+    q: "Which of the following is a PERMANENT fastening method?",
+    options: ["Cotter pin", "Rivet", "Nut and bolt", "Screw"],
+    answer: 1,
+    explanation: "Rivets create PERMANENT joints — once installed, they cannot be removed without destruction. Cotter pins, nuts/bolts, and screws are all removable (non-permanent) fasteners."
+  },
+  {
+    q: "Why is the handle of a soldering iron made of plastic or wood?",
+    options: ["To conduct heat efficiently", "To insulate heat and prevent burns during use", "To increase weight for stability", "To improve appearance only"],
+    answer: 1,
+    explanation: "Plastic and wood are HEAT INSULATORS — they prevent the heat from the soldering iron tip from conducting through to the operator's hand, preventing burns."
+  },
+  {
+    q: "Which material exhibits magnetism?",
+    options: ["Plastic", "Iron", "Aluminium", "Copper"],
+    answer: 1,
+    explanation: "Iron is FERROMAGNETIC and exhibits strong magnetism. Aluminium, copper, and plastic are non-magnetic. Other ferromagnetic metals include nickel and cobalt."
+  },
+  {
+    q: "Which power plant is free from atmospheric pollution problems?",
+    options: ["Thermal power plant", "Geothermal power plant", "Coal power plant", "Diesel power plant"],
+    answer: 1,
+    explanation: "Geothermal plants use natural underground heat — they produce minimal atmospheric pollutants compared to thermal, coal, or diesel plants which burn fuel and emit CO2, NOx, and SOx."
+  },
+  {
+    q: "In a steam power plant, what is used as the prime mover?",
+    options: ["I.C. engine", "Turbine", "Electric motor", "Hydraulic pump"],
+    answer: 1,
+    explanation: "Turbines are the prime movers in steam power plants — they convert steam energy (pressure and velocity) into mechanical rotational work to drive the generator."
+  },
+  {
+    q: "Which turbine is suited for HIGH HEAD installations?",
+    options: ["Kaplan turbine", "Pelton wheel", "Francis turbine", "Propeller turbine"],
+    answer: 1,
+    explanation: "Pelton wheels are designed for HIGH HEAD, low-flow conditions. They use high-velocity jets of water striking bucket-shaped blades. Used in Himalayan steep gorge sites with high water drops."
+  },
+  {
+    q: "Which component in a steam engine guides the piston rod to facilitate reciprocation?",
+    options: ["Crankshaft", "Crosshead", "Flywheel", "Governor"],
+    answer: 1,
+    explanation: "The crosshead guides the piston rod in a straight line, preventing side forces from bending the rod. It connects the piston rod to the connecting rod and slides in guides."
+  },
+  {
+    q: "Which type of mirror is used in a motorcycle or vehicle headlight?",
+    options: ["Convex mirror", "Concave mirror", "Plane mirror", "Spherical diverging mirror"],
+    answer: 1,
+    explanation: "CONCAVE mirrors are used in headlights — they converge (focus) light to produce a strong, directed beam ahead. Convex mirrors are used for rear-view mirrors (wide field of view)."
+  },
+  {
+    q: "What is the standard colour coding for the EARTH wire in electrical installations?",
+    options: ["Brown", "Blue", "Yellow and green striped", "Red"],
+    answer: 2,
+    explanation: "Standard IEC wiring colours: EARTH = green-yellow stripe. LIVE (phase) = brown. NEUTRAL = blue. Consistent colour coding prevents dangerous miswiring that could cause electrocution."
+  },
+  {
+    q: "A surface gauge (scribing block) in a workshop is used for:",
+    options: ["Measuring external shaft diameter", "Scribing lines at a consistent height from a datum surface", "Checking surface roughness", "Marking circular patterns only"],
+    answer: 1,
+    explanation: "A surface gauge marks lines at precise, consistent HEIGHT from a surface plate datum. Used for: marking-off heights, checking surface parallelism, and setting up workpieces on machine tables."
+  },
+  {
+    q: "The V-block in a workshop is primarily used to:",
+    options: ["Check flatness of a surface plate", "Locate and hold cylindrical workpieces for measuring or marking", "Check squareness of corners", "Store gauges and instruments"],
+    answer: 1,
+    explanation: "V-blocks have precision V-shaped grooves that locate round workpieces (shafts, round bars) at two tangent contact points. Used with dial gauges to check shaft runout, concentricity, and straightness."
+  }  ,
+  {
+    q: "Knurling on a lathe is done to:",
+    options: ["Reduce the diameter of a workpiece", "Create a diamond or straight pattern on the surface for improved grip", "Polish the surface to a mirror finish", "Create a tapered surface"],
+    answer: 1,
+    explanation: "Knurling presses a hardened knurling roller against the rotating workpiece, plastically deforming the surface to create a diamond or straight pattern. Used on tool handles, adjustment knobs, and any surface needing grip."
+  },
+  {
+    q: "The 'feed' in lathe turning is defined as:",
+    options: ["The rotational speed of the workpiece in RPM", "The distance the cutting tool advances for each revolution of the workpiece (mm/rev)", "The depth of material removed per pass", "The time taken to complete one full cut"],
+    answer: 1,
+    explanation: "Feed in lathe = distance the tool moves axially for each revolution (mm/rev). Fine feed = smoother surface; coarse feed = rougher but faster material removal. Feed and cutting speed together determine machining efficiency."
+  },
+  {
+    q: "Which type of gear is used to transmit power between two PARALLEL shafts?",
+    options: ["Bevel gear", "Worm gear", "Spur or helical gear", "Spiral bevel gear"],
+    answer: 2,
+    explanation: "SPUR and HELICAL gears transmit power between PARALLEL shafts. Bevel gears = intersecting shafts at 90°. Worm gears = non-parallel, non-intersecting shafts at 90°."
+  },
+  {
+    q: "The purpose of the splash lubrication system in a gearbox is to:",
+    options: ["Cool only the outer casing", "Circulate gear oil by the rotating gears dipping into and splashing oil onto all surfaces", "Use a pump to force oil to bearings only", "Reduce gear noise by adding grease"],
+    answer: 1,
+    explanation: "Splash lubrication: gears dip into an oil bath as they rotate, splashing oil onto all gear surfaces and bearings. Simple, reliable, no pump needed. Standard in enclosed vehicle gearboxes and axles."
+  },
+  {
+    q: "Before working on any electrical equipment or wiring, you MUST first:",
+    options: ["Put on rubber gloves and continue working live", "ISOLATE (switch off and lockout/tagout) the power supply", "Test with a voltmeter while circuit is still live", "Reduce voltage by removing some fuses"],
+    answer: 1,
+    explanation: "ISOLATION (Lockout/Tagout — LOTO) is mandatory before electrical work: switch off, lock the isolator, attach a warning tag. This prevents accidental energization while someone is working on the circuit."
+  }
 
-
-
-                       {
-        q: "Muffler (साइलेन्सर) को मुख्य काम के हो? (What is the main function of a muffler?)",
-        options: ["इञ्जिनको ताप कम गर्ने (Reduce engine heat)", "इञ्जिनको ध्वनि नियन्त्रण गर्ने (Control engine noise)", "इन्धन बचत गर्ने (Save fuel)", "इञ्जिनको शक्ति बढाउने (Increase engine power)"],
-        answer: 1,
-        explanation: "मफ्लरले इन्जिनको निकासको ध्वनि कम गर्छ। (The muffler reduces engine exhaust noise to acceptable levels.)"
-    },
-    {
-        q: "The feeler gauge is used to check:",
-        options: ["Internal diameter", "Clearance between mating surfaces", "Surface roughness", "Thread pitch"],
-        answer: 1,
-        explanation: "Feeler gauges measure small gaps, such as valve clearances, between mating surfaces."
-    },
-    {
-        q: "What is the function of cutting fluids in machining?",
-        options: ["Increase friction", "Reduce friction and cool the workpiece", "Increase tool hardness", "Prevent rust only"],
-        answer: 1,
-        explanation: "Cutting fluids lubricate and cool the tool and workpiece, reducing friction and heat."
-    },
-    {
-        q: "Which is NOT a cutting fluid?",
-        options: ["Soluble oil", "Gasoline", "Mineral oil", "Water-based coolant"],
-        answer: 1,
-        explanation: "Gasoline is not a cutting fluid; soluble oils, mineral oils, and water-based coolants are used for cooling and lubrication."
-    },
-    {
-        q: "Which component in a steam engine facilitates piston reciprocation?",
-        options: ["Crankshaft", "Crosshead", "Flywheel", "Governor"],
-        answer: 1,
-        explanation: "The crosshead guides the piston’s linear motion, connecting it to the connecting rod."
-    },
-    {
-        q: "Which of the following is a permanent fastening?",
-        options: ["Cotter pin", "Rivet", "Nut and bolt", "Screw"],
-        answer: 1,
-        explanation: "Rivets create permanent joints, unlike cotter pins, nuts, or screws, which are removable."
-    },
-    {
-        q: "Why is the handle of a soldering iron made of plastic?",
-        options: ["To conduct heat", "To insulate heat", "To increase weight", "To improve grip only"],
-        answer: 1,
-        explanation: "Plastic is a heat insulator, preventing burns during soldering."
-    },
-    {
-        q: "Which material exhibits magnetism?",
-        options: ["Plastic", "Iron", "Aluminum", "Copper"],
-        answer: 1,
-        explanation: "Iron is ferromagnetic and exhibits magnetism, unlike plastic, aluminum, or copper."
-    },
-    {
-        q: "Which power plant is free from environmental problems?",
-        options: ["Thermal power plant", "Geothermal power plant", "Coal power plant", "Diesel power plant"],
-        answer: 1,
-        explanation: "Geothermal plants have minimal environmental impact compared to thermal, coal, or diesel plants."
-    },
-    {
-        q: "In a steam power plant, what is used as the prime mover?",
-        options: ["I.C. engine", "Turbine", "Electric motor", "Hydraulic pump"],
-        answer: 1,
-        explanation: "Turbines convert steam energy into mechanical work in steam power plants."
-    },
-    {
-        q: "If one V-belt in a multiple V-belt drive system breaks, what is required?",
-        options: ["Replace only the broken belt", "Replace all belts", "Adjust tension only", "Lubricate the pulley"],
-        answer: 1,
-        explanation: "All belts should be replaced to ensure uniform tension and performance."
-    },
-    {
-        q: "1 horsepower (HP) is equivalent to:",
-        options: ["467 watts", "746 watts", "1000 watts", "500 watts"],
-        answer: 1,
-        explanation: "1 HP equals 746 watts, a standard unit of power."
-    },
-    {
-        q: "V-belt drives are generally used for:",
-        options: ["Low-speed applications", "Power transmission", "Cooling systems", "Fuel delivery"],
-        answer: 1,
-        explanation: "V-belts efficiently transmit power in automotive and industrial applications."
-    },
-    {
-        q: "Which turbine is suited for high-head installations?",
-        options: ["Kaplan turbine", "Pelton wheel", "Francis turbine", "Propeller turbine"],
-        answer: 1,
-        explanation: "Pelton wheels are designed for high-head, low-flow conditions."
-    },
-    {
-        q: "What is the unit of speed in aeronautics?",
-        options: ["Km/hr", "Knot", "Meter/sec", "Mile/hr"],
-        answer: 1,
-        explanation: "Knots (nautical miles per hour) are used to measure speed in aeronautics."
-    },
-    {
-        q: "What is the metric system unit for length?",
-        options: ["Foot", "Meter", "Inch", "Yard"],
-        answer: 1,
-        explanation: "The meter is the SI unit for length in the metric system."
-    },
-    {
-        q: "What can a vernier caliper measure?",
-        options: ["Height only", "Internal and external dimensions", "Weight", "Surface area"],
-        answer: 1,
-        explanation: "Vernier calipers measure both internal and external dimensions with precision."
-    },
-    {
-        q: "Which part is NOT related to a shaper machine?",
-        options: ["Tool post", "Tailstock", "Ram", "Clapper box"],
-        answer: 1,
-        explanation: "Tailstock is part of a lathe, not a shaper machine."
-    },
-    {
-        q: "During filing, metal is cut on the:",
-        options: ["Return stroke", "Forward stroke", "Side stroke", "Circular stroke"],
-        answer: 1,
-        explanation: "Filing removes material during the forward stroke, not the return stroke."
-    },
-    {
-        q: "Which type of mirror is used in a motorcycle headlight?",
-        options: ["Convex mirror", "Concave mirror", "Plane mirror", "Spherical mirror"],
-        answer: 1,
-        explanation: "Concave mirrors focus light to produce a strong beam in headlights."
-    }
-
-                    
 ];
+
+// TOTAL: 100 Questions
+
         let currentPage = 0;
         let score = 0;
         let skipped = [];
         let userAnswers = Array(questions.length).fill(null);
         let timerSeconds = 0;
         let timerInterval;
+        let currentStreak = 0;
+        let maxStreak = 0;
         const QUESTIONS_PER_PAGE = 5;
-        const ANSWER_DELAY = 1000;
+        const ANSWER_DELAY = 1500;
 
         const quizEl = document.getElementById("quiz");
         const scoreEl = document.getElementById("score");
         const resultsEl = document.getElementById("results");
         const resultsBody = document.getElementById("results-body");
         const progressEl = document.getElementById("progress");
+        const progressTextEl = document.getElementById("progress-text");
         const timerEl = document.getElementById("timer");
         const currentScoreEl = document.getElementById("current-score");
+        const questionsAnsweredEl = document.getElementById("questions-answered");
+        const accuracyEl = document.getElementById("accuracy");
+        const streakBadge = document.getElementById("streak-badge");
         const correctSound = document.getElementById("correct-sound");
         const wrongSound = document.getElementById("wrong-sound");
 
-        // Clear progress to start fresh
         function clearProgress() {
             localStorage.removeItem("quizProgressWorkshop");
             currentPage = 0;
@@ -828,25 +1700,45 @@
             skipped = [];
             userAnswers = Array(questions.length).fill(null);
             timerSeconds = 0;
+            currentStreak = 0;
+            maxStreak = 0;
         }
 
-        // Save progress to localStorage
         function saveProgress() {
             localStorage.setItem("quizProgressWorkshop", JSON.stringify({
                 currentPage,
                 score,
                 skipped,
                 answers: userAnswers,
-                time: timerSeconds
+                time: timerSeconds,
+                streak: currentStreak,
+                maxStreak
             }));
         }
 
-        // Update current score display
-        function updateCurrentScore() {
-            currentScoreEl.textContent = `Score: ${score}/${questions.length}`;
+        function updateStats() {
+            currentScoreEl.textContent = score;
+            const answered = userAnswers.filter(a => a !== null && a !== 'Skipped').length;
+            questionsAnsweredEl.textContent = answered;
+            const accuracy = answered > 0 ? Math.round((score / answered) * 100) : 0;
+            accuracyEl.textContent = accuracy + '%';
+            progressTextEl.textContent = `${answered}/${questions.length}`;
         }
 
-        // Shuffle array
+        function updateStreak(isCorrect) {
+            if (isCorrect) {
+                currentStreak++;
+                if (currentStreak > maxStreak) maxStreak = currentStreak;
+                if (currentStreak >= 3) {
+                    streakBadge.textContent = `Streak: ${currentStreak}`;
+                    streakBadge.classList.add('show');
+                    setTimeout(() => streakBadge.classList.remove('show'), 2000);
+                }
+            } else {
+                currentStreak = 0;
+            }
+        }
+
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -855,25 +1747,23 @@
             return array;
         }
 
-        // Start timer
         function startTimer() {
             timerInterval = setInterval(() => {
                 timerSeconds++;
                 const minutes = Math.floor(timerSeconds / 60);
                 const seconds = timerSeconds % 60;
-                timerEl.textContent = `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 saveProgress();
             }, 1000);
         }
 
-        // Update progress bar
         function updateProgress() {
             const answeredCount = userAnswers.filter(answer => answer !== null).length;
             const percentage = (answeredCount / questions.length) * 100;
             progressEl.style.width = `${percentage}%`;
+            updateStats();
         }
 
-        // Show questions for the current page
         function showQuestions(page) {
             quizEl.innerHTML = '';
             const startIndex = page * QUESTIONS_PER_PAGE;
@@ -883,61 +1773,80 @@
                 const q = questions[i];
                 const shuffledOptions = shuffle([...q.options].map((opt, j) => ({ text: opt, index: j })));
                 const optionsHtml = shuffledOptions
-                    .map(opt => `<button onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')">${opt.text}</button>`)
-                    .join('');
+                    .map((opt, idx) => `
+                        <button class="option-btn" onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')" data-index="${idx}">
+                            <span class="option-indicator">${String.fromCharCode(65 + idx)}</span>
+                            <span>${opt.text}</span>
+                        </button>
+                    `).join('');
+                
                 const questionDiv = document.createElement('div');
-                questionDiv.classList.add('question');
-                questionDiv.dataset.index = i;
+                questionDiv.classList.add('question-wrapper');
                 questionDiv.innerHTML = `
-                    <p>Q${i + 1}. ${q.q}</p>
-                    <div class="options">${optionsHtml}</div>
-                    <button class="skip-button" onclick="skipQuestion(${i})">Skip</button>
-                    <div class="explanation">${q.explanation}</div>
+                    <div class="question-card" data-index="${i}">
+                        <div class="question-header">
+                            <div class="question-number">${i + 1}</div>
+                            <div class="question-text">${q.q}</div>
+                        </div>
+                        <div class="options">${optionsHtml}</div>
+                        <div class="explanation">${q.explanation}</div>
+                    </div>
                 `;
                 quizEl.appendChild(questionDiv);
             }
 
+            const actionBar = document.createElement('div');
+            actionBar.classList.add('action-bar');
+
             if (endIndex < questions.length || skipped.length > 0) {
-                const nextButton = document.createElement('button');
-                nextButton.classList.add('next-button');
-                nextButton.textContent = endIndex < questions.length ? 'Next' : 'Review Skipped Questions';
-                nextButton.onclick = nextPage;
-                nextButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
-                quizEl.appendChild(nextButton);
+                const nextBtn = document.createElement('button');
+                nextBtn.classList.add('btn', 'btn-primary');
+                nextBtn.innerHTML = endIndex < questions.length ? 'Next Questions →' : 'Review Skipped →';
+                nextBtn.onclick = nextPage;
+                nextBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(nextBtn);
             } else {
-                const submitButton = document.createElement('button');
-                submitButton.classList.add('next-button');
-                submitButton.textContent = 'Submit Quiz';
-                submitButton.onclick = endQuiz;
-                submitButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
-                quizEl.appendChild(submitButton);
+                const submitBtn = document.createElement('button');
+                submitBtn.classList.add('btn', 'btn-primary');
+                submitBtn.innerHTML = '✓ Submit Quiz';
+                submitBtn.onclick = endQuiz;
+                submitBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(submitBtn);
             }
 
+            const skipBtn = document.createElement('button');
+            skipBtn.classList.add('btn', 'btn-skip');
+            skipBtn.innerHTML = '⊘ Skip All';
+            skipBtn.onclick = () => {
+                for (let i = startIndex; i < endIndex; i++) {
+                    if (userAnswers[i] === null) skipQuestion(i);
+                }
+            };
+            actionBar.appendChild(skipBtn);
+
+            quizEl.appendChild(actionBar);
             updateProgress();
             saveProgress();
         }
 
-        // Check if all questions on the current page are answered or skipped
         function areAllQuestionsAnsweredOnPage(startIndex, endIndex) {
             for (let i = startIndex; i < endIndex; i++) {
-                if (userAnswers[i] === null) {
-                    return false;
-                }
+                if (userAnswers[i] === null) return false;
             }
             return true;
         }
 
-        // Check answer
         function checkAnswer(button, questionIndex, selected, selectedText) {
             const q = questions[questionIndex];
             const correct = q.answer;
-            const buttons = button.parentElement.querySelectorAll("button");
-            const questionDiv = button.closest('.question');
-            const explanationDiv = questionDiv.querySelector('.explanation');
+            const buttons = button.parentElement.querySelectorAll(".option-btn");
+            const card = button.closest('.question-card');
+            const explanationDiv = card.querySelector('.explanation');
 
             buttons.forEach(btn => {
                 btn.disabled = true;
-                if (q.options.indexOf(btn.textContent) === correct) {
+                const btnText = btn.querySelector('span:last-child').textContent;
+                if (q.options.indexOf(btnText) === correct) {
                     btn.classList.add('correct');
                 }
                 if (btn === button && selected !== correct) {
@@ -945,22 +1854,26 @@
                 }
             });
 
-            questionDiv.querySelector('.skip-button').disabled = true;
             explanationDiv.style.display = 'block';
-
+            
             userAnswers[questionIndex] = selectedText;
-            if (selected === correct) {
+            const isCorrect = selected === correct;
+            if (isCorrect) {
                 score++;
-                correctSound.play().catch(() => console.log("Audio playback failed"));
+                correctSound.play().catch(() => {});
+                updateStreak(true);
             } else {
-                wrongSound.play().catch(() => console.log("Audio playback failed"));
+                wrongSound.play().catch(() => {});
+                updateStreak(false);
             }
 
-            updateCurrentScore();
+            updateStats();
             saveProgress();
-            const nextButton = quizEl.querySelector('.next-button');
-            if (nextButton) {
-                nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+            
+            const actionBar = quizEl.querySelector('.action-bar');
+            const primaryBtn = actionBar.querySelector('.btn-primary');
+            if (primaryBtn) {
+                primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
                     currentPage * QUESTIONS_PER_PAGE,
                     Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
                 );
@@ -976,19 +1889,21 @@
             }, ANSWER_DELAY);
         }
 
-        // Skip question
         function skipQuestion(questionIndex) {
             if (!skipped.includes(questions[questionIndex])) {
                 skipped.push(questions[questionIndex]);
                 userAnswers[questionIndex] = 'Skipped';
-                const questionDiv = document.querySelector(`.question[data-index="${questionIndex}"]`);
-                questionDiv.querySelectorAll('.options button').forEach(btn => btn.disabled = true);
-                questionDiv.querySelector('.skip-button').disabled = true;
-                questionDiv.querySelector('.explanation').style.display = 'block';
+                const card = document.querySelector(`.question-card[data-index="${questionIndex}"]`);
+                if (card) {
+                    card.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+                    card.querySelector('.explanation').style.display = 'block';
+                    card.style.opacity = '0.6';
+                }
                 saveProgress();
-                const nextButton = quizEl.querySelector('.next-button');
-                if (nextButton) {
-                    nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+                const actionBar = quizEl.querySelector('.action-bar');
+                const primaryBtn = actionBar.querySelector('.btn-primary');
+                if (primaryBtn) {
+                    primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
                         currentPage * QUESTIONS_PER_PAGE,
                         Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
                     );
@@ -996,7 +1911,6 @@
             }
         }
 
-        // Move to next page
         function nextPage() {
             if (skipped.length > 0 && currentPage * QUESTIONS_PER_PAGE >= questions.length) {
                 showSkippedQuestions();
@@ -1012,7 +1926,6 @@
             }
         }
 
-        // Show skipped questions
         function showSkippedQuestions() {
             questions.splice(0, questions.length, ...skipped);
             skipped = [];
@@ -1020,11 +1933,90 @@
             showQuestions(currentPage);
         }
 
-        // End quiz and show results
+        function drawConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const colors = ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'];
+            
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: Math.random() * 3 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    size: Math.random() * 6 + 2,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            let animationId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rotation += 2;
+                    
+                    if (p.y < canvas.height) {
+                        active = true;
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation * Math.PI / 180);
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                        ctx.restore();
+                    }
+                });
+                
+                if (active) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+            
+            setTimeout(() => cancelAnimationFrame(animationId), 5000);
+        }
+
         function endQuiz() {
             clearInterval(timerInterval);
             quizEl.innerHTML = '';
-            scoreEl.textContent = `Final Score: ${score} out of ${questions.length} (${((score / questions.length) * 100).toFixed(2)}%)`;
+            
+            const percentage = ((score / questions.length) * 100).toFixed(1);
+            let message = '';
+            let emoji = '';
+            
+            if (percentage >= 90) {
+                message = 'Outstanding! You\'re a master!';
+                emoji = '🏆';
+                drawConfetti();
+            } else if (percentage >= 70) {
+                message = 'Great job! Well done!';
+                emoji = '🌟';
+            } else if (percentage >= 50) {
+                message = 'Good effort! Keep practicing!';
+                emoji = '💪';
+            } else {
+                message = 'Keep learning! You\'ll improve!';
+                emoji = '📚';
+            }
+
+            scoreEl.innerHTML = `
+                <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+                <div class="score-display">${percentage}%</div>
+                <div class="score-label">${message}</div>
+                <div style="margin-top: 1rem; color: var(--text-secondary);">
+                    ${score} correct out of ${questions.length} questions<br>
+                    Time: ${timerEl.textContent} | Best Streak: ${maxStreak}
+                </div>
+            `;
+            
             resultsEl.classList.remove('hidden');
 
             resultsBody.innerHTML = questions.map((q, i) => {
@@ -1035,13 +2027,17 @@
                 const status = userAnswers[i] === q.options[q.answer] ? 'Correct' :
                               userAnswers[i] === 'Skipped' ? 'Skipped' :
                               userAnswers[i] === null ? 'Not attempted' : 'Wrong';
+                const statusClass = status.toLowerCase().replace(' ', '-');
+                const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : '⊘';
+                
                 return `
                     <tr>
-                        <td>${i + 1}. ${q.q}</td>
+                        <td>${i + 1}</td>
+                        <td>${q.q}</td>
                         <td>${userAnswer}</td>
                         <td>${correctAnswer}</td>
-                        <td class="${status.toLowerCase().replace(' ', '-')}">${status}</td>
-                        <td class="explanation">${q.explanation}</td>
+                        <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                        <td class="explanation-cell">${q.explanation}</td>
                     </tr>
                 `;
             }).join('');
@@ -1049,26 +2045,32 @@
             localStorage.removeItem('quizProgressWorkshop');
         }
 
-        // Restart quiz
         function restartQuiz() {
             clearProgress();
             resultsEl.classList.add('hidden');
-            scoreEl.textContent = '';
+            scoreEl.innerHTML = '';
             startTimer();
             showQuestions(currentPage);
-            updateCurrentScore();
+            updateStats();
         }
 
-        // Initialize quiz
         function initialize() {
-            clearProgress(); // Reset all progress on page load
+            clearProgress();
             startTimer();
             showQuestions(currentPage);
-            updateCurrentScore();
+            updateStats();
         }
 
-        // Start quiz on page load
         initialize();
+
+        // Handle resize for canvas
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
     </script>
 </body>
 </html>
