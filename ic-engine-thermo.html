@@ -603,6 +603,391 @@
     options: ["ISO 9001", "Euro III", "Bharat Stage II", "EPA Tier 1"],
     answer: 1,
     explanation: "Nepal Vehicle Mass Emission Standard 2069 aligns with Euro III emission norms for vehicles."
+  },
+          // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// IC ENGINE — ADDITIONAL 60 MCQs (append after existing 40)
+// Topics: Two/Four Stroke · Engine Parts · Overhaul Symptoms ·
+//         Troubleshooting · Fuel System · Emissions · Thermodynamics
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // TWO-STROKE vs FOUR-STROKE (additional)
+  {
+    q: "A two-stroke engine fires how many times per crankshaft revolution?",
+    options: ["Once every 2 revolutions", "Once per revolution", "Twice per revolution", "Once every 4 revolutions"],
+    answer: 1,
+    explanation: "Two-stroke engine: power stroke occurs ONCE per crankshaft revolution. Four-stroke: once every TWO revolutions. This gives the two-stroke more power pulses per minute at the same RPM."
+  },
+  {
+    q: "The main DISADVANTAGE of a two-stroke engine compared to four-stroke is:",
+    options: ["More power per cycle", "Higher fuel consumption and more exhaust emissions due to fuel-air loss through exhaust port", "Simpler design", "Lighter weight"],
+    answer: 1,
+    explanation: "Two-stroke engines lose some fresh charge through the exhaust port during scavenging — wasting fuel and increasing HC emissions. They also mix oil with fuel (less clean) and have shorter service life."
+  },
+  {
+    q: "Scavenging in a two-stroke engine means:",
+    options: ["Filtering the oil", "Pushing out burnt exhaust gases and filling with fresh charge simultaneously", "Cooling the cylinder", "Lubricating the crankshaft"],
+    answer: 1,
+    explanation: "Scavenging: fresh air-fuel charge enters the cylinder through transfer ports and pushes out burnt exhaust gases through the exhaust port. Both ports are open simultaneously — unique to two-stroke engines."
+  },
+  {
+    q: "Two-stroke engines do NOT have which of the following?",
+    options: ["Spark plug", "Separate intake and exhaust valves (they use ports instead)", "Piston", "Crankshaft"],
+    answer: 1,
+    explanation: "Most two-stroke engines use PORTS (holes in the cylinder wall) instead of poppet valves for intake and exhaust. The piston uncovers these ports as it moves. No camshaft or valve train needed."
+  },
+  {
+    q: "The THERMAL EFFICIENCY of a diesel engine is higher than a petrol engine because:",
+    options: ["Diesel fuel is cheaper", "Diesel engines use higher compression ratios (16-22:1 vs 8-12:1 for petrol)", "Diesel engines are heavier", "Diesel engines use carburetors"],
+    answer: 1,
+    explanation: "Higher compression ratio = higher thermal efficiency (η = 1 - 1/r^(γ-1)). Diesel CR of 16-22 gives ~40% thermal efficiency vs ~30% for petrol (CR 8-12). The higher CR is possible because diesel ignites by compression, not spark."
+  },
+
+  // MAIN ENGINE PARTS (additional)
+  {
+    q: "The CONNECTING ROD BEARING (big end bearing) in an engine is lubricated by:",
+    options: ["Grease only", "Pressurized oil fed through drillings in the crankshaft", "Splash from the sump only", "Coolant"],
+    answer: 1,
+    explanation: "The crankshaft has OIL DRILLINGS that channel pressurized oil from the main bearings to the big end (connecting rod) bearings. This pressurized lubrication system (full-flow) prevents metal-to-metal contact."
+  },
+  {
+    q: "The PISTON RINGS serve which two main functions?",
+    options: ["Decoration and weight", "Sealing combustion gases AND controlling oil film on cylinder walls", "Connecting rod to crankshaft", "Driving the camshaft"],
+    answer: 1,
+    explanation: "Piston rings: (1) COMPRESSION rings seal combustion gases above piston (prevent blow-by), (2) OIL CONTROL rings scrape excess oil off cylinder walls preventing oil from entering combustion chamber."
+  },
+  {
+    q: "The VALVE CLEARANCE (tappet clearance) must be set correctly because:",
+    options: ["It improves fuel injection", "Too small = burnt valves (no seat contact); too large = noise and power loss from late valve opening", "It controls oil pressure", "It adjusts ignition timing"],
+    answer: 1,
+    explanation: "Valve clearance compensates for thermal expansion. TOO SMALL: hot metal expansion closes gap → valve held open → burnt valve seat. TOO LARGE: valve opens late and closes early → power loss, noise. Check when cold."
+  },
+  {
+    q: "The FIRING ORDER of a 4-cylinder inline engine is typically:",
+    options: ["1-2-3-4", "1-3-4-2", "2-3-1-4", "1-4-3-2"],
+    answer: 1,
+    explanation: "Standard 4-cylinder inline firing order is 1-3-4-2. This alternating sequence ensures even firing intervals (every 180° of crankshaft), balanced vibration, and even thermal loading of the engine."
+  },
+  {
+    q: "The CRANKSHAFT converts which type of motion?",
+    options: ["Rotary to linear", "Linear (reciprocating piston) to rotary (rotation)", "Linear to oscillating", "Rotary to hydraulic"],
+    answer: 1,
+    explanation: "The crankshaft converts the RECIPROCATING (up-down) linear motion of the pistons into ROTARY motion for the drivetrain. The offset crank pins create the mechanical advantage to convert these motions."
+  },
+  {
+    q: "The FLYWHEEL is mounted on the CRANKSHAFT to:",
+    options: ["Drive the camshaft", "Store rotational energy during power strokes and release it during non-power strokes", "Control engine speed by throttle", "Pump oil through the engine"],
+    answer: 1,
+    explanation: "Flywheel STORES kinetic energy during the power stroke and RELEASES it during compression, exhaust, and intake strokes (when no power is being generated), keeping the engine rotating smoothly."
+  },
+  {
+    q: "Which engine component ensures VALVES open and close at the correct time?",
+    options: ["Crankshaft directly", "Camshaft (driven at half crankshaft speed via timing chain/belt)", "Flywheel", "Governor"],
+    answer: 1,
+    explanation: "CAMSHAFT lobes press on followers/rockers to open valves at precisely timed crankshaft positions. Runs at HALF crankshaft speed in 4-stroke engines (one valve event per 2 crank revolutions)."
+  },
+  {
+    q: "The TIMING CHAIN or TIMING BELT in an engine connects:",
+    options: ["Gearbox to engine", "Crankshaft to camshaft at correct 2:1 speed ratio", "Alternator to crankshaft", "Water pump to camshaft only"],
+    answer: 1,
+    explanation: "Timing chain/belt drives the camshaft from the crankshaft at exactly 2:1 ratio. Critical alignment — if timing slips, valves and pistons can collide (interference engine), causing catastrophic damage."
+  },
+  {
+    q: "Engine TORQUE is measured in:",
+    options: ["Watts", "Newton-meters (Nm) or kilogram-force meters", "RPM", "Litres"],
+    answer: 1,
+    explanation: "Torque = twisting force, measured in Newton-meters (Nm) or lb-ft. Engine torque is the rotational force available at the crankshaft. High torque at low RPM = good pulling/towing ability (diesel engines excel here)."
+  },
+  {
+    q: "The COMPRESSION RATIO of a petrol engine is typically:",
+    options: ["16:1 to 22:1", "8:1 to 12:1", "4:1 to 6:1", "25:1 to 30:1"],
+    answer: 1,
+    explanation: "Petrol engines: CR 8:1 to 12:1 (limited by knocking). Diesel engines: 16:1 to 22:1. Higher CR improves efficiency but petrol ignites prematurely (knocks) at very high compression — hence lower ratio."
+  },
+
+  // OVERHAUL SYMPTOMS (additional)
+  {
+    q: "BLUE SMOKE from a diesel engine exhaust indicates:",
+    options: ["Normal cold start condition only", "Engine burning OIL — worn piston rings or valve stem seals", "Air filter blocked", "Fuel injection timing early"],
+    answer: 1,
+    explanation: "Blue smoke = OIL burning. Oil passes worn piston rings (ring end gap too large) or valve stem seals (worn seals allow oil to enter past valve guides during intake). Engine overhaul needed."
+  },
+  {
+    q: "BLACK SMOKE from a diesel exhaust indicates:",
+    options: ["Oil burning", "RICH MIXTURE — too much fuel, insufficient air (incomplete combustion)", "Normal operation", "Water in fuel"],
+    answer: 1,
+    explanation: "Black smoke = RICH mixture = incomplete combustion. Causes: blocked air filter, faulty injectors over-fuelling, wrong injection timing, or worn injection pump. Carbon (soot) is expelled as black smoke."
+  },
+  {
+    q: "WHITE SMOKE from a cold diesel engine that disappears when warm is:",
+    options: ["Catastrophic engine failure", "Normal — unburnt fuel/vapour during cold start before engine reaches operating temperature", "Head gasket failure always", "Air filter blocked"],
+    answer: 1,
+    explanation: "WHITE smoke on cold start = unburnt fuel vapour condensing = NORMAL and disappears when engine warms. Persistent white smoke when hot = coolant burning (blown head gasket) — a serious problem."
+  },
+  {
+    q: "EXCESSIVE OIL CONSUMPTION (needing frequent top-ups) indicates:",
+    options: ["Oil is good quality", "Worn piston rings, worn valve stem seals, or external oil leaks", "Engine is working efficiently", "Oil filter needs cleaning only"],
+    answer: 1,
+    explanation: "Excessive oil consumption: (1) WORN PISTON RINGS — oil enters combustion chamber (blue smoke), (2) WORN VALVE SEALS — oil enters on intake stroke (blue smoke on startup/deceleration), (3) EXTERNAL LEAKS — gasket failures."
+  },
+  {
+    q: "LOW COMPRESSION in one or more cylinders indicates:",
+    options: ["Engine running normally", "Worn rings/cylinder walls, burnt valves, or blown head gasket — engine overhaul needed", "Wrong oil grade", "Fuel injection timing incorrect"],
+    answer: 1,
+    explanation: "Low compression causes: WORN RINGS (blow-by past rings), BURNT VALVES (not sealing), BLOWN HEAD GASKET (leaking between cylinders). Check with compression gauge and leak-down tester to identify cause."
+  },
+  {
+    q: "KNOCKING sound from the engine at startup, reducing as it warms, indicates:",
+    options: ["Valve noise", "Piston slap — clearance between piston and cylinder wall too large (worn)", "Normal engine noise", "Belt noise"],
+    answer: 1,
+    explanation: "PISTON SLAP: when cold, piston rattles in an oversized/worn cylinder. Diminishes when hot because thermal expansion reduces clearance. Persistent slap when hot = serious wear — requires reboring and new pistons."
+  },
+
+  // TROUBLESHOOTING AND MAINTENANCE (additional)
+  {
+    q: "Engine HARD STARTING in cold weather is caused by:",
+    options: ["Engine too hot", "Oil too thick (high viscosity) reducing cranking speed, cold air reducing compression temp in diesel", "Fuel pressure too high", "Thermostat open"],
+    answer: 1,
+    explanation: "Cold starts: (1) THICK OIL resists cranking — use correct grade multigrade (5W-40 etc.), (2) COLD AIR is denser but diesel ignition needs high temperature from compression — use glow plugs, (3) PETROL: enriched mixture (choke/cold start injector)."
+  },
+  {
+    q: "An engine OVERHEATS on hills or under heavy load. This indicates:",
+    options: ["Engine is performing well", "Cooling system marginal — blocked radiator, weak water pump, low coolant, or thermostat sticking closed", "Air filter too clean", "Fuel is too rich"],
+    answer: 1,
+    explanation: "Overheating under load: (1) RADIATOR blocked (reduced cooling capacity), (2) WATER PUMP worn (reduced flow), (3) LOW COOLANT (insufficient heat removal), (4) THERMOSTAT stuck closed (prevents coolant circulation). Check all four."
+  },
+  {
+    q: "The PRESSURE RELIEF VALVE in the lubrication system opens when:",
+    options: ["Oil level is low", "Oil pressure EXCEEDS the maximum set pressure, bypassing excess oil back to sump", "Oil temperature is too high", "Oil filter is clean"],
+    answer: 1,
+    explanation: "Pressure relief valve: when oil pump creates EXCESS PRESSURE (cold thick oil, blocked passages), the spring-loaded valve opens and routes excess oil back to sump — preventing seal and gasket damage from high pressure."
+  },
+  {
+    q: "If the OIL PRESSURE WARNING LIGHT illuminates while driving, the driver should:",
+    options: ["Drive slowly to a garage", "STOP ENGINE IMMEDIATELY and investigate — low oil pressure causes rapid bearing damage within seconds", "Increase engine speed to raise pressure", "Add oil while engine runs"],
+    answer: 1,
+    explanation: "Oil pressure warning = STOP IMMEDIATELY. Engine bearings depend on pressurized oil film — without it, metal-to-metal contact occurs at operating temperatures and speeds. Bearings can seize within 10-30 seconds of zero pressure."
+  },
+  {
+    q: "The AIR FILTER in an IC engine must be cleaned or replaced regularly because:",
+    options: ["Dirty air filter improves performance", "Blocked filter restricts air → rich mixture → power loss, high fuel consumption, and increased emissions", "Air filter lasts the engine's lifetime", "Cleaning is only cosmetic"],
+    answer: 1,
+    explanation: "Blocked air filter reduces air entering engine → excessively rich mixture → incomplete combustion → power loss, increased fuel consumption, black smoke. Also allows abrasive particles to enter causing cylinder wear."
+  },
+  {
+    q: "The DRY-TYPE air filter element in a diesel engine (secondary element) should be:",
+    options: ["Washed with water and reused", "REPLACED when blocked — never cleaned, as cleaning damages the filter media", "Blown clean with compressed air from inside out", "Soaked in oil before reinstalling"],
+    answer: 1,
+    explanation: "Secondary (safety) dry filter elements must be REPLACED — they cannot be cleaned. The delicate paper media is damaged by compressed air or washing. Primary element: can be cleaned with compressed air from INSIDE out."
+  },
+  {
+    q: "Cylinder REBORING is done when:",
+    options: ["Engine needs oil change", "Cylinder bore is worn beyond service limit (out-of-round, tapered) or has scoring/damage", "Air filter is blocked", "Exhaust is noisy"],
+    answer: 1,
+    explanation: "Reboring machines the worn cylinder to a larger, perfectly round, smooth bore — using oversize pistons and rings. Necessary when: bore wear exceeds 0.1-0.2mm, oval shape > 0.05mm, or deep scoring/seizure damage."
+  },
+  {
+    q: "DETONATION (knocking) in a petrol engine is caused by:",
+    options: ["Too low octane fuel or advanced ignition timing causing uncontrolled spontaneous ignition", "Too high octane fuel", "Retarded ignition timing", "Rich fuel mixture only"],
+    answer: 0,
+    explanation: "Detonation: end-gas ignites spontaneously before the flame front arrives — creating multiple flame fronts that collide, generating shock waves (knock/ping). Causes: LOW OCTANE fuel, ADVANCED timing, HIGH compression, hot spots, lean mixture."
+  },
+  {
+    q: "The DIESEL INJECTION NOZZLE is cleaned by:",
+    options: ["Water washing", "Specialized ultrasonic cleaning or mechanical cleaning with approved solvent — never wire brushing", "Wire brushing the nozzle holes", "Compressed air through fuel inlet only"],
+    answer: 1,
+    explanation: "Nozzle precision holes (0.2-0.5mm diameter) are cleaned with ULTRASONIC cleaning or approved naphtha/diesel solvent. NEVER use wire brush — it enlarges holes or blocks them. Check spray pattern on nozzle tester after cleaning."
+  },
+
+  // FUEL SYSTEM (additional)
+  {
+    q: "The FUEL INJECTION PUMP in a diesel engine must deliver fuel at:",
+    options: ["Atmospheric pressure", "High pressure (100-2000+ bar) at precisely timed intervals matched to engine speed and load", "Low pressure with large volume", "Constant pressure regardless of load"],
+    answer: 1,
+    explanation: "Fuel injection pump delivers fuel at HIGH PRESSURE (100+ bar for mechanical, 1000-2000+ bar for CRDI) — high pressure enables fine atomization. Timing and quantity must precisely match engine speed and load requirements."
+  },
+  {
+    q: "The GOVERNOR on a diesel engine controls:",
+    options: ["Coolant temperature", "Engine speed under varying load — prevents over-speed and maintains set speed", "Oil pressure", "Fuel quality"],
+    answer: 1,
+    explanation: "GOVERNOR: automatically adjusts fuel quantity to maintain engine speed despite load changes. Prevents OVER-SPEED (runaway) when load is suddenly removed, and maintains MINIMUM speed when load increases."
+  },
+  {
+    q: "CETANE NUMBER of diesel fuel indicates:",
+    options: ["Energy content per litre", "Ignition quality — higher cetane = shorter ignition delay = smoother, quieter combustion", "Viscosity of fuel", "Flash point temperature"],
+    answer: 1,
+    explanation: "Cetane number (CN): measures how quickly diesel self-ignites under compression. HIGH CN (50+) = short delay = smooth running, easy cold start. LOW CN (<45) = long delay = knocking, hard starting, rough combustion."
+  },
+  {
+    q: "The purpose of BLEED SCREWS on a diesel fuel system is to:",
+    options: ["Increase fuel pressure", "Remove trapped air from fuel lines and filters after maintenance or running dry", "Drain fuel from tank", "Adjust fuel quantity"],
+    answer: 1,
+    explanation: "Bleed screws (on fuel filter, injection pump, injectors) allow air to be purged from the fuel system. AIR IN FUEL LINES prevents engine starting or causes rough running. After any fuel system work, bleed carefully."
+  },
+  {
+    q: "COMMON RAIL DIRECT INJECTION (CRDI/CDI) improves diesel engine performance because:",
+    options: ["It uses less fuel automatically", "High-pressure fuel is stored in a common rail — enabling multiple precise injections per cycle, better atomization, lower emissions", "It eliminates the need for glow plugs always", "Fuel is preheated in the rail"],
+    answer: 1,
+    explanation: "CRDI advantages: (1) MULTIPLE INJECTIONS per cycle (pilot, main, post) — smoother combustion, reduced noise, (2) VERY HIGH PRESSURE (1000-2000 bar) — fine atomization, complete combustion, (3) PRECISE CONTROL by ECU for all conditions."
+  },
+  {
+    q: "A PETROL engine RUNS ON but won't switch off after the ignition is turned off. This is called DIESELING and is caused by:",
+    options: ["Strong engine", "Hot carbon deposits in cylinder igniting charge after ignition is off (pre-ignition from hot spots)", "Good fuel quality", "Correct ignition timing"],
+    answer: 1,
+    explanation: "DIESELING (run-on): hot carbon deposits on piston/head act as glow plugs, igniting the air-fuel mixture even without spark. Causes: wrong idle mixture (too rich), low octane fuel, overheating, excessive carbon buildup."
+  },
+
+  // ENGINE EMISSIONS AND ENVIRONMENT
+  {
+    q: "A THREE-WAY CATALYTIC CONVERTER converts which THREE pollutants?",
+    options: ["CO2, H2O, N2", "CO → CO2, unburnt HC → CO2+H2O, NOx → N2", "Only CO to CO2", "SO2, NOx, particulates"],
+    answer: 1,
+    explanation: "Three-way catalyst simultaneously converts: (1) CO → CO2, (2) unburnt HC → CO2 + H2O, (3) NOx → N2. Requires: correct air-fuel ratio (lambda = 1), operating temp >300°C (light-off), and platinum/palladium/rhodium catalysts."
+  },
+  {
+    q: "EGR (Exhaust Gas Recirculation) in a diesel engine reduces:",
+    options: ["CO2 emissions", "NOx emissions by diluting intake charge with inert exhaust gas, lowering peak combustion temperature", "Particulate emissions only", "HC emissions only"],
+    answer: 1,
+    explanation: "EGR dilutes intake air with inert exhaust gas → lower oxygen concentration → lower peak combustion temperature → less NOx formation (NOx is produced at high temperatures). Up to 40-60% NOx reduction."
+  },
+  {
+    q: "A DIESEL PARTICULATE FILTER (DPF) in modern diesel engines:",
+    options: ["Filters fuel before injection", "Traps soot particles from exhaust, then burns them off during regeneration", "Reduces CO emissions", "Controls oil pressure"],
+    answer: 1,
+    explanation: "DPF: cordierite or silicon carbide honeycomb filter traps soot (PM2.5 particulates) from exhaust. When full, REGENERATION burns off accumulated soot at ~600°C (active: fuel injection) or passively at sustained highway speed."
+  },
+  {
+    q: "The LAMBDA (λ) value of 1.0 in engine management means:",
+    options: ["Rich mixture", "Stoichiometric — perfect chemically correct air-fuel ratio (14.7:1 for petrol)", "Lean mixture", "No fuel"],
+    answer: 1,
+    explanation: "Lambda = actual AFR ÷ stoichiometric AFR. λ=1.0: PERFECT ratio (14.7:1 for petrol). λ<1: RICH (excess fuel). λ>1: LEAN (excess air). Catalytic converters work optimally at λ=1. Lambda sensor monitors this in real time."
+  },
+  {
+    q: "CARBON MONOXIDE (CO) in engine exhaust is produced by:",
+    options: ["Complete combustion of fuel", "INCOMPLETE combustion — insufficient oxygen for complete oxidation of carbon to CO2", "Correct air-fuel ratio", "Lean mixture combustion"],
+    answer: 1,
+    explanation: "CO forms when carbon doesn't fully oxidize: C + ½O2 → CO (instead of C + O2 → CO2). Causes: RICH MIXTURE (insufficient air), misfiring, cold engine, or a faulty catalytic converter. CO is odourless and highly toxic."
+  },
+
+  // THERMODYNAMICS OF IC ENGINE
+  {
+    q: "BRAKE SPECIFIC FUEL CONSUMPTION (BSFC) is defined as:",
+    options: ["Total fuel used per day", "Mass of fuel consumed per unit of brake power output per hour (g/kWh)", "Fuel consumed per kilometer", "Volume of fuel per revolution"],
+    answer: 1,
+    explanation: "BSFC = fuel mass flow rate ÷ brake power = g/kWh. Lower BSFC = MORE EFFICIENT engine. Diesel engines: ~200-250 g/kWh. Petrol engines: ~250-350 g/kWh. Used to compare engine efficiency independently of size."
+  },
+  {
+    q: "VOLUMETRIC EFFICIENCY of an engine is the ratio of:",
+    options: ["Actual power output to theoretical", "Actual volume of air inducted vs. theoretical swept volume — indicates breathing efficiency", "Fuel used to total possible", "Actual to theoretical torque"],
+    answer: 1,
+    explanation: "Volumetric efficiency = (actual air mass inducted) ÷ (swept volume × air density). Measures how well the engine 'breathes'. Turbocharging can give >100% VE. Poor valve timing, restricted intake = low VE."
+  },
+  {
+    q: "As COMPRESSION RATIO increases in an IC engine, thermal efficiency:",
+    options: ["Decreases", "Increases (up to the limit imposed by knocking in petrol engines)", "Stays the same", "Varies randomly"],
+    answer: 1,
+    explanation: "Otto cycle efficiency η = 1 - (1/r)^(γ-1) where r = compression ratio. HIGHER r = HIGHER efficiency. Petrol engines are limited by knock. Diesel engines use higher r without knock (compression ignition design)."
+  },
+  {
+    q: "MEAN EFFECTIVE PRESSURE (MEP) in an engine represents:",
+    options: ["Actual combustion pressure", "Hypothetical constant pressure that would produce the same work as the actual varying pressure cycle", "Oil pressure in sump", "Coolant pressure"],
+    answer: 1,
+    explanation: "MEP = theoretical constant pressure that, acting over the full stroke, produces the same work as the actual P-V diagram. BMEP (brake MEP) compares engine performance independent of size — higher BMEP = better specific output."
+  },
+  {
+    q: "A TURBOCHARGER improves engine power by:",
+    options: ["Adding fuel directly to combustion", "Compressing intake air to increase its density — more air = more fuel = more power", "Reducing engine friction", "Recycling exhaust gas for extra energy"],
+    answer: 1,
+    explanation: "Turbocharger: exhaust gas drives turbine → turbine drives compressor → compressed air enters engine denser → more oxygen per litre → more fuel can burn → MORE POWER from the same displacement. Power increase: 30-50%."
+  },
+  {
+    q: "An INTERCOOLER (charge air cooler) after a turbocharger:",
+    options: ["Heats the compressed air for better vaporization", "COOLS compressed air — reduces temperature, increases density, allowing more air and fuel for greater power", "Filters the compressed air", "Measures air mass entering engine"],
+    answer: 1,
+    explanation: "Compression HEATS air (lower density). Intercooler cools hot compressed air → higher density → more oxygen per litre → more fuel possible → MORE POWER and efficiency. Also reduces NOx (lower combustion temperature)."
+  },
+
+  // COOLING SYSTEM (engine specific)
+  {
+    q: "The THERMOSTAT in a cooling system is normally:",
+    options: ["Always fully open", "CLOSED when cold (to warm engine fast), OPEN when hot (to circulate coolant)", "Always fully closed", "Controlled by the driver manually"],
+    answer: 1,
+    explanation: "Thermostat: CLOSED when cold — coolant recirculates within engine block, warming up RAPIDLY. Opens at ~80-90°C allowing coolant to flow to radiator. Rapid warm-up reduces wear, emissions, and improves fuel economy."
+  },
+  {
+    q: "The WATER PUMP in a cooling system is driven by:",
+    options: ["Battery", "Engine via V-belt or timing belt/chain from crankshaft", "Exhaust gas turbine", "Electric motor always"],
+    answer: 1,
+    explanation: "Water pump is mechanically driven by the engine via belt or timing chain from the crankshaft. If the belt breaks, water pump stops → engine overheats rapidly. Electric water pumps (some modern engines) allow better control."
+  },
+  {
+    q: "The RADIATOR CAP maintains system pressure to:",
+    options: ["Keep coolant cold", "RAISE the boiling point of coolant above 100°C, preventing boiling at normal operating temperature", "Reduce coolant circulation speed", "Act as a safety valve only (no effect on boiling point)"],
+    answer: 1,
+    explanation: "Pressurized system (typically 0.9-1.4 bar above atmospheric) raises coolant boiling point to ~120-130°C. This allows higher operating temperature (better efficiency) without boiling. Relief valve opens if pressure exceeds maximum."
+  },
+  {
+    q: "ANTIFREEZE (ethylene glycol) is added to engine coolant to:",
+    options: ["Only prevent freezing in winter", "LOWER the freezing point AND raise the boiling point — protects in both winter and summer", "Only prevent corrosion", "Only improve cooling efficiency"],
+    answer: 1,
+    explanation: "50/50 ethylene glycol/water mixture: LOWERS freezing point to -37°C AND RAISES boiling point to ~108°C (or ~130°C pressurized). Also contains CORROSION INHIBITORS protecting aluminium, steel, copper, and rubber in the cooling system."
+  },
+
+  // LUBRICATION SYSTEM
+  {
+    q: "The OIL PUMP in an engine is driven by:",
+    options: ["Battery", "Crankshaft (directly or via chain/gears) — runs whenever engine runs", "Camshaft only", "Manual pump by operator"],
+    answer: 1,
+    explanation: "Oil pump is mechanically driven by the crankshaft, ensuring oil circulation whenever the engine runs. Common types: GEAR pump (most common), ROTOR (trochoid) pump. Stops if engine stops — important: never run engine without oil."
+  },
+  {
+    q: "The main function of ENGINE OIL is:",
+    options: ["Fuel for the engine", "Lubrication, cooling of bearings, cleaning (detergent), sealing, and corrosion protection", "Cooling only", "Hydraulic pressure for valves"],
+    answer: 1,
+    explanation: "Engine oil functions: (1) LUBRICATION — reduces friction, (2) COOLING — carries heat from bearings/pistons, (3) CLEANING — detergent additives suspend contaminants, (4) SEALING — helps piston rings seal, (5) CORROSION PROTECTION."
+  },
+  {
+    q: "The OIL FILTER in the full-flow lubrication system:",
+    options: ["Filters only some oil", "Filters ALL oil from the pump before it reaches the bearings — replacement at every oil change", "Filters oil only when pressure is high", "Needs cleaning but not replacement"],
+    answer: 1,
+    explanation: "FULL-FLOW filter: ALL oil passes through filter before reaching bearings. It removes metal particles, soot, and contaminants. BYPASS filter filters a small percentage continuously. Replace filter at EVERY oil change — used filter re-releases trapped contaminants."
+  },
+
+  // NEPAL-SPECIFIC / PSC EXAM QUESTIONS
+  {
+    q: "Nepal Vehicle Mass Emission Standard 2069 BS is equivalent to which international standard?",
+    options: ["Euro II", "Euro III", "Euro IV", "Bharat Stage II"],
+    answer: 1,
+    explanation: "Nepal Vehicle Mass Emission Standard 2069 aligns with EURO III emission norms — setting limits for CO, HC, NOx, and particulates from motor vehicles operating in Nepal."
+  },
+  {
+    q: "An engine producing INDICATED POWER of 50 kW with FRICTION POWER of 8 kW has a BRAKE POWER of:",
+    options: ["58 kW", "42 kW", "50 kW", "8 kW"],
+    answer: 1,
+    explanation: "Brake Power = Indicated Power − Friction Power = 50 − 8 = 42 kW. Indicated power = total power in cylinder. Friction power = power lost to friction. Brake power = useful power at the crankshaft output."
+  },
+  {
+    q: "The MECHANICAL EFFICIENCY of an engine is defined as:",
+    options: ["Indicated Power ÷ Friction Power", "Brake Power ÷ Indicated Power × 100%", "Friction Power ÷ Brake Power", "Heat input ÷ Work output"],
+    answer: 1,
+    explanation: "Mechanical efficiency = (Brake Power ÷ Indicated Power) × 100%. Typical values: 80-90%. Higher = less internal friction losses. Friction losses include: bearing friction, piston rings, valve train, oil pump, and auxiliary drives."
+  },
+  {
+    q: "इन्जिनको पावर स्ट्रोकमा के हुन्छ? (What happens during the power stroke of an engine?)",
+    options: ["सिलिन्डरमा हावा भर्छ (Cylinder fills with air)", "दहनले पिस्टनलाई तल धकेल्छ (Combustion pushes the piston down)", "पिस्टन तल जान्छ र एक्सहस्ट खुल्छ (Piston goes down and exhaust opens)", "कम्प्रेसन हुन्छ (Compression occurs)"],
+    answer: 1,
+    explanation: "पावर स्ट्रोकमा दहनको तापले गैसहरू फैलिन्छन् र पिस्टनलाई तल धकेल्छन् — यसैबाट शक्ति उत्पादन हुन्छ। (During power stroke, combustion gases expand and push piston down — generating mechanical power.)"
+  },
+  {
+    q: "गाडीको इन्जिन ओभरहीट हुँदा के गर्नुपर्छ? (What should be done when a vehicle engine overheats?)",
+    options: ["तुरुन्त चलाउन जारी राख्नु (Continue driving immediately)", "इन्जिन बन्द गर्नु र चिसो हुन दिनु — तातो रेडिएटर क्याप नखोल्नु (Stop engine, let cool — never open hot radiator cap)", "रेडिएटरमा चिसो पानी थप्नु (Add cold water to radiator)", "गति बढाउनु (Increase speed)"],
+    answer: 1,
+    explanation: "ओभरहीट भएमा: इन्जिन बन्द गर्नु, ठन्डा हुन दिनु। तातो रेडिएटर क्याप खोल्दा भाप र तातो पानी फ्वाक्क निस्कन्छ — गम्भीर चोट लाग्न सक्छ। (Stop engine, let cool. Opening hot radiator cap releases scalding steam — serious burns.)"
+  },
+  {
+    q: "४ सिलिन्डर इन्जिनको फायरिङ अर्डर के हो? (What is the firing order of a 4-cylinder engine?)",
+    options: ["1-2-3-4", "1-3-4-2", "1-4-2-3", "2-3-1-4"],
+    answer: 1,
+    explanation: "सामान्य ४ सिलिन्डर इन्जिनको फायरिङ अर्डर १-३-४-२ हो — यसले सन्तुलित दहन र कम कम्पन सुनिश्चित गर्छ। (Standard 4-cylinder firing order is 1-3-4-2 — ensures balanced combustion and minimal vibration.)"
   }
 ];
         function shuffle(array) {
