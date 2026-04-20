@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logsewa Welding MCQ Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Logsewa Workshop Practice Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,319 +33,997 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff, #c3dafe);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
             margin: 0;
-            padding: 2rem;
-            color: #333;
+            padding: 0;
+            color: var(--text-primary);
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
         }
 
         .quiz-container {
             max-width: 900px;
-            margin: auto;
-            background: #fff;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
             padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #1e3a8a;
-            font-size: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
             font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
         }
 
-        h2 {
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
             text-align: center;
-            color: #1e3a8a;
-            margin: 1rem 0;
+            transition: all 0.3s ease;
         }
 
-        .quiz-header {
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
 
         .timer {
-            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
             font-weight: 600;
-            color: #d81b60;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .progress-bar {
             width: 100%;
             height: 8px;
-            background: #e5e7eb;
-            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
             overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
             margin-bottom: 1.5rem;
         }
 
-        .progress {
-            height: 100%;
-            background: #3b82f6;
-            transition: width 0.3s ease;
-        }
-
-        .question {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8fafc;
-            border-radius: 12px;
-            animation: fadeIn 0.5s;
-            transition: transform 0.2s ease;
-        }
-
-        .question:hover {
-            transform: translateY(-2px);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .question p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .options button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            background: #ffffff;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: left;
-            color: #374151;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
         }
 
-        .options button:hover:not(:disabled) {
-            background: #f3f4f6;
-            border-color: #3b82f6;
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
             transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .options button.correct {
-            background: #bbf7d0;
-            border-color: #22c55e;
-            color: #166534;
-            animation: pulse 0.5s;
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
         }
 
-        .options button.wrong {
-            background: #fecaca;
-            border-color: #ef4444;
-            color: #991b1b;
-            animation: shake 0.3s;
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
         }
 
-        .options button:disabled {
-            cursor: not-allowed;
-            opacity: auto;
-        }
-
+        /* Explanation */
         .explanation {
             display: none;
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #eff6ff;
-            border-radius: 8px;
-            color: #1e3a8a;
-            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
         }
 
-        .skip-button {
-            background: #fff3cd;
-            margin-top: 1rem;
-            padding: 0.75rem;
-            width: 100%;
-            border: 1px solid #ffca28;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease;
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .skip-button:hover {
-            background: #ffecb3;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .next-button {
-            background: #3b82f6;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
             cursor: pointer;
-            margin-top: 1rem;
-            display: block;
-            width: 100%;
-            text-align: center;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .next-button:hover:not(:disabled) {
-            background: #2563eb;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
 
-        .next-button:disabled {
-            background: #ccc;
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
             cursor: not-allowed;
+            transform: none !important;
         }
 
+        /* Score Container */
         .score-container {
             text-align: center;
             margin-top: 2rem;
-            padding: 1.5rem;
-            background: #f8fafc;
-            border-radius: 12px;
         }
 
-        .score {
-            font-size: 1.5rem;
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
             font-weight: 700;
-            color: #1e3a8a;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
         }
 
         .results-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .results-table th, .results-table td {
-            border: 1px solid #e5e7eb;
-            padding: 0.75rem;
-            text-align: left;
+            font-size: 0.9rem;
+            min-width: 600px;
         }
 
         .results-table th {
-            background: #f8fafc;
-            color: #1e3a8a;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
             font-weight: 600;
         }
 
-        .results-table .correct {
-            color: #166534;
-            font-weight: bold;
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
         }
 
-        .results-table .wrong {
-            color: #991b1b;
-            font-weight: bold;
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
         }
 
-        .results-table .skipped, .results-table .not-attempted {
-            color: #d97706;
-            font-weight: bold;
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
         }
 
-        .hidden {
-            display: none;
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
         }
 
-        .restart-button {
-            background: #22c55e;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
-            margin: 1rem auto;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
             display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            text-align: center;
-            transition: background 0.3s ease;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
         }
 
-        .restart-button:hover {
-            background: #16a34a;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 1rem;
-            }
-
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .quiz-container {
                 padding: 1rem;
             }
 
-            h1 {
-                font-size: 1.8rem;
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
             }
 
-            .question p {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
                 font-size: 1rem;
             }
 
-            .options button, .skip-button, .next-button, .restart-button {
+            .option-btn {
+                padding: 0.875rem 1rem;
                 font-size: 0.9rem;
-                padding: 0.8rem;
             }
 
-            .results-table th, .results-table td {
-                padding: 0.5rem;
-                font-size: 0.85rem;
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
             }
         }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
+<base target="_blank">
 </head>
 <body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
     <div class="quiz-container">
-        <h1>Logsewa Welding MCQ Quiz</h1>
-        <div class="quiz-header">
-            <div class="timer" id="timer">Time: 00:00</div>
-            <div class="score" id="current-score">Score: 0/30</div>
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>Welding and sheets metal</h1>
+                        <div class="subtitle">Practice Quiz Platform</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">40</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
         </div>
-        <div class="progress-bar">
-            <div class="progress" id="progress"></div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/40</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
         </div>
+
         <div id="quiz"></div>
+
         <div class="score-container">
-            <div class="score" id="score"></div>
+            <div class="score-display" id="score"></div>
             <div id="results" class="hidden">
-                <h2>Quiz Results</h2>
-                <table class="results-table">
-                    <thead>
-                        <tr>
-                            <th>Question</th>
-                            <th>Your Answer</th>
-                            <th>Correct Answer</th>
-                            <th>Status</th>
-                            <th>Explanation</th>
-                        </tr>
-                    </thead>
-                    <tbody id="results-body"></tbody>
-                </table>
-                <button class="restart-button" onclick="restartQuiz()">Restart Quiz</button>
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" onclick="restartQuiz()">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -334,188 +1032,643 @@
     <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
 
     <script>
-        const questions = [
-            {
-                q: "What is brazing in metal joining?",
-                options: ["Melting the base metal", "Using a non-ferrous filler metal", "Cutting metal sheets", "Forging metal parts"],
-                answer: 1,
-                explanation: "Brazing joins metals using a non-ferrous filler metal with a melting point above 450°C but below the base metal’s melting point."
-            },
-            {
-                q: "Which gas combination is used in gas welding?",
-                options: ["Oxygen and acetylene", "Oxygen and hydrogen", "Nitrogen and acetylene", "Carbon dioxide and oxygen"],
-                answer: 0,
-                explanation: "Oxygen and acetylene produce a high-temperature flame suitable for gas welding."
-            },
-            {
-                q: "What is spot welding?",
-                options: ["Electric resistance welding", "Gas welding", "Arc welding", "Laser welding"],
-                answer: 0,
-                explanation: "Spot welding is a resistance welding process that joins metal sheets by applying electric current at specific points."
-            },
-            {
-                q: "Which metal can be welded using electric arc welding?",
-                options: ["Medium carbon steel", "Wood", "Plastic", "Ceramic"],
-                answer: 0,
-                explanation: "Medium carbon steel can be arc welded with proper techniques, unlike non-metals like wood, plastic, or ceramic."
-            },
-            {
-                q: "What happens in oxy-acetylene welding when oxygen supply is excessive?",
-                options: ["Oxidizing flame", "Neutral flame", "Carburizing flame", "No flame"],
-                answer: 0,
-                explanation: "Excess oxygen creates an oxidizing flame, which can oxidize the weld metal and affect weld quality."
-            },
-            {
-                q: "What material is used to coat a welding electrode?",
-                options: ["Flux", "Slag", "Solder", "Paint"],
-                answer: 0,
-                explanation: "Flux coats the electrode to shield the weld pool from atmospheric contamination and stabilize the arc."
-            },
-            {
-                q: "What is the filler material used in soldering?",
-                options: ["Tin-lead alloy", "Zinc-copper alloy", "Aluminum alloy", "Steel wire"],
-                answer: 0,
-                explanation: "Soldering uses a tin-lead alloy with a low melting point to join metals."
-            },
-            {
-                q: "What edge preparation is required for welding plates thicker than 15 mm?",
-                options: ["Double V or U groove on both sides", "Single V groove on one side", "No groove needed", "Square edge"],
-                answer: 0,
-                explanation: "Double V or U grooves ensure proper penetration and strength for welding thick plates."
-            },
-            {
-                q: "How is a neutral flame obtained in oxy-acetylene welding?",
-                options: ["Equal volumes of oxygen and acetylene", "More oxygen than acetylene", "More acetylene than oxygen", "No oxygen supply"],
-                answer: 0,
-                explanation: "A neutral flame, ideal for welding, results from equal volumes of oxygen and acetylene."
-            },
-            {
-                q: "Which is an example of a male and female joint in metalwork?",
-                options: ["Nuts and bolts", "Butt weld", "Lap weld", "Seam weld"],
-                answer: 0,
-                explanation: "Nuts and bolts form a male-female joint, unlike welds, which are permanent joints."
-            },
-            {
-                q: "What is a joint made by fastening two edges of sheet metal together called?",
-                options: ["Seam", "Lap joint", "Butt joint", "T-joint"],
-                answer: 0,
-                explanation: "A seam is a joint where sheet metal edges are fastened together, often by welding or folding."
-            },
-            {
-                q: "Which process is a type of resistance welding?",
-                options: ["Spot welding", "Arc welding", "TIG welding", "MIG welding"],
-                answer: 0,
-                explanation: "Spot welding is a resistance welding process, unlike arc, TIG, or MIG, which are fusion welding methods."
-            },
-            {
-                q: "Which is an example of fusion welding?",
-                options: ["Arc welding", "Resistance welding", "Brazing", "Soldering"],
-                answer: 0,
-                explanation: "Arc welding melts the base metal and filler, making it a fusion welding process."
-            },
-            {
-                q: "Welding defect पत्ता लगाउन NDT मा कुन test समावेश हुन्छ? (Which test is included in NDT to detect welding defects?)",
-                options: ["Magnetic particle test", "Visual inspection only", "Hardness test", "Tensile test"],
-                answer: 0,
-                explanation: "Magnetic particle testing detects surface and near-surface weld defects in NDT."
-            },
-            {
-                q: "Welding electrode को तातोमा ध्यान दिनु पर्ने कारण के हो? (Why is it important to manage the heat of a welding electrode?)",
-                options: ["सुरक्षा र गुणस्तर कायम राख्न (For safety and quality)", "धातुमा फुर्सद राख्न (To keep metal idle)", "इलेक्ट्रोडको आयु घटाउन (To reduce electrode life)", "वेल्डिङ गति बढाउन (To increase welding speed)"],
-                answer: 0,
-                explanation: "इलेक्ट्रोडको तातो व्यवस्थापनले वेल्डरको सुरक्षा र वेल्डको गुणस्तर सुनिश्चित गर्छ। (Managing electrode heat ensures welder safety and weld quality.)"
-            },
-            {
-                q: "Metallic sheet काट्ने सामान्य विधि कुन हो? (What is a common method for cutting metallic sheets?)",
-                options: ["Plasma cutting", "Chiseling", "Hammering", "Filing"],
-                answer: 0,
-                explanation: "प्लाज्मा कटिङ धातुको पातलो पाना काट्न सटीक र सामान्य विधि हो। (Plasma cutting is a precise and common method for cutting metal sheets.)"
-            },
-            {
-                q: "A cold chisel is typically made of:",
-                options: ["High carbon steel", "Mild steel", "Aluminum", "Copper"],
-                answer: 0,
-                explanation: "High carbon steel is used for cold chisels due to its hardness and durability."
-            },
-            {
-                q: "What chemical is used to generate acetylene for gas welding?",
-                options: ["Calcium carbide", "Calcium carbonate", "Sodium chloride", "Potassium nitrate"],
-                answer: 0,
-                explanation: "Calcium carbide reacts with water to produce acetylene gas for welding."
-            },
-            {
-                q: "Which is a common welding defect?",
-                options: ["Crack", "Perfect weld", "Smooth bead", "Uniform penetration"],
-                answer: 0,
-                explanation: "Cracks are a common weld imperfection, compromising structural integrity."
-            },
-            {
-                q: "Butt joint भनेको के हो? (What is a butt joint?)",
-                options: ["दुई टुक्रा सिधा राखी जोड्ने (Joining two pieces edge-to-edge)", "एकअर्काको माथि राखी जोड्ने (Joining by overlapping)", "कोणमा जोड्ने (Joining at an angle)", "पाइप जोड्ने (Joining pipes)"],
-                answer: 0,
-                explanation: "बट जोइन्टले दुई धातुका टुक्रालाई सिधा जोड्छ। (A butt joint aligns two metal pieces edge-to-edge for welding.)"
-            },
-            {
-                q: "Which is a welding testing method?",
-                options: ["Ultrasonic test", "Visual inspection only", "Hardness test", "Impact test"],
-                answer: 0,
-                explanation: "Ultrasonic testing is a non-destructive method to detect internal weld defects."
-            },
-            {
-                q: "Which welding process is suitable for grey cast iron?",
-                options: ["TIG welding", "Arc welding", "Resistance welding", "Plasma welding"],
-                answer: 0,
-                explanation: "TIG welding provides precise control, reducing cracking in grey cast iron."
-            },
-            {
-                q: "In arc welding, how is the electric arc produced?",
-                options: ["By voltage difference", "By mechanical friction", "By gas pressure", "By magnetic induction"],
-                answer: 0,
-                explanation: "The arc is created by a voltage difference between the electrode and workpiece."
-            },
-            {
-                q: "Which process joins metals without melting the base material?",
-                options: ["Brazing", "Arc welding", "MIG welding", "TIG welding"],
-                answer: 0,
-                explanation: "Brazing uses a filler metal to join metals without melting the base material."
-            },
-            {
-                q: "Where is electron beam welding typically performed?",
-                options: ["Vacuum", "Open air", "Underwater", "Inert gas atmosphere"],
-                answer: 0,
-                explanation: "Electron beam welding requires a vacuum to prevent beam scattering."
-            },
-            {
-                q: "What is the temperature range of an electric arc in arc welding?",
-                options: ["6000°C to 7000°C", "4000°C to 5000°C", "2000°C to 3000°C", "8000°C to 9000°C"],
-                answer: 0,
-                explanation: "The electric arc reaches temperatures of 6000°C to 7000°C, enabling metal fusion."
-            },
-            {
-                q: "Which provides better arc stability in welding?",
-                options: ["DC welding", "AC welding", "Gas welding", "Plasma welding"],
-                answer: 0,
-                explanation: "DC welding offers a more stable arc due to consistent current flow."
-            },
-            {
-                q: "पातलो फलाम काट्न प्रयोग गरिने ग्याँस वेल्डिङ प्रक्रिया कुन हो? (Which gas welding process is used for cutting thin iron?)",
-                options: ["प्लाज्मा कटिङ (Plasma cutting)", "ग्यास वेल्डिङ (Gas welding)", "आर्क वेल्डिङ (Arc welding)", "टिग वेल्डिङ (TIG welding)"],
-                answer: 0,
-                explanation: "प्लाज्मा कटिङ पातलो फलाम काट्न सटीक र प्रभावकारी छ। (Plasma cutting is precise for cutting thin iron sheets.)"
-            },
-            {
-                q: "In arc welding with DC current, where is greater heat generated?",
-                options: ["Positive pole (anode)", "Negative pole (cathode)", "Workpiece only", "Electrode tip only"],
-                answer: 0,
-                explanation: "In DC welding, the positive pole (anode) generates more heat due to electron flow."
-            },
-            {
-                q: "What is the process of cutting a flat sheet to a desired shape called?",
-                options: ["Blanking", "Trimming", "Shearing", "Bending"],
-                answer: 0,
-                explanation: "Blanking is the process of cutting a flat sheet into a specific shape using a die."
-            }
-        ];
+const questions = [
+
+  // ══════════════════════════════════════════════════════════════════
+  // SECTION 2.1 — TYPES OF WELDING PROCEDURES AND APPLICATIONS
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "What is brazing in metal joining?",
+    options: ["Melting the base metal", "Using a non-ferrous filler metal above 450°C without melting the base metal", "Cutting metal sheets", "Forging metal parts"],
+    answer: 1,
+    explanation: "Brazing joins metals using a non-ferrous filler metal with a melting point above 450°C but below the base metal's melting point. The base metal does NOT melt — only the filler metal does."
+  },
+  {
+    q: "Which gas combination is used in gas welding?",
+    options: ["Oxygen and acetylene", "Oxygen and hydrogen", "Nitrogen and acetylene", "Carbon dioxide and oxygen"],
+    answer: 0,
+    explanation: "Oxygen and acetylene produce a high-temperature flame (~3100°C) suitable for gas welding of steel and most metals."
+  },
+  {
+    q: "What is spot welding?",
+    options: ["Electric resistance welding at specific points", "Gas welding", "Arc welding", "Laser welding"],
+    answer: 0,
+    explanation: "Spot welding is a resistance welding process that joins metal sheets by applying electric current and pressure at specific points. Widely used in automotive body manufacturing."
+  },
+  {
+    q: "Which metal can be welded using electric arc welding?",
+    options: ["Medium carbon steel", "Wood", "Plastic", "Ceramic"],
+    answer: 0,
+    explanation: "Medium carbon steel can be arc welded with proper techniques (preheat may be needed). Non-metals like wood, plastic, and ceramic cannot be arc welded."
+  },
+  {
+    q: "What happens in oxy-acetylene welding when oxygen supply is excessive?",
+    options: ["Oxidizing flame", "Neutral flame", "Carburizing flame", "No flame"],
+    answer: 0,
+    explanation: "Excess oxygen creates an OXIDIZING flame — it burns hotter with a shorter inner cone. It oxidizes the weld metal. Used for welding brass and bronze but harmful to most steels."
+  },
+  {
+    q: "Which process is a type of resistance welding?",
+    options: ["Spot welding", "Arc welding", "TIG welding", "MIG welding"],
+    answer: 0,
+    explanation: "Spot welding is a resistance welding process — it uses electrical resistance heat at contact points. Arc, TIG, and MIG are all fusion welding processes using an electric arc."
+  },
+  {
+    q: "Which is an example of FUSION welding?",
+    options: ["Arc welding", "Resistance welding", "Brazing", "Soldering"],
+    answer: 0,
+    explanation: "Arc welding melts BOTH the base metal and filler, creating a fusion joint. Brazing and soldering use filler metal without melting the base. Resistance welding uses heat and pressure."
+  },
+  {
+    q: "Which process joins metals WITHOUT melting the base material?",
+    options: ["Brazing", "Arc welding", "MIG welding", "TIG welding"],
+    answer: 0,
+    explanation: "Brazing uses a filler metal (above 450°C) that flows into the joint by capillary action without melting the base metal. This preserves base metal properties and reduces distortion."
+  },
+  {
+    q: "Where is electron beam welding typically performed?",
+    options: ["Vacuum", "Open air", "Underwater", "Inert gas atmosphere only"],
+    answer: 0,
+    explanation: "Electron beam welding requires a VACUUM to prevent the electron beam from scattering when electrons collide with air molecules. Produces extremely precise, deep, narrow welds."
+  },
+  {
+    q: "Which provides better arc stability in welding?",
+    options: ["DC welding", "AC welding", "Gas welding", "Plasma welding"],
+    answer: 0,
+    explanation: "DC welding offers a more STABLE arc due to consistent unidirectional current flow. AC arc extinguishes and re-ignites 100 times per second, making it less stable but preferred for aluminium."
+  },
+  {
+    q: "In arc welding with DC current, where is greater heat generated?",
+    options: ["Positive pole (anode)", "Negative pole (cathode)", "Workpiece only", "Electrode tip only"],
+    answer: 0,
+    explanation: "In DC welding, the POSITIVE pole (anode) generates approximately 2/3 of total heat due to electron bombardment. DCEP (electrode positive) puts more heat at electrode; DCEN puts more heat at work."
+  },
+  {
+    q: "Thermite welding uses which reaction to generate heat?",
+    options: ["Aluminium powder and iron oxide reacting to produce molten iron", "Oxygen and acetylene burning", "Electric current through resistance", "Laser beam energy"],
+    answer: 0,
+    explanation: "Thermite welding: a mixture of aluminium powder and iron oxide (Fe2O3) ignites and reacts exothermically — producing molten iron at ~2500°C. Used for welding railway tracks in the field."
+  },
+  {
+    q: "Which type of welding is most commonly used in the AUTOMOBILE body manufacturing?",
+    options: ["Spot welding (resistance welding)", "Arc welding", "TIG welding", "Gas welding"],
+    answer: 0,
+    explanation: "Spot welding is used for automobile body manufacturing because it joins thin sheet metal quickly, consistently, with no filler metal, and is easily automated in production lines."
+  },
+  {
+    q: "Plasma cutting is used for cutting thin iron/metal sheets because:",
+    options: ["It is precise, fast, and produces clean cuts on metal sheets", "It is cheap and requires no power", "It is done by hand without equipment", "It requires no gas supply"],
+    answer: 0,
+    explanation: "Plasma cutting uses a high-temperature plasma jet (up to 30,000°C) to melt and eject metal. Precise, fast, and suitable for cutting thin to medium metal sheets of steel, aluminium, and stainless steel."
+  },
+  {
+    q: "Which welding process is best suited for welding GREY CAST IRON?",
+    options: ["TIG welding with nickel filler", "Submerged arc welding", "Resistance welding", "Plasma welding"],
+    answer: 0,
+    explanation: "TIG (GTAW) welding with nickel-based filler provides precise heat control needed for cast iron. Cast iron is brittle and prone to cracking — preheat and slow cooling are also essential."
+  },
+  {
+    q: "In arc welding, how is the ELECTRIC ARC produced?",
+    options: ["By voltage difference between electrode and workpiece", "By mechanical friction", "By gas pressure", "By magnetic induction"],
+    answer: 0,
+    explanation: "The arc is initiated when the electrode touches the work and is withdrawn slightly — the voltage difference ionizes the air gap, creating a sustained electric arc (plasma column) at 3500-7000°C."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // SECTION 2.2 — WELDING EQUIPMENT, TOOLS, ACCESSORIES, ELECTRODES
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "What material is used to coat a welding electrode?",
+    options: ["Flux", "Slag", "Solder", "Paint"],
+    answer: 0,
+    explanation: "Flux coats the electrode to: (1) protect the weld pool from atmosphere, (2) stabilize the arc, (3) form protective slag over the weld, (4) add alloying elements to the weld metal."
+  },
+  {
+    q: "What is the temperature range of an electric arc in arc welding?",
+    options: ["6000°C to 7000°C", "4000°C to 5000°C", "2000°C to 3000°C", "8000°C to 9000°C"],
+    answer: 0,
+    explanation: "The electric arc in arc welding reaches temperatures of 6000°C to 7000°C at its core, enabling complete fusion of metals."
+  },
+  {
+    q: "The chemical used to generate acetylene gas for gas welding is:",
+    options: ["Calcium carbide (CaC2)", "Calcium carbonate (CaCO3)", "Sodium chloride (NaCl)", "Potassium nitrate (KNO3)"],
+    answer: 0,
+    explanation: "Calcium carbide (CaC2) reacts with water: CaC2 + 2H2O → C2H2 (acetylene) + Ca(OH)2. This reaction in an acetylene generator produces acetylene gas for welding."
+  },
+  {
+    q: "The E7018 welding electrode is classified as:",
+    options: ["Low hydrogen electrode for high-strength steel", "Cellulosic electrode for pipeline welding", "Rutile electrode for general use", "Cast iron electrode only"],
+    answer: 0,
+    explanation: "E7018: E = electrode, 70 = 70,000 psi tensile strength, 1 = all positions, 8 = low hydrogen potassium coating. Used for high-strength steels, pressure vessels, and crack-sensitive applications."
+  },
+  {
+    q: "Welding electrodes must be kept DRY because:",
+    options: ["Moisture causes hydrogen to enter the weld, causing hydrogen cracking (cold cracking)", "Wet electrodes cost more to use", "Moisture improves arc stability", "Wet electrodes last longer"],
+    answer: 0,
+    explanation: "Moisture in electrode flux coating releases hydrogen during welding. Hydrogen diffuses into the weld and heat-affected zone, causing HYDROGEN-INDUCED (cold) CRACKING — a severe defect. Low hydrogen electrodes must be stored in ovens at 120-150°C."
+  },
+  {
+    q: "A WELDING HELMET is used during arc welding to protect against:",
+    options: ["UV and IR radiation, sparks, and spatter", "Cold temperatures", "Noise only", "Chemical fumes only"],
+    answer: 0,
+    explanation: "Welding helmets protect the eyes and face from: (1) UV/IR radiation that causes 'arc eye' (flash burn), (2) sparks and hot spatter, (3) flying slag. Filter lens shade depends on welding current."
+  },
+  {
+    q: "Which electrode gives the SMOOTHEST weld bead and is easiest to use for beginners?",
+    options: ["Rutile (titania) electrode (E6013)", "Basic/low hydrogen (E7018)", "Cellulosic (E6011)", "Iron powder electrode"],
+    answer: 0,
+    explanation: "RUTILE electrodes (E6013) produce a smooth, easily controlled arc with slag that removes easily. Ideal for general fabrication and beginners. Basic electrodes (E7018) give better mechanical properties but are harder to use."
+  },
+  {
+    q: "NDT to detect welding defects — which test is included?",
+    options: ["Magnetic particle test", "Visual inspection only", "Hardness test", "Tensile test"],
+    answer: 0,
+    explanation: "Magnetic particle testing (MPT) detects surface and near-surface defects in ferromagnetic welds. Other NDT methods: ultrasonic (internal defects), radiography (X-ray), dye penetrant, visual inspection."
+  },
+  {
+    q: "Ultrasonic testing of welds is used to detect:",
+    options: ["Internal weld defects without cutting the weld", "Surface colour changes only", "Electrode quality", "Shielding gas flow rate"],
+    answer: 0,
+    explanation: "Ultrasonic testing sends high-frequency sound waves through the weld. Internal defects (porosity, lack of fusion, cracks) reflect the sound waves back, appearing as signals on a display."
+  },
+  {
+    q: "A welding TRANSFORMER steps down voltage to approximately:",
+    options: ["20-80 volts for welding", "100-200 volts", "220-240 volts", "400-500 volts"],
+    answer: 0,
+    explanation: "Welding transformers step mains voltage down to 20-80V open circuit voltage (OCV) for AC welding. This lower voltage drives large welding current through the electrode-work circuit."
+  },
+  {
+    q: "Why is preheating done before welding high carbon or alloy steels?",
+    options: ["To prevent cracking and reduce rapid cooling that causes brittle martensite", "To save electricity", "To make the electrode last longer", "To speed up the welding process"],
+    answer: 0,
+    explanation: "Preheating slows the cooling rate, prevents martensite formation, reduces thermal shock, minimizes residual stress, and prevents hydrogen-induced cold cracking. Essential for high carbon steel (>0.3%C) and thick sections."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // SECTION 2.3 — WELDING DEFECTS, CAUSES AND REMEDIES
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Which is a common welding defect?",
+    options: ["Crack", "Perfect weld bead", "Smooth surface", "Uniform penetration"],
+    answer: 0,
+    explanation: "Cracks are a serious weld defect — they compromise structural integrity. Types: hot cracks (during solidification), cold cracks (after cooling, due to hydrogen), and fatigue cracks (under cyclic loading)."
+  },
+  {
+    q: "Welding electrode को तातोमा ध्यान दिनु पर्ने कारण के हो? (Why is it important to manage electrode heat?)",
+    options: ["सुरक्षा र गुणस्तर कायम राख्न (For safety and weld quality)", "धातुमा फुर्सद राख्न (To keep metal idle)", "इलेक्ट्रोडको आयु घटाउन (To reduce electrode life)", "वेल्डिङ गति बढाउन (To increase welding speed)"],
+    answer: 0,
+    explanation: "Managing electrode heat ensures welder safety (burns, arc eye) and weld quality (correct heat input affects fusion, penetration, and defect formation)."
+  },
+  {
+    q: "Welding defect पत्ता लगाउन NDT मा कुन test समावेश हुन्छ? (Which NDT test detects welding defects?)",
+    options: ["Magnetic particle test", "Visual inspection only", "Hardness test", "Tensile test"],
+    answer: 0,
+    explanation: "Magnetic particle testing detects surface and near-surface defects in ferromagnetic welds. Ultrasonic testing detects internal defects. Both are non-destructive testing methods."
+  },
+  {
+    q: "POROSITY in a weld is caused by:",
+    options: ["Gas entrapment in the solidifying weld metal", "Excessive welding current", "Too slow welding speed", "Correct electrode angle"],
+    answer: 0,
+    explanation: "Porosity = gas bubbles trapped in the weld pool as it solidifies. Causes: moisture on electrodes/base metal, surface contamination, incorrect shielding gas flow, or arc length too long."
+  },
+  {
+    q: "UNDERCUT welding defect appears as:",
+    options: ["A groove melted into the base metal alongside the weld toe", "Bubbles on weld surface", "Incomplete joint fill", "Weld metal spilling over base metal"],
+    answer: 0,
+    explanation: "Undercut is a groove cut into the base metal along the weld toe/edge. Causes: excess current, wrong electrode angle, too fast travel speed. Weakens the joint by reducing base metal cross-section."
+  },
+  {
+    q: "OVERLAP (cold lap) welding defect is caused by:",
+    options: ["Weld metal flowing over the base metal surface without fusing to it", "Too much current burning through the plate", "Gas porosity in the weld pool", "Cracks during solidification"],
+    answer: 0,
+    explanation: "Overlap occurs when weld metal flows onto the base metal surface and solidifies WITHOUT FUSING to it. Causes: too low current, too slow travel speed, or wrong electrode angle. Creates a notch effect."
+  },
+  {
+    q: "LACK OF FUSION in a weld means:",
+    options: ["Weld metal has not properly bonded with the base metal or previous pass", "Too much heat was applied", "Weld cooled too slowly", "Too much filler metal was used"],
+    answer: 0,
+    explanation: "Lack of fusion = incomplete bonding between weld metal and base metal (or between passes). Causes: too fast travel, wrong angle, contaminated surfaces, insufficient current. Creates a planar crack-like defect."
+  },
+  {
+    q: "DISTORTION in welding is caused by:",
+    options: ["Uneven heating and cooling creating thermal stresses that deform the workpiece", "Using the wrong electrode", "Excess shielding gas", "Too low voltage"],
+    answer: 0,
+    explanation: "Distortion occurs because: heated metal expands → restraint causes plastic deformation → on cooling, the metal contracts unevenly → causes bowing, angular distortion, or buckling. Controlled by clamping and proper weld sequence."
+  },
+  {
+    q: "SPATTER in arc welding is:",
+    options: ["Small droplets of molten metal expelled during welding landing near the weld", "A smooth weld surface", "Correct slag formation", "Proper arc length indicator"],
+    answer: 0,
+    explanation: "Spatter = small droplets of molten metal blown out of the weld pool. Causes: too high current, too long arc, wrong polarity, or damp electrodes. Increases cleanup time and can cause burns."
+  },
+  {
+    q: "What is INCOMPLETE PENETRATION in a weld?",
+    options: ["The weld does not extend through the full thickness of the joint", "Weld extends too deep", "Surface of weld is not smooth", "Weld bead is too wide"],
+    answer: 0,
+    explanation: "Incomplete (lack of) penetration: the weld metal does not reach the root of the joint. Leaves unfused base metal at the root, creating a stress concentration and weak point. Caused by too low current, too fast travel, or wrong joint design."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // SECTION 2.4 — SOLDERING AND BRAZING (Principle, Tools, Equipment, Procedure)
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "What is the filler material used in SOLDERING?",
+    options: ["Tin-lead alloy (or lead-free tin-silver-copper)", "Zinc-copper alloy", "Aluminium alloy", "Steel wire"],
+    answer: 0,
+    explanation: "Soldering uses TIN-LEAD alloy (60/40 traditionally, or lead-free Sn-Ag-Cu for electronics) as filler metal. Melting point below 450°C. Used for electronics, plumbing, and light-duty metal joining."
+  },
+  {
+    q: "How is a NEUTRAL FLAME obtained in oxy-acetylene welding?",
+    options: ["Equal volumes of oxygen and acetylene", "More oxygen than acetylene", "More acetylene than oxygen", "No oxygen supply"],
+    answer: 0,
+    explanation: "Neutral flame = equal O2 and C2H2 volumes. Ideal for welding most metals — neither oxidizes nor carburizes. Two-zone flame: bright inner cone + outer blue envelope. The most commonly used flame."
+  },
+  {
+    q: "The flux used in BRAZING is:",
+    options: ["Borax", "Zinc chloride", "Ammonium chloride", "Resin"],
+    answer: 0,
+    explanation: "BORAX (sodium tetraborate) is the flux used in brazing. It dissolves metal oxides that form during heating, keeping surfaces clean for the filler metal to flow by capillary action."
+  },
+  {
+    q: "The purpose of flux in SOLDERING is to:",
+    options: ["Prevent oxide formation on metal surfaces during heating", "Increase fluidity of solder", "Lower the melting temperature", "Wash away surplus solder"],
+    answer: 0,
+    explanation: "Flux PREVENTS OXIDE formation on surfaces during heating. Oxides prevent solder from bonding. Flux also improves solder flow by reducing surface tension. Types: active flux (for metals), rosin flux (for electronics)."
+  },
+  {
+    q: "SOLDERING is done at a temperature:",
+    options: ["Below 450°C", "Above 450°C", "Above 900°C", "Exactly at 450°C"],
+    answer: 0,
+    explanation: "Soldering = below 450°C. BRAZING = above 450°C but below base metal melting point. This temperature distinction is the key difference between soldering and brazing per international standards."
+  },
+  {
+    q: "What is the CAPILLARY ACTION principle in brazing?",
+    options: ["Molten filler metal is drawn into tight joint gaps by surface tension forces", "Pressure forces filler into the joint", "Vibration fills the joint", "Gravity alone fills the joint"],
+    answer: 0,
+    explanation: "Capillary action draws molten brazing filler metal into tight joint gaps (typically 0.025-0.1mm) against gravity. The gap must be correct — too wide: capillary action fails; too narrow: insufficient filler flow."
+  },
+  {
+    q: "A soldering IRON is used for:",
+    options: ["Soft soldering of small components like electronics by applying heat to the joint", "Arc welding", "Gas welding", "Cutting metal sheets"],
+    answer: 0,
+    explanation: "A soldering iron applies localized heat to the joint, melting the solder. Used for electronics PCB soldering, plumbing copper joints (small), and jewellery. Not used for structural metal joining."
+  },
+  {
+    q: "SOFT SOLDERING vs HARD SOLDERING (silver soldering) — the key difference is:",
+    options: ["Soft soldering uses low-melting filler (below 450°C); hard soldering uses silver alloy filler above 450°C", "Soft is harder; hard is softer", "Both use same temperature", "Hard soldering melts the base metal"],
+    answer: 0,
+    explanation: "Soft soldering (<450°C): tin-lead filler, used for electronics and plumbing. Hard soldering (silver soldering, 450-900°C): silver alloy filler, used for jewellery, musical instruments, and stronger structural joints."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // SECTION 2.5 — GENERAL FITTING (Male/Female Joints, Marking, Sawing,
+  //               Chiseling, Cutting, Joining)
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Which is an example of a MALE and FEMALE joint in metalwork?",
+    options: ["Nuts and bolts", "Butt weld", "Lap weld", "Seam weld"],
+    answer: 0,
+    explanation: "Nuts and bolts form a male-female joint: the bolt (external/male thread) engages with the nut (internal/female thread). Welds are permanent fusion joints, not male-female mechanical fits."
+  },
+  {
+    q: "Butt joint भनेको के हो? (What is a butt joint?)",
+    options: ["दुई टुक्रा सिधा राखी जोड्ने (Joining two pieces edge-to-edge)", "एकअर्काको माथि राखी जोड्ने (Joining by overlapping)", "कोणमा जोड्ने (Joining at an angle)", "पाइप जोड्ने (Joining pipes)"],
+    answer: 0,
+    explanation: "A butt joint aligns two metal pieces END-TO-END in the same plane for welding. The most common joint type. May need V-groove preparation for full penetration in thick plates."
+  },
+  {
+    q: "What is a LAP JOINT in welding?",
+    options: ["Two pieces overlapping each other, welded at the edges", "Two pieces placed end-to-end", "Two pieces at 90° to each other", "Two pieces welded with a backing strip"],
+    answer: 0,
+    explanation: "A lap joint: two pieces OVERLAP each other and are welded along the overlapping edges using fillet welds. Simple to fit up, but less efficient than butt joints because load is transferred through shear."
+  },
+  {
+    q: "A T-JOINT in welding is formed when:",
+    options: ["One piece is placed at 90° (perpendicular) to another, forming a T-shape", "Two pieces are placed end-to-end", "Two pieces overlap completely", "Two pieces form a corner at 45°"],
+    answer: 0,
+    explanation: "T-joint: one plate stands perpendicular (90°) to another — forming a T-shape. Welded with fillet welds on both sides. Very common in structural steel fabrication."
+  },
+  {
+    q: "A cold chisel is typically made of:",
+    options: ["High carbon steel", "Mild steel", "Aluminium", "Copper"],
+    answer: 0,
+    explanation: "Cold chisels are HIGH CARBON STEEL — hardened and tempered. The cutting edge is hard for metal cutting; the striking head is left soft to prevent shattering under hammer blows."
+  },
+  {
+    q: "What is the purpose of MARKING OUT (scribing) before cutting metal?",
+    options: ["To accurately mark the cutting lines and reference points on the metal before machining or cutting", "To improve metal appearance", "To heat the metal", "To test metal hardness"],
+    answer: 0,
+    explanation: "Marking out transfers the dimensions from drawings onto the metal surface using scribers, centre punches, and dividers. Accurate marking ensures the finished part matches the design dimensions."
+  },
+  {
+    q: "A HACKSAWING operation on metal is done with:",
+    options: ["Forward cutting stroke (teeth pointing away from handle)", "Return stroke cutting (teeth toward handle)", "Both strokes", "Circular motion"],
+    answer: 0,
+    explanation: "Hacksaw teeth point FORWARD — cutting on the FORWARD (push) stroke. Apply pressure on forward stroke; lift slightly on return. Cutting on return stroke damages teeth and reduces blade life."
+  },
+  {
+    q: "What edge preparation is required for welding plates THICKER than 15 mm?",
+    options: ["Double V or U groove on both sides", "Single V groove on one side only", "No groove needed", "Square (straight) edge only"],
+    answer: 0,
+    explanation: "Thick plates (>15mm) need DOUBLE V or U-grooves on BOTH sides to ensure complete penetration and fusion throughout the full thickness. Single V is adequate for thinner plates (6-15mm)."
+  },
+  {
+    q: "Which of the following is a permanent fastening method?",
+    options: ["Rivet", "Cotter pin", "Nut and bolt", "Screw"],
+    answer: 0,
+    explanation: "RIVETS create PERMANENT joints — the rivet is deformed during installation and cannot be removed without drilling out. Cotter pins, nuts/bolts, and screws are all removable (temporary) fasteners."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // SECTION 2.6 — SHEET METAL: MARKING, CUTTING, FOLDING, BENDING, JOINING
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "What is a joint made by fastening two EDGES of sheet metal together called?",
+    options: ["Seam", "Lap joint", "Butt joint", "T-joint"],
+    answer: 0,
+    explanation: "A SEAM is a joint where sheet metal edges are fastened together — by welding, folding, crimping, or soldering. Common in HVAC ductwork, tin cans, and sheet metal fabrication."
+  },
+  {
+    q: "Metallic sheet काट्ने सामान्य विधि कुन हो? (What is a common method for cutting metallic sheets?)",
+    options: ["Plasma cutting", "Chiseling", "Hammering", "Filing"],
+    answer: 0,
+    explanation: "Plasma cutting is precise, fast, and produces clean cuts on metal sheets. Other methods include shearing (guillotine), oxy-fuel cutting, laser cutting, and tin snips (for thin sheet)."
+  },
+  {
+    q: "The process of cutting a flat sheet to a DESIRED SHAPE (the cut-out piece is the useful part) is called:",
+    options: ["Blanking", "Trimming", "Shearing", "Bending"],
+    answer: 0,
+    explanation: "BLANKING: the cut-out piece (BLANK) is the useful product — surrounding sheet is scrap. PIERCING: the hole is the useful feature — removed slug is scrap. Both use punch and die."
+  },
+  {
+    q: "HEMMING in sheet metal work is done to:",
+    options: ["Fold the sheet edge back on itself to create a smooth, safe rounded edge", "Cut the sheet into strips", "Join two sheets with rivets", "Create a 90° bend"],
+    answer: 0,
+    explanation: "Hemming folds the sheet edge back on itself (like folding a page), creating a smooth, safe, rounded edge. Used on car door edges, appliance panels, and sheet metal housings to eliminate sharp edges."
+  },
+  {
+    q: "BENDING of sheet metal is done to:",
+    options: ["Change the shape of sheet metal by applying force to create angles or curves", "Cut the sheet into pieces", "Join two sheets permanently", "Increase sheet thickness"],
+    answer: 0,
+    explanation: "Bending applies force to plastic deform sheet metal into angles, channels, or curves without cutting. Done by press brake, bending rolls, or hand folder. The SPRINGBACK must be accounted for in bend design."
+  },
+  {
+    q: "PIERCING in sheet metal work creates:",
+    options: ["A hole in the sheet — the removed slug is scrap, the hole is the useful feature", "A blank cut-out piece that is useful", "A notch at the edge of the sheet", "A groove on the surface"],
+    answer: 0,
+    explanation: "PIERCING punches holes in sheet metal — the HOLE is the useful feature. The removed piece (slug/blank) is scrap. BLANKING is the opposite: the cut-out piece is useful; surrounding sheet is scrap."
+  },
+  {
+    q: "NOTCHING in sheet metal work is done to:",
+    options: ["Remove material from the corner or edge of a sheet to allow bending or joining", "Create holes in the centre of sheet", "Flatten the sheet surface", "Cut the sheet to length only"],
+    answer: 0,
+    explanation: "Notching removes material from sheet CORNERS or EDGES, allowing the sheet to be folded into a box shape without the corners overlapping. Essential for making sheet metal boxes and trays."
+  },
+  {
+    q: "TIN SNIPS are used to:",
+    options: ["Cut thin sheet metal (up to ~1.5mm) by shearing action, like large scissors", "Cut thick steel plates", "Weld sheet metal edges", "Drill holes in sheet metal"],
+    answer: 0,
+    explanation: "Tin snips cut thin sheet metal (aluminium, copper, thin steel up to ~1.5mm) by shearing. Types: straight cut, left-cut (red handle), right-cut (green handle). For thicker sheet, use power shears or plasma cutter."
+  },
+  {
+    q: "The BEND RADIUS in sheet metal work should be at least equal to:",
+    options: ["The material thickness — minimum inside bend radius ≈ 1× material thickness to prevent cracking", "10 times the material thickness", "Half the material thickness always", "Zero (sharp bend is fine)"],
+    answer: 0,
+    explanation: "Minimum inside bend radius ≈ material thickness (for ductile materials like aluminium and mild steel). Too small a radius causes cracking on the OUTSIDE of the bend because the outer fibres are overstretched."
+  },
+  {
+    q: "SPRING BACK in sheet metal bending refers to:",
+    options: ["The tendency of bent metal to partially return toward its original shape after the bending force is removed", "Metal breaking during bending", "The machine bouncing during operation", "Elastic energy stored in the die"],
+    answer: 0,
+    explanation: "Spring back: bent metal partially SPRINGS BACK when force is removed (elastic recovery). The operator must OVERBEND to compensate — bend slightly past the required angle so the part springs back to the correct angle."
+  },
+  {
+    q: "Which type of shearing machine cuts sheet metal using a long straight blade (like a guillotine)?",
+    options: ["Squaring shear (guillotine shear)", "Circular shear (rotary slitter)", "Nibbler", "Plasma cutter"],
+    answer: 0,
+    explanation: "Squaring shear (guillotine) has a long straight upper blade that moves down against a fixed lower blade, shearing the sheet in a straight line. Most common sheet metal cutting machine for straight cuts."
+  },
+  {
+    q: "FORMING in sheet metal work means:",
+    options: ["Shaping sheet metal into three-dimensional shapes (cups, domes) by plastic deformation without cutting", "Cutting the sheet into pieces", "Welding two sheets together", "Marking dimensions on the sheet"],
+    answer: 0,
+    explanation: "Forming (drawing/forming) shapes flat sheet metal into 3D shapes like cups, shells, and domes by pressing the sheet into a die. Used to make car body panels, bowls, cans, and aircraft skins."
+  },
+  {
+    q: "पाइप्स र सिट मेटल (sheet metal) जोड्ने एउटा विधि कुन हो? (What is one method for joining pipes and sheet metal?)",
+    options: ["Seaming (एज फोल्डिंग)", "Painting (रङ लगाउने)", "Sanding (बालुवाले घस्ने)", "Polishing (पालिस गर्ने)"],
+    answer: 0,
+    explanation: "Seaming (edge folding/crimping) joins sheet metal by folding and interlocking the edges. Used for HVAC ductwork, tin cans, and sheet metal enclosures. Creates a mechanical joint without welding."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // ADDITIONAL WELDING QUESTIONS (from papers — not yet covered)
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Which welding position is the MOST DIFFICULT to perform?",
+    options: ["Overhead (4G) position", "Flat (1G) position", "Horizontal (2G) position", "Vertical (3G) position"],
+    answer: 0,
+    explanation: "OVERHEAD (4G) position is most difficult — gravity pulls the weld pool downward (away from the joint), requiring higher skill to control. Flat (1G) is easiest as gravity helps control the weld pool."
+  },
+  {
+    q: "What does the 'E' in an electrode classification like E7018 stand for?",
+    options: ["Electrode (arc welding electrode)", "Efficiency rating", "Edge preparation", "Energy level"],
+    answer: 0,
+    explanation: "E = ELECTRODE (covered arc welding electrode). The full classification: E (electrode) + 70 (70,000 psi tensile strength) + 1 (all positions) + 8 (low hydrogen, potassium, iron powder coating)."
+  },
+  {
+    q: "SHIELDED METAL ARC WELDING (SMAW / stick welding) uses:",
+    options: ["A flux-coated consumable stick electrode and no external shielding gas", "A continuous wire feed with shielding gas", "Non-consumable tungsten electrode", "Electron beam in vacuum"],
+    answer: 0,
+    explanation: "SMAW (stick welding): flux-coated rod electrode. The flux coating burns to provide shielding gas and forms protective slag — NO external gas cylinder needed. Most versatile outdoor welding process."
+  },
+  {
+    q: "In MIG (GMAW) welding, the shielding gas used for mild steel is typically:",
+    options: ["CO2 or Ar/CO2 mixture (75% Ar + 25% CO2)", "Pure argon only", "Helium only", "Air (no shielding gas)"],
+    answer: 0,
+    explanation: "MIG welding mild steel commonly uses CO2 (cheaper, deeper penetration) or mixed gas Ar/CO2 (75/25) — gives better bead appearance, lower spatter. Pure argon is for aluminium; helium for stainless steel."
+  },
+  {
+    q: "FRICTION WELDING joins metals by:",
+    options: ["Rotating one workpiece against the other to generate frictional heat, then applying forge pressure", "Electric current resistance", "Gas flame heating", "Arc heat and filler metal"],
+    answer: 0,
+    explanation: "Friction welding: one part rotates rapidly while pressed against the stationary part → frictional heat softens the interface → rotation stops → forge pressure applied → solid-state bond forms. No filler metal, no melting."
+  },
+  {
+    q: "Which welding defect is caused by the ARC BEING TOO LONG?",
+    options: ["Porosity, spatter, and undercutting", "Smooth weld bead", "Deep penetration", "Narrow weld bead"],
+    answer: 0,
+    explanation: "Too long arc causes: (1) POROSITY (shielding gas ineffective), (2) SPATTER (arc blows droplets), (3) UNDERCUTTING (excess heat), (4) wide, flat, shallow weld bead. Correct arc length ≈ electrode diameter."
+  },
+  {
+    q: "WELD SYMBOLISM — a triangular symbol on a weld drawing represents:",
+    options: ["A fillet weld", "A butt weld", "A plug weld", "A seam weld"],
+    answer: 0,
+    explanation: "A filled triangle (▲) on a weld symbol indicates a FILLET WELD. Fillet welds join two surfaces at approximately 90° (T-joints, corner joints, lap joints) with triangular cross-section weld metal."
+  },
+  {
+    q: "PROJECTION WELDING is a type of:",
+    options: ["Resistance welding that uses raised projections to concentrate current and heat at specific points", "Arc welding", "Laser welding", "Gas welding"],
+    answer: 0,
+    explanation: "Projection welding is a RESISTANCE WELDING process. Raised projections (embossments) on one workpiece concentrate current and heat at specific predetermined points, then collapse under electrode pressure."
+  },
+  {
+    q: "Which gas is used in GAS METAL ARC WELDING (GMAW/MIG) for aluminium welding?",
+    options: ["Pure argon (100% Ar)", "CO2", "Oxygen", "Nitrogen"],
+    answer: 0,
+    explanation: "PURE ARGON (100%) is used for MIG welding aluminium. CO2 and O2 would oxidize aluminium. Argon provides inert shielding and its lower ionization energy gives the spray transfer arc needed for aluminium."
+  },
+  {
+    q: "What is the purpose of a BACK PURGE (backing gas) in TIG welding of stainless steel pipes?",
+    options: ["Protect the ROOT side of the weld from oxidation (prevent discolouration and chromium depletion)", "Cool the weld faster", "Improve welding speed", "Increase weld bead width"],
+    answer: 0,
+    explanation: "Back purge: argon or nitrogen gas is filled inside the pipe to protect the WELD ROOT from atmospheric oxidation. Without it, stainless steel root oxidizes ('sugaring') — losing corrosion resistance and strength."
+  },
+  {
+    q: "In oxy-acetylene welding, the ACETYLENE hose colour is:",
+    options: ["Red (maroon)", "Blue", "Black", "Green"],
+    answer: 0,
+    explanation: "Standard hose colour coding: Acetylene = RED (maroon). Oxygen = BLUE (or black in some standards). This colour coding is CRITICAL — connecting hoses to wrong cylinders can cause catastrophic explosion."
+  },
+  {
+    q: "Welding on a CONFINED SPACE (like inside a tank) requires special precautions because:",
+    options: ["Toxic fumes, oxygen deficiency, and fire/explosion risk are greatly magnified in enclosed spaces", "It is faster to weld in confined spaces", "No special precautions needed", "Welding quality improves in confined spaces"],
+    answer: 0,
+    explanation: "Confined space welding hazards: (1) toxic fume accumulation (no dispersion), (2) oxygen depletion from combustion, (3) explosive gas/vapour accumulation, (4) egress difficulties. Requires continuous ventilation, gas monitoring, and rescue standby."
+  }  ,
+  {
+    q: "SUBMERGED ARC WELDING (SAW) uses:",
+    options: ["A granular flux that completely covers the arc, making welding invisible", "Shielding gas only", "Flux-coated stick electrode", "No filler material"],
+    answer: 0,
+    explanation: "SAW: the arc and weld pool are completely submerged under a layer of granular flux. No visible arc or spatter. Used for large structural welds on thick plates — shipbuilding, pressure vessels, pipe manufacture."
+  },
+  {
+    q: "Which welding defect is caused by EXCESS WELDING CURRENT?",
+    options: ["Burn-through (hole in the plate), undercut, and excessive spatter", "Lack of penetration", "Porosity", "Lack of fusion"],
+    answer: 0,
+    explanation: "Excess current causes: (1) BURN-THROUGH — melts a hole through thin metal, (2) UNDERCUT — excess heat melts base metal alongside weld, (3) spatter — intense arc blows droplets. Reduce current to correct."
+  },
+  {
+    q: "Metallic sheet काट्ने बेलामा कुन औजार प्रयोग गरिन्छ? (Which tool cuts thin sheet metal like scissors?)",
+    options: ["Tin snips (कैँची)", "Hacksaw (ह्याक्सो)", "Angle grinder (एङ्गल ग्राइन्डर)", "Cold chisel (कोल्ड छेनी)"],
+    answer: 0,
+    explanation: "Tin snips cut thin sheet metal by shearing action — like large scissors with hardened blades. Suitable for thin gauge aluminium, copper, and steel sheet up to 1.5mm. Available in straight, left-cut, and right-cut versions."
+  },
+  {
+    q: "SPOT WELDING is most commonly used in the automotive industry because:",
+    options: ["It is fast, automated, produces consistent joints, and requires no filler metal on thin sheet", "It is the cheapest welding method always", "It works on all materials and thicknesses", "It produces the strongest welds of all methods"],
+    answer: 0,
+    explanation: "Spot welding joins thin body panels quickly (fraction of a second per spot), is easily automated by robots, produces consistent quality, and requires no filler metal — making it ideal for high-volume automotive production."
+  },
+  {
+    q: "In oxy-acetylene gas welding, what does FLASHBACK mean?",
+    options: ["The flame burning back into the torch or hoses, causing a hissing/squealing sound — extremely dangerous", "Normal flame reversal during welding", "The flame going out accidentally", "The acetylene running out"],
+    answer: 0,
+    explanation: "FLASHBACK: flame travels back into the torch body and hoses — dangerous and potentially explosive. Caused by: blocked nozzle, too low gas pressure, nozzle touching work. Immediately close BOTH valves. Flashback arrestors prevent this."
+  },
+  {
+    q: "A FILLET WELD has which cross-sectional shape?",
+    options: ["Triangular (approximately)", "Square", "Circular", "Hexagonal"],
+    answer: 0,
+    explanation: "Fillet welds have a TRIANGULAR cross-section. They join two surfaces at approximately 90° — the weld fills the corner with triangular weld metal. The throat size (perpendicular from hypotenuse to right angle) determines weld strength."
+  },
+  {
+    q: "पातलो धातुको पाना जोड्न कुन विधि सर्वोत्तम छ? (Which method is best for joining thin metal sheets?)",
+    options: ["रेजिस्टान्स स्पट वेल्डिंग (Resistance spot welding)", "सबमर्ज्ड आर्क वेल्डिंग (Submerged arc welding)", "ग्यास वेल्डिंग (Gas welding)", "थर्मिट वेल्डिंग (Thermite welding)"],
+    answer: 0,
+    explanation: "Resistance spot welding is best for thin metal sheets — it applies precise heat only at the contact point, prevents burn-through, and requires no filler metal. Submerged arc welding is for thick plates."
+  },
+  {
+    q: "SEAM WELDING is similar to spot welding except:",
+    options: ["It produces a continuous watertight seam by using rotating wheel electrodes instead of spot electrodes", "It uses arc instead of resistance", "It requires filler metal", "It only works on thick plates"],
+    answer: 0,
+    explanation: "Seam welding uses rotating disc (wheel) electrodes that roll along the joint, producing overlapping spot welds or a continuous weld seam. Creates WATERTIGHT joints — used for fuel tanks, containers, radiators."
+  },
+  {
+    q: "In sheet metal DRAWING operation, a sheet is formed into a:",
+    options: ["Three-dimensional hollow shape (cup, shell) by pressing into a die", "Flat piece cut to shape", "Bent angle shape only", "Rolled tube"],
+    answer: 0,
+    explanation: "DEEP DRAWING presses a flat blank into a die cavity to form a 3D hollow shape (cup, cylinder, shell). Used for: car body panels, cans, sinks, pots. The blank flows inward — not stretched — by the punch pressure."
+  },
+  {
+    q: "FLANGING of sheet metal creates:",
+    options: ["A flange (bent lip) along the edge of a sheet for joining, stiffening, or sealing purposes", "A hole in the sheet centre", "A curved dome shape", "Decorative pattern on surface"],
+    answer: 0,
+    explanation: "Flanging bends the sheet edge outward or inward to form a FLANGE (rim). Flanges provide: stiffness to sheet edges, attachment surfaces for bolting, and sealing surfaces on pipe ends (pipe flanges)."
+  },
+  {
+    q: "What is RIVETING as a sheet metal joining method?",
+    options: ["Permanent joining using metal rivets that are deformed (bucked) to clamp the sheets together", "Temporary joining with bolts", "Joining by soldering along the edge", "Joining by spot welding only"],
+    answer: 0,
+    explanation: "Riveting: a rivet (cylindrical rod with a head) is inserted through holes in sheets. The tail end is deformed (bucked) to form a second head — clamping the sheets permanently. Used in aircraft, bridges, and boilers."
+  },
+  {
+    q: "SOLDERING IRON WATTAGE affects:",
+    options: ["The heat delivered to the joint — higher watts = more heat for larger joints; lower watts = less heat for delicate electronics", "The type of solder used", "The flux type needed", "The colour of the joint"],
+    answer: 0,
+    explanation: "Soldering iron wattage: 15-40W for electronics PCB work (too much heat damages components); 80-150W for larger plumbing or sheet metal joints. Always use minimum wattage needed for the job."
+  },
+  {
+    q: "GAS WELDING of aluminium requires which flux because aluminium has a tough oxide layer?",
+    options: ["Aluminium-specific flux (chloride and fluoride based) to dissolve Al2O3 oxide layer", "Borax only", "No flux is needed", "Same flux as steel welding"],
+    answer: 0,
+    explanation: "Aluminium oxide (Al2O3) melts at ~2050°C but aluminium melts at 660°C. Aluminium welding flux (chloride/fluoride based) DISSOLVES the oxide layer, allowing filler metal to bond to clean aluminium beneath."
+  },
+  {
+    q: "The ANGLE GRINDER in a welding workshop is used for:",
+    options: ["Grinding welds smooth, removing scale, and cutting metal using abrasive/cutting discs", "Drilling holes", "Measuring weld dimensions", "Preheating metal"],
+    answer: 0,
+    explanation: "Angle grinder in welding: (1) GRINDING excess weld metal flush, (2) CUTTING metal with cutting disc, (3) REMOVING rust/scale before welding, (4) CLEANING weld seams between passes."
+  },
+  {
+    q: "Sheet metal gauge number — a higher gauge number means:",
+    options: ["Thinner sheet metal", "Thicker sheet metal", "Harder material", "Larger sheet size"],
+    answer: 0,
+    explanation: "In sheet metal gauge systems: HIGHER gauge number = THINNER material. Example: 18 gauge (1.27mm) is thinner than 16 gauge (1.59mm). Gauge 10 is much thicker than gauge 28. Confusingly, gauge is inverse to thickness."
+  },
+  {
+    q: "WELD INSPECTION — VISUAL INSPECTION should be done:",
+    options: ["Before welding (check fit-up), during welding (inter-pass), and after welding (final bead)", "Only after welding is complete", "Only before welding", "Only with X-ray, not visually"],
+    answer: 0,
+    explanation: "Visual inspection (the simplest NDT method) at THREE stages: (1) BEFORE — check fit-up, cleanliness, joint preparation, (2) DURING — inter-pass cleaning, bead profile, (3) AFTER — final bead surface, dimensions, visible defects."
+  },
+  {
+    q: "TACK WELDS in fabrication are used to:",
+    options: ["Hold parts in correct position before final welding — small welds spaced along the joint", "Create the final permanent joint only", "Test weld quality", "Mark the weld line"],
+    answer: 0,
+    explanation: "Tack welds are short, temporary welds spaced along the joint to HOLD PARTS IN ALIGNMENT before final welding. They prevent distortion during welding. Tacks must be sound (not cracked) — they become part of the final weld."
+  },
+  {
+    q: "In gas cutting (oxy-fuel cutting), metal is cut by:",
+    options: ["Burning iron in a stream of pure oxygen (oxidation), not by melting", "Melting with the flame alone", "Mechanical shearing", "Plasma arc erosion"],
+    answer: 0,
+    explanation: "Oxy-fuel cutting: preheat flame raises steel to ignition temperature (~870°C), then a HIGH-PRESSURE OXYGEN jet BURNS (oxidizes) the iron to iron oxide — which has a lower melting point and is blown away by the oxygen jet."
+  },
+  {
+    q: "HARD FACING (hardsurfacing) in welding means:",
+    options: ["Applying a hard, wear-resistant weld overlay onto a base metal to resist wear and abrasion", "Welding a hard steel plate to a structure", "Hardening the base metal by quenching", "Grinding the weld surface smooth"],
+    answer: 0,
+    explanation: "Hard facing deposits a wear-resistant alloy (containing chromium carbides, tungsten carbides) on high-wear surfaces like bucket teeth, crusher jaws, and grader blades — extending service life significantly."
+  },
+  {
+    q: "In sheet metal work, ROLLING is done to:",
+    options: ["Form flat sheet metal into cylindrical or conical shapes using rollers", "Cut sheet into strips", "Create holes by punching", "Flatten sheet to uniform thickness"],
+    answer: 0,
+    explanation: "Rolling (plate rolling) passes sheet metal through forming rollers to curve it into cylindrical, conical, or other curved profiles. Used to make pipes, tanks, cone sections, and curved structural elements."
+  },
+  {
+    q: "STUD WELDING is used to:",
+    options: ["Weld threaded studs or fasteners directly to a metal plate in one rapid operation", "Join two thick plates", "Weld in the overhead position", "Join aluminium to steel"],
+    answer: 0,
+    explanation: "Stud welding attaches studs, bolts, or pins to a metal base in one rapid automated operation. Used in construction (concrete anchors on steel beams), automotive, and shipbuilding for attaching fasteners without drilling."
+  }
+
+
+];
+
+// TOTAL: 100 Questions — Welding & Sheet Metal Works
+
+// TOTAL: 100 Questions
 
         let currentPage = 0;
         let score = 0;
@@ -523,46 +1676,71 @@
         let userAnswers = Array(questions.length).fill(null);
         let timerSeconds = 0;
         let timerInterval;
+        let currentStreak = 0;
+        let maxStreak = 0;
         const QUESTIONS_PER_PAGE = 5;
-        const ANSWER_DELAY = 1000;
+        const ANSWER_DELAY = 1500;
 
         const quizEl = document.getElementById("quiz");
         const scoreEl = document.getElementById("score");
         const resultsEl = document.getElementById("results");
         const resultsBody = document.getElementById("results-body");
         const progressEl = document.getElementById("progress");
+        const progressTextEl = document.getElementById("progress-text");
         const timerEl = document.getElementById("timer");
         const currentScoreEl = document.getElementById("current-score");
+        const questionsAnsweredEl = document.getElementById("questions-answered");
+        const accuracyEl = document.getElementById("accuracy");
+        const streakBadge = document.getElementById("streak-badge");
         const correctSound = document.getElementById("correct-sound");
         const wrongSound = document.getElementById("wrong-sound");
 
-        // Clear progress to start fresh
         function clearProgress() {
-            localStorage.removeItem("quizProgressWelding");
+            localStorage.removeItem("quizProgressWorkshop");
             currentPage = 0;
             score = 0;
             skipped = [];
             userAnswers = Array(questions.length).fill(null);
             timerSeconds = 0;
+            currentStreak = 0;
+            maxStreak = 0;
         }
 
-        // Save progress to localStorage
         function saveProgress() {
-            localStorage.setItem("quizProgressWelding", JSON.stringify({
+            localStorage.setItem("quizProgressWorkshop", JSON.stringify({
                 currentPage,
                 score,
                 skipped,
                 answers: userAnswers,
-                time: timerSeconds
+                time: timerSeconds,
+                streak: currentStreak,
+                maxStreak
             }));
         }
 
-        // Update current score display
-        function updateCurrentScore() {
-            currentScoreEl.textContent = `Score: ${score}/${questions.length}`;
+        function updateStats() {
+            currentScoreEl.textContent = score;
+            const answered = userAnswers.filter(a => a !== null && a !== 'Skipped').length;
+            questionsAnsweredEl.textContent = answered;
+            const accuracy = answered > 0 ? Math.round((score / answered) * 100) : 0;
+            accuracyEl.textContent = accuracy + '%';
+            progressTextEl.textContent = `${answered}/${questions.length}`;
         }
 
-        // Shuffle array
+        function updateStreak(isCorrect) {
+            if (isCorrect) {
+                currentStreak++;
+                if (currentStreak > maxStreak) maxStreak = currentStreak;
+                if (currentStreak >= 3) {
+                    streakBadge.textContent = `Streak: ${currentStreak}`;
+                    streakBadge.classList.add('show');
+                    setTimeout(() => streakBadge.classList.remove('show'), 2000);
+                }
+            } else {
+                currentStreak = 0;
+            }
+        }
+
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -571,25 +1749,23 @@
             return array;
         }
 
-        // Start timer
         function startTimer() {
             timerInterval = setInterval(() => {
                 timerSeconds++;
                 const minutes = Math.floor(timerSeconds / 60);
                 const seconds = timerSeconds % 60;
-                timerEl.textContent = `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 saveProgress();
             }, 1000);
         }
 
-        // Update progress bar
         function updateProgress() {
             const answeredCount = userAnswers.filter(answer => answer !== null).length;
             const percentage = (answeredCount / questions.length) * 100;
             progressEl.style.width = `${percentage}%`;
+            updateStats();
         }
 
-        // Show questions for the current page
         function showQuestions(page) {
             quizEl.innerHTML = '';
             const startIndex = page * QUESTIONS_PER_PAGE;
@@ -599,61 +1775,80 @@
                 const q = questions[i];
                 const shuffledOptions = shuffle([...q.options].map((opt, j) => ({ text: opt, index: j })));
                 const optionsHtml = shuffledOptions
-                    .map(opt => `<button onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')">${opt.text}</button>`)
-                    .join('');
+                    .map((opt, idx) => `
+                        <button class="option-btn" onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')" data-index="${idx}">
+                            <span class="option-indicator">${String.fromCharCode(65 + idx)}</span>
+                            <span>${opt.text}</span>
+                        </button>
+                    `).join('');
+                
                 const questionDiv = document.createElement('div');
-                questionDiv.classList.add('question');
-                questionDiv.dataset.index = i;
+                questionDiv.classList.add('question-wrapper');
                 questionDiv.innerHTML = `
-                    <p>Q${i + 1}. ${q.q}</p>
-                    <div class="options">${optionsHtml}</div>
-                    <button class="skip-button" onclick="skipQuestion(${i})">Skip</button>
-                    <div class="explanation">${q.explanation}</div>
+                    <div class="question-card" data-index="${i}">
+                        <div class="question-header">
+                            <div class="question-number">${i + 1}</div>
+                            <div class="question-text">${q.q}</div>
+                        </div>
+                        <div class="options">${optionsHtml}</div>
+                        <div class="explanation">${q.explanation}</div>
+                    </div>
                 `;
                 quizEl.appendChild(questionDiv);
             }
 
+            const actionBar = document.createElement('div');
+            actionBar.classList.add('action-bar');
+
             if (endIndex < questions.length || skipped.length > 0) {
-                const nextButton = document.createElement('button');
-                nextButton.classList.add('next-button');
-                nextButton.textContent = endIndex < questions.length ? 'Next' : 'Review Skipped Questions';
-                nextButton.onclick = nextPage;
-                nextButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
-                quizEl.appendChild(nextButton);
+                const nextBtn = document.createElement('button');
+                nextBtn.classList.add('btn', 'btn-primary');
+                nextBtn.innerHTML = endIndex < questions.length ? 'Next Questions →' : 'Review Skipped →';
+                nextBtn.onclick = nextPage;
+                nextBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(nextBtn);
             } else {
-                const submitButton = document.createElement('button');
-                submitButton.classList.add('next-button');
-                submitButton.textContent = 'Submit Quiz';
-                submitButton.onclick = endQuiz;
-                submitButton.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
-                quizEl.appendChild(submitButton);
+                const submitBtn = document.createElement('button');
+                submitBtn.classList.add('btn', 'btn-primary');
+                submitBtn.innerHTML = '✓ Submit Quiz';
+                submitBtn.onclick = endQuiz;
+                submitBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(submitBtn);
             }
 
+            const skipBtn = document.createElement('button');
+            skipBtn.classList.add('btn', 'btn-skip');
+            skipBtn.innerHTML = '⊘ Skip All';
+            skipBtn.onclick = () => {
+                for (let i = startIndex; i < endIndex; i++) {
+                    if (userAnswers[i] === null) skipQuestion(i);
+                }
+            };
+            actionBar.appendChild(skipBtn);
+
+            quizEl.appendChild(actionBar);
             updateProgress();
             saveProgress();
         }
 
-        // Check if all questions on the current page are answered or skipped
         function areAllQuestionsAnsweredOnPage(startIndex, endIndex) {
             for (let i = startIndex; i < endIndex; i++) {
-                if (userAnswers[i] === null) {
-                    return false;
-                }
+                if (userAnswers[i] === null) return false;
             }
             return true;
         }
 
-        // Check answer
         function checkAnswer(button, questionIndex, selected, selectedText) {
             const q = questions[questionIndex];
             const correct = q.answer;
-            const buttons = button.parentElement.querySelectorAll("button");
-            const questionDiv = button.closest('.question');
-            const explanationDiv = questionDiv.querySelector('.explanation');
+            const buttons = button.parentElement.querySelectorAll(".option-btn");
+            const card = button.closest('.question-card');
+            const explanationDiv = card.querySelector('.explanation');
 
             buttons.forEach(btn => {
                 btn.disabled = true;
-                if (q.options.indexOf(btn.textContent) === correct) {
+                const btnText = btn.querySelector('span:last-child').textContent;
+                if (q.options.indexOf(btnText) === correct) {
                     btn.classList.add('correct');
                 }
                 if (btn === button && selected !== correct) {
@@ -661,22 +1856,26 @@
                 }
             });
 
-            questionDiv.querySelector('.skip-button').disabled = true;
             explanationDiv.style.display = 'block';
-
+            
             userAnswers[questionIndex] = selectedText;
-            if (selected === correct) {
+            const isCorrect = selected === correct;
+            if (isCorrect) {
                 score++;
-                correctSound.play().catch(() => console.log("Audio playback failed"));
+                correctSound.play().catch(() => {});
+                updateStreak(true);
             } else {
-                wrongSound.play().catch(() => console.log("Audio playback failed"));
+                wrongSound.play().catch(() => {});
+                updateStreak(false);
             }
 
-            updateCurrentScore();
+            updateStats();
             saveProgress();
-            const nextButton = quizEl.querySelector('.next-button');
-            if (nextButton) {
-                nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+            
+            const actionBar = quizEl.querySelector('.action-bar');
+            const primaryBtn = actionBar.querySelector('.btn-primary');
+            if (primaryBtn) {
+                primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
                     currentPage * QUESTIONS_PER_PAGE,
                     Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
                 );
@@ -692,19 +1891,21 @@
             }, ANSWER_DELAY);
         }
 
-        // Skip question
         function skipQuestion(questionIndex) {
             if (!skipped.includes(questions[questionIndex])) {
                 skipped.push(questions[questionIndex]);
                 userAnswers[questionIndex] = 'Skipped';
-                const questionDiv = document.querySelector(`.question[data-index="${questionIndex}"]`);
-                questionDiv.querySelectorAll('.options button').forEach(btn => btn.disabled = true);
-                questionDiv.querySelector('.skip-button').disabled = true;
-                questionDiv.querySelector('.explanation').style.display = 'block';
+                const card = document.querySelector(`.question-card[data-index="${questionIndex}"]`);
+                if (card) {
+                    card.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+                    card.querySelector('.explanation').style.display = 'block';
+                    card.style.opacity = '0.6';
+                }
                 saveProgress();
-                const nextButton = quizEl.querySelector('.next-button');
-                if (nextButton) {
-                    nextButton.disabled = !areAllQuestionsAnsweredOnPage(
+                const actionBar = quizEl.querySelector('.action-bar');
+                const primaryBtn = actionBar.querySelector('.btn-primary');
+                if (primaryBtn) {
+                    primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
                         currentPage * QUESTIONS_PER_PAGE,
                         Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
                     );
@@ -712,7 +1913,6 @@
             }
         }
 
-        // Move to next page
         function nextPage() {
             if (skipped.length > 0 && currentPage * QUESTIONS_PER_PAGE >= questions.length) {
                 showSkippedQuestions();
@@ -728,7 +1928,6 @@
             }
         }
 
-        // Show skipped questions
         function showSkippedQuestions() {
             questions.splice(0, questions.length, ...skipped);
             skipped = [];
@@ -736,11 +1935,90 @@
             showQuestions(currentPage);
         }
 
-        // End quiz and show results
+        function drawConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const colors = ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'];
+            
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: Math.random() * 3 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    size: Math.random() * 6 + 2,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            let animationId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rotation += 2;
+                    
+                    if (p.y < canvas.height) {
+                        active = true;
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation * Math.PI / 180);
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                        ctx.restore();
+                    }
+                });
+                
+                if (active) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+            
+            setTimeout(() => cancelAnimationFrame(animationId), 5000);
+        }
+
         function endQuiz() {
             clearInterval(timerInterval);
             quizEl.innerHTML = '';
-            scoreEl.textContent = `Final Score: ${score} out of ${questions.length} (${((score / questions.length) * 100).toFixed(2)}%)`;
+            
+            const percentage = ((score / questions.length) * 100).toFixed(1);
+            let message = '';
+            let emoji = '';
+            
+            if (percentage >= 90) {
+                message = 'Outstanding! You\'re a master!';
+                emoji = '🏆';
+                drawConfetti();
+            } else if (percentage >= 70) {
+                message = 'Great job! Well done!';
+                emoji = '🌟';
+            } else if (percentage >= 50) {
+                message = 'Good effort! Keep practicing!';
+                emoji = '💪';
+            } else {
+                message = 'Keep learning! You\'ll improve!';
+                emoji = '📚';
+            }
+
+            scoreEl.innerHTML = `
+                <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+                <div class="score-display">${percentage}%</div>
+                <div class="score-label">${message}</div>
+                <div style="margin-top: 1rem; color: var(--text-secondary);">
+                    ${score} correct out of ${questions.length} questions<br>
+                    Time: ${timerEl.textContent} | Best Streak: ${maxStreak}
+                </div>
+            `;
+            
             resultsEl.classList.remove('hidden');
 
             resultsBody.innerHTML = questions.map((q, i) => {
@@ -751,40 +2029,50 @@
                 const status = userAnswers[i] === q.options[q.answer] ? 'Correct' :
                               userAnswers[i] === 'Skipped' ? 'Skipped' :
                               userAnswers[i] === null ? 'Not attempted' : 'Wrong';
+                const statusClass = status.toLowerCase().replace(' ', '-');
+                const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : '⊘';
+                
                 return `
                     <tr>
-                        <td>${i + 1}. ${q.q}</td>
+                        <td>${i + 1}</td>
+                        <td>${q.q}</td>
                         <td>${userAnswer}</td>
                         <td>${correctAnswer}</td>
-                        <td class="${status.toLowerCase().replace(' ', '-')}">${status}</td>
-                        <td class="explanation">${q.explanation}</td>
+                        <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                        <td class="explanation-cell">${q.explanation}</td>
                     </tr>
                 `;
             }).join('');
 
-            localStorage.removeItem('quizProgressWelding');
+            localStorage.removeItem('quizProgressWorkshop');
         }
 
-        // Restart quiz
         function restartQuiz() {
             clearProgress();
             resultsEl.classList.add('hidden');
-            scoreEl.textContent = '';
+            scoreEl.innerHTML = '';
             startTimer();
             showQuestions(currentPage);
-            updateCurrentScore();
+            updateStats();
         }
 
-        // Initialize quiz
         function initialize() {
-            clearProgress(); // Reset all progress on page load
+            clearProgress();
             startTimer();
             showQuestions(currentPage);
-            updateCurrentScore();
+            updateStats();
         }
 
-        // Start quiz on page load
         initialize();
+
+        // Handle resize for canvas
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
     </script>
 </body>
 </html>
