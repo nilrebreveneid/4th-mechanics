@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Mock test 2 Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>Mock test 2</h1>
+                        <div class="subtitle">Practice Quiz Platform</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">40</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/40</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" onclick="restartQuiz()">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+
+      // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// MCQ SET 2 — 100 Questions | Sewa Sambandhi (Job Based Knowledge)
+// Distribution follows SYLLABUS units × ~3 (scaled to 100 questions)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 1:  Workshop Practices         → 9 Qs  (syllabus: 3)
+// UNIT 2:  Welding & Sheet Metal      → 12 Qs (syllabus: 4)
+// UNIT 3:  Construction Equipment    → 6 Qs  (syllabus: 2)
+// UNIT 4:  IC Engine                 → 7 Qs  (syllabus: 2)
+// UNIT 5:  Fuel System               → 6 Qs  (syllabus: 2)
+// UNIT 6:  Cooling System            → 6 Qs  (syllabus: 2)
+// UNIT 7:  Brake System              → 6 Qs  (syllabus: 2)
+// UNIT 8:  Suspension System         → 5 Qs  (syllabus: 2)
+// UNIT 9:  Steering System           → 5 Qs  (syllabus: 2)
+// UNIT 10: Transmission System       → 4 Qs  (syllabus: 1)
+// UNIT 11: Hydraulic System          → 4 Qs  (syllabus: 1)
+// UNIT 12: Track, Wheel & Tyres      → 4 Qs  (syllabus: 1)
+// UNIT 13: Servicing & Maintenance   → 4 Qs  (syllabus: 1)
+// UNIT 14: Electrical System         → 4 Qs  (syllabus: 1)
+// UNIT 15: Record Keeping            → 4 Qs  (syllabus: 1)
+// UNIT 16: Safety Practices          → 4 Qs  (syllabus: 1)
+// UNIT 17: Coolants & Lubricants     → 4 Qs  (syllabus: 1)
+// UNIT 18: Air Conditioning          → 6 Qs  (syllabus: 1)
+// TOTAL: 100 questions
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const questions = [
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 1 — WORKSHOP PRACTICES (Questions 1-9)
+  // Scale, Tri-square, Bevel Protractor, Vernier Caliper, Micrometer,
+  // Gauges, Feeler gauge, Metric/FPS/SI units, Hand tools,
+  // Lathe, Milling, Shaper, Grinding, Drilling, Arc/Oxy welding,
+  // Power transmission in workshop
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Which measuring instrument is used to check the squareness of a workpiece?",
+    options: ["Steel rule", "Bevel protractor", "Tri-square", "Vernier caliper"],
+    answer: 2,
+    explanation: "A tri-square (engineer's square) checks that surfaces are at 90° (square) to each other. It has a fixed blade at exactly 90° to its stock. Used daily in fitting, marking, and inspection."
+  },
+  {
+    q: "A bevel protractor is used to measure:",
+    options: ["Length of a workpiece", "Angles between surfaces", "External diameter", "Surface roughness"],
+    answer: 1,
+    explanation: "A bevel protractor measures angles between surfaces with high precision. It can measure angles from 0° to 360°. The vernier scale gives accuracy of 5 minutes (1/12 of a degree)."
+  },
+  {
+    q: "The least count of a standard Vernier caliper is:",
+    options: ["0.1 mm", "0.02 mm", "0.001 mm", "1 mm"],
+    answer: 1,
+    explanation: "Standard Vernier calipers have a least count of 0.02 mm (some are 0.05 mm). The micrometer is more precise at 0.001 mm. The least count determines the smallest measurement that can be read."
+  },
+  {
+    q: "Which hand tool is used to cut INTERNAL threads inside a hole?",
+    options: ["Die", "Tap", "File", "Hacksaw"],
+    answer: 1,
+    explanation: "A TAP cuts internal (female) threads inside a drilled hole. A DIE cuts external (male) threads on a rod or bolt. Both are used in pairs for matching threaded connections."
+  },
+  {
+    q: "In the FPS (Foot-Pound-Second) system of measurement, the unit of length is:",
+    options: ["Meter", "Centimeter", "Foot", "Kilometer"],
+    answer: 2,
+    explanation: "FPS system uses: Foot (length), Pound (mass/force), Second (time). The metric/SI system uses: Meter, Kilogram, Second. The FPS system is used in USA and some legacy engineering."
+  },
+  {
+    q: "Power transmission in a workshop can be done through which of the following?",
+    options: ["Belt and pulley system", "Gear drive system", "Chain and sprocket system", "All of the above"],
+    answer: 3,
+    explanation: "Workshop power transmission can use ALL three: Belt-pulley (smooth, slips if overloaded), Gear drive (precise, no slip), Chain-sprocket (strong, used where exact speed ratio is needed)."
+  },
+  {
+    q: "Which type of file cuts fastest and is used for heavy stock removal?",
+    options: ["Smooth cut file", "Second cut file", "Bastard cut file", "Dead smooth file"],
+    answer: 2,
+    explanation: "Bastard cut file has the coarsest teeth and removes material fastest. Order from coarsest to finest: Rough → Bastard → Second cut → Smooth → Dead smooth."
+  },
+  {
+    q: "The lathe machine is called the 'mother of all machine tools' because:",
+    options: ["It is the most expensive machine", "It can produce most of the parts needed to make other machines", "It uses the most electricity", "It is the oldest machine ever made"],
+    answer: 1,
+    explanation: "The lathe is called the 'mother of all machine tools' because it can produce cylindrical, conical, threaded surfaces and can make components needed to build other machine tools."
+  },
+  {
+    q: "Metrology is defined as:",
+    options: ["Study of weather", "Science of precise and accurate measurement of physical quantities", "Study of metals and their properties", "Study of machine tools"],
+    answer: 1,
+    explanation: "Metrology is the science of measurement — establishing standards, calibration, and ensuring measurement accuracy. It covers length, mass, temperature, and other physical quantities."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 2 — WELDING AND SHEET METAL WORKS (Questions 10-21)
+  // Types of welding, equipment, tools, accessories, electrodes,
+  // defects, causes, remedies, soldering, brazing, sheet metal ops
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Which type of welding uses the heat generated by electrical resistance between the workpieces?",
+    options: ["Arc welding", "Gas welding", "Resistance welding (spot welding)", "TIG welding"],
+    answer: 2,
+    explanation: "Resistance welding (spot, seam, projection welding) uses electrical resistance heat — current flows through the joint, resistance generates heat, and pressure fuses the metals. No filler metal needed."
+  },
+  {
+    q: "What is the main function of the coating on an arc welding electrode?",
+    options: ["Increase welding current", "Provide shielding gas and form a protective slag layer over weld", "Cool the electrode quickly", "Increase arc length"],
+    answer: 1,
+    explanation: "Electrode coating burns to: (1) produce shielding gas to protect molten metal from atmosphere, (2) form slag that covers the weld and slows cooling, (3) add alloying elements to improve weld quality."
+  },
+  {
+    q: "Porosity in a weld is caused by:",
+    options: ["Excessive welding current", "Gas entrapment in the solidifying weld metal", "Too slow welding speed", "Correct electrode angle"],
+    answer: 1,
+    explanation: "Porosity = gas bubbles trapped in the weld as it solidifies. Causes: moisture on electrode/base metal, contaminated surfaces, incorrect shielding gas flow, or arc length too long."
+  },
+  {
+    q: "What type of welding joint is formed when two plates are placed end-to-end in the same plane?",
+    options: ["Lap joint", "Butt joint", "T-joint", "Corner joint"],
+    answer: 1,
+    explanation: "A butt joint joins two pieces end-to-end in the same plane. It is the most common joint type. May require edge preparation (V-groove, U-groove) for thick plates to ensure full penetration."
+  },
+  {
+    q: "The E7018 electrode is classified as:",
+    options: ["Cellulosic electrode for downhand welding only", "Low hydrogen electrode for high strength steel welding", "For welding cast iron", "AC only electrode"],
+    answer: 1,
+    explanation: "E7018 = Low hydrogen electrode. 70 = 70,000 psi tensile strength, 1 = all positions, 8 = low hydrogen coating. Used for high strength steel, pressure vessels, and where cracking must be prevented."
+  },
+  {
+    q: "Preheating before welding is done primarily to:",
+    options: ["Speed up welding process", "Prevent cracking and reduce heat-affected zone distortion", "Save electricity", "Make the electrode last longer"],
+    answer: 1,
+    explanation: "Preheating slows cooling rate of the weld, reduces thermal shock, prevents hydrogen-induced cracking (cold cracking), and relieves thermal stress. Essential for high carbon and alloy steels."
+  },
+  {
+    q: "In oxyacetylene welding, the ACETYLENE hose is colored:",
+    options: ["Blue", "Black", "Red (maroon)", "Green"],
+    answer: 2,
+    explanation: "Acetylene hose = Red. Oxygen hose = Blue (or black in some standards). This color coding prevents connecting hoses to wrong regulators, which could cause explosion. Always check before use."
+  },
+  {
+    q: "The 'undercut' welding defect appears as:",
+    options: ["Bubbles on the weld surface", "A groove melted into the base metal alongside the weld toe", "Incomplete joint fill", "Cracks across the weld"],
+    answer: 1,
+    explanation: "Undercut is a groove or channel along the weld toe/edge where base metal has been melted away without being filled. Caused by excess current, wrong angle, or too fast travel speed."
+  },
+  {
+    q: "Which sheet metal operation creates a fold at the edge to make it smooth and eliminate sharp edges?",
+    options: ["Blanking", "Hemming", "Drawing", "Punching"],
+    answer: 1,
+    explanation: "Hemming folds the sheet edge back on itself (like folding a page), creating a smooth, safe, rounded edge. Used on car doors, appliance covers, and sheet metal panels."
+  },
+  {
+    q: "Spot welding is most commonly used in which industry?",
+    options: ["Heavy construction", "Automotive body manufacturing", "Mining", "Shipbuilding only"],
+    answer: 1,
+    explanation: "Spot welding is widely used in automobile body manufacturing for joining thin sheet metal panels. Car bodies have thousands of spot welds. It is fast, consistent, and requires no filler metal."
+  },
+  {
+    q: "The purpose of a 'V-groove' preparation on thick plates before butt welding is:",
+    options: ["To make the plate lighter", "To ensure full penetration and fusion through the plate thickness", "To reduce welding cost", "To cool the weld faster"],
+    answer: 1,
+    explanation: "V-groove preparation on thick plates allows the electrode/heat to reach the root of the joint, ensuring complete fusion through the full plate thickness. Insufficient penetration = weak joint."
+  },
+  {
+    q: "What distinguishes brazing from welding?",
+    options: ["Brazing uses higher temperatures than welding", "In brazing, only the filler metal melts — the base metal does NOT melt", "Brazing requires flux while welding never does", "Brazing is only used for copper"],
+    answer: 1,
+    explanation: "In brazing: filler metal (melting point above 450°C but below base metal melting point) melts and bonds to the solid base metal. In welding: the base metal itself melts and fuses."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 3 — CONSTRUCTION EQUIPMENT (Questions 22-27)
+  // Dozer, Loader, Excavator, Grader, Truck, Crane, Roller
+  // Major components and parts
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "A motor grader is primarily used for:",
+    options: ["Digging deep trenches", "Leveling, grading, and finishing road surfaces", "Compacting asphalt", "Loading material into trucks"],
+    answer: 1,
+    explanation: "A motor grader uses a long angled blade to level and finish road surfaces, cut ditches, and spread material evenly. It produces the precise, flat surface needed before asphalt or concrete paving."
+  },
+  {
+    q: "Which component of a wheel loader holds and transports material?",
+    options: ["Blade", "Boom only", "Bucket", "Counterweight"],
+    answer: 2,
+    explanation: "The bucket (front-mounted) scoops and holds material (dirt, gravel, sand). The boom lifts and tilts the bucket to dump material into a truck or stockpile. Together they perform the loading operation."
+  },
+  {
+    q: "The track system on a bulldozer gives it which advantage?",
+    options: ["Higher speed on paved roads", "Better floatation and grip on soft, muddy, and rough terrain", "Lower fuel consumption", "Easier turning on flat ground"],
+    answer: 1,
+    explanation: "Tracks distribute the machine's weight over a large area, preventing sinking on soft ground. They also provide superior grip on slopes, mud, and rough terrain where wheeled machines would get stuck."
+  },
+  {
+    q: "The main arm attached to the upper structure of an excavator that extends outward is called the:",
+    options: ["Bucket", "Track", "Boom", "Counterweight"],
+    answer: 2,
+    explanation: "The boom is the main structural arm attached to the excavator's upper structure (house). The stick (dipper arm) attaches to the boom, and the bucket attaches to the stick end. All are hydraulically controlled."
+  },
+  {
+    q: "Outriggers on a mobile crane are used to:",
+    options: ["Increase crane speed", "Stabilize the crane and distribute load during lifting operations", "Lower the boom", "Rotate the crane faster"],
+    answer: 1,
+    explanation: "Outriggers extend from the crane's frame and press against the ground to widen the support base. This prevents tipping during heavy lifts and allows the crane to work at full rated capacity."
+  },
+  {
+    q: "Which machine is primarily used for earthmoving and pushing material short distances?",
+    options: ["Excavator", "Roller", "Bulldozer (dozer)", "Grader"],
+    answer: 2,
+    explanation: "A bulldozer uses its front blade to push large volumes of material (topsoil, sand, debris) short distances. It cannot haul material long distances — scrapers or trucks are used for that."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 4 — INTERNAL COMBUSTION (IC) ENGINE (Questions 28-34)
+  // Two stroke and four stroke, main parts, functions,
+  // overhaul symptoms, troubleshooting, maintenance
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Which of the following is NOT a main component of an IC engine?",
+    options: ["Piston", "Crankshaft", "Camshaft", "Differential"],
+    answer: 3,
+    explanation: "The differential is part of the drivetrain/transmission — not the engine. Engine main parts include: cylinder block, piston, connecting rod, crankshaft, camshaft, valves, cylinder head."
+  },
+  {
+    q: "The primary function of piston rings in an IC engine is to:",
+    options: ["Connect piston to crankshaft", "Seal the combustion chamber and control oil film on cylinder walls", "Open and close valves", "Cool the piston directly"],
+    answer: 1,
+    explanation: "Piston rings serve two functions: (1) COMPRESSION rings seal combustion gases above the piston, (2) OIL rings control the oil film on cylinder walls, preventing oil from entering combustion chamber."
+  },
+  {
+    q: "In a TWO-STROKE engine, what happens during the UPSTROKE of the piston?",
+    options: ["Exhaust only", "Compression of charge above AND intake of fresh mixture below", "Power stroke", "Only exhaust gases leave"],
+    answer: 1,
+    explanation: "Two-stroke upstroke: above piston = compression of air-fuel mixture; below piston = inlet of fresh charge into crankcase. The 2-stroke combines events that are separate in a 4-stroke engine."
+  },
+  {
+    q: "The compression ratio of a typical diesel engine compared to a petrol engine is:",
+    options: ["Lower (6:1 to 8:1)", "Same as petrol", "Higher (14:1 to 22:1)", "Equal at 10:1"],
+    answer: 2,
+    explanation: "Diesel engines use compression ratios of 14:1 to 22:1 — much higher than petrol engines (8:1 to 12:1). The high compression raises air temperature enough to ignite diesel fuel without a spark plug."
+  },
+  {
+    q: "Blue smoke coming from a diesel engine exhaust indicates:",
+    options: ["Air filter clogging", "Injection timing too early", "Engine burning oil (worn piston rings or valve seals)", "Fuel system blockage"],
+    answer: 2,
+    explanation: "Blue smoke = oil burning. Caused by worn piston rings (oil enters combustion chamber past rings) or worn valve stem seals (oil enters on intake stroke). Needs engine overhaul."
+  },
+  {
+    q: "Black smoke from a diesel engine exhaust indicates:",
+    options: ["Engine burning oil", "Too much fuel or insufficient air — rich mixture", "Water in fuel", "Correct combustion"],
+    answer: 1,
+    explanation: "Black smoke = incomplete combustion of fuel (rich mixture). Causes: clogged air filter, faulty injectors spraying too much fuel, wrong injection timing, or restricted turbocharger."
+  },
+  {
+    q: "Which symptom suggests an IC engine needs overhauling?",
+    options: ["Good fuel economy", "Excessive oil consumption and significant loss of power", "Low coolant temperature", "Smooth running at all speeds"],
+    answer: 1,
+    explanation: "Overhaul indicators: excessive oil consumption (burning or leaking), significant power loss, low compression, excessive blow-by (gases entering crankcase), blue/white smoke, and knocking noises."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 5 — FUEL SYSTEM OF IC ENGINE (Questions 35-40)
+  // Fuel injection pump function, types, parts, carburetor,
+  // troubleshooting, maintenance
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The main function of the fuel injection pump in a diesel engine is to:",
+    options: ["Supply fuel to the air filter", "Meter and deliver fuel at HIGH PRESSURE to injectors at precise timing", "Cool the fuel before combustion", "Filter impurities from fuel"],
+    answer: 1,
+    explanation: "The fuel injection pump: (1) meters the EXACT amount of fuel needed, (2) pressurizes fuel to 100-2000+ bar, (3) delivers it at the precise timing, (4) controls speed via governor."
+  },
+  {
+    q: "Air in the fuel lines of a diesel engine causes:",
+    options: ["Engine to run faster", "Engine to stop, run unevenly, or misfire", "Better fuel economy", "Increased power output"],
+    answer: 1,
+    explanation: "Air in diesel fuel lines prevents proper fuel pressure and flow. The engine will crank but not start, or run erratically and stall. Air must be bled out using the priming pump before starting."
+  },
+  {
+    q: "The priming pump in a diesel fuel system is used to:",
+    options: ["Permanently increase fuel pressure", "Manually remove air from fuel system before first start", "Filter fuel contaminants", "Regulate fuel temperature"],
+    answer: 1,
+    explanation: "The hand-operated priming pump bleeds air from the fuel system before starting a diesel engine (after running dry, filter change, or long storage). It draws fuel through the system to purge air."
+  },
+  {
+    q: "Which carburetor component regulates the air flow into the engine?",
+    options: ["Float chamber", "Venturi", "Choke", "Throttle valve"],
+    answer: 2,
+    explanation: "The Venturi is the narrowed section of the carburetor where air speeds up, creating a low pressure that draws fuel from the jet. The amount of air passing through the Venturi depends on throttle opening."
+  },
+  {
+    q: "The choke in a carburetor is used:",
+    options: ["To increase air flow during normal running", "To restrict air flow to enrich fuel mixture during COLD starting", "To filter the fuel", "To control maximum engine speed"],
+    answer: 1,
+    explanation: "The choke plate closes partially to restrict air, creating a rich (fuel-heavy) mixture needed for cold starting when fuel vaporization is poor. It should open gradually as engine warms up."
+  },
+  {
+    q: "Which component prevents fuel from flowing BACK to the tank in a diesel fuel system?",
+    options: ["Governor", "Fuel filter", "Check valve (non-return valve)", "Priming pump"],
+    answer: 2,
+    explanation: "A check valve (non-return valve) allows fuel to flow in one direction only — toward the engine. It prevents backflow to the tank and maintains prime in the fuel lines."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 6 — COOLING SYSTEM (Questions 41-46)
+  // Importance, components, functions, antifreeze,
+  // troubleshooting, maintenance
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The pressure cap on a radiator is designed to:",
+    options: ["Prevent coolant from entering the engine", "Increase the boiling point of coolant by maintaining system pressure above atmospheric", "Allow air into the system to prevent vacuum", "Reduce coolant flow rate"],
+    answer: 1,
+    explanation: "The pressurized cooling system raises the boiling point of coolant (~15 psi raises boiling point by ~25°C). This prevents coolant boiling at normal operating temperature and allows more efficient cooling."
+  },
+  {
+    q: "Why is ethylene glycol (antifreeze) added to engine coolant?",
+    options: ["To improve coolant color", "To prevent freezing in winter AND raise the boiling point in summer", "Only to clean the radiator", "Only to increase pump pressure"],
+    answer: 1,
+    explanation: "Ethylene glycol antifreeze mixture lowers the freezing point (preventing freeze cracking) AND raises the boiling point (preventing overheating). A 50/50 mix is most common."
+  },
+  {
+    q: "A 'milky' colored engine oil indicates:",
+    options: ["Oil is due for change", "Coolant has mixed with engine oil — likely blown head gasket", "Oil is perfectly clean", "Overfilled oil sump"],
+    answer: 1,
+    explanation: "Milky/creamy oil = coolant contamination. Caused by: blown head gasket (most common), cracked cylinder head, or cracked engine block allowing coolant to mix with oil. Needs immediate attention."
+  },
+  {
+    q: "The radiator overflow tank (expansion tank) collects:",
+    options: ["Extra fuel for emergencies", "Coolant expelled when it expands as engine warms up, and returns it when engine cools", "Engine oil for cleaning", "Filtered air"],
+    answer: 1,
+    explanation: "As coolant heats and expands, excess flows to the overflow tank. As the engine cools and coolant contracts, it is drawn back into the radiator. This maintains correct level and is a closed system."
+  },
+  {
+    q: "Which of the following is a symptom of a BLOCKED radiator?",
+    options: ["Engine runs at very low temperature", "Engine overheats especially at low speed or when stationary", "Engine consumes more oil", "Fuel consumption decreases"],
+    answer: 1,
+    explanation: "A blocked radiator restricts coolant flow and reduces heat dissipation. Overheating is worse at low speeds (less airflow) and when stationary (no ram air). Flushing or replacing the radiator is needed."
+  },
+  {
+    q: "The cooling fan on an engine is necessary to:",
+    options: ["Increase engine noise", "Draw air through the radiator when vehicle speed is too low for ram air cooling", "Pump coolant through the engine", "Reduce engine oil temperature only"],
+    answer: 1,
+    explanation: "At low speeds or when stationary, there is insufficient ram air through the radiator. The fan (belt-driven or electric) draws air through the radiator fins to maintain cooling at all speeds."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 7 — BRAKE SYSTEM (Questions 47-52)
+  // Purpose, types, components, functions, troubleshooting
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The master cylinder in a hydraulic brake system converts:",
+    options: ["Hydraulic pressure into mechanical force at the wheel", "Mechanical force (pedal pressure) into hydraulic pressure", "Brake fluid into vapor", "Engine power into braking force"],
+    answer: 1,
+    explanation: "The master cylinder converts the driver's pedal force into hydraulic pressure. This pressure travels through brake lines to wheel cylinders/calipers where it is converted back to mechanical clamping force."
+  },
+  {
+    q: "Brake fade (reduced braking efficiency) during heavy braking is caused by:",
+    options: ["Too much brake fluid", "Overheating of brake components reducing friction effectiveness", "Cold brake discs", "Brand new brake pads"],
+    answer: 1,
+    explanation: "Brake fade occurs when brakes overheat. The friction material reaches a temperature where it can no longer generate sufficient friction. Gases form between pad and rotor, further reducing effectiveness."
+  },
+  {
+    q: "A spongy brake pedal feel is caused by:",
+    options: ["Too much brake fluid", "Air in the hydraulic brake lines", "New brake pads bedding in", "High brake fluid temperature"],
+    answer: 1,
+    explanation: "Air is compressible; brake fluid is not. When air enters brake lines (through leaks or after brake work), the pedal compresses the air before pressure builds — giving a spongy, ineffective feel."
+  },
+  {
+    q: "The parking (handbrake) brake typically operates on:",
+    options: ["All four wheels equally", "Front wheels only", "Rear wheels only", "One rear wheel only"],
+    answer: 2,
+    explanation: "Parking brakes typically operate on the REAR wheels via a mechanical cable system. This is separate from the hydraulic service brakes and holds the vehicle stationary on slopes."
+  },
+  {
+    q: "Which component in a disc brake system clamps the brake pads against the rotor?",
+    options: ["Master cylinder", "Brake drum", "Caliper", "Wheel cylinder"],
+    answer: 2,
+    explanation: "The brake caliper contains hydraulic pistons that, when activated, push the brake pads against both sides of the rotating disc/rotor. The friction generated slows wheel rotation."
+  },
+  {
+    q: "If a vehicle pulls to one side when braking, the likely cause is:",
+    options: ["Low fuel", "Unequal braking force — one side has seized caliper, worn pads, or contaminated pads", "Worn engine mounts", "Low battery"],
+    answer: 1,
+    explanation: "Pulling during braking = unequal braking force side-to-side. Causes: seized caliper (one side not releasing), contaminated brake pads (oil or grease), worn pads on one side, or unequal tyre pressure."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 8 — SUSPENSION SYSTEM (Questions 53-57)
+  // Introduction, use, components, troubleshooting, maintenance
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Which type of spring is most commonly used in heavy vehicle REAR suspension?",
+    options: ["Coil spring", "Torsion bar spring", "Leaf spring (multi-leaf)", "Air spring"],
+    answer: 2,
+    explanation: "Multi-leaf springs are standard in heavy trucks and commercial vehicle rear suspension. They are simple, durable, can support high loads, and also serve as locating links for the axle."
+  },
+  {
+    q: "The primary purpose of a shock absorber (damper) in the suspension system is to:",
+    options: ["Support the vehicle's weight", "Dampen spring oscillations and control the rate of suspension movement", "Steer the front wheels", "Transmit engine torque to wheels"],
+    answer: 1,
+    explanation: "Shock absorbers dampen (control) spring oscillations by converting kinetic energy to heat via hydraulic resistance. Without them, the spring would bounce continuously after hitting a bump."
+  },
+  {
+    q: "An independent suspension system means:",
+    options: ["All four wheels move together as one unit", "Each wheel can move up/down independently without affecting the opposite wheel", "Only front wheels are independently suspended", "The suspension is not connected to the chassis"],
+    answer: 1,
+    explanation: "In independent suspension, each wheel moves independently on its own. When one wheel hits a bump, it deflects without significantly affecting the other wheels — improving ride and handling."
+  },
+  {
+    q: "The control arm (wishbone) in a suspension system connects:",
+    options: ["Steering wheel to steering gear", "The wheel hub/knuckle to the vehicle frame/body", "Engine to gearbox", "Propeller shaft to differential"],
+    answer: 1,
+    explanation: "Control arms (upper and lower wishbones in double-wishbone suspension) connect the wheel hub/steering knuckle to the vehicle's frame or subframe, allowing controlled up/down wheel movement."
+  },
+  {
+    q: "Clunking or knocking noise from the suspension when going over bumps indicates:",
+    options: ["Engine misfire", "Worn or loose suspension components (ball joints, bushings, or shock absorbers)", "Brake pad wear", "Low engine oil"],
+    answer: 1,
+    explanation: "Knocking/clunking from suspension = worn ball joints, rubber bushings, strut mounts, or shock absorbers. These should be inspected immediately as worn components affect vehicle control."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 9 — STEERING SYSTEM (Questions 58-62)
+  // Introduction, power steering mechanism, troubleshooting
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The power steering pump in most vehicles is driven by:",
+    options: ["Battery", "Separate electric motor (always)", "Engine via V-belt from crankshaft", "Exhaust gas pressure"],
+    answer: 2,
+    explanation: "Hydraulic power steering pumps are driven by the engine via a V-belt (serpentine belt) from the crankshaft. Electric power steering uses an electric motor — no belt drive needed."
+  },
+  {
+    q: "Excessive steering wheel free play (slack before wheels start to turn) indicates:",
+    options: ["Properly adjusted steering system", "Worn or loose steering components — tie rod ends, steering box, or column joints", "New tyres installed", "Correctly inflated tyres"],
+    answer: 1,
+    explanation: "Free play/slack in steering = worn tie rod ends, loose steering box, worn column U-joints, or worn rack bushings. Excessive play is dangerous — the driver loses precise control of the vehicle."
+  },
+  {
+    q: "In a rack-and-pinion steering system, what converts the pinion's ROTATIONAL motion into LINEAR motion to steer the wheels?",
+    options: ["Tie rod", "Steering knuckle", "The rack (a linear gear)", "Pitman arm"],
+    answer: 2,
+    explanation: "The rack is a linear (straight) gear meshed with the circular pinion gear. As the pinion rotates (from the steering column), it moves the rack left or right. Tie rods connect the rack to wheel knuckles."
+  },
+  {
+    q: "Hard steering (heavy effort required to turn the steering wheel) can result from:",
+    options: ["Low power steering fluid", "Worn power steering pump", "Incorrect tyre pressure", "All of the above"],
+    answer: 3,
+    explanation: "Hard steering has multiple causes: low PS fluid (insufficient hydraulic pressure), worn PS pump, low tyre pressure (more rolling resistance), seized caliper, or misaligned front wheels — all of the above."
+  },
+  {
+    q: "Steering 'wander' (vehicle drifts and needs constant steering correction) is caused by:",
+    options: ["Correct wheel alignment", "Incorrect wheel alignment, worn tie rods, or unequal tyre pressure", "Fully charged battery", "Fresh engine oil"],
+    answer: 1,
+    explanation: "Steering wander = incorrect alignment (toe, caster, camber), worn tie rod ends allowing play, unequal tyre pressures, or loose wheel bearings. Needs professional alignment and inspection."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 10 — TRANSMISSION SYSTEM (Questions 63-66)
+  // Function, gearbox, clutch, propeller shaft, universal joint,
+  // differential, torque converter, troubleshooting
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The function of the universal joint (U-joint) in a propeller shaft is to:",
+    options: ["Change the gear ratio", "Allow power to be transmitted through an angle that changes as suspension moves", "Connect engine to clutch", "Lock the differential for off-road use"],
+    answer: 1,
+    explanation: "U-joints allow the propeller shaft to transmit torque through varying angles. As the vehicle suspension moves up/down, the driveshaft angle changes — U-joints accommodate this without binding."
+  },
+  {
+    q: "A torque converter in an automatic transmission differs from a clutch in that it:",
+    options: ["Provides a direct mechanical connection always", "Allows the engine to keep running smoothly when vehicle stops, without stalling", "Only works in first gear", "Increases fuel consumption only"],
+    answer: 1,
+    explanation: "A torque converter uses fluid coupling — it allows slip between engine and transmission, so the engine keeps running when the car stops without stalling. It also multiplies torque at low speeds."
+  },
+  {
+    q: "Gear 'whine' (high-pitched noise when driving at speed) indicates:",
+    options: ["Low engine oil", "Worn or damaged gear teeth, or incorrect gearbox oil level/type", "Low coolant temperature", "Battery discharging"],
+    answer: 1,
+    explanation: "Gear whine from gearbox/differential = worn gear teeth (tooth profile worn), incorrect backlash, or wrong oil. Gear noise changes with speed and load. Ignoring it leads to complete gear failure."
+  },
+  {
+    q: "The propeller shaft transmits power from the:",
+    options: ["Engine to clutch", "Gearbox output to the differential at the rear axle", "Clutch to front wheels", "Battery to the starter motor"],
+    answer: 1,
+    explanation: "The propeller shaft (driveshaft) connects the gearbox output shaft to the differential/final drive. It is a hollow or solid shaft with U-joints at each end to handle angle changes."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 11 — HYDRAULIC SYSTEM (Questions 67-70)
+  // Introduction, components, troubleshooting, maintenance
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Hydraulic oil foaming (bubbles in the oil) in a hydraulic system is caused by:",
+    options: ["Correct oil type and level", "Air entering the system through leaks or wrong oil type", "Too high operating temperature", "Too much filtration"],
+    answer: 1,
+    explanation: "Foaming = air in hydraulic oil. Causes: low oil level (pump cavitates), leaking seals on suction side, wrong oil type with poor anti-foam additives. Foam reduces system efficiency and damages components."
+  },
+  {
+    q: "The hydraulic control valve in a construction machine controls:",
+    options: ["Engine temperature", "The direction, speed, and force of hydraulic actuators", "Fuel flow rate", "Alternator output"],
+    answer: 1,
+    explanation: "Directional control valves control which way hydraulic cylinders/motors move (extend/retract). Flow control valves control speed. Pressure relief valves limit maximum system pressure."
+  },
+  {
+    q: "Hydraulic system OVERHEATING is typically caused by:",
+    options: ["Correct oil level and type", "Restricted flow, excessive back pressure, or internal leakage causing energy loss as heat", "Fresh hydraulic oil", "Low system pressure setting"],
+    answer: 1,
+    explanation: "Overheating causes: restricted lines (undersized or kinked), pressure relief valve set too high, worn pump with high internal leakage, clogged filters, or ambient temperature too high. Degrades oil and seals."
+  },
+  {
+    q: "The hydraulic cylinder converts:",
+    options: ["Mechanical energy to hydraulic pressure", "Hydraulic pressure/flow back into mechanical (linear) force and motion", "Electrical energy to mechanical energy", "Hydraulic flow to rotational motion"],
+    answer: 1,
+    explanation: "Hydraulic cylinders (linear actuators) convert hydraulic pressure and flow into linear (straight-line) mechanical force and movement. Used in excavator arms, loader booms, and crane jibs."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 12 — TRACK, WHEEL AND TYRES (Questions 71-74)
+  // Introduction, features, tyre sizes, rating,
+  // troubleshooting, maintenance
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "In the tyre marking 205/55 R16 91V, what does '91' indicate?",
+    options: ["Speed rating", "Load index (maximum load capacity)", "Aspect ratio", "Rim diameter"],
+    answer: 1,
+    explanation: "The load index (91) indicates the maximum load per tyre. LI 91 = 615 kg per tyre. The speed rating (V) = maximum sustained speed (240 km/h). Both must match or exceed vehicle requirements."
+  },
+  {
+    q: "Tyre rotation at recommended intervals is performed to:",
+    options: ["Change tyre size", "Equalize wear across all four tyres, extending tyre life", "Reduce fuel consumption only", "Increase tyre pressure"],
+    answer: 1,
+    explanation: "Front tyres wear faster due to steering. Rotating tyres (front-to-rear or cross-pattern) equalizes wear patterns and extends overall tyre life. Recommended every 8,000-12,000 km."
+  },
+  {
+    q: "Centre tread wear on a tyre (wear only in the middle of the tread) indicates:",
+    options: ["Correct tyre pressure", "Under-inflation (too low pressure)", "Over-inflation (too high pressure)", "Wheel misalignment"],
+    answer: 2,
+    explanation: "Over-inflated tyre: bulges in the centre — only the centre contacts the road. This causes centre wear. Under-inflation causes edge wear. Correct pressure = even tread contact across full width."
+  },
+  {
+    q: "Track (crawler) systems on heavy equipment are preferred over wheels for:",
+    options: ["Higher travel speed on paved roads", "Better traction, lower ground pressure, and stability on soft/uneven terrain", "Lower maintenance cost", "Easier transportation on highways"],
+    answer: 1,
+    explanation: "Tracks distribute machine weight over a larger area, reducing ground pressure and preventing sinking. They provide superior traction on soft, muddy, rocky, or sloped terrain where wheels would sink or slip."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 13 — SERVICING AND MAINTENANCE (Questions 75-78)
+  // Maintenance systems, importance, fuels, lubricants, periodic
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The purpose of periodic maintenance schedules (PM) is to:",
+    options: ["Increase repair costs deliberately", "Prevent failures, maintain reliability, and extend equipment service life", "Reduce equipment performance intentionally", "Use more fuel and lubricants"],
+    answer: 1,
+    explanation: "Periodic maintenance prevents failures through regular inspection, cleaning, lubrication, and part replacement before they fail. Reduces unexpected downtime and total lifecycle maintenance costs."
+  },
+  {
+    q: "Which fuel property (number) indicates the diesel fuel's ignition quality under compression?",
+    options: ["Octane number", "Cetane number", "Viscosity index", "Flash point"],
+    answer: 1,
+    explanation: "Cetane number measures diesel fuel's ignition quality — how quickly it auto-ignites under compression heat. High cetane (50+) = quick ignition, smooth running. Low cetane = hard starting, rough running."
+  },
+  {
+    q: "The purpose of the engine air filter is to:",
+    options: ["Filter the engine oil", "Remove dust, dirt, and contaminants from incoming air before it enters the engine", "Cool the incoming air", "Reduce engine noise"],
+    answer: 1,
+    explanation: "A clean air filter protects the engine from abrasive dust particles that cause cylinder, piston, and ring wear. A clogged filter restricts airflow, causing rich mixture, power loss, and increased fuel consumption."
+  },
+  {
+    q: "Engine oil must be changed based on:",
+    options: ["Color change only", "Manufacturer-specified intervals (hours or km) OR when oil analysis shows degradation", "Once a year regardless of usage", "Only when the engine makes noise"],
+    answer: 1,
+    explanation: "Oil changes should follow manufacturer's schedule (e.g., every 250 engine hours or 5,000 km). Modern oil analysis can extend intervals if oil remains in good condition. Never exceed maximum intervals."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 14 — ELECTRICAL SYSTEM (Questions 79-82)
+  // General knowledge, battery, lights, fuses, wiring, troubleshooting
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "What is the function of a fuse in an electrical circuit?",
+    options: ["Increase circuit voltage", "Protect the circuit by melting and breaking the circuit when current exceeds safe limits", "Store electrical energy", "Convert AC to DC current"],
+    answer: 1,
+    explanation: "A fuse is a safety device. Its element melts when current exceeds the rated value, breaking the circuit and preventing wiring fires or component damage from short circuits or overloads."
+  },
+  {
+    q: "The alternator in a vehicle is responsible for:",
+    options: ["Starting the engine", "Generating AC electricity, converting it to DC to charge battery and power electrical systems", "Controlling fuel injection", "Operating only the cooling fan"],
+    answer: 1,
+    explanation: "The alternator generates AC electricity (converted to DC by internal diodes) to recharge the battery and supply power to all electrical consumers while the engine runs. Without it, battery discharges."
+  },
+  {
+    q: "Corroded or dirty battery terminals cause which problem?",
+    options: ["Improved electrical conductivity", "High resistance leading to poor starting, dim lights, and charging problems", "Increased battery voltage", "Reduced fuel consumption"],
+    answer: 1,
+    explanation: "Terminal corrosion (whitish/bluish deposits) creates high resistance, reducing current flow. Symptoms: hard starting (insufficient current to starter), dim lights, alternator unable to charge battery properly."
+  },
+  {
+    q: "Dim headlights while the engine is running indicate:",
+    options: ["Battery is fully charged", "Alternator not charging properly, or weak/failing battery", "Good electrical system performance", "Headlight bulbs need replacement immediately"],
+    answer: 1,
+    explanation: "Dim lights while engine runs = alternator not maintaining voltage (faulty alternator, broken belt) or heavy battery drain from short circuit. The alternator should maintain 13.5-14.5V while running."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 15 — RECORD KEEPING (Questions 83-86)
+  // Importance of record keeping, maintenance job card basics
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Why is accurate maintenance record keeping critically important?",
+    options: ["It is required only for new equipment", "It tracks maintenance history, enables trend analysis, supports warranty claims, and controls costs", "Only useful for impressing auditors", "Not important for small workshops"],
+    answer: 1,
+    explanation: "Maintenance records provide: complete history of all work done, ability to identify recurring problems, proof for warranty claims, data for planning shutdowns, and legal compliance documentation."
+  },
+  {
+    q: "A maintenance job card must include which essential information?",
+    options: ["Employee personal details only", "Machine ID, work description, date, parts replaced, hours taken, technician name, and observations", "Only the cost of parts", "Only the time taken"],
+    answer: 1,
+    explanation: "A complete job card includes: machine/equipment ID, work order number, date/time, description of work performed, parts replaced with part numbers, labor hours, technician name, and supervisor sign-off."
+  },
+  {
+    q: "An equipment logbook (operation log sheet) typically records:",
+    options: ["Employee attendance", "Equipment operating hours, fuel consumption, oil additions, and maintenance performed", "Office supply inventory", "Personnel monthly schedules"],
+    answer: 1,
+    explanation: "Equipment logbooks record: date, operator, hours operated, fuel added, oil added, any abnormalities observed, and maintenance done. Used to calculate fuel consumption, schedule maintenance, and track costs."
+  },
+  {
+    q: "The 'Equipment Ledger' (asset register) is primarily used to track:",
+    options: ["Day-to-day fuel consumption", "Equipment ownership, value, depreciation, major repairs, and location", "Employee work hours", "Daily production output only"],
+    answer: 1,
+    explanation: "Equipment ledger records: equipment description, serial number, purchase date and cost, depreciation, major overhaul history, current value, and location. Used for accounting, insurance, and asset management."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 16 — SAFETY PRACTICES (Questions 87-90)
+  // Importance, types of safety, safety tools and devices
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "Before servicing any machinery, the FIRST safety action should be:",
+    options: ["Check the oil level", "Lockout/Tagout (LOTO) — isolate all energy sources and lock them in safe position", "Inform the manager", "Test run at low speed"],
+    answer: 1,
+    explanation: "Lockout/Tagout prevents accidental machine startup during maintenance. Steps: isolate energy (electrical, hydraulic, pneumatic), apply lock, attach tag, and verify machine cannot be energized."
+  },
+  {
+    q: "Why should compressed air NEVER be directed at a person's body or used to clean clothing?",
+    options: ["It wastes expensive compressed air", "It can force particles and air into skin, eyes, or ears at dangerous pressure, causing serious injury or death", "It leaves oil residue", "It reduces air pressure in the system"],
+    answer: 1,
+    explanation: "Compressed air at shop pressure (6-10 bar / 87-145 PSI) can force debris into skin, rupture eardrums, cause air embolism if directed at wounds, or blow dust particles into eyes at dangerous velocity."
+  },
+  {
+    q: "The colour coding of safety signs: a RED circle with a diagonal line means:",
+    options: ["Safe to proceed", "Prohibition — this action is FORBIDDEN/PROHIBITED", "Warning of a hazard", "Mandatory action required"],
+    answer: 1,
+    explanation: "Red circular signs with diagonal = PROHIBITION (e.g., NO SMOKING, NO ENTRY). Yellow/triangular = WARNING. Blue/circular = MANDATORY (must do). Green/rectangular = SAFE CONDITION/EMERGENCY."
+  },
+  {
+    q: "When working with electrical equipment, which type of ladder is safest to use?",
+    options: ["Metal (aluminium) ladder", "Steel ladder", "Fiberglass (non-conductive) ladder", "Wooden ladder (if dry)"],
+    answer: 2,
+    explanation: "Fiberglass ladders are non-conductive and safest for electrical work. Metal (aluminium or steel) ladders conduct electricity — a contact with a live wire is instantly fatal. Wooden ladders are acceptable only if completely dry."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 17 — COOLANTS AND LUBRICANTS (Questions 91-94)
+  // Metalworking fluid function, lubricant types, cutting fluids,
+  // types, function, qualities of good cutting fluid
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The PRIMARY combined function of cutting fluid during machining is:",
+    options: ["Only cool the cutting zone", "Only lubricate the tool-workpiece interface", "Cool the cutting zone, lubricate tool-chip interface, and flush chips away", "Only flush away chips"],
+    answer: 2,
+    explanation: "Cutting fluids perform THREE functions simultaneously: (1) COOLING — removes heat from cutting zone, (2) LUBRICATING — reduces friction at tool-chip interface, (3) FLUSHING — clears chips from cutting zone."
+  },
+  {
+    q: "Which type of lubricant is used on vertical surfaces or where liquid oil would not stay in place?",
+    options: ["Light liquid oil", "Grease (semi-solid/thick lubricant)", "Water only", "Thin penetrating oil"],
+    answer: 1,
+    explanation: "Grease (semi-solid lubricant: oil + thickening agent like soap) clings to surfaces and stays where applied — on vertical surfaces, wheel bearings, chassis joints, and high-load slow-speed applications."
+  },
+  {
+    q: "A good cutting fluid should possess which qualities?",
+    options: ["High cooling ability only", "Good lubrication properties only", "Non-corrosive to tool and workpiece only", "All of the above — cooling, lubrication, and non-corrosive properties"],
+    answer: 3,
+    explanation: "A good cutting fluid must: (1) cool effectively, (2) lubricate to reduce tool wear, (3) be non-corrosive to machine, tool, and workpiece, (4) non-toxic, (5) stable and not foam excessively."
+  },
+  {
+    q: "The Viscosity Index (VI) of a lubricating oil indicates:",
+    options: ["The oil's colour quality", "How much the oil's viscosity changes with temperature (high VI = less change)", "The oil's acidity level", "The oil's flash point temperature"],
+    answer: 1,
+    explanation: "High Viscosity Index (VI) oil maintains more consistent viscosity across a wide temperature range — doesn't thin too much when hot or thicken too much when cold. Multigrade oils have high VI."
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  // UNIT 18 — AIR CONDITIONING (Questions 95-100)
+  // Psychometry concept, human comfort, AC system,
+  // equipment, components, controls, tools, safety precautions
+  // ══════════════════════════════════════════════════════════════════
+  {
+    q: "The refrigerant used in modern vehicle air conditioning systems (replacing R-12) is:",
+    options: ["Freon R-12", "R-134a (HFC-134a)", "Ammonia (R-717)", "Carbon dioxide (R-744)"],
+    answer: 1,
+    explanation: "R-134a replaced R-12 (Freon) in vehicle AC systems from the 1990s because R-12 destroys the ozone layer (CFC). R-134a is an HFC — better for the ozone but still has global warming potential."
+  },
+  {
+    q: "What is the function of the compressor in a vehicle AC system?",
+    options: ["Cool the refrigerant directly", "Compress the refrigerant, raising its pressure and temperature to enable heat rejection", "Filter the air inside the cabin", "Absorb heat from outside air"],
+    answer: 1,
+    explanation: "The compressor pumps (compresses) refrigerant from low pressure gas to high pressure hot gas. This high pressure allows the refrigerant to reject heat at the condenser. The compressor is the 'heart' of the AC system."
+  },
+  {
+    q: "What does the EVAPORATOR do in a vehicle AC system?",
+    options: ["Compresses refrigerant to high pressure", "Rejects heat to outside air", "Absorbs heat from cabin air to cool it, while refrigerant evaporates inside", "Filters and dries the refrigerant"],
+    answer: 2,
+    explanation: "The evaporator is inside the cabin. Low-pressure refrigerant evaporates inside it, absorbing heat from the cabin air passing over it. This cools and dehumidifies the cabin air."
+  },
+  {
+    q: "The condenser in a vehicle AC system is located:",
+    options: ["Inside the passenger cabin", "At the rear of the vehicle", "In front of the radiator, exposed to airflow", "Inside the engine compartment away from airflow"],
+    answer: 2,
+    explanation: "The condenser is placed in front of the radiator where it receives maximum airflow. Hot high-pressure refrigerant gas flows through it, loses heat to outside air, and condenses back to liquid."
+  },
+  {
+    q: "Relative humidity refers to:",
+    options: ["The actual weight of water vapor in the air", "The percentage of water vapor in the air relative to the maximum air can hold at that temperature", "The temperature at which air feels comfortable", "The air pressure at a given altitude"],
+    answer: 1,
+    explanation: "Relative humidity (RH) = (actual water vapor ÷ maximum possible at that temperature) × 100%. 100% RH = air is fully saturated (foggy/raining). Human comfort zone is generally 40-60% RH."
+  },
+  {
+    q: "Which safety precaution is CRITICAL when handling AC refrigerant (R-134a)?",
+    options: ["Refrigerant is harmless and needs no precautions", "Wear gloves and eye protection — liquid refrigerant causes freezing burns; never vent to atmosphere", "Always heat the refrigerant cylinder before use", "Use refrigerant containers as regular spray cans"],
+    answer: 1,
+    explanation: "AC refrigerant safety: (1) liquid R-134a causes freeze burns — wear gloves/goggles, (2) never vent to atmosphere — illegal and causes global warming, (3) recover refrigerant using proper equipment, (4) no open flames — toxic decomposition products."
+  }
+
+];
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// SET 2 COMPLETE: 100 Questions — Sewa Sambandhi (Job Knowledge)
+// Unit distribution mirrors syllabus proportions × ~3
+// All questions sourced from: Sewa_sambandi.pdf (229 pages),
+// as-mechanics.pdf (PSC 2082 actual exam), Sajha Yatayat,
+// NOC, Khanepani, TU Sewa Aayog papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// TOTAL: 100 Questions
+
+        let currentPage = 0;
+        let score = 0;
+        let skipped = [];
+        let userAnswers = Array(questions.length).fill(null);
+        let timerSeconds = 0;
+        let timerInterval;
+        let currentStreak = 0;
+        let maxStreak = 0;
+        const QUESTIONS_PER_PAGE = 5;
+        const ANSWER_DELAY = 1500;
+
+        const quizEl = document.getElementById("quiz");
+        const scoreEl = document.getElementById("score");
+        const resultsEl = document.getElementById("results");
+        const resultsBody = document.getElementById("results-body");
+        const progressEl = document.getElementById("progress");
+        const progressTextEl = document.getElementById("progress-text");
+        const timerEl = document.getElementById("timer");
+        const currentScoreEl = document.getElementById("current-score");
+        const questionsAnsweredEl = document.getElementById("questions-answered");
+        const accuracyEl = document.getElementById("accuracy");
+        const streakBadge = document.getElementById("streak-badge");
+        const correctSound = document.getElementById("correct-sound");
+        const wrongSound = document.getElementById("wrong-sound");
+
+        function clearProgress() {
+            localStorage.removeItem("quizProgressWorkshop");
+            currentPage = 0;
+            score = 0;
+            skipped = [];
+            userAnswers = Array(questions.length).fill(null);
+            timerSeconds = 0;
+            currentStreak = 0;
+            maxStreak = 0;
+        }
+
+        function saveProgress() {
+            localStorage.setItem("quizProgressWorkshop", JSON.stringify({
+                currentPage,
+                score,
+                skipped,
+                answers: userAnswers,
+                time: timerSeconds,
+                streak: currentStreak,
+                maxStreak
+            }));
+        }
+
+        function updateStats() {
+            currentScoreEl.textContent = score;
+            const answered = userAnswers.filter(a => a !== null && a !== 'Skipped').length;
+            questionsAnsweredEl.textContent = answered;
+            const accuracy = answered > 0 ? Math.round((score / answered) * 100) : 0;
+            accuracyEl.textContent = accuracy + '%';
+            progressTextEl.textContent = `${answered}/${questions.length}`;
+        }
+
+        function updateStreak(isCorrect) {
+            if (isCorrect) {
+                currentStreak++;
+                if (currentStreak > maxStreak) maxStreak = currentStreak;
+                if (currentStreak >= 3) {
+                    streakBadge.textContent = `Streak: ${currentStreak}`;
+                    streakBadge.classList.add('show');
+                    setTimeout(() => streakBadge.classList.remove('show'), 2000);
+                }
+            } else {
+                currentStreak = 0;
+            }
+        }
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const minutes = Math.floor(timerSeconds / 60);
+                const seconds = timerSeconds % 60;
+                timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                saveProgress();
+            }, 1000);
+        }
+
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            progressEl.style.width = `${percentage}%`;
+            updateStats();
+        }
+
+        function showQuestions(page) {
+            quizEl.innerHTML = '';
+            const startIndex = page * QUESTIONS_PER_PAGE;
+            const endIndex = Math.min(startIndex + QUESTIONS_PER_PAGE, questions.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const q = questions[i];
+                const shuffledOptions = shuffle([...q.options].map((opt, j) => ({ text: opt, index: j })));
+                const optionsHtml = shuffledOptions
+                    .map((opt, idx) => `
+                        <button class="option-btn" onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')" data-index="${idx}">
+                            <span class="option-indicator">${String.fromCharCode(65 + idx)}</span>
+                            <span>${opt.text}</span>
+                        </button>
+                    `).join('');
+                
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question-wrapper');
+                questionDiv.innerHTML = `
+                    <div class="question-card" data-index="${i}">
+                        <div class="question-header">
+                            <div class="question-number">${i + 1}</div>
+                            <div class="question-text">${q.q}</div>
+                        </div>
+                        <div class="options">${optionsHtml}</div>
+                        <div class="explanation">${q.explanation}</div>
+                    </div>
+                `;
+                quizEl.appendChild(questionDiv);
+            }
+
+            const actionBar = document.createElement('div');
+            actionBar.classList.add('action-bar');
+
+            if (endIndex < questions.length || skipped.length > 0) {
+                const nextBtn = document.createElement('button');
+                nextBtn.classList.add('btn', 'btn-primary');
+                nextBtn.innerHTML = endIndex < questions.length ? 'Next Questions →' : 'Review Skipped →';
+                nextBtn.onclick = nextPage;
+                nextBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(nextBtn);
+            } else {
+                const submitBtn = document.createElement('button');
+                submitBtn.classList.add('btn', 'btn-primary');
+                submitBtn.innerHTML = '✓ Submit Quiz';
+                submitBtn.onclick = endQuiz;
+                submitBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(submitBtn);
+            }
+
+            const skipBtn = document.createElement('button');
+            skipBtn.classList.add('btn', 'btn-skip');
+            skipBtn.innerHTML = '⊘ Skip All';
+            skipBtn.onclick = () => {
+                for (let i = startIndex; i < endIndex; i++) {
+                    if (userAnswers[i] === null) skipQuestion(i);
+                }
+            };
+            actionBar.appendChild(skipBtn);
+
+            quizEl.appendChild(actionBar);
+            updateProgress();
+            saveProgress();
+        }
+
+        function areAllQuestionsAnsweredOnPage(startIndex, endIndex) {
+            for (let i = startIndex; i < endIndex; i++) {
+                if (userAnswers[i] === null) return false;
+            }
+            return true;
+        }
+
+        function checkAnswer(button, questionIndex, selected, selectedText) {
+            const q = questions[questionIndex];
+            const correct = q.answer;
+            const buttons = button.parentElement.querySelectorAll(".option-btn");
+            const card = button.closest('.question-card');
+            const explanationDiv = card.querySelector('.explanation');
+
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                const btnText = btn.querySelector('span:last-child').textContent;
+                if (q.options.indexOf(btnText) === correct) {
+                    btn.classList.add('correct');
+                }
+                if (btn === button && selected !== correct) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            explanationDiv.style.display = 'block';
+            
+            userAnswers[questionIndex] = selectedText;
+            const isCorrect = selected === correct;
+            if (isCorrect) {
+                score++;
+                correctSound.play().catch(() => {});
+                updateStreak(true);
+            } else {
+                wrongSound.play().catch(() => {});
+                updateStreak(false);
+            }
+
+            updateStats();
+            saveProgress();
+            
+            const actionBar = quizEl.querySelector('.action-bar');
+            const primaryBtn = actionBar.querySelector('.btn-primary');
+            if (primaryBtn) {
+                primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                );
+            }
+
+            setTimeout(() => {
+                if (areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                )) {
+                    nextPage();
+                }
+            }, ANSWER_DELAY);
+        }
+
+        function skipQuestion(questionIndex) {
+            if (!skipped.includes(questions[questionIndex])) {
+                skipped.push(questions[questionIndex]);
+                userAnswers[questionIndex] = 'Skipped';
+                const card = document.querySelector(`.question-card[data-index="${questionIndex}"]`);
+                if (card) {
+                    card.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+                    card.querySelector('.explanation').style.display = 'block';
+                    card.style.opacity = '0.6';
+                }
+                saveProgress();
+                const actionBar = quizEl.querySelector('.action-bar');
+                const primaryBtn = actionBar.querySelector('.btn-primary');
+                if (primaryBtn) {
+                    primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
+                        currentPage * QUESTIONS_PER_PAGE,
+                        Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                    );
+                }
+            }
+        }
+
+        function nextPage() {
+            if (skipped.length > 0 && currentPage * QUESTIONS_PER_PAGE >= questions.length) {
+                showSkippedQuestions();
+            } else {
+                currentPage++;
+                if (currentPage * QUESTIONS_PER_PAGE < questions.length) {
+                    showQuestions(currentPage);
+                } else if (skipped.length === 0) {
+                    endQuiz();
+                } else {
+                    showSkippedQuestions();
+                }
+            }
+        }
+
+        function showSkippedQuestions() {
+            questions.splice(0, questions.length, ...skipped);
+            skipped = [];
+            currentPage = 0;
+            showQuestions(currentPage);
+        }
+
+        function drawConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const colors = ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'];
+            
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: Math.random() * 3 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    size: Math.random() * 6 + 2,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            let animationId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rotation += 2;
+                    
+                    if (p.y < canvas.height) {
+                        active = true;
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation * Math.PI / 180);
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                        ctx.restore();
+                    }
+                });
+                
+                if (active) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+            
+            setTimeout(() => cancelAnimationFrame(animationId), 5000);
+        }
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            quizEl.innerHTML = '';
+            
+            const percentage = ((score / questions.length) * 100).toFixed(1);
+            let message = '';
+            let emoji = '';
+            
+            if (percentage >= 90) {
+                message = 'Outstanding! You\'re a master!';
+                emoji = '🏆';
+                drawConfetti();
+            } else if (percentage >= 70) {
+                message = 'Great job! Well done!';
+                emoji = '🌟';
+            } else if (percentage >= 50) {
+                message = 'Good effort! Keep practicing!';
+                emoji = '💪';
+            } else {
+                message = 'Keep learning! You\'ll improve!';
+                emoji = '📚';
+            }
+
+            scoreEl.innerHTML = `
+                <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+                <div class="score-display">${percentage}%</div>
+                <div class="score-label">${message}</div>
+                <div style="margin-top: 1rem; color: var(--text-secondary);">
+                    ${score} correct out of ${questions.length} questions<br>
+                    Time: ${timerEl.textContent} | Best Streak: ${maxStreak}
+                </div>
+            `;
+            
+            resultsEl.classList.remove('hidden');
+
+            resultsBody.innerHTML = questions.map((q, i) => {
+                const userAnswer = userAnswers[i] === null ? 'Not attempted' :
+                                  userAnswers[i] === 'Skipped' ? 'Skipped' :
+                                  userAnswers[i];
+                const correctAnswer = q.options[q.answer];
+                const status = userAnswers[i] === q.options[q.answer] ? 'Correct' :
+                              userAnswers[i] === 'Skipped' ? 'Skipped' :
+                              userAnswers[i] === null ? 'Not attempted' : 'Wrong';
+                const statusClass = status.toLowerCase().replace(' ', '-');
+                const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : '⊘';
+                
+                return `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${q.q}</td>
+                        <td>${userAnswer}</td>
+                        <td>${correctAnswer}</td>
+                        <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                        <td class="explanation-cell">${q.explanation}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            localStorage.removeItem('quizProgressWorkshop');
+        }
+
+        function restartQuiz() {
+            clearProgress();
+            resultsEl.classList.add('hidden');
+            scoreEl.innerHTML = '';
+            startTimer();
+            showQuestions(currentPage);
+            updateStats();
+        }
+
+        function initialize() {
+            clearProgress();
+            startTimer();
+            showQuestions(currentPage);
+            updateStats();
+        }
+
+        initialize();
+
+        // Handle resize for canvas
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
+    </script>
+</body>
+</html>
