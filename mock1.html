@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Mock test 1 Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>Mock test 1</h1>
+                        <div class="subtitle">Practice Quiz Platform</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">40</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/40</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" onclick="restartQuiz()">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+
+      const questions = [
+
+  // ── ENGINE SYSTEMS ─────────────────────────────────────────────────────
+  {
+    q: "What is the most important property of a lubricant?",
+    options: ["Density", "Viscosity", "Melting point", "Specific gravity"],
+    answer: 1,
+    explanation: "Viscosity is the most important property of a lubricant. It determines the oil's ability to maintain a protective film between moving parts. This has appeared in 9+ PSC papers."
+  },
+  {
+    q: "The thermostat valve in an engine cooling system opens when:",
+    options: ["Engine is cold", "Engine temperature is high", "Oil pressure is low", "Coolant level drops"],
+    answer: 1,
+    explanation: "The thermostat remains CLOSED when cold (warms engine faster) and OPENS at high temperature, allowing coolant to flow to the radiator for cooling."
+  },
+  {
+    q: "Which engine component handles cyclic variation in engine speed?",
+    options: ["Camshaft", "Crankshaft", "Flywheel", "Governor"],
+    answer: 2,
+    explanation: "The flywheel stores rotational energy and releases it between power strokes, smoothing cyclic speed variations. The governor controls speed under varying loads."
+  },
+  {
+    q: "Which component connects the piston to the crankshaft?",
+    options: ["Camshaft", "Gudgeon pin", "Flywheel", "Connecting rod"],
+    answer: 3,
+    explanation: "The connecting rod connects the piston (via gudgeon/wrist pin) to the crankshaft, converting the piston's reciprocating motion into crankshaft rotation."
+  },
+  {
+    q: "What is the primary function of a carburetor in a petrol (SI) engine?",
+    options: ["Mixing air and diesel", "Mixing air and petrol", "Mixing air and water", "Mixing air and steam"],
+    answer: 1,
+    explanation: "A carburetor mixes air and petrol in the correct ratio for combustion. Diesel engines do not use carburetors — they use high-pressure fuel injection pumps."
+  },
+  {
+    q: "The fuel injection pump in a diesel engine is used to pump:",
+    options: ["Diesel fuel", "Petrol fuel", "Both A and B", "None of the above"],
+    answer: 0,
+    explanation: "The fuel injection pump is used in diesel engines to pump diesel fuel at high pressure to the injector nozzles at the correct timing for combustion."
+  },
+  {
+    q: "What is the most common sign of cooling system failure in a vehicle?",
+    options: ["Engine idles smoothly", "Low battery voltage", "Decrease in fuel efficiency", "Engine overheating"],
+    answer: 3,
+    explanation: "Engine overheating is the primary indicator of cooling system failure. Other signs include steam from bonnet, coolant leaks, and temperature gauge reading high."
+  },
+  {
+    q: "The FIRST thing to check for an overheated engine is:",
+    options: ["Coolant level", "Function of thermostat", "Tension of radiator fan belt", "Blockage of radiator fins"],
+    answer: 0,
+    explanation: "Always check coolant level first when the engine overheats. If coolant is low/empty, that is the likely cause. Never open the radiator cap on a hot engine."
+  },
+  {
+    q: "In a 4-stroke engine, a power stroke occurs every how many revolutions of the crankshaft?",
+    options: ["1", "2", "3", "4"],
+    answer: 1,
+    explanation: "A 4-stroke engine (intake-compression-power-exhaust) completes 2 crankshaft revolutions per power stroke. A 2-stroke engine has 1 power stroke per revolution."
+  },
+  {
+    q: "Which component controls the TIMING of valve operation and fuel injection?",
+    options: ["Camshaft", "Crankshaft", "Governor", "Fuel pump"],
+    answer: 0,
+    explanation: "The camshaft controls the timing of both valve operation and fuel injection. It is driven by the crankshaft at half speed via chain or belt."
+  },
+  {
+    q: "What SAE oil grade has the highest viscosity?",
+    options: ["SAE15", "SAE20", "SAE30", "SAE50"],
+    answer: 3,
+    explanation: "Higher SAE number = higher viscosity (thicker oil). SAE50 is thicker than SAE30, SAE20, and SAE15. Thicker oils are used in hot climates and high-load engines."
+  },
+  {
+    q: "Which of the following is a multigrade engine oil?",
+    options: ["SAE 30", "SAE 50", "SAE 20W-50", "API SF"],
+    answer: 2,
+    explanation: "SAE 20W-50 is a multigrade oil: '20W' = cold viscosity (W = Winter), '50' = hot viscosity. It provides consistent viscosity across temperature ranges."
+  },
+  {
+    q: "What type of ignition does a diesel engine use?",
+    options: ["Spark ignition", "Compression ignition", "Flame ignition", "Electronic ignition"],
+    answer: 1,
+    explanation: "Diesel engines use compression ignition — air is compressed to high temperature, then diesel is injected and ignites spontaneously without a spark plug."
+  },
+  {
+    q: "The governor in an engine is used to control:",
+    options: ["Fuel temperature", "Engine speed under varying load", "Coolant pressure", "Exhaust emissions"],
+    answer: 1,
+    explanation: "The governor maintains constant engine speed by automatically adjusting fuel supply when load changes. Without it, the engine would speed up when unloaded and stall under load."
+  },
+  {
+    q: "The water pump in a cooling system is driven by:",
+    options: ["Battery", "Engine via belt or timing chain", "Exhaust gas", "Electric motor only"],
+    answer: 1,
+    explanation: "The water pump circulates coolant and is mechanically driven by the engine via a belt (V-belt or serpentine belt) or timing chain. Some modern vehicles use electric water pumps."
+  },
+
+  // ── WELDING ────────────────────────────────────────────────────────────
+  {
+    q: "A neutral flame in gas welding is obtained by supplying:",
+    options: ["More oxygen than acetylene", "Equal volumes of oxygen and acetylene", "More acetylene than oxygen", "Only oxygen"],
+    answer: 1,
+    explanation: "Neutral flame = equal O2 and C2H2. Most commonly used for general welding of steel, copper, and aluminium. Neither oxidizing nor carburizing effect on the weld."
+  },
+  {
+    q: "A gas flame with MORE oxygen than acetylene is called:",
+    options: ["Carburizing flame", "Neutral flame", "Oxidizing flame", "Nitriding flame"],
+    answer: 2,
+    explanation: "Oxidizing flame has excess oxygen. It burns hotter, shorter inner cone, and oxidizes metals. Used for welding brass and bronze. Identified by a hissing sound."
+  },
+  {
+    q: "A carburizing flame (excess acetylene) is used for:",
+    options: ["Welding brass", "Welding aluminium only", "Hard surfacing and cast iron welding", "All types of welding"],
+    answer: 2,
+    explanation: "Carburizing flame (more C2H2 than O2) is used for hard surfacing, high carbon steel, and cast iron welding. It adds carbon to the weld, which can harden the surface."
+  },
+  {
+    q: "The flux used in brazing is:",
+    options: ["Zinc chloride", "Ammonium chloride", "Resin plus alcohol", "Borax"],
+    answer: 3,
+    explanation: "Borax (sodium tetraborate) is the flux used in brazing. It prevents oxide formation on metal surfaces during heating, ensuring clean surfaces for the filler metal to bond."
+  },
+  {
+    q: "The purpose of flux in soldering is to:",
+    options: ["Increase fluidity of solder", "Prevent oxides formation on metal surfaces", "Wash away surplus solder", "Lower melting temperature"],
+    answer: 1,
+    explanation: "Flux prevents oxide formation on metal surfaces during heating. Oxides prevent the solder from bonding to the base metal. Flux keeps surfaces clean for a reliable solder joint."
+  },
+  {
+    q: "Which welding process uses a NON-CONSUMABLE electrode?",
+    options: ["MIG welding", "TIG welding", "SMAW (stick)", "Submerged arc welding"],
+    answer: 1,
+    explanation: "TIG (Tungsten Inert Gas) welding uses a non-consumable tungsten electrode — it does not melt. Filler metal is fed separately if needed. MIG uses a consumable wire electrode."
+  },
+  {
+    q: "TIG welding uses which shielding gas(es)?",
+    options: ["Hydrogen and oxygen", "Argon and nitrogen", "Argon and helium", "CO2 and argon"],
+    answer: 2,
+    explanation: "TIG welding uses argon and/or helium as shielding gases. These inert gases protect the weld pool and the tungsten electrode from atmospheric contamination during welding."
+  },
+  {
+    q: "MIG welding uses a ___ electrode?",
+    options: ["Non-consumable tungsten", "Carbon rod", "Consumable wire electrode", "Flux-coated rod"],
+    answer: 2,
+    explanation: "MIG (Metal Inert Gas) welding uses a continuously fed consumable wire electrode. The wire melts and becomes part of the weld deposit, unlike TIG welding's tungsten electrode."
+  },
+  {
+    q: "The welding defect caused by gas entrapment in the weld metal is called:",
+    options: ["Undercut", "Crack", "Porosity", "Lack of fusion"],
+    answer: 2,
+    explanation: "Porosity: gas bubbles trapped in solidifying weld metal forming voids. Causes: moisture on electrode/base metal, contamination, wrong gas flow, or incorrect arc length."
+  },
+  {
+    q: "Soldering takes place at a temperature:",
+    options: ["Above 900°C", "Above 450°C", "Below 450°C", "Exactly 900°C"],
+    answer: 2,
+    explanation: "Soldering = below 450°C. Brazing = above 450°C. Both join metals using a lower-melting-point filler metal without melting the base metal. Temperature is the key distinction."
+  },
+  {
+    q: "In DCEP (Reverse Polarity) arc welding, the electrode holder is connected to:",
+    options: ["Negative terminal, work to positive", "Positive terminal, work to negative", "Both terminals equal", "AC supply directly"],
+    answer: 1,
+    explanation: "DCEP (Direct Current Electrode Positive): electrode = positive (+), workpiece = negative (-). More heat generated at the electrode. Used for thin sheet welding."
+  },
+  {
+    q: "Which of the following is NOT a commonly used arc welding method?",
+    options: ["Metal Inert Gas Welding", "Tungsten Inert Gas Welding", "Flux Cored Arc Welding", "Variable Arc Welding"],
+    answer: 3,
+    explanation: "Variable Arc Welding does NOT exist as a standard welding method. Standard types: MIG, TIG, SMAW (stick), FCAW (flux cored), SAW (submerged arc)."
+  },
+  {
+    q: "The temperature of the electric arc in arc welding is approximately:",
+    options: ["500-1000°C", "1000-2000°C", "2000-3000°C", "3500-4000°C"],
+    answer: 3,
+    explanation: "The electric arc in arc welding reaches approximately 3500-4000°C. This extreme temperature melts the base metal and electrode to form the weld pool."
+  },
+  {
+    q: "A welding defect where a groove is melted into the base metal alongside the weld is called:",
+    options: ["Porosity", "Undercut", "Crack", "Overlap"],
+    answer: 1,
+    explanation: "Undercut is a groove or channel melted into the base metal along the weld toe/root. Caused by excessive current, incorrect electrode angle, or too fast travel speed. Weakens the joint."
+  },
+
+  // ── MACHINE TOOLS ──────────────────────────────────────────────────────
+  {
+    q: "What is the main function of a lathe machine?",
+    options: ["To drill holes", "To paint metal surfaces", "To weld parts", "To shape metals by removing material"],
+    answer: 3,
+    explanation: "The lathe machine shapes metals by rotating the workpiece against a stationary cutting tool. It is called the 'mother of all machine tools' and can produce cylindrical, tapered, and threaded surfaces."
+  },
+  {
+    q: "What type of motion does a shaper machine primarily use to cut material?",
+    options: ["Rotary motion", "Linear reciprocating motion", "Oscillating motion", "Continuous circular motion"],
+    answer: 1,
+    explanation: "A shaper machine uses linear reciprocating motion. The cutting tool moves forward (cutting stroke) and backward (return stroke) in a straight line. Material is cut only on the forward stroke."
+  },
+  {
+    q: "In a shaper machine, which part remains STATIONARY during operation?",
+    options: ["The cutting tool", "The workpiece", "Both move equally", "The ram"],
+    answer: 1,
+    explanation: "In a shaper, the workpiece is clamped stationary on the table while the tool (mounted on the ram) reciprocates. Feed is given at the end of the return stroke."
+  },
+  {
+    q: "What surfaces does a shaper machine primarily produce?",
+    options: ["Cylindrical surfaces", "Curved surfaces", "Flat surfaces", "Tapered holes"],
+    answer: 2,
+    explanation: "A shaper produces flat, angular, and stepped surfaces using a single-point cutting tool. For cylindrical surfaces, a lathe must be used instead."
+  },
+  {
+    q: "Grinding is classified as which type of machining operation?",
+    options: ["Shaping", "Forming", "Surface finishing (abrasive)", "Dressing"],
+    answer: 2,
+    explanation: "Grinding is a surface finishing operation using abrasive wheels. It removes very small amounts of material, producing smooth surfaces and precise dimensions to tight tolerances."
+  },
+  {
+    q: "In a milling machine, which component ROTATES to cut the material?",
+    options: ["Workpiece", "Both tool and workpiece", "Milling cutter (tool)", "Arbor only"],
+    answer: 2,
+    explanation: "In milling, the milling CUTTER (tool) rotates while the workpiece is fed into it. This is opposite to a lathe where the workpiece rotates and the tool is fed."
+  },
+  {
+    q: "Which machine is used for producing cylindrical jobs?",
+    options: ["Shaper", "Milling machine", "Grinder", "Lathe"],
+    answer: 3,
+    explanation: "The lathe machine produces cylindrical shapes by rotating the workpiece against a cutting tool. It is the primary machine for turning, facing, threading, and boring operations."
+  },
+  {
+    q: "The quick return mechanism in a shaper converts:",
+    options: ["Reciprocating to oscillatory motion", "Oscillatory to reciprocating motion", "Rotary to reciprocating motion", "Linear to circular motion"],
+    answer: 2,
+    explanation: "The quick return mechanism converts rotary motion (from motor) into the reciprocating motion of the tool. The return stroke is faster than the cutting stroke to save time."
+  },
+  {
+    q: "Which machining operations can be done on a milling machine?",
+    options: ["Cutting keyways", "Slots and grooves", "Gears", "All of the above"],
+    answer: 3,
+    explanation: "A milling machine can perform ALL these operations: cutting keyways, slots, grooves, gears, threads, and flat/angular surfaces. It is one of the most versatile machine tools."
+  },
+  {
+    q: "The part of a micrometer that is rotated to bring the spindle toward the anvil is:",
+    options: ["Frame", "Thimble", "Ratchet stop", "Sleeve"],
+    answer: 1,
+    explanation: "The thimble is the rotating barrel of the micrometer. Rotating it moves the spindle via a precision screw thread. The sleeve shows the main scale; the thimble shows the fractional reading."
+  },
+
+  // ── MEASURING INSTRUMENTS ──────────────────────────────────────────────
+  {
+    q: "The feeler gauge is used to measure:",
+    options: ["External shaft diameter", "Surface roughness", "Clearance between mating surfaces / tappet clearance", "Wall thickness"],
+    answer: 2,
+    explanation: "A feeler gauge measures clearances between surfaces. Most commonly used to check tappet clearance (gap between rocker arm and valve stem) in IC engines."
+  },
+  {
+    q: "Which instrument measures external diameter, internal diameter, and depth?",
+    options: ["Micrometer", "Vernier caliper", "Screw gauge", "Steel rule"],
+    answer: 1,
+    explanation: "A Vernier caliper has outside jaws (external dia), inside jaws (internal dia), and a depth rod (depth measurement). It is a versatile instrument for multiple measurement types."
+  },
+  {
+    q: "The accuracy of a standard metric micrometer is:",
+    options: ["0.1 mm", "0.01 mm", "0.001 mm", "0.0001 mm"],
+    answer: 2,
+    explanation: "A standard metric micrometer measures to 0.001 mm accuracy. A vernier micrometer can measure to 0.001 mm. This precision makes it suitable for precision component measurement."
+  },
+  {
+    q: "A snap gauge is primarily used for:",
+    options: ["Measuring height", "Measuring flatness", "Quickly checking outer dimensions (go/no-go)", "Measuring hole diameter"],
+    answer: 2,
+    explanation: "A snap gauge checks external dimensions quickly using the go/no-go principle. If the part fits the 'go' side but not the 'no-go' side, it is within tolerance. Used for mass production inspection."
+  },
+  {
+    q: "Which tool is used to measure hydraulic system pressure?",
+    options: ["Thermometer", "Tachometer", "Pressure gauge", "Multimeter"],
+    answer: 2,
+    explanation: "A pressure gauge measures fluid pressure in hydraulic and pneumatic systems. It connects to the system line and reads pressure in bar, PSI, or kPa for diagnostics and maintenance."
+  },
+  {
+    q: "Which of the following is NOT an SI unit?",
+    options: ["Inch", "Meter", "Kelvin", "Kilogram"],
+    answer: 0,
+    explanation: "Inch belongs to the Imperial/FPS system, NOT the SI system. SI base units include: meter (length), kilogram (mass), second (time), Kelvin (temperature), ampere (current)."
+  },
+
+  // ── VEHICLE SYSTEMS — BRAKES ───────────────────────────────────────────
+  {
+    q: "Drum brakes in vehicles use:",
+    options: ["Brake shoes", "Brake pads", "Leather linings only", "All of the above"],
+    answer: 0,
+    explanation: "Drum brakes use curved BRAKE SHOES lined with friction material that press outward against the inside of a rotating drum. DISC brakes use BRAKE PADS that press against a rotor disc."
+  },
+  {
+    q: "The process of removing trapped air from hydraulic brake lines is called:",
+    options: ["Trapping", "Tapping", "Bleeding", "Cleaning"],
+    answer: 2,
+    explanation: "Bleeding removes air from brake lines. Air is compressible; oil is not. Air in brake lines causes a spongy pedal feel and reduced braking force. Regular bleeding maintains brake performance."
+  },
+  {
+    q: "The brake booster is used to:",
+    options: ["Cool the brake system", "Store braking fluid", "Increase/amplify braking force", "Boost engine power"],
+    answer: 2,
+    explanation: "A brake booster amplifies the pedal force applied by the driver, reducing the effort required to brake effectively. It uses engine vacuum or hydraulic assistance."
+  },
+  {
+    q: "ABS (Anti-lock Braking System) is most useful on:",
+    options: ["Slippery road", "City road", "Muddy road", "Inclined road"],
+    answer: 0,
+    explanation: "ABS prevents wheel lockup on slippery surfaces (wet, ice, loose gravel), maintaining steering control and shortening stopping distance. Without ABS, locked wheels cause loss of steering."
+  },
+  {
+    q: "In a self-locking (self-energizing) brake, the force required to maintain braking is:",
+    options: ["Zero", "Minimum", "Maximum", "Average"],
+    answer: 0,
+    explanation: "Self-locking brakes use drum rotation to energize/tighten the brake shoes. Once engaged, they require zero external force to remain applied — the system is self-sustaining."
+  },
+
+  // ── SUSPENSION, STEERING, TRANSMISSION ──────────────────────────────
+  {
+    q: "The suspension system's objective includes:",
+    options: ["Prevent road shocks from reaching passengers", "Safeguard occupants from road shocks", "Preserve vehicle stability while moving", "All of the above"],
+    answer: 3,
+    explanation: "The suspension system serves ALL three purposes simultaneously. This is a classic 'all of the above' pattern in Nepal PSC papers — appears in 4+ different organizations' papers."
+  },
+  {
+    q: "A sign of worn-out shock absorbers or struts is:",
+    options: ["Excessive bouncing after hitting a bump", "Squeaking brakes", "Engine misfiring", "Hard steering"],
+    answer: 0,
+    explanation: "Worn shock absorbers cannot dampen spring oscillations. The vehicle continues to bounce excessively after hitting a bump (more than 1-2 bounces = worn shocks)."
+  },
+  {
+    q: "Which component connects the steering rack to the wheel knuckles?",
+    options: ["Tie rod", "Axle shaft", "Brake drum", "Control arm"],
+    answer: 0,
+    explanation: "Tie rods transmit steering force from the steering rack or pitman arm to the wheel steering knuckles, turning the front wheels left or right."
+  },
+  {
+    q: "The main purpose of the differential in a vehicle's drivetrain is:",
+    options: ["Increase engine horsepower", "Allow wheels on the same axle to rotate at different speeds when cornering", "Store transmission fluid", "Connect gearbox to engine"],
+    answer: 1,
+    explanation: "The differential allows inner and outer wheels to rotate at different speeds during cornering. The outer wheel travels a longer distance and must rotate faster than the inner wheel."
+  },
+  {
+    q: "In a vehicle, the clutch is located between the:",
+    options: ["Engine and gearbox", "Gearbox and propeller shaft", "Propeller shaft and differential", "Differential and drive axles"],
+    answer: 0,
+    explanation: "The clutch is positioned between the engine flywheel and the gearbox input shaft. It allows temporary disconnection of the drivetrain for smooth gear changes."
+  },
+  {
+    q: "Which type of gearbox does NOT exist?",
+    options: ["Linear mesh gearbox", "Sliding mesh gearbox", "Constant mesh gearbox", "Synchromesh gearbox"],
+    answer: 0,
+    explanation: "Linear mesh gearbox does NOT exist. Real types: Sliding mesh (oldest), Constant mesh (gears always engaged, uses dog clutch), Synchromesh (synchronizers for smooth shifting, most common)."
+  },
+  {
+    q: "A vehicle with excessive inside tyre wear on the rear right tyre — what could cause this?",
+    options: ["Bent rear spindle", "Excessive negative caster", "Excessive positive camber", "Worn out front struts"],
+    answer: 2,
+    explanation: "Excessive positive camber (wheel top tilted outward) causes the inner part of the tyre to bear more load, producing inside tyre wear. Negative camber causes outside tyre wear."
+  },
+  {
+    q: "Low air pressure inside a tyre primarily causes:",
+    options: ["Wear at the centre of the tread", "Slow/even tyre wear", "Rapid wear at the centre", "Excessive wear at the edges (both shoulders)"],
+    answer: 3,
+    explanation: "Under-inflated tyres flex excessively at the sidewalls, causing the tread edges to contact the road more heavily than the centre — resulting in edge wear on both shoulders."
+  },
+
+  // ── HYDRAULICS ─────────────────────────────────────────────────────────
+  {
+    q: "Pascal's Law states that pressure applied to an enclosed fluid is:",
+    options: ["Reduced proportionally", "Transmitted equally in all directions", "Absorbed by the container walls", "Increased at curved surfaces"],
+    answer: 1,
+    explanation: "Pascal's Law: Pressure applied to an enclosed, incompressible fluid is transmitted equally and undiminished in ALL directions. This is the fundamental principle of all hydraulic systems."
+  },
+  {
+    q: "Which pump type is best for low-viscosity fluids at high volume?",
+    options: ["Screw pump", "Centrifugal pump", "Reciprocating pump", "Gear pump"],
+    answer: 1,
+    explanation: "Centrifugal pumps are ideal for low-viscosity fluids (water) at high flow rates and moderate pressure. Screw pumps handle high-viscosity fluids; reciprocating pumps give high head/low volume."
+  },
+  {
+    q: "A hydraulic accumulator stores:",
+    options: ["Kinetic energy of fluid", "Energy of a fluid in the form of pressure energy", "Potential energy only", "Heat energy from hydraulic fluid"],
+    answer: 1,
+    explanation: "A hydraulic accumulator stores fluid energy as pressure energy using compressed gas (bladder type), spring, or gravity. It releases stored energy during peak demand periods."
+  },
+  {
+    q: "Hydraulic oil viscosity changes with temperature — when temperature increases, viscosity:",
+    options: ["Increases (gets thicker)", "Decreases (gets thinner)", "Remains unchanged", "Doubles"],
+    answer: 1,
+    explanation: "As temperature increases, hydraulic oil becomes THINNER (lower viscosity). This is why hydraulic systems use viscosity index improvers and why operating temperature must be controlled."
+  },
+
+  // ── SAFETY & PPE ───────────────────────────────────────────────────────
+  {
+    q: "Which of the following is NOT part of the fire triangle?",
+    options: ["Fuel", "Carbon dioxide", "Heat", "Oxygen"],
+    answer: 1,
+    explanation: "Fire triangle = Fuel + Heat + Oxygen. CO2 is NOT part of the fire triangle — it is used IN fire extinguishers to remove oxygen and smother fires."
+  },
+  {
+    q: "Which type of fire extinguisher is installed in a machine shop?",
+    options: ["ABC type", "B type only", "C type only", "Heavy duty type"],
+    answer: 0,
+    explanation: "ABC fire extinguishers cover Class A (ordinary combustibles), Class B (flammable liquids), and Class C (electrical) fires — making them suitable for general machine shop use."
+  },
+  {
+    q: "Personal Protective Equipment (PPE) in a mechanical workshop includes:",
+    options: ["Safety helmets", "Gloves", "Safety boots", "All of the above"],
+    answer: 3,
+    explanation: "PPE includes ALL protective equipment: helmets (head), gloves (hands), boots (feet), goggles (eyes), ear muffs (hearing). Safety questions in Nepal PSC ALWAYS answer 'all of the above.'"
+  },
+  {
+    q: "Which of the following is NOT a safety device or tool?",
+    options: ["Helmet", "Safety boots", "Goggles", "Bag"],
+    answer: 3,
+    explanation: "A bag is not a safety device. Safety tools/devices include: helmets, boots, goggles, gloves, ear muffs, safety harnesses, face shields, and fire extinguishers."
+  },
+  {
+    q: "Good housekeeping in a workshop primarily helps to:",
+    options: ["Decorate the place", "Impress visitors", "Hide broken parts", "Prevent accidents caused by slips, trips and fires"],
+    answer: 3,
+    explanation: "Good housekeeping prevents: slipping on spilled oil, tripping on loose cables/tools, and fire from combustible waste materials. It is the foundation of workshop safety."
+  },
+  {
+    q: "ISO 45001 is the international standard for:",
+    options: ["Quality management systems", "Environmental management", "Occupational health and safety management", "Energy management"],
+    answer: 2,
+    explanation: "ISO 45001 = Occupational Health and Safety. ISO 9001 = Quality Management. ISO 14001 = Environmental Management. ISO 50001 = Energy Management."
+  },
+
+  // ── MAINTENANCE ─────────────────────────────────────────────────────────
+  {
+    q: "Maintenance consists of:",
+    options: ["Replacing components only", "Repairing components only", "Servicing components only", "All of the above"],
+    answer: 3,
+    explanation: "Maintenance includes ALL three: REPLACING worn/failed parts, REPAIRING damaged parts, and SERVICING (cleaning, lubricating, adjusting). This 'all of the above' answer is confirmed in 6+ PSC papers."
+  },
+  {
+    q: "A maintenance job card typically contains:",
+    options: ["Part manual and shop manual details", "Task, description, date, parts used, technician name", "Vehicle color and expected breakdowns", "Vehicle registration renewal date"],
+    answer: 1,
+    explanation: "A job card records the specific work done: task description, date performed, parts used, technician's name, time taken, and observations. It is the standard workshop record."
+  },
+  {
+    q: "Maintenance performed AFTER equipment has broken down is called:",
+    options: ["Scheduled maintenance", "Preventive maintenance", "Corrective maintenance", "Predictive maintenance"],
+    answer: 2,
+    explanation: "Corrective (breakdown/reactive) maintenance is performed after failure. It is the most expensive form. Preventive = time-based before failure; Predictive = condition-monitoring based."
+  },
+  {
+    q: "What distinguishes preventive maintenance from predictive maintenance?",
+    options: ["Required downtime", "Based on regular time intervals", "Uses many spare parts", "Relies on condition monitoring"],
+    answer: 1,
+    explanation: "Preventive maintenance is SCHEDULED at regular TIME INTERVALS (e.g., every 250 hours or monthly). Predictive maintenance is based on actual equipment CONDITION monitoring."
+  },
+  {
+    q: "Equipment history cards record:",
+    options: ["How equipment behaves", "Total down times", "Rate at which components wear", "All of the above"],
+    answer: 3,
+    explanation: "Equipment history cards record ALL: equipment behaviour patterns, downtime events and durations, component wear rates, maintenance costs, and repair history. Essential for planning."
+  },
+  {
+    q: "The preferred method for recharging a completely dead/flat battery is:",
+    options: ["Fast charging", "Rapid charging", "Trickle charging", "Boost charging"],
+    answer: 2,
+    explanation: "Trickle charging (very low current over many hours) is preferred for dead batteries. It safely restores full charge without overheating, overcharging, or damaging battery cells."
+  },
+
+  // ── CONSTRUCTION EQUIPMENT ─────────────────────────────────────────────
+  {
+    q: "Which component of an excavator allows it to rotate 360 degrees?",
+    options: ["Boom", "Counterweight", "Slewing ring (Turntable)", "Hydraulic cylinder"],
+    answer: 2,
+    explanation: "The slewing ring (turntable) enables the upper structure of an excavator to rotate a full 360° on the undercarriage, allowing digging and dumping without repositioning the tracks."
+  },
+  {
+    q: "The large metal plate at the front of a dozer that pushes material is called:",
+    options: ["Bucket", "Hoe", "Boom", "Blade"],
+    answer: 3,
+    explanation: "The blade is the large curved steel plate at the front of a bulldozer. It pushes, cuts, and moves soil, rock, and debris. Blade type (straight, universal, angle) determines its use."
+  },
+  {
+    q: "Which machine is used for compacting soil, gravel, and asphalt in road construction?",
+    options: ["Grader", "Dozer", "Roller", "Truck"],
+    answer: 2,
+    explanation: "A roller (compactor) compacts road materials using its weight and vibration. Smooth drum rollers compact asphalt; padfoot rollers compact soil. Compaction increases density and stability."
+  },
+  {
+    q: "Which equipment is primarily used for trench digging and earth excavation?",
+    options: ["Roller", "Grader", "Excavator", "Tower crane"],
+    answer: 2,
+    explanation: "An excavator (JCB, backhoe) is the primary machine for trench digging, foundation excavation, and earth removal. Its hydraulic arm and bucket can dig, swing, and dump in one cycle."
+  },
+  {
+    q: "Which component of a crane is primarily responsible for supporting the lifting load?",
+    options: ["Counterweight", "Boom", "Cabin", "Outrigger"],
+    answer: 1,
+    explanation: "The boom is the long structural arm of the crane from which loads are suspended via wire rope and hook. The counterweight balances the load; outriggers provide stability."
+  },
+
+  // ── ELECTRICAL ─────────────────────────────────────────────────────────
+  {
+    q: "A fully charged 12V car battery should show approximately:",
+    options: ["12.6V or higher", "10.5V", "9.0V", "6.3V"],
+    answer: 0,
+    explanation: "A healthy, fully charged 12V lead-acid battery reads 12.6V or higher at rest. 12.4V = ~75% charged; 12.0V = ~25% charged; below 11.8V = deeply discharged and needs immediate charging."
+  },
+  {
+    q: "The purpose of a relay in an electrical system is to:",
+    options: ["Store electrical energy", "Cool the electrical components", "Control a high power circuit using a low power signal", "Increase battery voltage"],
+    answer: 2,
+    explanation: "A relay is an electrically operated switch. A small current (from switch/ECU) energizes the relay coil, which closes contacts to switch a much larger current load (starter, headlights, fan)."
+  },
+  {
+    q: "The octane rating of gasoline indicates:",
+    options: ["The fuel's resistance to premature detonation (knocking)", "The color of gasoline", "The weight of fuel per gallon", "The speed at which fuel flows"],
+    answer: 0,
+    explanation: "Octane rating = resistance to premature detonation (knocking/pinging). Higher octane fuel is required for high-compression engines to prevent knock, which damages pistons and engine."
+  },
+  {
+    q: "What commonly causes headlights to flicker while driving?",
+    options: ["Faulty ignition coil", "Engine overheating", "Low fuel level", "Loose wiring or poor connections"],
+    answer: 3,
+    explanation: "Flickering headlights are most commonly caused by loose wiring or poor electrical connections. Other causes: failing alternator, faulty relay, or corroded battery terminals."
+  },
+
+  // ── GK — NEPAL SPECIFIC ────────────────────────────────────────────────
+  {
+    q: "According to Sushasan (Good Governance) Act 2064, reply to an 'Ati Jaruri' letter must be sent within:",
+    options: ["3 days", "5 days", "7 days", "15 days"],
+    answer: 1,
+    explanation: "Sushasan Niyamawali Rule 35: 'Ati Jaruri' (Very Urgent) = 5 days reply. 'Jaruri' (Urgent) = 7 days. Normal letter = 15 days. This rule appeared directly in the actual PSC 2082 exam."
+  },
+  {
+    q: "Nepal Civil Service Act 2049 — pension after retirement is calculated as:",
+    options: ["Service years ÷ 50 × latest salary", "Service years ÷ 40 × latest salary", "Service years ÷ 30 × latest salary", "Service years ÷ 60 × latest salary"],
+    answer: 0,
+    explanation: "Pension = (Number of service years ÷ 50) × latest salary. Divisor is 50. This formula appeared verbatim TWICE in the 229-page PSC paper collection (pages 150 and 200)."
+  },
+  {
+    q: "Nepal Constitution Schedule 6 lists:",
+    options: ["Federal government exclusive powers", "Concurrent powers shared by Federal and Province", "Provincial government exclusive powers", "Local government powers"],
+    answer: 1,
+    explanation: "Schedule 5 = Federal exclusive. Schedule 6 = Concurrent (shared Federal-Province). Schedule 7 = Provincial. Schedule 8 = Local government powers. Appeared in actual 2082 PSC exam."
+  },
+  {
+    q: "Which of the following is NOT a constitutional body in Nepal?",
+    options: ["Lok Sewa Aayog", "CIAA", "Mahakalekhaparikhsak Karyalaya", "Adhikar Durupyog Anusandhan Aayog"],
+    answer: 3,
+    explanation: "Adhikar Durupyog Anusandhan Aayog is NOT constitutional. Constitutional bodies: Lok Sewa Aayog, CIAA, Election Commission, Auditor General, Human Rights Commission, etc."
+  },
+  {
+    q: "Nepal's 15th Periodic Plan (2076/77-2080/81) targets reducing absolute poverty to:",
+    options: ["10%", "11%", "12%", "13%"],
+    answer: 1,
+    explanation: "The 15th Periodic Plan targets reducing poverty to 11%. This appeared directly as Q8 in the actual as-mechanics.pdf PSC exam paper (2082/3/8)."
+  },
+  {
+    q: "The first step when receiving an official letter in a Nepal government office is:",
+    options: ["Chalani (dispatch)", "Darta (registration/logging)", "Filing", "Writing a reply"],
+    answer: 1,
+    explanation: "Darta (registration) is the FIRST step for any incoming letter. It is logged in the register with a darta number, date received, sender, and subject before any further processing."
+  },
+  {
+    q: "The 2024 Nobel Peace Prize was awarded to:",
+    options: ["Center for Civil Liberties", "World Food Program", "Nihon Hidankyo", "European Union"],
+    answer: 2,
+    explanation: "Nihon Hidankyo (Japanese organization of atomic bomb survivors) received the 2024 Nobel Peace Prize. This appeared as Q15 in the actual 2082 PSC Mechanics exam — current affairs ARE tested."
+  },
+  {
+    q: "Ancient Nepal's 'golden age' (swarna yug) refers to which dynasty's rule?",
+    options: ["Gopalvansha ko shasan kal", "Lichhavikalin shasan kal", "Kiratvansha ko shasan kal", "Shah vansha ko shasan kal"],
+    answer: 0,
+    explanation: "Gopalvansha (Gopal dynasty) is referred to as the golden age of ancient Nepal. This appeared as Q7 in the actual 2082 PSC Mechanics exam."
+  },
+
+  // ── THERMODYNAMICS & PHYSICS ───────────────────────────────────────────
+  {
+    q: "According to the 2nd Law of Thermodynamics, heat naturally transfers from:",
+    options: ["Cold to hot", "Hot to cold", "Either direction equally", "Only through conduction"],
+    answer: 1,
+    explanation: "The 2nd Law: heat flows spontaneously from HOT to COLD — never the reverse without external energy. Refrigerators and heat pumps use energy to move heat against this natural direction."
+  },
+  {
+    q: "Which heat treatment process INCREASES the hardness of steel?",
+    options: ["Annealing", "Tempering", "Normalizing", "Quenching"],
+    answer: 3,
+    explanation: "Quenching (rapid cooling in water/oil) traps carbon in martensite structure, greatly increasing hardness. Annealing = soften. Tempering = reduce brittleness after quenching. Normalizing = relieve stress."
+  },
+  {
+    q: "Which type of engine uses EXTERNAL combustion?",
+    options: ["Petrol engine", "Steam engine", "Diesel engine", "Jet engine"],
+    answer: 1,
+    explanation: "Steam engines burn fuel externally to heat water and produce steam, which drives the piston. Petrol, diesel, and jet engines all burn fuel INTERNALLY (inside the cylinder/combustion chamber)."
+  },
+  {
+    q: "Speed is classified as a:",
+    options: ["Vector quantity", "Scalar quantity", "Both vector and scalar", "Neither"],
+    answer: 1,
+    explanation: "Speed is SCALAR (magnitude only, e.g., 60 km/h). Velocity is VECTOR (magnitude + direction, e.g., 60 km/h northward). Force, displacement, and acceleration are also vectors."
+  },
+  {
+    q: "The unit of work is the same as the unit of:",
+    options: ["Power", "Force", "Energy", "None of the above"],
+    answer: 2,
+    explanation: "Work = Force × Distance, measured in Joules (J). Energy is also measured in Joules. They share the same SI unit because work done equals energy transferred."
+  },
+
+  {
+    q: "Leaf spring in a vehicle suspension absorbs shocks by:",
+    options: ["Expanding", "Bending", "Compression", "Twisting"],
+    answer: 1,
+    explanation: "Leaf springs absorb road shocks by BENDING. The spring flexes/bends under load and returns to its original shape, absorbing energy. Commonly used in heavy-duty vehicles and truck rear axles."
+  },
+  {
+    q: "The number '205' in a tyre size marking 205/55 R16 represents:",
+    options: ["The tyre diameter in inches", "The aspect ratio of the tyre", "The tyre section width in millimeters", "The load rating"],
+    answer: 2,
+    explanation: "Tyre marking 205/55 R16: 205 = section WIDTH in mm, 55 = aspect ratio (sidewall height as % of width), R = Radial construction, 16 = rim diameter in inches."
+  },
+  {
+    q: "Which maintenance strategy is the most effective in reducing overall maintenance costs?",
+    options: ["Corrective maintenance", "Breakdown maintenance", "Preventive maintenance", "Unplanned maintenance"],
+    answer: 2,
+    explanation: "Preventive maintenance (scheduled, before failure) is the most cost-effective strategy. It reduces unexpected breakdowns, extends equipment life, and lowers total maintenance costs long-term."
+  }
+,
+  {
+    q: "Which component in a rack-and-pinion steering system converts rotational motion of the steering wheel into linear motion?",
+    options: ["Tie rod", "Steering knuckle", "Rack gear", "Pitman arm"],
+    answer: 2,
+    explanation: "In a rack-and-pinion system, the RACK (a linear gear) converts the rotational motion of the pinion (connected to the steering column) into linear motion, which pushes/pulls the tie rods to steer the wheels."
+  },
+
+];
+
+// ── SET 1 COMPLETE: 100 Questions ─────────────────────────────────────────
+// Topics: Engine(15) | Welding(14) | Machine Tools(10) | Measuring(6) |
+//         Brakes(5) | Suspension/Steering/Trans(8) | Hydraulics(4) |
+//         Safety(6) | Maintenance(6) | Construction(5) | Electrical(4) |
+//         GK Nepal(8) | Thermodynamics/Physics(6) | Vehicle/Tyre(3)
+// Source: PSC 2082 actual exam + Sajha Yatayat + NOC + Khanepani +
+//         Wayu Sewa + TU Sewa Aayog + Sewa_sambandi.pdf (229 pages)
+
+// TOTAL: 100 Questions
+
+        let currentPage = 0;
+        let score = 0;
+        let skipped = [];
+        let userAnswers = Array(questions.length).fill(null);
+        let timerSeconds = 0;
+        let timerInterval;
+        let currentStreak = 0;
+        let maxStreak = 0;
+        const QUESTIONS_PER_PAGE = 5;
+        const ANSWER_DELAY = 1500;
+
+        const quizEl = document.getElementById("quiz");
+        const scoreEl = document.getElementById("score");
+        const resultsEl = document.getElementById("results");
+        const resultsBody = document.getElementById("results-body");
+        const progressEl = document.getElementById("progress");
+        const progressTextEl = document.getElementById("progress-text");
+        const timerEl = document.getElementById("timer");
+        const currentScoreEl = document.getElementById("current-score");
+        const questionsAnsweredEl = document.getElementById("questions-answered");
+        const accuracyEl = document.getElementById("accuracy");
+        const streakBadge = document.getElementById("streak-badge");
+        const correctSound = document.getElementById("correct-sound");
+        const wrongSound = document.getElementById("wrong-sound");
+
+        function clearProgress() {
+            localStorage.removeItem("quizProgressWorkshop");
+            currentPage = 0;
+            score = 0;
+            skipped = [];
+            userAnswers = Array(questions.length).fill(null);
+            timerSeconds = 0;
+            currentStreak = 0;
+            maxStreak = 0;
+        }
+
+        function saveProgress() {
+            localStorage.setItem("quizProgressWorkshop", JSON.stringify({
+                currentPage,
+                score,
+                skipped,
+                answers: userAnswers,
+                time: timerSeconds,
+                streak: currentStreak,
+                maxStreak
+            }));
+        }
+
+        function updateStats() {
+            currentScoreEl.textContent = score;
+            const answered = userAnswers.filter(a => a !== null && a !== 'Skipped').length;
+            questionsAnsweredEl.textContent = answered;
+            const accuracy = answered > 0 ? Math.round((score / answered) * 100) : 0;
+            accuracyEl.textContent = accuracy + '%';
+            progressTextEl.textContent = `${answered}/${questions.length}`;
+        }
+
+        function updateStreak(isCorrect) {
+            if (isCorrect) {
+                currentStreak++;
+                if (currentStreak > maxStreak) maxStreak = currentStreak;
+                if (currentStreak >= 3) {
+                    streakBadge.textContent = `Streak: ${currentStreak}`;
+                    streakBadge.classList.add('show');
+                    setTimeout(() => streakBadge.classList.remove('show'), 2000);
+                }
+            } else {
+                currentStreak = 0;
+            }
+        }
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const minutes = Math.floor(timerSeconds / 60);
+                const seconds = timerSeconds % 60;
+                timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                saveProgress();
+            }, 1000);
+        }
+
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            const percentage = (answeredCount / questions.length) * 100;
+            progressEl.style.width = `${percentage}%`;
+            updateStats();
+        }
+
+        function showQuestions(page) {
+            quizEl.innerHTML = '';
+            const startIndex = page * QUESTIONS_PER_PAGE;
+            const endIndex = Math.min(startIndex + QUESTIONS_PER_PAGE, questions.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const q = questions[i];
+                const shuffledOptions = shuffle([...q.options].map((opt, j) => ({ text: opt, index: j })));
+                const optionsHtml = shuffledOptions
+                    .map((opt, idx) => `
+                        <button class="option-btn" onclick="checkAnswer(this, ${i}, ${opt.index}, '${opt.text.replace(/'/g, "\\'")}')" data-index="${idx}">
+                            <span class="option-indicator">${String.fromCharCode(65 + idx)}</span>
+                            <span>${opt.text}</span>
+                        </button>
+                    `).join('');
+                
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question-wrapper');
+                questionDiv.innerHTML = `
+                    <div class="question-card" data-index="${i}">
+                        <div class="question-header">
+                            <div class="question-number">${i + 1}</div>
+                            <div class="question-text">${q.q}</div>
+                        </div>
+                        <div class="options">${optionsHtml}</div>
+                        <div class="explanation">${q.explanation}</div>
+                    </div>
+                `;
+                quizEl.appendChild(questionDiv);
+            }
+
+            const actionBar = document.createElement('div');
+            actionBar.classList.add('action-bar');
+
+            if (endIndex < questions.length || skipped.length > 0) {
+                const nextBtn = document.createElement('button');
+                nextBtn.classList.add('btn', 'btn-primary');
+                nextBtn.innerHTML = endIndex < questions.length ? 'Next Questions →' : 'Review Skipped →';
+                nextBtn.onclick = nextPage;
+                nextBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(nextBtn);
+            } else {
+                const submitBtn = document.createElement('button');
+                submitBtn.classList.add('btn', 'btn-primary');
+                submitBtn.innerHTML = '✓ Submit Quiz';
+                submitBtn.onclick = endQuiz;
+                submitBtn.disabled = !areAllQuestionsAnsweredOnPage(startIndex, endIndex);
+                actionBar.appendChild(submitBtn);
+            }
+
+            const skipBtn = document.createElement('button');
+            skipBtn.classList.add('btn', 'btn-skip');
+            skipBtn.innerHTML = '⊘ Skip All';
+            skipBtn.onclick = () => {
+                for (let i = startIndex; i < endIndex; i++) {
+                    if (userAnswers[i] === null) skipQuestion(i);
+                }
+            };
+            actionBar.appendChild(skipBtn);
+
+            quizEl.appendChild(actionBar);
+            updateProgress();
+            saveProgress();
+        }
+
+        function areAllQuestionsAnsweredOnPage(startIndex, endIndex) {
+            for (let i = startIndex; i < endIndex; i++) {
+                if (userAnswers[i] === null) return false;
+            }
+            return true;
+        }
+
+        function checkAnswer(button, questionIndex, selected, selectedText) {
+            const q = questions[questionIndex];
+            const correct = q.answer;
+            const buttons = button.parentElement.querySelectorAll(".option-btn");
+            const card = button.closest('.question-card');
+            const explanationDiv = card.querySelector('.explanation');
+
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                const btnText = btn.querySelector('span:last-child').textContent;
+                if (q.options.indexOf(btnText) === correct) {
+                    btn.classList.add('correct');
+                }
+                if (btn === button && selected !== correct) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            explanationDiv.style.display = 'block';
+            
+            userAnswers[questionIndex] = selectedText;
+            const isCorrect = selected === correct;
+            if (isCorrect) {
+                score++;
+                correctSound.play().catch(() => {});
+                updateStreak(true);
+            } else {
+                wrongSound.play().catch(() => {});
+                updateStreak(false);
+            }
+
+            updateStats();
+            saveProgress();
+            
+            const actionBar = quizEl.querySelector('.action-bar');
+            const primaryBtn = actionBar.querySelector('.btn-primary');
+            if (primaryBtn) {
+                primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                );
+            }
+
+            setTimeout(() => {
+                if (areAllQuestionsAnsweredOnPage(
+                    currentPage * QUESTIONS_PER_PAGE,
+                    Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                )) {
+                    nextPage();
+                }
+            }, ANSWER_DELAY);
+        }
+
+        function skipQuestion(questionIndex) {
+            if (!skipped.includes(questions[questionIndex])) {
+                skipped.push(questions[questionIndex]);
+                userAnswers[questionIndex] = 'Skipped';
+                const card = document.querySelector(`.question-card[data-index="${questionIndex}"]`);
+                if (card) {
+                    card.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+                    card.querySelector('.explanation').style.display = 'block';
+                    card.style.opacity = '0.6';
+                }
+                saveProgress();
+                const actionBar = quizEl.querySelector('.action-bar');
+                const primaryBtn = actionBar.querySelector('.btn-primary');
+                if (primaryBtn) {
+                    primaryBtn.disabled = !areAllQuestionsAnsweredOnPage(
+                        currentPage * QUESTIONS_PER_PAGE,
+                        Math.min((currentPage + 1) * QUESTIONS_PER_PAGE, questions.length)
+                    );
+                }
+            }
+        }
+
+        function nextPage() {
+            if (skipped.length > 0 && currentPage * QUESTIONS_PER_PAGE >= questions.length) {
+                showSkippedQuestions();
+            } else {
+                currentPage++;
+                if (currentPage * QUESTIONS_PER_PAGE < questions.length) {
+                    showQuestions(currentPage);
+                } else if (skipped.length === 0) {
+                    endQuiz();
+                } else {
+                    showSkippedQuestions();
+                }
+            }
+        }
+
+        function showSkippedQuestions() {
+            questions.splice(0, questions.length, ...skipped);
+            skipped = [];
+            currentPage = 0;
+            showQuestions(currentPage);
+        }
+
+        function drawConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const colors = ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'];
+            
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: Math.random() * 3 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    size: Math.random() * 6 + 2,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            let animationId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rotation += 2;
+                    
+                    if (p.y < canvas.height) {
+                        active = true;
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation * Math.PI / 180);
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                        ctx.restore();
+                    }
+                });
+                
+                if (active) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+            
+            setTimeout(() => cancelAnimationFrame(animationId), 5000);
+        }
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            quizEl.innerHTML = '';
+            
+            const percentage = ((score / questions.length) * 100).toFixed(1);
+            let message = '';
+            let emoji = '';
+            
+            if (percentage >= 90) {
+                message = 'Outstanding! You\'re a master!';
+                emoji = '🏆';
+                drawConfetti();
+            } else if (percentage >= 70) {
+                message = 'Great job! Well done!';
+                emoji = '🌟';
+            } else if (percentage >= 50) {
+                message = 'Good effort! Keep practicing!';
+                emoji = '💪';
+            } else {
+                message = 'Keep learning! You\'ll improve!';
+                emoji = '📚';
+            }
+
+            scoreEl.innerHTML = `
+                <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+                <div class="score-display">${percentage}%</div>
+                <div class="score-label">${message}</div>
+                <div style="margin-top: 1rem; color: var(--text-secondary);">
+                    ${score} correct out of ${questions.length} questions<br>
+                    Time: ${timerEl.textContent} | Best Streak: ${maxStreak}
+                </div>
+            `;
+            
+            resultsEl.classList.remove('hidden');
+
+            resultsBody.innerHTML = questions.map((q, i) => {
+                const userAnswer = userAnswers[i] === null ? 'Not attempted' :
+                                  userAnswers[i] === 'Skipped' ? 'Skipped' :
+                                  userAnswers[i];
+                const correctAnswer = q.options[q.answer];
+                const status = userAnswers[i] === q.options[q.answer] ? 'Correct' :
+                              userAnswers[i] === 'Skipped' ? 'Skipped' :
+                              userAnswers[i] === null ? 'Not attempted' : 'Wrong';
+                const statusClass = status.toLowerCase().replace(' ', '-');
+                const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : '⊘';
+                
+                return `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${q.q}</td>
+                        <td>${userAnswer}</td>
+                        <td>${correctAnswer}</td>
+                        <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                        <td class="explanation-cell">${q.explanation}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            localStorage.removeItem('quizProgressWorkshop');
+        }
+
+        function restartQuiz() {
+            clearProgress();
+            resultsEl.classList.add('hidden');
+            scoreEl.innerHTML = '';
+            startTimer();
+            showQuestions(currentPage);
+            updateStats();
+        }
+
+        function initialize() {
+            clearProgress();
+            startTimer();
+            showQuestions(currentPage);
+            updateStats();
+        }
+
+        initialize();
+
+        // Handle resize for canvas
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
+    </script>
+</body>
+</html>
