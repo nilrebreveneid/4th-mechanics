@@ -583,7 +583,390 @@
                 options: ["Voltmeter", "Pressure gauge", "Screwdriver", "Feeler gauge"],
                 answer: 1,
                 explanation: "A pressure gauge measures the pump’s injection pressure."
-            }
+            },
+
+            // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 5 — FUEL SYSTEM OF IC ENGINE
+// Additional MCQs from PSC supplied papers
+// (Append after your own supplied fuel MCQs)
+// Syllabus: 5.1 Fuel Injection Pump · 5.2 Types & Parts ·
+//           5.3 Fuel Injection Components · 5.4 Carburetor ·
+//           5.5 Troubleshooting & Maintenance
+// Sources: as-mechanics.pdf · saja_yatayat.pdf · NOC/wayu_sewa ·
+//          tu5mcqs.pdf · Sewa_sambandi.pdf · TU image papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM as-mechanics.pdf — PSC 2082 ACTUAL EXAM ─────────────
+  {
+    q: "The fuel injection pump in a diesel engine is used to pump:",
+    options: ["Diesel fuel", "Petrol fuel", "Both A and B", "None of the above"],
+    answer: 0,
+    explanation: "Fuel injection pump is used exclusively in DIESEL engines to pump diesel fuel at high pressure to injector nozzles. From as-mechanics.pdf PSC 2082 exam Q37 — confirmed repeat question."
+  },
+  {
+    q: "What is the function of a carburetor?",
+    options: ["For mixing air and petrol", "For mixing air and diesel", "For mixing air and water", "For mixing air and steam"],
+    answer: 0,
+    explanation: "Carburetor mixes AIR AND PETROL in the correct ratio for combustion in SI (spark ignition/petrol) engines. Diesel engines do NOT use carburetors — they use fuel injection pumps. From as-mechanics.pdf PSC 2082 Q38."
+  },
+  {
+    q: "What does the octane rating of gasoline indicate?",
+    options: ["The fuel's resistance to premature detonation (knocking)", "The color of the gasoline", "The weight of the fuel per gallon", "The speed at which fuel travels through fuel lines"],
+    answer: 0,
+    explanation: "Octane rating = fuel's resistance to PREMATURE DETONATION (knocking/pinging). Higher octane = more resistant to knock = suitable for high-compression engines. From TU image paper Q43."
+  },
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "In a diesel engine, which component sends fuel into the combustion chamber?",
+    options: ["Injector nozzle", "Spark plug", "Induction coil", "Oil pump"],
+    answer: 0,
+    explanation: "INJECTOR NOZZLE atomizes and sprays diesel fuel at high pressure into combustion chamber at the precise moment. Diesel auto-ignites in hot compressed air — no spark plug. From saja_yatayat.pdf."
+  },
+  {
+    q: "The quality of fuel is judged mainly by its:",
+    options: ["Power conversion rate", "Calorific value", "Loss to cool the engine", "Consumption rate only"],
+    answer: 1,
+    explanation: "CALORIFIC VALUE (heat of combustion, MJ/kg or kJ/kg) is the primary quality measure of fuel — how much energy is released per kg when burned completely. Higher calorific value = more energy per litre."
+  },
+  {
+    q: "Which component of a carburetor regulates the AIR FLOW entering the engine?",
+    options: ["Float chamber", "Venturi", "Choke", "Throttle valve"],
+    answer: 1,
+    explanation: "The VENTURI is the narrowed section where air velocity increases and pressure drops (Bernoulli effect), drawing fuel from the jet. Air flow quantity through the Venturi depends on throttle opening."
+  },
+  {
+    q: "The choke in a carburetor is used to:",
+    options: ["Increase air flow during normal running", "Restrict air flow to enrich fuel mixture during COLD starting", "Filter the fuel", "Control maximum engine speed"],
+    answer: 1,
+    explanation: "CHOKE plate restricts incoming air → stronger vacuum → more fuel drawn through jets → RICH MIXTURE needed for cold starting when fuel vaporization is poor. Should be opened gradually as engine warms."
+  },
+  {
+    q: "The float chamber in a carburetor maintains:",
+    options: ["Constant air pressure", "Constant fuel level to ensure consistent fuel delivery to the jets", "Constant engine temperature", "Air-fuel ratio electronically"],
+    answer: 1,
+    explanation: "FLOAT CHAMBER: float rises with fuel level → closes needle valve when full, opens when fuel drops. Maintains CONSTANT FUEL LEVEL ensuring consistent fuel pressure and delivery to main jet."
+  },
+  {
+    q: "The throttle valve in a carburetor controls:",
+    options: ["Fuel temperature", "The quantity of air-fuel mixture entering the engine (engine speed and power)", "Ignition timing", "Oil pressure"],
+    answer: 1,
+    explanation: "THROTTLE VALVE (butterfly valve): opens/closes to vary the amount of air-fuel mixture entering the engine. More open = more mixture = more power and speed. Directly connected to accelerator pedal."
+  },
+  {
+    q: "The priming (hand primer) pump in a diesel fuel system is used to:",
+    options: ["Permanently increase fuel pressure", "Manually remove air from fuel system before starting after running dry", "Filter fuel contaminants", "Regulate fuel temperature"],
+    answer: 1,
+    explanation: "Hand primer pump bleeds AIR from diesel fuel lines after: running dry, filter change, or long storage. Air in diesel fuel lines prevents starting or causes rough running. From saja_yatayat.pdf confirmed."
+  },
+
+  // ── FROM Sewa_sambandi.pdf (229 pages) ───────────────────────
+  {
+    q: "The carburetor supplies ______ into the engine cylinder.",
+    options: ["Air only", "Air-fuel mixture", "Fuel only", "Coolant"],
+    answer: 1,
+    explanation: "Carburetor supplies AIR-FUEL MIXTURE (atomized petrol mixed with air in correct ratio) to engine cylinder. It is the mixing device for petrol engines. From Sewa_sambandi.pdf — confirmed repeat."
+  },
+  {
+    q: "In which of the following is a fuel injector used?",
+    options: ["Spark-ignition (petrol) engines", "Compression-ignition (diesel) engines", "Steam engines", "Electric engines"],
+    answer: 1,
+    explanation: "Fuel injectors are used in COMPRESSION-IGNITION (diesel) engines for precise high-pressure fuel delivery. Modern petrol engines also use injectors (EFI) but traditional carburetors were used previously. From Sewa_sambandi.pdf."
+  },
+  {
+    q: "Which of the following is an indication of a problem in the fuel injection pump?",
+    options: ["Difficulty starting", "Excessive smoke", "Reduced power", "All of the above"],
+    answer: 3,
+    explanation: "Faulty injection pump causes ALL THREE: DIFFICULTY STARTING (insufficient pressure), EXCESSIVE SMOKE (wrong fuel quantity), REDUCED POWER (incorrect timing or quantity). From Sewa_sambandi.pdf — ALL OF ABOVE pattern."
+  },
+  {
+    q: "The fuel injection TIMING in a distributor-type injection pump is controlled by:",
+    options: ["Changing plunger stroke", "Rotating the cam ring", "Adjusting nozzle size", "Varying fuel pressure only"],
+    answer: 1,
+    explanation: "In distributor-type (rotary) pump: rotating the CAM RING advances or retards injection timing relative to the engine crankshaft position. From Sewa_sambandi.pdf — confirmed timing question."
+  },
+  {
+    q: "The secondary dry-type filter element of a diesel engine is cleaned by:",
+    options: ["With compressed air on the outer surface", "It is NOT cleaned — only replaced when required", "Washing with water", "Brushing with soft brush"],
+    answer: 1,
+    explanation: "Secondary dry filter (safety element) must be REPLACED — never cleaned. Cleaning damages the delicate filter paper media. Primary element can be carefully cleaned with compressed air from inside outward. From Sewa_sambandi.pdf."
+  },
+  {
+    q: "Which component prevents fuel from flowing BACK to the tank in a diesel fuel system?",
+    options: ["Governor", "Fuel filter", "Check valve (non-return valve)", "Priming pump"],
+    answer: 2,
+    explanation: "CHECK VALVE (non-return valve) allows fuel flow only toward the engine. Prevents backflow to tank when engine stops, maintaining fuel prime in the lines. From Sewa_sambandi.pdf and NOC papers."
+  },
+
+  // ── FROM tu5mcqs.pdf ─────────────────────────────────────────
+  {
+    q: "Direct fuel injection (vs port injection) improves:",
+    options: ["Exhaust noise only", "Fuel efficiency and power output", "Carburetor longevity", "Octane rating of fuel"],
+    answer: 1,
+    explanation: "DIRECT fuel injection (DFI/GDI) injects fuel directly into cylinder: better atomization, precise timing, higher compression ratio allowed → improved FUEL EFFICIENCY AND POWER. From tu5mcqs.pdf PSC 5th level exam."
+  },
+  {
+    q: "The CETANE NUMBER of diesel fuel indicates:",
+    options: ["The fuel's resistance to knocking like octane for petrol", "Ignition quality under compression — higher cetane = faster ignition = smoother running", "The fuel's calorific value per litre", "Fuel density and viscosity only"],
+    answer: 1,
+    explanation: "CETANE NUMBER measures diesel self-ignition quality: high CN (50+) = SHORT ignition delay = smooth combustion, easy cold start. Low CN (<45) = LONG delay = knocking, hard starting. From tu5mcqs.pdf confirmed."
+  },
+  {
+    q: "Multi-grade oils (e.g. 10W-40) are formulated to:",
+    options: ["Reduce production costs", "Provide consistent viscosity across a wide temperature range", "Eliminate need for oil filters", "Increase fuel density"],
+    answer: 1,
+    explanation: "Multi-grade oils stay thin enough for COLD STARTING (10W grade) and thick enough for HOT RUNNING (40 grade) using viscosity index improvers. One oil works in all seasons. From tu5mcqs.pdf."
+  },
+
+  // ── FROM NOC_and_wayu_sewa.pdf ────────────────────────────────
+  {
+    q: "Air in the fuel lines of a diesel engine causes:",
+    options: ["Engine to run faster", "Engine to stop, run unevenly, or fail to start", "Better fuel economy", "Increased power output"],
+    answer: 1,
+    explanation: "Air in diesel fuel lines prevents proper fuel pressure and flow. Engine will CRANK BUT NOT START or run erratically and stall. Must be bled using priming pump. From Wayu Sewa papers — confirmed repeat."
+  },
+  {
+    q: "Which fuel causes the LEAST air pollution when burned?",
+    options: ["Petrol", "Hydrogen gas", "Diesel", "Liquefied petroleum gas (LPG)"],
+    answer: 1,
+    explanation: "HYDROGEN burns producing only WATER VAPOUR (H2O) — no CO2, no CO, no particulates, no NOx (if burned at low temp). Cleanest possible fuel. Challenge is production, storage, and distribution."
+  },
+  {
+    q: "In a diesel engine, what is the correct sequence of fuel flow?",
+    options: ["Tank → Injector → Filter → Pump → Engine", "Tank → Filter → Lift pump → Injection pump → Injector → Engine", "Tank → Injection pump → Filter → Injector", "Tank → Injector → Engine directly"],
+    answer: 1,
+    explanation: "Correct diesel fuel flow: TANK → primary filter → LIFT PUMP → secondary filter → INJECTION PUMP (high pressure) → INJECTORS → combustion chamber. Each stage filters and pressurizes. From NOC papers."
+  },
+  {
+    q: "Nepal Vehicle Mass Emission Standard 2069 BS is equivalent to:",
+    options: ["Euro II", "Euro III", "Euro IV", "Bharat Stage IV"],
+    answer: 1,
+    explanation: "Nepal Vehicle Mass Emission Standard 2069 BS aligns with EURO III emission norms — setting limits for CO, HC, NOx, and particulates. From Sewa_sambandi.pdf — confirmed Nepal-specific repeat."
+  },
+
+  // ── ADDITIONAL FUEL SYSTEM QUESTIONS (all syllabus 5.1-5.5) ──
+  {
+    q: "The MAIN function of the fuel injection pump in a diesel engine is to:",
+    options: ["Store fuel before delivery", "Meter and deliver fuel at HIGH PRESSURE to injectors at precisely timed intervals", "Cool the fuel", "Filter impurities from fuel only"],
+    answer: 1,
+    explanation: "Injection pump performs THREE tasks: (1) METERS exact fuel quantity for load/speed, (2) PRESSURIZES fuel to 100-2000+ bar for atomization, (3) TIMES delivery precisely to match crankshaft position."
+  },
+  {
+    q: "The INLINE (in-line) fuel injection pump has:",
+    options: ["One plunger for all cylinders", "One plunger per cylinder arranged in a row — most common in heavy diesel engines", "A rotor distributing fuel", "No governor fitted"],
+    answer: 1,
+    explanation: "INLINE pump: each cylinder has its OWN plunger and barrel arranged in a line. Robust, reliable, used in trucks, buses, construction equipment. Bosch PE series is the most common. More serviceable than distributor type."
+  },
+  {
+    q: "The DISTRIBUTOR (rotary) type fuel injection pump (VE pump) differs from inline pump because:",
+    options: ["It has more plungers than cylinders", "It uses a SINGLE plunger that rotates to distribute fuel to each cylinder in sequence", "It operates at lower pressure", "It does not need a governor"],
+    answer: 1,
+    explanation: "DISTRIBUTOR pump (Bosch VE): single rotating plunger handles all cylinders — rotor distributes fuel to correct outlet port in firing order sequence. Compact, lighter, used in smaller diesel engines (cars, light trucks)."
+  },
+  {
+    q: "The COMMON RAIL DIRECT INJECTION (CRDI) system stores fuel at:",
+    options: ["Atmospheric pressure", "50-100 bar in a common rail", "1,000-2,000 bar in a common rail — available instantly to all injectors", "Variable pressure depending on engine only"],
+    answer: 2,
+    explanation: "CRDI: high-pressure pump fills COMMON RAIL at 1000-2000 bar. All injectors draw from this pressurized rail. ECU controls WHEN and HOW LONG each injector opens — enabling multiple injections per cycle."
+  },
+  {
+    q: "MULTIPLE INJECTIONS per cycle in CRDI engines (pilot + main + post injection) result in:",
+    options: ["More fuel consumption", "Smoother combustion, reduced noise, lower emissions, better efficiency", "Higher exhaust temperature", "Engine knock"],
+    answer: 1,
+    explanation: "Pilot injection: small pre-injection warms combustion chamber = less knock. Main injection: primary power. Post injection: burns soot in DPF. Multiple injections = SMOOTHER, QUIETER, CLEANER combustion."
+  },
+  {
+    q: "The GOVERNOR fitted to a diesel fuel injection pump serves to:",
+    options: ["Filter fuel", "Control engine speed automatically — preventing over-speed and maintaining set speed under varying loads", "Advance injection timing only", "Cool the injection pump"],
+    answer: 1,
+    explanation: "GOVERNOR automatically adjusts fuel quantity when load changes: load increases → speed drops → governor increases fuel → speed recovers. Prevents RUNAWAY (over-speed) when load is suddenly removed — essential for diesel engines."
+  },
+  {
+    q: "The DELIVERY VALVE in a fuel injection pump:",
+    options: ["Filters the fuel entering the pump", "Prevents fuel from flowing back from the high-pressure line into the pump after injection", "Controls fuel temperature", "Adjusts injection timing"],
+    answer: 1,
+    explanation: "DELIVERY VALVE (check valve): opens when pump pressure overcomes spring force → fuel flows to injector. CLOSES after injection → prevents backflow → helps injector needle seat properly and maintains residual line pressure."
+  },
+  {
+    q: "The LIFT PUMP (feed pump) in a diesel fuel system:",
+    options: ["Creates the high injection pressure", "Draws fuel from tank at LOW pressure and feeds it to the injection pump", "Atomizes fuel in combustion chamber", "Controls maximum fuel quantity"],
+    answer: 1,
+    explanation: "LIFT PUMP (transfer/feed pump): draws fuel from tank at LOW pressure (0.5-1.5 bar) and delivers it through filters to the high-pressure injection pump inlet. Maintains steady low-pressure supply."
+  },
+  {
+    q: "The fuel RETURN LINE from the injectors back to the tank serves to:",
+    options: ["Recirculate unused high-pressure fuel and remove heat from injectors", "Fill the injectors with extra fuel", "Connect tank to filter only", "Measure fuel consumption"],
+    answer: 0,
+    explanation: "RETURN LINE: excess fuel that was not injected (leakage fuel from injector plunger/needle) flows back to tank. This also COOLS the injectors. Diesel injectors always have more fuel delivered than injected — return is normal."
+  },
+  {
+    q: "A DIESEL INJECTOR NOZZLE must atomize fuel because:",
+    options: ["Large droplets evaporate faster", "Fine atomization dramatically increases surface area for rapid mixing with air and complete combustion", "Nozzle size is just for regulation", "Fuel pressure determines power, not droplet size"],
+    answer: 1,
+    explanation: "ATOMIZATION: fuel broken into microscopic droplets (10-100 microns). Tiny droplets have HUGE surface area → rapid evaporation and mixing with compressed hot air → COMPLETE combustion = more power, less soot."
+  },
+  {
+    q: "The OPENING PRESSURE (crack pressure) of a diesel injector nozzle is set by:",
+    options: ["Throttle position", "Spring tension on the needle — adjustable by shim under the spring", "Engine speed only", "Fuel temperature"],
+    answer: 1,
+    explanation: "Injector needle opens when fuel pressure overcomes SPRING FORCE. Opening pressure (200-350 bar for conventional injectors, 1000+ for CRDI) is set by adjusting shim thickness under spring. Nozzle tester checks this."
+  },
+  {
+    q: "Which type of fuel injection system is used in PETROL engines today?",
+    options: ["Mechanical fuel injection pump (same as diesel)", "Electronic Fuel Injection (EFI) with injectors controlled by ECU", "Carburetor in all modern petrol engines", "Gravity feed from fuel tank"],
+    answer: 1,
+    explanation: "Modern petrol engines use ELECTRONIC FUEL INJECTION (EFI/PFI/GDI): ECU controls each injector based on signals from MAP sensor, throttle position, oxygen sensor, etc. Carburetors are obsolete in modern vehicles."
+  },
+  {
+    q: "The ACCELERATOR PUMP in a carburetor is used to:",
+    options: ["Reduce fuel during acceleration", "Inject an extra squirt of fuel during sudden throttle opening to prevent hesitation/lean surge", "Cool the carburetor during acceleration", "Control idle speed"],
+    answer: 1,
+    explanation: "ACCELERATOR PUMP: when throttle opens suddenly, air volume increases instantly but fuel (heavier) lags behind → momentary lean mixture → hesitation. Accelerator pump injects extra fuel instantly to match the increased air."
+  },
+  {
+    q: "The IDLE JET in a carburetor supplies fuel when:",
+    options: ["Engine is at high speed", "Engine is at idle — throttle nearly closed, main jet cannot function due to low air flow", "During cold start only", "During full-throttle acceleration"],
+    answer: 1,
+    explanation: "At IDLE: throttle nearly closed → very low air flow → Venturi vacuum insufficient to draw from main jet. A separate IDLE JET (emulsion tube) near throttle plate delivers a small amount of rich mixture for idle running."
+  },
+  {
+    q: "What causes a carburetor to FLOOD (engine gets too much fuel)?",
+    options: ["Air filter blocked only", "Stuck float or needle valve — float chamber overfills and fuel spills into intake", "Throttle stuck open", "Choke fully open"],
+    answer: 1,
+    explanation: "FLOODING: float gets stuck (or needle valve doesn't seat) → float chamber OVERFILLS → fuel spills past main jet into intake → excessively rich mixture. Engine cranks but won't start or runs roughly with black smoke."
+  },
+  {
+    q: "The FUEL PRESSURE REGULATOR in an EFI (Electronic Fuel Injection) system maintains:",
+    options: ["Variable pressure based on throttle", "Constant pressure difference between fuel rail and intake manifold (typically 3-4 bar)", "Maximum pressure only when engine is cold", "Fuel pressure equal to atmospheric"],
+    answer: 1,
+    explanation: "Fuel pressure regulator maintains CONSTANT FUEL RAIL PRESSURE (typically 3-4 bar relative to manifold pressure). Constant pressure ensures the injector's open time (pulse width) directly controls the fuel quantity injected."
+  },
+  {
+    q: "The LAMBDA (OXYGEN) SENSOR in an EFI system measures:",
+    options: ["Engine oil quality", "Oxygen content in exhaust — tells ECU if mixture is rich or lean for closed-loop control", "Fuel pressure in the rail", "Injector pulse width directly"],
+    answer: 1,
+    explanation: "Lambda (O2) sensor: voltage output changes based on exhaust oxygen content. RICH mixture (little O2): high voltage → ECU reduces fuel. LEAN (high O2): low voltage → ECU increases fuel. Enables precise stoichiometric control."
+  },
+  {
+    q: "DIESEL KNOCK (rough combustion noise) is caused by:",
+    options: ["Too low compression", "Long ignition delay — fuel accumulates then ignites all at once causing rapid pressure rise", "Rich fuel mixture", "Injector nozzle too clean"],
+    answer: 1,
+    explanation: "DIESEL KNOCK: during ignition delay, fuel accumulates. When it finally ignites, ALL accumulated fuel burns simultaneously → very rapid pressure rise → harsh knock. Low cetane fuel, cold engine, or worn injectors worsen knock."
+  },
+  {
+    q: "Which symptom indicates a BLOCKED fuel filter in a diesel engine?",
+    options: ["Engine runs at higher RPM than usual", "Hard starting, power loss, and engine stalling under load due to fuel starvation", "Fuel consumption decreases", "Oil pressure increases"],
+    answer: 1,
+    explanation: "Blocked fuel filter RESTRICTS fuel flow → insufficient fuel reaches injection pump → HARD STARTING (especially cold), POWER LOSS under load, ENGINE STALLING when demand is highest. Replace filter at specified intervals."
+  },
+  {
+    q: "The WATER SEPARATOR in a diesel fuel system removes:",
+    options: ["Metal particles from fuel", "Water that has condensed in the fuel tank or entered through contamination", "Air from fuel lines", "Wax from diesel in cold weather"],
+    answer: 1,
+    explanation: "WATER SEPARATOR (bowl type filter): water in diesel fuel causes injection pump and nozzle corrosion, reduced lubricity, and injector seizure. Water is denser — settles at bottom of bowl. Drain regularly (daily in humid climates)."
+  },
+  {
+    q: "In cold weather, diesel fuel can suffer from WAX PRECIPITATION causing:",
+    options: ["Better fuel flow in cold", "Wax crystals blocking fuel filters and lines — engine fails to start in extreme cold", "Increased calorific value", "Reduced NOx emissions"],
+    answer: 1,
+    explanation: "Diesel contains paraffin wax → in cold weather, wax CRYSTALLIZES → blocks fuel filter → fuel starvation → won't start. Solution: WINTER GRADE diesel (lower cloud point), fuel additives (pour point depressants), or heaters on fuel filter."
+  },
+  {
+    q: "The THROTTLE BODY in a modern EFI engine is:",
+    options: ["The fuel rail component", "The electronically or mechanically controlled valve that regulates air entering the engine (replaces carburetor's throttle)", "The fuel pressure regulator", "The MAP sensor housing"],
+    answer: 1,
+    explanation: "THROTTLE BODY: large butterfly valve controlling AIR entering the intake manifold. In drive-by-wire systems, an electric motor controls it (no cable from pedal). ECU matches fuel injection to the measured air flow."
+  },
+  {
+    q: "The MASS AIR FLOW (MAF) sensor in an EFI system measures:",
+    options: ["Fuel pressure in the rail", "The actual mass of air entering the engine — tells ECU exactly how much fuel to inject", "Exhaust gas temperature", "Engine oil mass"],
+    answer: 1,
+    explanation: "MAF sensor (hot wire or hot film type): measures the EXACT MASS of air entering. ECU uses this to calculate precise fuel injection quantity for stoichiometric mixture. More accurate than MAP sensor alone."
+  },
+  {
+    q: "Why is it important to use the CORRECT GRADE of diesel fuel for the ambient temperature?",
+    options: ["For better colour", "Lower ambient temperature requires diesel with a lower CLOUD POINT to prevent wax blocking filters", "Higher grade is always best", "Grade only affects fuel cost"],
+    answer: 1,
+    explanation: "Diesel grades: SUMMER diesel has higher cloud point (acceptable in warm weather). WINTER diesel has lower cloud point and cold filter plugging point (CFPP) — won't wax up in cold. Wrong grade → filter blockage → no start in cold."
+  },
+  {
+    q: "The FUEL TANK BREATHER (vent) on a vehicle must be kept clear because:",
+    options: ["It reduces fuel evaporation", "Blocked breather creates vacuum in tank as fuel is used — eventually stops fuel flow by preventing fuel from leaving tank", "It is only for appearance", "It cools the fuel"],
+    answer: 1,
+    explanation: "As fuel is consumed, air must enter tank to fill the vacuum. BLOCKED BREATHER → vacuum builds → eventually prevents fuel from flowing out to engine → stalling. On modern vehicles, EVAP canister captures fuel vapours from the vent."
+  },
+  {
+    q: "Maintenance of fuel injection system includes:",
+    options: ["Daily oil change", "Regular filter replacement, bleeding air, cleaning injectors, checking delivery pressure and timing", "Only replacing fuel tank", "Only checking fuel level"],
+    answer: 1,
+    explanation: "Fuel system maintenance: (1) FILTER replacement at schedule, (2) BLEED air after any fuel system work, (3) CLEAN injectors (ultrasonic or chemically), (4) CHECK delivery pressure and injection timing, (5) INSPECT lines for leaks."
+  },
+  {
+    q: "The INJECTOR RETURN PIPE (leak-off pipe) on diesel injectors carries:",
+    options: ["Fresh fuel to injectors", "Excess fuel (leakage past needle) back to tank — also removes heat from injector body", "Oil for injector lubrication", "Coolant for injector cooling"],
+    answer: 1,
+    explanation: "LEAK-OFF / RETURN: small amount of fuel escapes past needle and plunger (lubricating them) → collects in injector top → returns to tank via leak-off pipe. Normal. Excessive return = worn injector. Checks: disconnect and measure volume."
+  },
+  {
+    q: "The correct procedure for BLEEDING AIR from a diesel fuel system is:",
+    options: ["Rev engine at high RPM", "Use hand priming pump to pump fuel through system, loosen bleed screws in sequence from filter to pump to injectors", "Leave engine idling for 30 minutes", "Replace all fuel lines"],
+    answer: 1,
+    explanation: "Bleeding sequence: (1) PUMP hand primer, (2) LOOSEN bleed screw on primary filter → pump until bubble-free fuel flows → tighten, (3) BLEED secondary filter same way, (4) BLEED injection pump, (5) Loosen injector pipes one at a time, crank engine."
+  },
+  {
+    q: "A diesel engine that HUNTS (surges — RPM rises and falls repeatedly at idle) indicates:",
+    options: ["Engine working normally", "Faulty governor or air in fuel system — governor cannot maintain stable speed", "Rich fuel mixture", "Correct idle speed setting"],
+    answer: 1,
+    explanation: "HUNTING/SURGING: governor oscillates trying to correct speed → over-corrects → hunts. Causes: FAULTY GOVERNOR springs, AIR in fuel (inconsistent fuel supply), dirty fuel, or worn injection pump. Check fuel system first."
+  },
+  {
+    q: "The advantage of a FUEL INJECTION SYSTEM over a carburetor system is:",
+    options: ["Improved power output only", "Better fuel efficiency only", "Precise fuel delivery only", "All of the above — power, efficiency, and precise delivery"],
+    answer: 3,
+    explanation: "Fuel injection advantages over carburetor: BETTER POWER (precise fuelling), BETTER EFFICIENCY (no over-fuelling), PRECISE DELIVERY (exact quantity at exact time), BETTER COLD START (no choke), LOWER EMISSIONS. From Sewa_sambandi.pdf — ALL OF ABOVE."
+  },
+  {
+    q: "When checking injection TIMING on a diesel engine, timing that is TOO ADVANCED causes:",
+    options: ["Late combustion and low power", "Early ignition — excessive knock, overheating, and NOx emissions", "No noticeable change", "Black smoke only"],
+    answer: 1,
+    explanation: "ADVANCED timing: fuel ignites too early (before TDC) → gases push against still-rising piston → KNOCK, high stress, overheating, high NOx. RETARDED timing: late combustion → black smoke, high exhaust temperature, low power."
+  },
+  {
+    q: "Which fuel filter type allows visual inspection of the fuel and water content?",
+    options: ["Paper filter element in metal housing", "Transparent bowl type (sediment bowl) filter", "Inline filter with no bowl", "Spin-on filter"],
+    answer: 1,
+    explanation: "TRANSPARENT BOWL filter: clear plastic/glass bowl allows VISUAL INSPECTION — you can see fuel colour (dark = contaminated), sediment accumulation, and WATER layer at the bottom (water appears as a separate clear layer). Drain as needed."
+  },
+  {
+    q: "The purpose of a FUEL RETURN LINE RESTRICTOR in some diesel systems is to:",
+    options: ["Stop all fuel return", "Maintain minimum fuel rail pressure by creating back-pressure in the return line", "Increase return flow rate", "Filter returning fuel"],
+    answer: 1,
+    explanation: "Return restrictor creates slight BACK-PRESSURE in return line → helps maintain minimum injection pump inlet pressure. Ensures pump receives adequate low-pressure supply even at high altitude or high fuel demand."
+  },
+  {
+    q: "VAPOUR LOCK in a petrol engine fuel system occurs when:",
+    options: ["Too much fuel flows to engine", "Fuel vaporizes in fuel lines due to excessive heat — vapour bubble blocks liquid fuel flow", "Fuel pressure is too high", "Air filter is blocked"],
+    answer: 1,
+    explanation: "VAPOUR LOCK: excessive heat (from engine, sun, or poor fuel line routing) causes petrol to BOIL in fuel lines → vapour bubble → fuel flow stops → engine stalls. Common in hot weather. Relocation of fuel lines or heat shielding prevents it."
+  }  ,
+  {
+    q: "The MAIN JET in a carburetor supplies fuel to the engine at:",
+    options: ["Idle only", "Part to full throttle — when adequate air flow through Venturi creates sufficient vacuum", "Cold start only", "Overrun/deceleration only"],
+    answer: 1,
+    explanation: "MAIN JET: at PART TO FULL THROTTLE, Venturi vacuum draws fuel from float chamber through main jet into airstream. Below a certain throttle opening, vacuum is too low → idle circuit takes over. Main jet determines cruise fuel delivery."
+  },
+  {
+    q: "Why must a diesel engine NEVER run out of fuel while operating?",
+    options: ["It causes immediate engine seizure", "Air enters fuel system → must be manually bled before restarting — time-consuming process in the field", "Fuel cools the engine", "Running dry improves injector cleaning"],
+    answer: 1,
+    explanation: "Running a diesel DRY draws AIR into the fuel system. Air must be MANUALLY BLED from all components (filter, pump, injectors) before engine will start again. In remote/construction sites this can take 30-60 minutes. Always refuel before empty."
+  },
+  {
+    q: "The FUEL RACK in a diesel injection pump controls:",
+    options: ["Injection timing", "The amount of fuel delivered per stroke — moved by governor and throttle", "Number of cylinders firing", "Fuel pressure only"],
+    answer: 1,
+    explanation: "FUEL RACK (control rack): moves to rotate plunger in inline pump → changes EFFECTIVE STROKE → changes FUEL QUANTITY per injection. Throttle and governor both act on the rack. Full rack = maximum fuel. Zero rack = engine stops."
+  }
         ];
 
         let currentPage = 0;
