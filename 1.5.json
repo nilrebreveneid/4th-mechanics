@@ -1,0 +1,1103 @@
+{
+  "config": {
+    "quizId": "subjects-prabidhik-gk-1-5",
+    "quizTitle": "1.5 मानव जीवनमा प्रत्यक्ष प्रभाव पार्ने विज्ञान र प्रविधिका महत्वपूर्ण उपलब्धिहरू",
+    "displayTitle": "1.5 मानव जीवनमा प्रत्यक्ष प्रभाव पार्ने विज्ञान र प्रविधिका महत्वपूर्ण उपलब्धिहरू",
+    "topicName": "Gk",
+    "marksCorrect": 2,
+    "marksWrong": -0.4,
+    "questionsPerPage": 1,
+    "techpscPointsPerCorrect": 1
+  },
+  "questions": [
+    {
+      "q": "विश्वको पहिलो कृत्रिम उपग्रह (Artificial Satellite) कुन थियो?",
+      "options": [
+        "Sputnik-1",
+        "Explorer-1",
+        "Vostok-1",
+        "Apollo-11"
+      ],
+      "answer": 0,
+      "explanation": "Sputnik-1 सोभियत संघद्वारा सन् १९५७ अक्टोबर ४ मा प्रक्षेपण गरिएको विश्वको पहिलो कृत्रिम उपग्रह हो।"
+    },
+    {
+      "q": "DNA को Double Helix संरचना कसले पत्ता लगाए?",
+      "options": [
+        "Louis Pasteur र Robert Koch",
+        "James Watson र Francis Crick",
+        "Gregor Mendel र Charles Darwin",
+        "Alexander Fleming र Howard Florey"
+      ],
+      "answer": 1,
+      "explanation": "James Watson र Francis Crick ले सन् १९५३ मा DNA को Double Helix संरचना पत्ता लगाए। उनीहरूले सन् १९६२ मा Nobel Prize प्राप्त गरे।"
+    },
+    {
+      "q": "CRISPR-Cas9 प्रविधि के हो?",
+      "options": [
+        "एक प्रकारको एन्टिबायोटिक",
+        "नयाँ खोप प्रविधि",
+        "जिन सम्पादन प्रविधि",
+        "कृत्रिम बुद्धिमत्ता उपकरण"
+      ],
+      "answer": 2,
+      "explanation": "CRISPR-Cas9 एक क्रान्तिकारी जिन सम्पादन (Gene Editing) प्रविधि हो। यसका लागि Emmanuelle Charpentier र Jennifer Doudna लाई सन् २०२० मा Nobel Prize मिल्यो।"
+    },
+    {
+      "q": "इन्टरनेटको आविष्कार कहिले भएको मानिन्छ?",
+      "options": [
+        "सन् १९७५",
+        "सन् १९८०",
+        "सन् १९८५",
+        "सन् १९६९"
+      ],
+      "answer": 3,
+      "explanation": "इन्टरनेटको पूर्वज ARPANET को स्थापना सन् १९६९ मा अमेरिकी रक्षा विभागले गरेको थियो। World Wide Web (WWW) सन् १९९१ मा Tim Berners-Lee ले बनाए।"
+    },
+    {
+      "q": "पेनिसिलिन (Penicillin) को आविष्कारक को हुन्?",
+      "options": [
+        "Alexander Fleming",
+        "Louis Pasteur",
+        "Edward Jenner",
+        "Robert Koch"
+      ],
+      "answer": 0,
+      "explanation": "Alexander Fleming ले सन् १९२८ मा पेनिसिलिन पत्ता लगाए। यो पहिलो एन्टिबायोटिक हो जसले लाखौं मानिसको जीवन बचाएको छ।"
+    },
+    {
+      "q": "नेपालमा 'ई-गभर्नेन्स' अन्तर्गत 'नागरिक एप' (Nagarik App) ले के सुविधा दिन्छ?",
+      "options": [
+        "केवल पासपोर्ट सेवा",
+        "एकीकृत सरकारी डिजिटल सेवा",
+        "केवल कर भुक्तानी",
+        "केवल राहदानी नवीकरण"
+      ],
+      "answer": 1,
+      "explanation": "नागरिक एपमार्फत विभिन्न सरकारी सेवाहरू एउटै डिजिटल प्लेटफर्मबाट उपलब्ध गराइन्छन्।"
+    },
+    {
+      "q": "Artificial Intelligence (AI) मा 'Large Language Model' (LLM) भनेको के हो?",
+      "options": [
+        "एक प्रकारको रोबोट",
+        "कम्प्युटर भाइरस",
+        "भाषा प्रशोधन गर्ने AI मोडेल",
+        "इन्टरनेट खोज इन्जिन"
+      ],
+      "answer": 2,
+      "explanation": "Large Language Model भाषा बुझ्न, उत्पादन गर्न र विश्लेषण गर्न प्रयोग हुने AI मोडेल हो।"
+    },
+    {
+      "q": "विश्वको पहिलो मोबाइल फोन कसले बनाएको थियो?",
+      "options": [
+        "Steve Jobs",
+        "Bill Gates",
+        "Nikola Tesla",
+        "Martin Cooper"
+      ],
+      "answer": 3,
+      "explanation": "Martin Cooper (Motorola) ले सन् १९७३ मा विश्वको पहिलो मोबाइल फोन कल गरे।"
+    },
+    {
+      "q": "नेपालमा पहिलो पटक इन्टरनेट सेवा कहिले सुरु भयो?",
+      "options": [
+        "सन् १९९४",
+        "सन् १९९६",
+        "सन् १९९८",
+        "सन् २०००"
+      ],
+      "answer": 0,
+      "explanation": "नेपालमा इन्टरनेट सेवा सन् १९९४ (वि.सं. २०५१) मा Nepal Telecom द्वारा पहिलो पटक सुरु गरिएको थियो।"
+    },
+    {
+      "q": "COVID-19 विरुद्धको mRNA खोप (Vaccine) को विशेषता के हो?",
+      "options": [
+        "जीवित भाइरस प्रयोग गर्छ",
+        "spike protein बनाउन निर्देशन दिन्छ",
+        "एन्टिबायोटिक हो",
+        "DNA परिवर्तन गर्छ"
+      ],
+      "answer": 1,
+      "explanation": "mRNA खोप (Pfizer-BioNTech, Moderna) ले शरीरको कोशिकाहरूलाई spike protein बनाउने निर्देशन दिन्छ। यसले DNA परिवर्तन गर्दैन।"
+    },
+    {
+      "q": "Quantum Computing को मुख्य फाइदा के हो?",
+      "options": [
+        "सस्तो बिजुली खपत",
+        "सानो आकार",
+        "जटिल समस्या छिटो समाधान",
+        "इन्टरनेट बिना पनि काम गर्छ"
+      ],
+      "answer": 2,
+      "explanation": "Quantum Computing ले qubits को superposition र entanglement गुण प्रयोग गरी परम्परागत कम्प्युटरभन्दा लाखौं गुणा छिटो जटिल गणना गर्न सक्छ।"
+    },
+    {
+      "q": "GPS (Global Positioning System) कसले संचालन गर्छ?",
+      "options": [
+        "NASA",
+        "ESA",
+        "ISRO",
+        "US DoD"
+      ],
+      "answer": 3,
+      "explanation": "GPS अमेरिकी रक्षा विभाग (US Department of Defense) ले संचालन गर्छ। यसमा ३१+ उपग्रह पृथ्वीको कक्षामा छन्।"
+    },
+    {
+      "q": "विश्वको पहिलो 'Test Tube Baby' (IVF) कहिले जन्मिएको थियो?",
+      "options": [
+        "सन् १९७८",
+        "सन् १९८०",
+        "सन् १९७५",
+        "सन् १९८५"
+      ],
+      "answer": 0,
+      "explanation": "Louise Brown विश्वको पहिलो Test Tube Baby हुन् जो सन् १९७८ मा UK मा IVF प्रविधिद्वारा जन्मेकी थिइन्।"
+    },
+    {
+      "q": "नेपालमा 'विद्युतीय सवारी' (Electric Vehicles) प्रवर्द्धनका लागि सरकारले के नीति लिएको छ?",
+      "options": [
+        "EV मा कुनै छुट छैन",
+        "EV मा आयात शुल्क छुट",
+        "EV मा बढी कर",
+        "EV आयात प्रतिबन्ध"
+      ],
+      "answer": 1,
+      "explanation": "नेपाल सरकारले विद्युतीय सवारी साधनमा आयात शुल्क छुट र प्रोत्साहन नीति लिएको छ।"
+    },
+    {
+      "q": "नेपालमा 'डिजिटल नेपाल फ्रेमवर्क' (DNF) अन्तर्गत कति वटा क्षेत्र समेटिएका छन्?",
+      "options": [
+        "५",
+        "७",
+        "८",
+        "१०"
+      ],
+      "answer": 2,
+      "explanation": "Digital Nepal Framework मा ८ वटा क्षेत्र (Digital Infrastructure, Government, Economy, Agriculture, Health, Education, Tourism, Finance) समेटिएका छन्।"
+    },
+    {
+      "q": "3D Printing प्रविधिको मुख्य उपयोग के हो?",
+      "options": [
+        "केवल खेलौना बनाउन",
+        "केवल खाना पकाउन",
+        "केवल कपडा बनाउन",
+        "त्रिआयामी वस्तु निर्माण"
+      ],
+      "answer": 3,
+      "explanation": "3D Printing को मुख्य उपयोग त्रिआयामी वस्तु निर्माण गर्नु हो।"
+    },
+    {
+      "q": "नेपालमा 'ConnectING Nepal' कार्यक्रमको मुख्य उद्देश्य के हो?",
+      "options": [
+        "ग्रामीण ब्रोडब्यान्ड विस्तार",
+        "मोबाइल फोन उत्पादन",
+        "IT पार्क निर्माण",
+        "साइबर सुरक्षा"
+      ],
+      "answer": 0,
+      "explanation": "ConnectING Nepal कार्यक्रमले नेपालका ७५३ स्थानीय तहमा ब्रोडब्यान्ड इन्टरनेट पुर्याउने लक्ष्य राखेको छ।"
+    },
+    {
+      "q": "Telemedicine (टेलिमेडिसिन) भनेको के हो?",
+      "options": [
+        "टेलिफोन उत्पादन",
+        "दूरसञ्चारमार्फत उपचार सेवा",
+        "अस्पताल व्यवस्थापन सफ्टवेयर",
+        "औषधि उत्पादन"
+      ],
+      "answer": 1,
+      "explanation": "Telemedicine भनेको दूरसञ्चार प्रविधि प्रयोग गरेर चिकित्सा परामर्श र सेवा दिनु हो।"
+    },
+    {
+      "q": "नेपालले 'NepaliSat-1' उपग्रह कहिले प्रक्षेपण गरेको थियो?",
+      "options": [
+        "सन् २०१७",
+        "सन् २०१८",
+        "सन् २०१९",
+        "सन् २०२०"
+      ],
+      "answer": 2,
+      "explanation": "NepaliSat-1 सन् २०१९ मा प्रक्षेपण गरिएको थियो।"
+    },
+    {
+      "q": "Blockchain प्रविधिको मुख्य विशेषता के हो?",
+      "options": [
+        "केन्द्रीकृत डेटाबेस",
+        "सजिलो परिमार्जन",
+        "एकल प्रयोगकर्ता नियन्त्रण",
+        "विकेन्द्रीकृत लेनदेन अभिलेख"
+      ],
+      "answer": 3,
+      "explanation": "Blockchain एक विकेन्द्रीकृत (Decentralized) डिजिटल खाता-बही हो जहाँ एकपटक राखिएको डेटा परिवर्तन गर्न अत्यन्त कठिन छ।"
+    },
+    {
+      "q": "WWW (World Wide Web) को आविष्कारक को हुन्?",
+      "options": [
+        "Tim Berners-Lee",
+        "Bill Gates",
+        "Steve Jobs",
+        "Elon Musk"
+      ],
+      "answer": 0,
+      "explanation": "Tim Berners-Lee ले सन् १९९१ मा World Wide Web (WWW) को आविष्कार गरे।"
+    },
+    {
+      "q": "नेपालमा '5G' इन्टरनेट सेवाको परीक्षण कहिले शुरु भयो?",
+      "options": [
+        "२०७७ साल",
+        "२०७९ साल",
+        "२०७८ साल",
+        "२०८० साल"
+      ],
+      "answer": 1,
+      "explanation": "नेपाल टेलिकमले २०७९ सालमा नेपालमा 5G सेवाको परीक्षण सुरु गरेको थियो।"
+    },
+    {
+      "q": "ChatGPT (GPT-4) लाई विकास गर्ने कम्पनी कुन हो?",
+      "options": [
+        "Google DeepMind",
+        "Meta AI",
+        "OpenAI",
+        "Microsoft Research"
+      ],
+      "answer": 2,
+      "explanation": "ChatGPT (GPT-3.5, GPT-4) OpenAI कम्पनीले विकास गरेको छ। यो सन् २०२२ नोभेम्बरमा सार्वजनिक भयो।"
+    },
+    {
+      "q": "सौर्य ऊर्जा (Solar Energy) उत्पादनमा प्रयोग हुने मुख्य प्रविधि के हो?",
+      "options": [
+        "Wind Turbine",
+        "Hydropower",
+        "Nuclear Reactor",
+        "Photovoltaic Cells"
+      ],
+      "answer": 3,
+      "explanation": "Photovoltaic (PV) Cells सूर्यको प्रकाशलाई सिधै विद्युत ऊर्जामा रूपान्तरण गर्छन्। Solar Panel यिनै PV cells को संग्रह हो।"
+    },
+    {
+      "q": "नेपालमा 'राष्ट्रिय परिचय पत्र' वितरण कुन निकायले गर्छ?",
+      "options": [
+        "DONIDP",
+        "गृह मन्त्रालय",
+        "जिल्ला प्रशासन कार्यालय",
+        "नेपाल टेलिकम"
+      ],
+      "answer": 0,
+      "explanation": "राष्ट्रिय परिचय पत्र तथा पञ्जीकरण विभागले राष्ट्रिय परिचय पत्र वितरण गर्छ।"
+    },
+    {
+      "q": "Nanotechnology (न्यानोप्रविधि) को क्षेत्र कति मापनमा काम गर्छ?",
+      "options": [
+        "Micro",
+        "Nano",
+        "Pico",
+        "Milli"
+      ],
+      "answer": 1,
+      "explanation": "Nanotechnology 1-100 nanometer (10⁻⁹ मिटर) मापनमा सामग्री र उपकरण निर्माण गर्ने विज्ञान हो।"
+    },
+    {
+      "q": "नेपालको 'IT Park' (Banepa) कहिले स्थापना भएको हो?",
+      "options": [
+        "२०५५ साल",
+        "२०५७ साल",
+        "२०५९ साल",
+        "२०६३ साल"
+      ],
+      "answer": 2,
+      "explanation": "Banepa IT Park (Kavre) सन् २००२ (वि.सं. २०५९) मा स्थापना भएको नेपालको पहिलो IT Park हो।"
+    },
+    {
+      "q": "Artificial Intelligence (AI) को जनकको रूपमा कसलाई मानिन्छ?",
+      "options": [
+        "Bill Gates",
+        "Steve Jobs",
+        "Elon Musk",
+        "Alan Turing"
+      ],
+      "answer": 3,
+      "explanation": "Alan Turing लाई AI र आधुनिक कम्प्युटिङको जनक मानिन्छ। उनले 'Turing Test' प्रस्ताव गरे।"
+    },
+    {
+      "q": "नेपालमा 'राष्ट्रिय सूचना प्रविधि केन्द्र' (NITC) को मुख्य काम के हो?",
+      "options": [
+        "सरकारी IT सेवा व्यवस्थापन",
+        "इन्टरनेट सेवा प्रदान",
+        "मोबाइल एप विकास",
+        "साइबर अपराध अनुसन्धान"
+      ],
+      "answer": 0,
+      "explanation": "NITC नेपाल सरकारको IT पूर्वाधार, e-Government सेवा, Government Data Center र IT नीति कार्यान्वयनको केन्द्रीय निकाय हो।"
+    },
+    {
+      "q": "Stem Cell Therapy को मुख्य उपयोग के हो?",
+      "options": [
+        "भाइरस मार्न",
+        "क्षतिग्रस्त तन्तु मर्मत",
+        "दाँत सेतो बनाउन",
+        "तौल घटाउन"
+      ],
+      "answer": 1,
+      "explanation": "Stem Cell Therapy मा Stem Cells प्रयोग गरी क्षतिग्रस्त अंग, ल्युकेमिया, हृदय रोगको उपचार गरिन्छ।"
+    },
+    {
+      "q": "विश्वमा पहिलो चन्द्रमा अवतरण (Moon Landing) कहिले भयो?",
+      "options": [
+        "सन् १९६५",
+        "सन् १९६७",
+        "सन् १९६९",
+        "सन् १९७१"
+      ],
+      "answer": 2,
+      "explanation": "Neil Armstrong र Buzz Aldrin सन् १९६९ जुलाई २० मा Apollo-11 मिशनद्वारा पहिलो पटक चन्द्रमामा अवतरण गरे।"
+    },
+    {
+      "q": "IoT (Internet of Things) भनेको के हो?",
+      "options": [
+        "एक प्रकारको भाइरस",
+        "इन्टरनेट ब्राउजर",
+        "अनलाइन शपिङ",
+        "इन्टरनेट-जोडिएका उपकरणहरूको नेटवर्क"
+      ],
+      "answer": 3,
+      "explanation": "IoT भनेको स्मार्टफोन, फ्रिज, गाडी, सेन्सर जस्ता भौतिक उपकरणहरू इन्टरनेटसँग जोडेर डेटा सङ्कलन र विनिमय गर्ने प्रविधि हो।"
+    },
+    {
+      "q": "नेपालमा 'डिजिटल साक्षरता' को दर कति प्रतिशत अनुमान गरिएको छ?",
+      "options": [
+        "लगभग ४०-४५%",
+        "लगभग ६०%",
+        "लगभग ७०%",
+        "लगभग ८०%"
+      ],
+      "answer": 0,
+      "explanation": "नेपालको डिजिटल साक्षरता दर लगभग ४०-४५% अनुमान गरिएको छ। ग्रामीण र शहरी क्षेत्रबीच ठूलो डिजिटल खाडल छ।"
+    },
+    {
+      "q": "Robotics मा 'Autonomous Robot' भनेको के हो?",
+      "options": [
+        "मानव नियन्त्रित रोबोट",
+        "स्वतन्त्र रूपमा निर्णय गर्न सक्ने रोबोट",
+        "सौर्य ऊर्जाचालित रोबोट",
+        "पानीमुनि काम गर्ने रोबोट"
+      ],
+      "answer": 1,
+      "explanation": "Autonomous Robot ले मानव हस्तक्षेप बिना वातावरण बुझेर स्वतन्त्र निर्णय गर्न र काम गर्न सक्छ।"
+    },
+    {
+      "q": "नेपालमा 'विद्युतीय भुक्तानी' मा कुन प्रणाली सबैभन्दा बढी प्रयोग हुन्छ?",
+      "options": [
+        "SWIFT",
+        "VISA/Mastercard",
+        "eSewa, Khalti, IME Pay",
+        "Bitcoin"
+      ],
+      "answer": 2,
+      "explanation": "नेपालमा eSewa, Khalti, IME Pay, ConnectIPS, FonePay जस्ता Digital Wallet र Payment Gateway सर्वाधिक प्रयोग हुन्छन्।"
+    },
+    {
+      "q": "X-Ray को आविष्कार कसले गरे?",
+      "options": [
+        "Marie Curie",
+        "Albert Einstein",
+        "Nikola Tesla",
+        "Wilhelm Röntgen"
+      ],
+      "answer": 3,
+      "explanation": "Wilhelm Röntgen ले सन् १८९५ मा X-Ray पत्ता लगाए। Röntgen लाई सन् १९०१ मा पहिलो Physics Nobel Prize मिल्यो।"
+    },
+    {
+      "q": "नेपालमा 'राष्ट्रिय दूरसञ्चार प्राधिकरण' (NTA) को मुख्य काम के हो?",
+      "options": [
+        "दूरसञ्चार नियमन र लाइसेन्स",
+        "टेलिभिजन कार्यक्रम निर्माण",
+        "मोबाइल फोन उत्पादन",
+        "इन्टरनेट पसल सञ्चालन"
+      ],
+      "answer": 0,
+      "explanation": "NTA नेपालको दूरसञ्चार क्षेत्रको नियामक निकाय हो जसले अनुमतिपत्र, आवृत्ति व्यवस्थापन र उपभोक्ता संरक्षणको काम गर्छ।"
+    },
+    {
+      "q": "Machine Learning (ML) र Deep Learning बीचको सम्बन्ध के हो?",
+      "options": [
+        "दुवै एकै कुरा हो",
+        "Deep Learning, ML को उपसमूह हो",
+        "Machine Learning, DL को उपसमूह हो",
+        "दुवैको कुनै सम्बन्ध छैन"
+      ],
+      "answer": 1,
+      "explanation": "Deep Learning भनेको Machine Learning को एक उपसमूह हो जसमा Neural Networks को बहुस्तरीय संरचना प्रयोग हुन्छ।"
+    },
+    {
+      "q": "नेपालको पहिलो राष्ट्रिय 'Space Policy' कहिले लागू भयो?",
+      "options": [
+        "२०७१ साल",
+        "२०७३ साल",
+        "२०७६ साल",
+        "२०७८ साल"
+      ],
+      "answer": 2,
+      "explanation": "नेपालको पहिलो राष्ट्रिय Space Policy सन् २०१९ (वि.सं. २०७६) मा लागू भयो। NAST लाई Space Research को नोडल एजेन्सी बनाइयो।"
+    },
+    {
+      "q": "विश्वमा 'Human Genome Project' कहिले सम्पन्न भयो?",
+      "options": [
+        "सन् १९९७",
+        "सन् २०००",
+        "सन् २००१",
+        "सन् २००३"
+      ],
+      "answer": 3,
+      "explanation": "Human Genome Project सन् २००३ मा सम्पन्न भयो जसले मानव DNA को ३ अर्ब base pair को पूर्ण नक्शा तयार गर्यो।"
+    },
+    {
+      "q": "Augmented Reality (AR) र Virtual Reality (VR) बीचको फरक के हो?",
+      "options": [
+        "AR ले वास्तविकमा डिजिटल तह थप्छ; VR पूर्ण आभासी वातावरण हो",
+        "VR ले वास्तविकमा थप्छ; AR पूर्ण डिजिटल हो",
+        "दुवै एकै हुन्",
+        "AR केवल चिकित्सामा प्रयोग हुन्छ"
+      ],
+      "answer": 0,
+      "explanation": "AR ले वास्तविक दुनियामा डिजिटल तत्व थप्छ (जस्तै Pokemon Go), जबकि VR ले पूर्णरूपमा कृत्रिम डिजिटल वातावरण सिर्जना गर्छ।"
+    },
+    {
+      "q": "नेपालमा 'साइबर सुरक्षा' सम्बन्धी 'इलेक्ट्रोनिक कारोबार ऐन' कहिले आएको हो?",
+      "options": [
+        "२०५५ साल",
+        "२०६३ साल",
+        "२०७२ साल",
+        "२०७८ साल"
+      ],
+      "answer": 1,
+      "explanation": "नेपालको इलेक्ट्रोनिक कारोबार ऐन, २०६३ (Electronic Transactions Act, 2006) साइबर कानूनको आधार हो।"
+    },
+    {
+      "q": "विश्वमा 'Higgs Boson' (God Particle) पत्ता लाग्यो कहिले?",
+      "options": [
+        "सन् २०१०",
+        "सन् २०११",
+        "सन् २०१२",
+        "सन् २०१५"
+      ],
+      "answer": 2,
+      "explanation": "CERN को Large Hadron Collider (LHC) मा सन् २०१२ मा Higgs Boson पत्ता लागेको घोषणा भयो। Peter Higgs लाई सन् २०१३ मा Nobel Prize मिल्यो।"
+    },
+    {
+      "q": "MRI (Magnetic Resonance Imaging) को काम कसरी हुन्छ?",
+      "options": [
+        "X-Ray प्रयोग गर्छ",
+        "Ultrasound प्रयोग गर्छ",
+        "Gamma Ray प्रयोग गर्छ",
+        "Magnetic Field र Radio Waves प्रयोग गर्छ"
+      ],
+      "answer": 3,
+      "explanation": "MRI ले शक्तिशाली Magnetic Field र Radio Waves प्रयोग गरी शरीरका भित्री अंगहरूको विस्तृत तस्बिर लिन्छ। यसमा रेडियेशन हुँदैन।"
+    },
+    {
+      "q": "नेपालमा 'डिजिटल कृषि' अन्तर्गत कुन सेवाहरू छन्?",
+      "options": [
+        "कृषि ज्ञान केन्द्र, मोबाइल एप मार्फत बजार मूल्य र मौसम जानकारी",
+        "केवल मल वितरण",
+        "ट्र्याक्टर किनबेच",
+        "खाद्यान्न भण्डारण मात्र"
+      ],
+      "answer": 0,
+      "explanation": "Digital Agriculture अन्तर्गत कृषि ज्ञान केन्द्र, Krishi Bazar App, मौसम पूर्वानुमान सेवा र किसान हेल्पलाइन छन्।"
+    },
+    {
+      "q": "Cloud Computing को मुख्य फाइदा के हो?",
+      "options": [
+        "इन्टरनेट बिना पनि काम गर्छ",
+        "स्केलेबल र सजिलो पहुँच",
+        "केवल ठूला कम्पनीका लागि",
+        "डेटा चोरी हुँदैन"
+      ],
+      "answer": 1,
+      "explanation": "Cloud Computing ले इन्टरनेटमार्फत Computing Resources scalable रूपमा प्रदान गर्छ। AWS, Google Cloud, Azure यसका प्रमुख प्रदायक हुन्।"
+    },
+    {
+      "q": "नेपालमा 'एआई' (Artificial Intelligence) नीति कहिले आएको हो?",
+      "options": [
+        "२०७५ साल",
+        "२०७७ साल",
+        "२०७९ साल",
+        "२०८० साल"
+      ],
+      "answer": 2,
+      "explanation": "नेपाल सरकारले वि.सं. २०७९ (सन् २०२३) मा AI नीतिको मस्यौदा तयार पारेको छ।"
+    },
+    {
+      "q": "विश्वको सबैभन्दा पहिलो Vaccine कुन रोगका लागि बनाइएको थियो?",
+      "options": [
+        "Polio",
+        "Tuberculosis",
+        "Cholera",
+        "Smallpox"
+      ],
+      "answer": 3,
+      "explanation": "Edward Jenner ले सन् १७९६ मा Cowpox प्रयोग गरी Smallpox विरुद्धको पहिलो Vaccine बनाए।"
+    },
+    {
+      "q": "नेपालमा 'स्मार्ट सिटी' परियोजनाको लागि कति सहर छनोट भएका छन्?",
+      "options": [
+        "काठमाडौं, पोखरा, र अन्य",
+        "केवल काठमाडौं",
+        "केवल पोखरा",
+        "सबै ७५३ पालिका"
+      ],
+      "answer": 0,
+      "explanation": "नेपाल सरकारले Smart City विकासका लागि ९ वटा नगर छनोट गरेको छ। स्रोत: DUDBC"
+    },
+    {
+      "q": "Renewable Energy को सन्दर्भमा 'Green Hydrogen' भनेको के हो?",
+      "options": [
+        "हरियो रङको पानी",
+        "नवीकरणीय ऊर्जाबाट बनेको Hydrogen",
+        "Natural Gas बाट बनेको Hydrogen",
+        "Nuclear Energy बाट बनेको Hydrogen"
+      ],
+      "answer": 1,
+      "explanation": "Green Hydrogen भनेको सौर्य वा वायु ऊर्जाबाट Electrolysis द्वारा पानीलाई विभाजन गरी उत्पादित Hydrogen हो।"
+    },
+    {
+      "q": "नेपालमा 'E-Passport' (Biometric Passport) सेवा कहिलेदेखि सुरु भयो?",
+      "options": [
+        "२०७३ साल",
+        "२०७५ साल",
+        "२०७७ साल",
+        "२०७९ साल"
+      ],
+      "answer": 2,
+      "explanation": "नेपालले Machine Readable e-Passport (Biometric Passport) वि.सं. २०७७ (सन् २०२०) देखि वितरण शुरु गरेको हो।"
+    },
+    {
+      "q": "नेपालमा 'मोबाइल इन्टरनेट' प्रयोगकर्ताको संख्या (२०२३/२४) कति छ?",
+      "options": [
+        "५० लाख",
+        "७५ लाख",
+        "१ करोड",
+        "२ करोडभन्दा बढी"
+      ],
+      "answer": 3,
+      "explanation": "NTA को तथ्याङ्क अनुसार नेपालमा मोबाइल इन्टरनेट प्रयोगकर्ताको संख्या २ करोडभन्दा बढी छ।"
+    },
+    {
+      "q": "विश्वमा 'Mars Rover' सफलतापूर्वक पठाउने संस्था को हो?",
+      "options": [
+        "NASA - Perseverance, Curiosity",
+        "ESA",
+        "SpaceX",
+        "ISRO"
+      ],
+      "answer": 0,
+      "explanation": "NASA ले अहिलेसम्म सफलतापूर्वक मंगल ग्रहमा Rover पठाएको छ: Curiosity (2012) र Perseverance (2021)।"
+    },
+    {
+      "q": "नेपालमा 'Digital Signature' को कानूनी मान्यता कुन ऐनले दिएको छ?",
+      "options": [
+        "इलेक्ट्रोनिक सूचना ऐन",
+        "इलेक्ट्रोनिक कारोबार ऐन, २०६३",
+        "सूचना प्रविधि नीति",
+        "साइबर सुरक्षा ऐन"
+      ],
+      "answer": 1,
+      "explanation": "इलेक्ट्रोनिक कारोबार ऐन, २०६३ (ETA 2006) ले नेपालमा Digital Signature लाई कानूनी मान्यता दिएको छ।"
+    },
+    {
+      "q": "नेपालमा 'लोड शेडिङ' समस्या समाधानमा कुन प्रविधिको योगदान छ?",
+      "options": [
+        "Solar Energy मात्र",
+        "Wind Energy मात्र",
+        "Nuclear Energy",
+        "जलविद्युत विस्तार"
+      ],
+      "answer": 3,
+      "explanation": "नेपालमा जलविद्युत उत्पादन विस्तारले (हाल करिब २,५०० MW+) लोड शेडिङ अन्त्य गर्न र भारतमा बिजुली निर्यात गर्न सफलता मिलेको छ।"
+    },
+    {
+      "q": "Biotechnology मा 'PCR' (Polymerase Chain Reaction) को उपयोग के हो?",
+      "options": [
+        "DNA को धेरै प्रतिलिपि छिटो बनाउन",
+        "प्रोटिन संश्लेषण गर्न",
+        "कोशिका विभाजन रोक्न",
+        "एन्टिबायोटिक उत्पादन गर्न"
+      ],
+      "answer": 0,
+      "explanation": "PCR प्रविधिले DNA को लाखौं प्रतिलिपि छोटो समयमा बनाउँछ। COVID-19 परीक्षण, अपराध अनुसन्धान, र आनुवंशिक अध्ययनमा PCR अपरिहार्य छ।"
+    },
+    {
+      "q": "नेपालमा 'TeliMed' (Telemedicine) सेवा कुन संस्थाले विस्तार गरेको छ?",
+      "options": [
+        "FNCCI",
+        "स्वास्थ्य मन्त्रालय र अस्पतालहरू",
+        "WHO",
+        "World Bank"
+      ],
+      "answer": 1,
+      "explanation": "Nepal Telecom, स्वास्थ्य तथा जनसंख्या मन्त्रालय र विभिन्न अस्पतालहरूले Telemedicine सेवा विस्तार गरेका छन्।"
+    },
+    {
+      "q": "James Webb Space Telescope (JWST) कहिले प्रक्षेपण गरिएको थियो?",
+      "options": [
+        "सन् २०१९",
+        "सन् २०२०",
+        "सन् २०२१",
+        "सन् २०२३"
+      ],
+      "answer": 2,
+      "explanation": "James Webb Space Telescope (JWST) सन् २०२१ डिसेम्बर २५ मा प्रक्षेपण गरियो। यसले ब्रह्माण्डको प्रारम्भिक अवस्थाको अध्ययन गर्छ।"
+    },
+    {
+      "q": "विश्वको पहिलो 'Electric Car' व्यावसायिक रूपमा कुन कम्पनीले लोकप्रिय बनायो?",
+      "options": [
+        "Ford",
+        "General Motors",
+        "Toyota",
+        "Tesla"
+      ],
+      "answer": 3,
+      "explanation": "Tesla Inc. (Elon Musk) ले आधुनिक Electric Car को व्यावसायीकरणमा क्रान्ति ल्यायो।"
+    },
+    {
+      "q": "नेपालमा 'सूचना प्रविधि नीति' (IT Policy) को नवीनतम संस्करण कहिले आयो?",
+      "options": [
+        "२०७२ साल",
+        "२०७५ साल",
+        "२०७८ साल",
+        "२०८० साल"
+      ],
+      "answer": 0,
+      "explanation": "नेपालको IT Policy 2015 (वि.सं. २०७२) नेपालको नवीनतम IT नीति हो। Digital Nepal Framework 2019 यसको विस्तार हो।"
+    },
+    {
+      "q": "Precision Agriculture (परिशुद्ध कृषि) भनेको के हो?",
+      "options": [
+        "रासायनिक मल बढी प्रयोग गर्नु",
+        "GPS, Drone र Data Analytics सहितको कृषि",
+        "परम्परागत खेती विधि",
+        "जैविक खेती मात्र"
+      ],
+      "answer": 1,
+      "explanation": "Precision Agriculture मा GPS, IoT Sensors, Drone र Big Data Analytics प्रयोग गरी उत्पादकता बढाइन्छ।"
+    },
+    {
+      "q": "नेपालमा राष्ट्रव्यापी Fiber Optic इन्टरनेट विस्तार कुन परियोजनाले गरिरहेको छ?",
+      "options": [
+        "ADSL Expansion Project",
+        "VSAT Nepal",
+        "National Broadband Network / Optical Fiber Backbone",
+        "Satellite Internet"
+      ],
+      "answer": 2,
+      "explanation": "National Broadband Network (NBN) अन्तर्गत Nepal Telecom र Ncell ले Optical Fiber Backbone विस्तार गरिरहेका छन्।"
+    },
+    {
+      "q": "विश्वमा 'Cloning' प्रविधिबाट पहिलो स्तनधारी जीव (Dolly the Sheep) कहिले जन्माइएको थियो?",
+      "options": [
+        "सन् १९९२",
+        "सन् १९९४",
+        "सन् १९९५",
+        "सन् १९९६"
+      ],
+      "answer": 3,
+      "explanation": "Dolly the Sheep सन् १९९६ मा Scotland को Roslin Institute मा Nuclear Transfer Cloning प्रविधिद्वारा जन्माइएको थियो।"
+    },
+    {
+      "q": "नेपालमा 'Drone Technology' को उपयोग कुन क्षेत्रमा भइरहेको छ?",
+      "options": [
+        "कृषि, उद्धार, स्वास्थ्य र सर्वेक्षण",
+        "केवल फोटोग्राफी",
+        "केवल सैनिक उद्देश्य",
+        "केवल खेलकुद"
+      ],
+      "answer": 0,
+      "explanation": "नेपालमा Drone Technology भूकम्प/बाढी पीडित खोज-उद्धार, कृषि सर्वेक्षण, दुर्गम क्षेत्रमा औषधि डेलिभरी र भू-सर्वेक्षणमा प्रयोग भइरहेको छ।"
+    },
+    {
+      "q": "'Moore's Law' भनेको के हो?",
+      "options": [
+        "इन्टरनेटको गति दोब्बर हुन्छ",
+        "Transistors दुई वर्षमा दोब्बर हुन्छन्",
+        "RAM तेब्बर हुन्छ",
+        "Battery जीवन दोब्बर हुन्छ"
+      ],
+      "answer": 1,
+      "explanation": "Moore's Law (Gordon Moore, 1965): Microchip मा Transistors को संख्या लगभग हरेक २ वर्षमा दोब्बर हुन्छ र लागत आधा हुन्छ।"
+    },
+    {
+      "q": "नेपालमा IT Engineering तयार गर्ने मुख्य सरकारी संस्था कुन हो?",
+      "options": [
+        "Tribhuvan University",
+        "Kathmandu University",
+        "Institute of Engineering",
+        "CTEVT"
+      ],
+      "answer": 2,
+      "explanation": "नेपालमा IT Engineering अध्ययनका लागि प्रमुख सरकारी संस्था त्रिभुवन विश्वविद्यालयअन्तर्गतको Institute of Engineering हो।"
+    },
+    {
+      "q": "स्मार्टफोनको 'Operating System' मध्ये विश्वमा सबैभन्दा बढी प्रयोग हुने कुन हो?",
+      "options": [
+        "iOS",
+        "Windows Mobile",
+        "Blackberry OS",
+        "Android"
+      ],
+      "answer": 3,
+      "explanation": "Android (Google) विश्वको सबैभन्दा बढी प्रयोग हुने Mobile Operating System हो जसको विश्वव्यापी बजार हिस्सा लगभग ७२% छ।"
+    },
+    {
+      "q": "नेपालमा COVID-19 पछि 'Online Education' लाई कसरी प्रवर्द्धन गरियो?",
+      "options": [
+        "खुला विश्वविद्यालय र शिक्षा एप विस्तार",
+        "केवल टेलिभिजन शिक्षा",
+        "विद्यालय बन्द गरियो",
+        "कुनै कदम उठाइएन"
+      ],
+      "answer": 0,
+      "explanation": "COVID-19 पछि Nepal Open University को विस्तार, 'Hamro Shiksha' एप, Zoom/Google Meet र सरकारी TV मार्फत शिक्षा प्रदान गरिएको थियो।"
+    },
+    {
+      "q": "विश्वमा पहिलो 'Heart Transplant' (मुटु प्रत्यारोपण) कहिले भएको थियो?",
+      "options": [
+        "सन् १९६०",
+        "सन् १९६७",
+        "सन् १९७०",
+        "सन् १९७५"
+      ],
+      "answer": 1,
+      "explanation": "Dr. Christiaan Barnard ले सन् १९६७ डिसेम्बर ३ मा South Africa मा विश्वको पहिलो Human Heart Transplant सम्पन्न गरे।"
+    },
+    {
+      "q": "नेपालमा 'Cryptocurrency' को कानूनी स्थिति के हो?",
+      "options": [
+        "पूर्णतः वैध",
+        "वैध तर कर लाग्छ",
+        "NRB ले निषेध गरेको",
+        "अनिश्चित स्थिति"
+      ],
+      "answer": 2,
+      "explanation": "नेपाल राष्ट्र बैंकले Cryptocurrency को कारोबार नेपालमा कानूनी रूपमा निषेध गरेको छ।"
+    },
+    {
+      "q": "CT Scan ले शरीरको तस्बिर कसरी लिन्छ?",
+      "options": [
+        "Magnetic Field बाट",
+        "Ultrasound बाट",
+        "Infrared Ray बाट",
+        "X-Ray र Computer बाट"
+      ],
+      "answer": 3,
+      "explanation": "CT Scan ले विभिन्न कोणबाट X-Ray लिएर Computer ले त्यसलाई Cross-sectional तस्बिरमा परिणत गर्छ।"
+    },
+    {
+      "q": "नेपालमा 'Solar Mini Grid' परियोजना मुख्यतः कुन क्षेत्रमा सञ्चालित छ?",
+      "options": [
+        "दुर्गम हिमाली र पहाडी क्षेत्र",
+        "काठमाडौं उपत्यका",
+        "तराई मात्र",
+        "औद्योगिक क्षेत्र"
+      ],
+      "answer": 0,
+      "explanation": "Solar Mini Grid परियोजना मुख्यतः राष्ट्रिय ग्रिड नपुगेका दुर्गम हिमाली र पहाडी क्षेत्रमा AEPC ले सञ्चालन गरेको छ।"
+    },
+    {
+      "q": "Big Data को '4Vs' भनेको के हो?",
+      "options": [
+        "Volume, Velocity, Value, Variety",
+        "Volume, Velocity, Variety, Veracity",
+        "Vision, Velocity, Variety, Value",
+        "Volume, Vision, Value, Veracity"
+      ],
+      "answer": 1,
+      "explanation": "Big Data का ४ मुख्य विशेषता (4Vs): Volume (विशाल मात्रा), Velocity (तीव्र गति), Variety (विभिन्न प्रकार) र Veracity (सत्यता) हुन्।"
+    },
+    {
+      "q": "नेपालले 'ITER' (Nuclear Fusion) परियोजनामा के भूमिका खेल्छ?",
+      "options": [
+        "सदस्य राष्ट्र",
+        "अप्रत्यक्ष लाभार्थी मात्र",
+        "पर्यवेक्षक/अप्रत्यक्ष सहभागी",
+        "लगानीकर्ता देश"
+      ],
+      "answer": 2,
+      "explanation": "ITER परियोजनामा नेपाल प्रत्यक्ष सदस्य नभई पर्यवेक्षक/अप्रत्यक्ष सहभागी मात्र हो।"
+    },
+    {
+      "q": "विश्वको सबैभन्दा धेरै प्रयोग हुने Search Engine कुन हो?",
+      "options": [
+        "Bing",
+        "Yahoo",
+        "DuckDuckGo",
+        "Google"
+      ],
+      "answer": 3,
+      "explanation": "Google विश्वको सबैभन्दा धेरै प्रयोग हुने Search Engine हो जसको विश्वव्यापी बजार हिस्सा लगभग ९२% छ।"
+    },
+    {
+      "q": "नेपालमा 'Open Government Data' (OGD) पोर्टल को मुख्य उद्देश्य के हो?",
+      "options": [
+        "सरकारी डेटा खुला र पुनःप्रयोगयोग्य बनाउनु",
+        "कर उठाउनु",
+        "इन्टरनेट सेवा दिनु",
+        "Passport वितरण"
+      ],
+      "answer": 0,
+      "explanation": "Open Government Data Portal (data.gov.np) ले सरकारी डेटा नागरिक, अनुसन्धानकर्ता र डेभलपरहरूका लागि सार्वजनिक रूपमा उपलब्ध गराउँछ।"
+    },
+    {
+      "q": "SpaceX को 'Starlink' सेवाले के गर्छ?",
+      "options": [
+        "मंगल उपनिवेश",
+        "उपग्रह इन्टरनेट सेवा",
+        "Rocket इन्धन उत्पादन",
+        "GPS नेभिगेसन"
+      ],
+      "answer": 1,
+      "explanation": "SpaceX को Starlink ले Low Earth Orbit मा हजारौं उपग्रह प्रक्षेपण गरी विश्वका दुर्गम क्षेत्रमा हाई-स्पिड इन्टरनेट प्रदान गर्दछ। नेपालमा पनि Starlink सेवा उपलब्ध छ।"
+    },
+    {
+      "q": "नेपालमा 'Hydropower' को 'Water-Energy-Food Nexus' का लागि के अर्थ राख्छ?",
+      "options": [
+        "केवल बिजुली उत्पादन",
+        "केवल सिंचाइ",
+        "जल, ऊर्जा र खाद्यको एकीकृत व्यवस्थापन",
+        "केवल पर्यटन विकास"
+      ],
+      "answer": 2,
+      "explanation": "WEF Nexus (Water-Energy-Food) भनेको जल, ऊर्जा र खाद्य सुरक्षालाई एकीकृत रूपमा व्यवस्थापन गर्ने अवधारणा हो।"
+    },
+    {
+      "q": "विश्वको सबैभन्दा ठूलो Technology Company (Market Cap अनुसार) हाल कुन हो?",
+      "options": [
+        "Amazon",
+        "Google",
+        "Meta",
+        "Apple/Microsoft"
+      ],
+      "answer": 3,
+      "explanation": "Apple र Microsoft विश्वका सबैभन्दा ठूला Technology Companies हुन् जसको Market Capitalization $२-३ Trillion (2023-24) पुगेको छ।"
+    },
+    {
+      "q": "नेपालमा 'Biometric Voting System' को प्रयोग कहिलेदेखि शुरु भएको हो?",
+      "options": [
+        "२०७४ साल संघीय निर्वाचनदेखि",
+        "२०७० साल",
+        "२०७२ साल",
+        "२०७९ साल"
+      ],
+      "answer": 0,
+      "explanation": "नेपालको २०७४ सालको संघीय, प्रदेश र स्थानीय तह निर्वाचनमा पहिलो पटक Biometric Voter Registration र Verification प्रणाली प्रयोग गरिएको थियो।"
+    },
+    {
+      "q": "Cybersecurity मा 'Ransomware' भनेको के हो?",
+      "options": [
+        "कम्प्युटर मर्मत सफ्टवेयर",
+        "फिरौती माग्ने Malware",
+        "एन्टिभाइरस",
+        "VPN सेवा"
+      ],
+      "answer": 1,
+      "explanation": "Ransomware एक प्रकारको Malware हो जसले पीडितको कम्प्युटरका फाइल Encrypt गर्छ र फिरौती नतिरेसम्म पहुँच ब्लक गर्छ।"
+    },
+    {
+      "q": "नेपालले 'Satellite Communication' का लागि कुन अन्तर्राष्ट्रिय संस्थासँग सम्झौता गरेको छ?",
+      "options": [
+        "NASA",
+        "ESA",
+        "ISRO/MEASAT/Intersputnik",
+        "SpaceX"
+      ],
+      "answer": 2,
+      "explanation": "नेपालले ISRO (India), MEASAT (Malaysia) र Intersputnik (Russia) सँग Satellite Communication सेवाका लागि सम्झौता गरेको छ।"
+    },
+    {
+      "q": "विश्वमा पहिलो 'Email' कसले पठाएको थियो?",
+      "options": [
+        "Bill Gates",
+        "Steve Jobs",
+        "Mark Zuckerberg",
+        "Ray Tomlinson"
+      ],
+      "answer": 3,
+      "explanation": "Ray Tomlinson ले सन् १९७१ मा पहिलो Email पठाए र '@' सिम्बलको प्रयोग शुरु गरे।"
+    },
+    {
+      "q": "नेपालमा 'e-Health' अन्तर्गत 'Health Management Information System' (HMIS) कुन मन्त्रालयले सञ्चालन गर्छ?",
+      "options": [
+        "स्वास्थ्य तथा जनसंख्या मन्त्रालय",
+        "सूचना तथा सञ्चार प्रविधि मन्त्रालय",
+        "NITC",
+        "WHO Nepal"
+      ],
+      "answer": 0,
+      "explanation": "HMIS नेपालको स्वास्थ्य तथा जनसंख्या मन्त्रालय (MoHP) अन्तर्गत सञ्चालित छ।"
+    },
+    {
+      "q": "Nuclear Power मा 'Fission' र 'Fusion' को फरक के हो?",
+      "options": [
+        "दुवै एकै हुन्",
+        "Fission: भारी परमाणु विभाजन; Fusion: हल्का परमाणु जोडाइ",
+        "Fusion: परमाणु विभाजन; Fission: परमाणु जोडाइ",
+        "Fission: सौर्य ऊर्जा; Fusion: हावा ऊर्जा"
+      ],
+      "answer": 1,
+      "explanation": "Nuclear Fission मा Uranium/Plutonium जस्ता भारी परमाणु विभाजन भएर ऊर्जा निस्कन्छ। Nuclear Fusion मा Hydrogen जस्ता हल्का परमाणु जोडिएर ऊर्जा निस्कन्छ।"
+    },
+    {
+      "q": "नेपालको 'Hydropower' क्षेत्रमा 'Power Trade Agreement' (PTA) कुन देशसँग छ?",
+      "options": [
+        "चीन",
+        "बंगलादेश",
+        "भारत",
+        "भुटान"
+      ],
+      "answer": 2,
+      "explanation": "नेपाल र भारतबीच Power Trade Agreement (PTA) सन् २०१४ मा भएको छ।"
+    },
+    {
+      "q": "विश्वको सबैभन्दा पहिलो 'Computer Virus' को नाम के थियो?",
+      "options": [
+        "ILOVEYOU",
+        "Stuxnet",
+        "WannaCry",
+        "Creeper"
+      ],
+      "answer": 3,
+      "explanation": "Creeper (1971) विश्वको पहिलो Computer Virus/Worm मानिन्छ।"
+    },
+    {
+      "q": "नेपालमा 'Startup Ecosystem' विकासका लागि कुन नीति/कार्यक्रम छ?",
+      "options": [
+        "Startup Nepal Policy र Biztech Nepal कार्यक्रम",
+        "केवल बैंक ऋण",
+        "केवल विदेश लगानी",
+        "कुनै नीति छैन"
+      ],
+      "answer": 0,
+      "explanation": "नेपाल सरकारको Startup Nepal Policy र Biztech Nepal कार्यक्रमहरूले Technology Startup लाई कर छुट, अनुदान र Incubation सुविधा प्रदान गर्छन्।"
+    },
+    {
+      "q": "Ultrasound प्रविधि चिकित्सामा कसरी प्रयोग हुन्छ?",
+      "options": [
+        "हड्डी तस्बिर मात्र",
+        "ध्वनि तरङ्गबाट भित्री अंगको तस्बिर",
+        "DNA विश्लेषण",
+        "रगत परीक्षण"
+      ],
+      "answer": 1,
+      "explanation": "Ultrasound उच्च-आवृत्तिका ध्वनि तरङ्गहरू शरीरमा पठाएर भित्री अंगहरूको तस्बिर लिने प्रविधि हो। यसमा कुनै रेडियेशन हुँदैन।"
+    },
+    {
+      "q": "नेपालमा 'Smart Metering' (AMI) विद्युत प्राधिकरणले कहिलेदेखि लागू गर्दैछ?",
+      "options": [
+        "२०७५ साल",
+        "२०७७ साल",
+        "२०७९ साल देखि क्रमशः",
+        "२०८२ साल"
+      ],
+      "answer": 2,
+      "explanation": "Nepal Electricity Authority (NEA) ले Smart Meter (AMI) कार्यक्रम वि.सं. २०७९ (2023) देखि क्रमशः लागू गर्न शुरु गरेको छ।"
+    },
+    {
+      "q": "'Wi-Fi' को पूर्ण नाम के हो?",
+      "options": [
+        "Wireless Fidelity Internet",
+        "Wide Field Frequency",
+        "Wireless Frequency Interface",
+        "Wi-Fi एक ब्रान्ड नाम हो"
+      ],
+      "answer": 3,
+      "explanation": "Wi-Fi एक ब्रान्ड नाम हो (Wi-Fi Alliance द्वारा) जसले IEEE 802.11 Wireless LAN Standard लाई जनाउँछ।"
+    },
+    {
+      "q": "नेपालमा 'Geospatial Technology' (GIS/Remote Sensing) को उपयोग कुन क्षेत्रमा हुन्छ?",
+      "options": [
+        "भूमि, विपद्, वन र कृषि सर्वेक्षण",
+        "केवल सैनिक उद्देश्य",
+        "केवल मौसम पूर्वानुमान",
+        "केवल निर्वाचन"
+      ],
+      "answer": 0,
+      "explanation": "GIS र Remote Sensing नेपालमा भूमि व्यवस्थापन (LRIMS), विपद् जोखिम मूल्याङ्कन, वन अनुगमन र Urban Planning मा व्यापक रूपमा प्रयोग हुन्छ।"
+    },
+    {
+      "q": "CERN (European Organisation for Nuclear Research) को मुख्यालय कहाँ छ?",
+      "options": [
+        "Paris, France",
+        "Geneva, Switzerland",
+        "Berlin, Germany",
+        "Brussels, Belgium"
+      ],
+      "answer": 1,
+      "explanation": "CERN को मुख्यालय Geneva, Switzerland मा छ। यहाँ विश्वको सबैभन्दा ठूलो Particle Accelerator (LHC) छ।"
+    },
+    {
+      "q": "नेपालमा 'Cashless Economy' को लागि 'QR Code Payment' मानक कुन निकायले बनाएको छ?",
+      "options": [
+        "Nepal Telecom",
+        "Ministry of Finance",
+        "Nepal QR Standard",
+        "eSewa"
+      ],
+      "answer": 2,
+      "explanation": "Nepal Rastra Bank (NRB) ले 'Nepal QR' (Unified QR Code Standard) बनाएको छ जसले सबै Payment Service Providers बीच Interoperability सुनिश्चित गर्छ।"
+    },
+    {
+      "q": "LED को मुख्य फाइदा पारम्परिक Bulb भन्दा के हो?",
+      "options": [
+        "बढी गर्मी उत्पादन",
+        "बढी बिजुली खपत",
+        "कम उज्यालो",
+        "कम ऊर्जा खपत र लामो जीवनकाल"
+      ],
+      "answer": 3,
+      "explanation": "LED Bulb पारम्परिक Incandescent Bulb भन्दा ८०-९०% कम बिजुली खपत गर्छ र १५-२५ गुणा लामो चल्छ।"
+    },
+    {
+      "q": "नेपालमा 'National Cyber Security Centre (NCSC)' को स्थापना कहाँ भएको छ?",
+      "options": [
+        "NITC अन्तर्गत, काठमाडौं",
+        "नेपाल प्रहरी मुख्यालय",
+        "सेना मुख्यालय",
+        "NTA अन्तर्गत"
+      ],
+      "answer": 0,
+      "explanation": "NCSC नेपाल सरकारको NITC अन्तर्गत स्थापना भएको छ। यसले Cyber Threats को अनुगमन र प्रतिक्रिया गर्छ।"
+    },
+    {
+      "q": "AI को नियमनका लागि विश्वको पहिलो व्यापक कानून कसले बनायो?",
+      "options": [
+        "अमेरिका",
+        "युरोपेली संघ",
+        "चीन",
+        "UK"
+      ],
+      "answer": 1,
+      "explanation": "European Union (EU) ले सन् २०२४ मा विश्वको पहिलो व्यापक AI नियमन कानून 'EU AI Act' पारित गर्यो।"
+    },
+    {
+      "q": "नेपालमा 'Renewable Energy' उत्पादनमा AEPC को भूमिका के हो?",
+      "options": [
+        "जलविद्युत मात्र",
+        "आयात मात्र",
+        "नवीकरणीय ऊर्जा प्रवर्द्धन र अनुदान",
+        "ऊर्जा बिक्री"
+      ],
+      "answer": 2,
+      "explanation": "AEPC ले नेपालमा Solar Home System, Biogas, Micro-Hydro र अन्य Renewable Energy को प्रवर्द्धन, प्राविधिक सहयोग र अनुदान व्यवस्थापन गर्छ।"
+    },
+    {
+      "q": "नेपालमा 'टेक्नोलोजी' क्षेत्रमा IT Export को लक्ष्य सरकारले कति राखेको छ?",
+      "options": [
+        "$५० मिलियन/वर्ष",
+        "$१०० मिलियन/वर्ष",
+        "$५०० मिलियन/वर्ष",
+        "$१ बिलियन"
+      ],
+      "answer": 3,
+      "explanation": "नेपाल सरकारले IT र BPO Export $१ बिलियन (सन् २०३०) सम्म पुर्याउने लक्ष्य राखेको छ। स्रोत: MICT/Digital Nepal Framework"
+    }
+  ]
+}

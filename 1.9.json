@@ -1,0 +1,1103 @@
+{
+  "config": {
+    "quizId": "subjects-prabidhik-gk-1-9",
+    "quizTitle": "1.9 क्षेत्रीय संगठन (सार्क, बिम्सटेक, आसियान र युरोपियन संघ) सम्बन्धी जानकारी",
+    "displayTitle": "1.9 क्षेत्रीय संगठन (सार्क, बिम्सटेक, आसियान र युरोपियन संघ) सम्बन्धी जानकारी",
+    "topicName": "Gk",
+    "marksCorrect": 2,
+    "marksWrong": -0.4,
+    "questionsPerPage": 1,
+    "techpscPointsPerCorrect": 1
+  },
+  "questions": [
+    {
+      "q": "SAARC (South Asian Association for Regional Cooperation) को स्थापना कहिले भयो?",
+      "options": [
+        "डिसेम्बर ८, १९८५",
+        "जनवरी १, १९८०",
+        "अक्टोबर २४, १९८३",
+        "मार्च १५, १९९०"
+      ],
+      "answer": 0,
+      "explanation": "SAARC को स्थापना डिसेम्बर ८, १९८५ मा ढाका, बंगलादेशमा भएको थियो।"
+    },
+    {
+      "q": "SAARC को मुख्यालय (Secretariat) कहाँ छ?",
+      "options": [
+        "ढाका",
+        "काठमाडौं",
+        "नयाँ दिल्ली",
+        "इस्लामाबाद"
+      ],
+      "answer": 1,
+      "explanation": "SAARC को मुख्यालय काठमाडौं, नेपालमा छ। यो सन् १९८७ मा स्थापना भएको हो।"
+    },
+    {
+      "q": "SAARC मा हाल कति सदस्य राष्ट्र छन्?",
+      "options": [
+        "६",
+        "७",
+        "८",
+        "९"
+      ],
+      "answer": 2,
+      "explanation": "SAARC मा हाल ८ सदस्य राष्ट्र छन्: अफगानिस्तान, बंगलादेश, भुटान, भारत, माल्दिभ्स, नेपाल, पाकिस्तान र श्रीलंका।"
+    },
+    {
+      "q": "SAARC को पहिलो शिखर सम्मेलन (Summit) कहाँ भएको थियो?",
+      "options": [
+        "काठमाडौं",
+        "नयाँ दिल्ली",
+        "कोलम्बो",
+        "ढाका"
+      ],
+      "answer": 3,
+      "explanation": "SAARC को पहिलो शिखर सम्मेलन डिसेम्बर ७-८, १९८५ मा ढाका, बंगलादेशमा भएको थियो।"
+    },
+    {
+      "q": "SAARC को मुख्य उद्देश्य के हो?",
+      "options": [
+        "दक्षिण एसियामा आर्थिक, सामाजिक र सांस्कृतिक विकास तथा क्षेत्रीय सहयोग प्रवर्द्धन",
+        "सैन्य गठबन्धन",
+        "साझा मुद्रा स्थापना",
+        "एकीकृत सरकार बनाउने"
+      ],
+      "answer": 0,
+      "explanation": "SAARC को मुख्य उद्देश्य दक्षिण एसियाली जनताको कल्याण, आर्थिक विकास, सामाजिक प्रगति र सांस्कृतिक विकासका लागि क्षेत्रीय सहयोग प्रवर्द्धन गर्नु हो।"
+    },
+    {
+      "q": "SAARC को पछिल्लो (१९औं) शिखर सम्मेलन कहाँ हुने थियो र के भयो?",
+      "options": [
+        "काठमाडौं, २०१४",
+        "इस्लामाबाद, २०१६",
+        "कोलम्बो, २०१८",
+        "ढाका, १९८५"
+      ],
+      "answer": 1,
+      "explanation": "SAARC को १९औं शिखर सम्मेलन सन् २०१६ मा इस्लामाबादमा हुने थियो तर भारत लगायत देशहरूको बहिष्कारपछि स्थगित भयो।"
+    },
+    {
+      "q": "SAARC को महासचिव (Secretary General) को कार्यकाल कति हुन्छ?",
+      "options": [
+        "२ वर्ष",
+        "४ वर्ष",
+        "३ वर्ष",
+        "५ वर्ष"
+      ],
+      "answer": 2,
+      "explanation": "SAARC को महासचिवको कार्यकाल ३ वर्षको हुन्छ र यो पद सदस्य राष्ट्रहरूबीच वर्णमाला क्रममा बाँडिन्छ।"
+    },
+    {
+      "q": "SAARC मा Observer States को संख्या कति छ?",
+      "options": [
+        "५",
+        "७",
+        "८",
+        "९"
+      ],
+      "answer": 3,
+      "explanation": "SAARC मा ९ वटा Observer States छन्: अस्ट्रेलिया, चीन, EU, इरान, जापान, दक्षिण कोरिया, मोरिसस, म्यान्मार र अमेरिका।"
+    },
+    {
+      "q": "SAFTA (South Asia Free Trade Area) सम्झौता कहिले लागू भयो?",
+      "options": [
+        "जनवरी १, २००६",
+        "जनवरी १, २०००",
+        "जुलाई १, २००५",
+        "अक्टोबर १, २००८"
+      ],
+      "answer": 0,
+      "explanation": "SAFTA जनवरी १, २००६ मा लागू भयो। यसले SAARC सदस्यहरूबीच स्वतन्त्र व्यापार क्षेत्र स्थापना गर्ने लक्ष्य राखेको छ।"
+    },
+    {
+      "q": "SAARC को १८औं शिखर सम्मेलन काठमाडौंमा कहिले भयो?",
+      "options": [
+        "२०१०",
+        "नोभेम्बर २०१४",
+        "२०१२",
+        "२०१६"
+      ],
+      "answer": 1,
+      "explanation": "SAARC को १८औं शिखर सम्मेलन नोभेम्बर २६-२७, २०१४ मा काठमाडौंमा भयो। थिम: 'Deeper Integration for Peace and Prosperity'।"
+    },
+    {
+      "q": "SAARC का कति वटा 'Regional Centres' छन् र नेपालमा कुन छ?",
+      "options": [
+        "५ वटा, कुनै छैन",
+        "७ वटा, SAARC Energy Centre",
+        "८ वटा, SAARC Disaster Management Centre / Forestry Centre",
+        "१० वटा, SAARC Finance Centre"
+      ],
+      "answer": 2,
+      "explanation": "SAARC का ८ वटा Regional Centres छन्। नेपालमा SAARC Disaster Management Centre र SAARC Forestry Centre छन्।"
+    },
+    {
+      "q": "SAARC का मुख्य संस्थागत संरचनाहरू कुन-कुन हुन्?",
+      "options": [
+        "केवल Summit र Secretariat",
+        "Summit, Council of Ministers र Secretariat",
+        "Summit र Standing Committee मात्र",
+        "Summit, Council of Ministers, Standing Committee, Programming Committee र Technical Committees"
+      ],
+      "answer": 3,
+      "explanation": "SAARC का मुख्य संरचना: Summit, Council of Ministers, Standing Committee, Programming Committee र Technical Committees।"
+    },
+    {
+      "q": "SAARC University (South Asian University) कहाँ छ?",
+      "options": [
+        "काठमाडौं",
+        "नयाँ दिल्ली",
+        "ढाका",
+        "कोलम्बो"
+      ],
+      "answer": 1,
+      "explanation": "South Asian University (SAU) नयाँ दिल्ली, भारतमा छ।"
+    },
+    {
+      "q": "SAARC को कुन सदस्य राष्ट्र सबैभन्दा पछि (सन् २००७ मा) थपिएको हो?",
+      "options": [
+        "माल्दिभ्स",
+        "भुटान",
+        "अफगानिस्तान",
+        "श्रीलंका"
+      ],
+      "answer": 2,
+      "explanation": "अफगानिस्तान SAARC को ८औं सदस्य राष्ट्र हो जो सन् २००७ मा सदस्य भयो।"
+    },
+    {
+      "q": "SAPTA (South Asian Preferential Trading Arrangement) कहिले लागू भयो?",
+      "options": [
+        "१९८५",
+        "१९९०",
+        "१९९३",
+        "१९९५"
+      ],
+      "answer": 3,
+      "explanation": "SAPTA सन् १९९५ मा लागू भयो। यो SAFTA भन्दा पहिलेको व्यापार सहजीकरण व्यवस्था थियो।"
+    },
+    {
+      "q": "BIMSTEC को पूरा नाम के हो?",
+      "options": [
+        "Bay of Bengal Initiative for Multi-Sectoral Technical and Economic Cooperation",
+        "Bangladesh India Myanmar Sri Lanka Thailand Economic Cooperation",
+        "Bay of Bengal International Maritime and Sea Trade Economic Cooperation",
+        "Bengal Initiative for Multi-State Technical and Economic Cooperation"
+      ],
+      "answer": 0,
+      "explanation": "BIMSTEC को पूरा नाम Bay of Bengal Initiative for Multi-Sectoral Technical and Economic Cooperation हो।"
+    },
+    {
+      "q": "BIMSTEC को स्थापना कहिले भयो?",
+      "options": [
+        "जुन ६, १९९५",
+        "जुन ६, १९९७",
+        "जनवरी १, २०००",
+        "मार्च १५, २०१०"
+      ],
+      "answer": 1,
+      "explanation": "BIMSTEC को स्थापना जुन ६, १९९७ मा ब्याङ्कक, थाइल्यान्डमा भएको थियो।"
+    },
+    {
+      "q": "BIMSTEC मा हाल कति सदस्य राष्ट्र छन्?",
+      "options": [
+        "५",
+        "६",
+        "७",
+        "८"
+      ],
+      "answer": 2,
+      "explanation": "BIMSTEC मा ७ सदस्य राष्ट्र छन्: बंगलादेश, भुटान, भारत, म्यान्मार, नेपाल, श्रीलंका र थाइल्यान्ड।"
+    },
+    {
+      "q": "BIMSTEC को मुख्यालय (Permanent Secretariat) कहाँ छ?",
+      "options": [
+        "काठमाडौं",
+        "नयाँ दिल्ली",
+        "थाइल्यान्ड",
+        "ढाका"
+      ],
+      "answer": 3,
+      "explanation": "BIMSTEC को स्थायी सचिवालय ढाका, बंगलादेशमा छ। यसको स्थापना सन् २०१४ मा भएको थियो।"
+    },
+    {
+      "q": "BIMSTEC को ५औं शिखर सम्मेलन कहाँ र कहिले भयो?",
+      "options": [
+        "कोलम्बो, मार्च ३० २०२२",
+        "काठमाडौं, २०२३",
+        "ढाका, २०२१",
+        "नयाँ दिल्ली, २०२०"
+      ],
+      "answer": 0,
+      "explanation": "BIMSTEC को ५औं शिखर सम्मेलन मार्च ३०, २०२२ मा कोलम्बो, श्रीलंकामा भयो। यसमा BIMSTEC Charter पनि अपनाइयो।"
+    },
+    {
+      "q": "BIMSTEC Charter कहिले अपनाइयो?",
+      "options": [
+        "सन् २०१४",
+        "सन् २०२२",
+        "सन् २०१८",
+        "सन् २०२०"
+      ],
+      "answer": 1,
+      "explanation": "BIMSTEC Charter सन् २०२२ मा कोलम्बो शिखर सम्मेलनमा औपचारिक रूपमा अपनाइयो।"
+    },
+    {
+      "q": "BIMSTEC ले हाल कति Priority Sectors मा सहयोग गर्छ?",
+      "options": [
+        "५",
+        "१०",
+        "७",
+        "२०"
+      ],
+      "answer": 2,
+      "explanation": "BIMSTEC को ५औं शिखर सम्मेलनमा पुनर्संरचना गरी ७ Priority Sectors तय गरियो: Trade/Investment, Technology, Energy, Transport, Tourism, Environment, People-to-People Contact।"
+    },
+    {
+      "q": "BIMSTEC को Lead Country प्रणाली अन्तर्गत नेपालले कुन क्षेत्रको नेतृत्व गर्छ?",
+      "options": [
+        "ऊर्जा",
+        "व्यापार",
+        "पर्यटन",
+        "Counter-Terrorism र Transnational Crime"
+      ],
+      "answer": 3,
+      "explanation": "BIMSTEC को Lead Country प्रणाली अन्तर्गत नेपालले Counter-Terrorism तथा Transnational Crime क्षेत्रको नेतृत्व गर्दै आएको हो।"
+    },
+    {
+      "q": "BIMSTEC ले SAARC भन्दा कसरी भिन्न छ?",
+      "options": [
+        "BIMSTEC ले दक्षिण र दक्षिणपूर्व एसियालाई जोड्छ र पाकिस्तान/अफगानिस्तान यसमा छैनन्; थाइल्यान्ड र म्यान्मार थपिएका छन्",
+        "BIMSTEC सैन्य संगठन हो",
+        "BIMSTEC मा भारत सदस्य छैन",
+        "BIMSTEC पुरानो र SAARC नयाँ संगठन हो"
+      ],
+      "answer": 0,
+      "explanation": "BIMSTEC दक्षिण एसिया र दक्षिणपूर्व एसियाको Bridge हो। पाकिस्तान र अफगानिस्तान BIMSTEC मा छैनन्; म्यान्मार र थाइल्यान्ड BIMSTEC मा छन्।"
+    },
+    {
+      "q": "BIMSTEC को पहिलो शिखर सम्मेलन कहाँ भएको थियो?",
+      "options": [
+        "ढाका",
+        "ब्याङ्कक",
+        "कोलम्बो",
+        "काठमाडौं"
+      ],
+      "answer": 1,
+      "explanation": "BIMSTEC को पहिलो शिखर सम्मेलन जुलाई ३१, २००४ मा ब्याङ्कक, थाइल्यान्डमा भएको थियो।"
+    },
+    {
+      "q": "BIMSTEC Free Trade Area (FTA) Framework Agreement कहिले हस्ताक्षर भयो?",
+      "options": [
+        "२०००",
+        "२००२",
+        "२००४",
+        "२०१०"
+      ],
+      "answer": 2,
+      "explanation": "BIMSTEC FTA Framework Agreement फेब्रुअरी ८, २००४ मा हस्ताक्षर भएको थियो।"
+    },
+    {
+      "q": "नेपाल BIMSTEC मा कहिले सामेल भयो?",
+      "options": [
+        "१९९७ मा संस्थापक सदस्यका रूपमा",
+        "२०००",
+        "२००२",
+        "फेब्रुअरी ९, १९९७ ब्याङ्कक घोषणापत्र सहित संस्थापक सदस्य"
+      ],
+      "answer": 3,
+      "explanation": "नेपाल BIMSTEC को संस्थापक सदस्य हो। BIST-EC को स्थापनाका समयदेखि नेपाल यसमा छ।"
+    },
+    {
+      "q": "ASEAN (Association of Southeast Asian Nations) को स्थापना कहिले भयो?",
+      "options": [
+        "अगस्त ८, १९६७",
+        "जनवरी १, १९७०",
+        "जुन १५, १९७५",
+        "सेप्टेम्बर १, १९८०"
+      ],
+      "answer": 0,
+      "explanation": "ASEAN को स्थापना अगस्त ८, १९६७ मा ब्याङ्कक, थाइल्यान्डमा भएको थियो।"
+    },
+    {
+      "q": "ASEAN को Secretariat कहाँ छ?",
+      "options": [
+        "ब्याङ्कक",
+        "जकार्ता",
+        "सिंगापुर",
+        "कुआलालम्पुर"
+      ],
+      "answer": 1,
+      "explanation": "ASEAN को Secretariat जकार्ता, इन्डोनेसियामा छ। यसको स्थापना सन् १९७६ मा भएको हो।"
+    },
+    {
+      "q": "ASEAN मा हाल कति सदस्य राष्ट्र छन्?",
+      "options": [
+        "८",
+        "९",
+        "१०",
+        "११"
+      ],
+      "answer": 3,
+      "explanation": "अक्टोबर २०२५ मा Timor-Leste ११औं सदस्य बनेपछि ASEAN मा हाल ११ सदस्य राष्ट्र छन्।"
+    },
+    {
+      "q": "ASEAN का संस्थापक सदस्य राष्ट्रहरू कुन-कुन थिए?",
+      "options": [
+        "१० वटा सबै एकैपटक",
+        "इन्डोनेसिया र मलेसिया मात्र",
+        "थाइल्यान्ड, इन्डोनेसिया र सिंगापुर",
+        "इन्डोनेसिया, मलेसिया, फिलिपिन्स, सिंगापुर र थाइल्यान्ड"
+      ],
+      "answer": 3,
+      "explanation": "ASEAN का ५ संस्थापक सदस्य: इन्डोनेसिया, मलेसिया, फिलिपिन्स, सिंगापुर र थाइल्यान्ड।"
+    },
+    {
+      "q": "ASEAN Community का तीन स्तम्भहरू कुन हुन्?",
+      "options": [
+        "ASEAN Political-Security Community, ASEAN Economic Community र ASEAN Socio-Cultural Community",
+        "Military, Economic र Social Community",
+        "Trade, Tourism र Technology Community",
+        "Defence, Development र Democracy Community"
+      ],
+      "answer": 0,
+      "explanation": "ASEAN Community का ३ Pillars: APSC, AEC र ASCC।"
+    },
+    {
+      "q": "ASEAN Charter कहिले लागू भयो?",
+      "options": [
+        "सन् २०००",
+        "डिसेम्बर १५, २००८",
+        "सन् २०१०",
+        "सन् २०१५"
+      ],
+      "answer": 1,
+      "explanation": "ASEAN Charter डिसेम्बर १५, २००८ मा लागू भयो। यसले ASEAN लाई Legal Personality दियो।"
+    },
+    {
+      "q": "ASEAN Economic Community (AEC) कहिले स्थापना भयो?",
+      "options": [
+        "सन् २०१०",
+        "सन् २०१२",
+        "डिसेम्बर ३१, २०१५",
+        "सन् २०२०"
+      ],
+      "answer": 2,
+      "explanation": "ASEAN Economic Community (AEC) डिसेम्बर ३१, २०१५ मा औपचारिक रूपमा स्थापना भयो।"
+    },
+    {
+      "q": "ASEAN Plus Three भनेको के हो?",
+      "options": [
+        "ASEAN + USA, EU, India",
+        "ASEAN + Australia, New Zealand, India",
+        "ASEAN + Pakistan, Bangladesh, Nepal",
+        "ASEAN + China, Japan, South Korea"
+      ],
+      "answer": 3,
+      "explanation": "ASEAN Plus Three भनेको ASEAN का १० देश + चीन, जापान र दक्षिण कोरिया मिलेको सहयोग प्रक्रिया हो।"
+    },
+    {
+      "q": "'ASEAN Way' भनेको के हो?",
+      "options": [
+        "सर्वसम्मति, अहस्तक्षेप र कूटनीतिक परामर्शमा आधारित निर्णय प्रक्रिया",
+        "सैन्य गठबन्धन",
+        "साझा मुद्रा नीति",
+        "मुक्त व्यापार नीति मात्र"
+      ],
+      "answer": 0,
+      "explanation": "ASEAN Way भनेको Consensus-based decision making, Non-interference र Consultative diplomacy पर्छन्।"
+    },
+    {
+      "q": "ASEAN Regional Forum (ARF) के हो?",
+      "options": [
+        "ASEAN को आर्थिक मञ्च",
+        "ASEAN र साझेदार देशहरू बीचको सुरक्षा र राजनीतिक संवाद मञ्च",
+        "ASEAN को शिक्षा मञ्च",
+        "ASEAN र EU बीचको व्यापार मञ्च"
+      ],
+      "answer": 1,
+      "explanation": "ARF एसिया-प्रशान्त क्षेत्रमा सुरक्षा र राजनीतिक संवादका लागि सन् १९९४ मा स्थापना भयो।"
+    },
+    {
+      "q": "ASEAN को ४३औं शिखर सम्मेलन कहाँ भयो?",
+      "options": [
+        "सिंगापुर",
+        "थाइल्यान्ड",
+        "जकार्ता",
+        "म्यान्मार"
+      ],
+      "answer": 2,
+      "explanation": "ASEAN को ४३औं शिखर सम्मेलन सन् २०२३ मा जकार्ता, इन्डोनेसियामा भयो।"
+    },
+    {
+      "q": "ASEAN Free Trade Area (AFTA) कहिले स्थापना भयो?",
+      "options": [
+        "१९८९",
+        "१९९०",
+        "१९९१",
+        "जनवरी १, १९९२"
+      ],
+      "answer": 3,
+      "explanation": "ASEAN Free Trade Area (AFTA) जनवरी १, १९९२ मा सिंगापुर शिखर सम्मेलनमा स्थापना भयो।"
+    },
+    {
+      "q": "Maastricht Treaty (Treaty on European Union) कहिले लागू भयो?",
+      "options": [
+        "नोभेम्बर १, १९९३",
+        "जनवरी १, १९९०",
+        "जुन १२, १९९५",
+        "मार्च २५, १९५७"
+      ],
+      "answer": 0,
+      "explanation": "Maastricht Treaty नोभेम्बर १, १९९३ मा लागू भयो। यसले European Community लाई European Union मा रूपान्तरण गर्यो।"
+    },
+    {
+      "q": "EU को मुख्य प्रशासनिक मुख्यालय कहाँ छ?",
+      "options": [
+        "पेरिस",
+        "ब्रसेल्स",
+        "स्ट्र्यासबर्ग",
+        "लक्जेम्बर्ग"
+      ],
+      "answer": 1,
+      "explanation": "EU को मुख्य प्रशासनिक मुख्यालय ब्रसेल्स, बेल्जियममा छ।"
+    },
+    {
+      "q": "EU मा हाल कति सदस्य राष्ट्र छन्?",
+      "options": [
+        "२५",
+        "२६",
+        "२७",
+        "२८"
+      ],
+      "answer": 2,
+      "explanation": "EU मा हाल २७ सदस्य राष्ट्र छन्। UK ले Brexit पछि सन् २०२० मा EU छोड्यो।"
+    },
+    {
+      "q": "युरोपेली एकीकरणको आधार 'Treaty of Rome' कहिले हस्ताक्षर भयो?",
+      "options": [
+        "१९४५",
+        "१९५०",
+        "१९५५",
+        "मार्च २५, १९५७"
+      ],
+      "answer": 3,
+      "explanation": "Treaty of Rome मार्च २५, १९५७ मा हस्ताक्षर भई जनवरी १, १९५८ मा लागू भयो। यसले EEC को स्थापना गर्यो।"
+    },
+    {
+      "q": "EU को साझा मुद्रा Euro कहिले सुरु भयो?",
+      "options": [
+        "Euro; जनवरी १, १९९९ र जनवरी १, २००२",
+        "Euro; जनवरी १, १९९५",
+        "Eurodollar; जनवरी १, २०००",
+        "EuroCoin; मार्च १, २०००"
+      ],
+      "answer": 0,
+      "explanation": "Euro जनवरी १, १९९९ मा खाता मुद्राका रूपमा र जनवरी १, २००२ मा भौतिक नोट/सिक्काका रूपमा प्रचलनमा आयो।"
+    },
+    {
+      "q": "EU को European Parliament को मुख्यालय कहाँ छ?",
+      "options": [
+        "ब्रसेल्स",
+        "स्ट्र्यासबर्ग",
+        "लक्जेम्बर्ग",
+        "पेरिस"
+      ],
+      "answer": 1,
+      "explanation": "European Parliament को आधिकारिक मुख्यालय स्ट्र्यासबर्ग, फ्रान्समा छ।"
+    },
+    {
+      "q": "Brexit भनेको के हो र कहिले भयो?",
+      "options": [
+        "फ्रान्सको EU छाड्ने निर्णय, २०१९",
+        "जर्मनीको EU छाड्ने जनमत संग्रह",
+        "बेलायत को European Union बाट बाहिर निस्कने प्रक्रिया; जनवरी ३१, २०२०",
+        "बेल्जियमको EU छाड्ने प्रयास"
+      ],
+      "answer": 2,
+      "explanation": "Brexit — UK को EU बाट बाहिर निस्कने प्रक्रिया। जनवरी ३१, २०२० मा UK EU बाट आधिकारिक रूपमा बाहिर भयो।"
+    },
+    {
+      "q": "EU लाई सन् २०१२ मा कुन पुरस्कार मिल्यो?",
+      "options": [
+        "UN Peace Award",
+        "WHO Global Award",
+        "IMF Development Prize",
+        "Nobel Peace Prize"
+      ],
+      "answer": 3,
+      "explanation": "EU लाई सन् २०१२ मा शान्ति, मेलमिलाप, लोकतन्त्र र मानव अधिकारमा गरेको योगदानका लागि Nobel Peace Prize प्रदान गरियो।"
+    },
+    {
+      "q": "EU को 'Schengen Area' भनेको के हो?",
+      "options": [
+        "पासपोर्ट नियन्त्रण बिना सीमा पार गर्न मिल्ने युरोपेली देशहरूको क्षेत्र",
+        "EU को सैन्य क्षेत्र",
+        "Euro प्रयोग गर्ने देशहरूको क्षेत्र",
+        "EU को कृषि नीति क्षेत्र"
+      ],
+      "answer": 0,
+      "explanation": "Schengen Area — passport control बिना आपसमा यात्रा गर्न मिल्ने देशहरूको क्षेत्र।"
+    },
+    {
+      "q": "EU को सर्वोच्च निर्णय निकाय कुन हो?",
+      "options": [
+        "European Commission",
+        "European Council",
+        "European Parliament",
+        "Council of the EU"
+      ],
+      "answer": 1,
+      "explanation": "European Council (सदस्य राष्ट्रहरूका राज्य/सरकार प्रमुखहरूको बैठक) EU को सर्वोच्च राजनीतिक निकाय हो।"
+    },
+    {
+      "q": "EU को 'European Commission' को मुख्य काम के हो?",
+      "options": [
+        "कानुन बनाउने",
+        "न्यायिक निर्णय गर्ने",
+        "EU नीतिको प्रस्ताव र कार्यान्वयन गर्ने",
+        "सैन्य नेतृत्व गर्ने"
+      ],
+      "answer": 2,
+      "explanation": "European Commission EU को कार्यकारी निकाय हो। यसले कानुन प्रस्ताव गर्छ र EU बजेट कार्यान्वयन गर्छ।"
+    },
+    {
+      "q": "EU को European Central Bank (ECB) को मुख्यालय कहाँ छ?",
+      "options": [
+        "ब्रसेल्स",
+        "लक्जेम्बर्ग",
+        "पेरिस",
+        "फ्र्याङ्कफर्ट"
+      ],
+      "answer": 3,
+      "explanation": "European Central Bank (ECB) को मुख्यालय फ्र्याङ्कफर्ट, जर्मनीमा छ। यसले Eurozone को मौद्रिक नीति सञ्चालन गर्छ।"
+    },
+    {
+      "q": "EU को Court of Justice (CJEU) को मुख्यालय कहाँ छ?",
+      "options": [
+        "लक्जेम्बर्ग",
+        "ब्रसेल्स",
+        "स्ट्र्यासबर्ग",
+        "हेग"
+      ],
+      "answer": 0,
+      "explanation": "Court of Justice of the EU (CJEU) को मुख्यालय लक्जेम्बर्गमा छ।"
+    },
+    {
+      "q": "EU को 'Lisbon Treaty' कहिले लागू भयो?",
+      "options": [
+        "सन् २००५, EU संविधान बनायो",
+        "डिसेम्बर १, २००९; EU संस्थागत सुधार गर्यो",
+        "सन् २०१०, Euro सुरु गर्यो",
+        "सन् २०१५, Schengen Area बनायो"
+      ],
+      "answer": 1,
+      "explanation": "Lisbon Treaty डिसेम्बर १, २००९ मा लागू भयो। European Council को स्थायी अध्यक्षको पद सिर्जना गर्यो।"
+    },
+    {
+      "q": "EU को 'Common Agricultural Policy (CAP)' के हो?",
+      "options": [
+        "EU को सैन्य नीति",
+        "EU को मौद्रिक नीति",
+        "EU किसानहरूलाई अनुदान र कृषि बजार व्यवस्थापनको साझा नीति",
+        "EU को पर्यावरण नीति"
+      ],
+      "answer": 2,
+      "explanation": "Common Agricultural Policy (CAP) EU को सबैभन्दा पुरानो नीतिहरूमध्ये एक हो।"
+    },
+    {
+      "q": "EU को Eurozone मा हाल कति देश छन्?",
+      "options": [
+        "१५",
+        "१७",
+        "१९",
+        "२०"
+      ],
+      "answer": 3,
+      "explanation": "Eurozone मा हाल २० देश छन्। क्रोएसिया सन् २०२३ मा Eurozone को नवीनतम सदस्य बनेको हो।"
+    },
+    {
+      "q": "SAARC र BIMSTEC दुवैमा सदस्य भएका देशहरू कुन-कुन हुन्?",
+      "options": [
+        "बंगलादेश, भुटान, भारत, नेपाल र श्रीलंका",
+        "पाकिस्तान र अफगानिस्तान",
+        "थाइल्यान्ड र म्यान्मार",
+        "चीन र जापान"
+      ],
+      "answer": 0,
+      "explanation": "SAARC र BIMSTEC दुवैमा: बंगलादेश, भुटान, भारत, नेपाल र श्रीलंका।"
+    },
+    {
+      "q": "RCEP (Regional Comprehensive Economic Partnership) कहिले लागू भयो र कति देश छन्?",
+      "options": [
+        "सन् २०१९, १२ देश",
+        "जनवरी १, २०२२; ASEAN १०+ चीन, जापान, दक्षिण कोरिया, अस्ट्रेलिया, न्युजिल्यान्ड = १५ देश",
+        "सन् २०२०, ८ देश",
+        "सन् २०१७, २० देश"
+      ],
+      "answer": 1,
+      "explanation": "RCEP जनवरी १, २०२२ मा लागू भयो। यसमा १५ देश छन् र यो विश्वकै सबैभन्दा ठूलो FTA हो।"
+    },
+    {
+      "q": "EU को 'Four Freedoms' भनेको के हो?",
+      "options": [
+        "Speech, Press, Religion, Assembly",
+        "Democracy, Rule of Law, Human Rights, Free Market",
+        "Goods, Services, Capital र People को स्वतन्त्र आवागमन",
+        "Trade, Investment, Tourism र Technology Freedom"
+      ],
+      "answer": 2,
+      "explanation": "EU Single Market का 'Four Freedoms': Free movement of Goods, Services, Capital र People।"
+    },
+    {
+      "q": "SAARC Charter को Article X ले के व्यवस्था गर्छ?",
+      "options": [
+        "सदस्यता प्रक्रिया",
+        "वित्तीय व्यवस्था",
+        "शिखर सम्मेलन आयोजना",
+        "सदस्यहरूबीचका द्विपक्षीय विवादास्पद विषयहरू SAARC मञ्चमा छलफल गर्न नपाइने"
+      ],
+      "answer": 3,
+      "explanation": "SAARC Charter को Article X ले द्विपक्षीय विवादास्पद विषयहरू SAARC बैठकमा छलफल गर्न नपाइने व्यवस्था गरेको छ।"
+    },
+    {
+      "q": "ASEAN मा East Timor (Timor-Leste) को हालको स्थिति के छ?",
+      "options": [
+        "Observer Status र सदस्यता प्रक्रियामा",
+        "पूर्ण सदस्य",
+        "कुनै सम्पर्क छैन",
+        "ASEAN बाट अस्वीकृत"
+      ],
+      "answer": 1,
+      "explanation": "Timor-Leste लाई ASEAN को ४७औं शिखर सम्मेलनले अक्टोबर २०२५ मा ११औं पूर्ण सदस्यका रूपमा स्वागत गरेको हो।"
+    },
+    {
+      "q": "EU को 'Article 50' के हो?",
+      "options": [
+        "EU को प्रवेश प्रक्रिया",
+        "Lisbon Treaty को Article 50: सदस्य राष्ट्रले EU छाड्न सक्ने प्रावधान",
+        "EU को बजेट प्रावधान",
+        "EU को सुरक्षा नीति"
+      ],
+      "answer": 1,
+      "explanation": "Lisbon Treaty को Article 50 ले सदस्य राष्ट्रले EU बाट बाहिर निस्कने प्रावधान गर्छ। UK ले Brexit का लागि यही प्रयोग गर्यो।"
+    },
+    {
+      "q": "BIMSTEC Master Plan for Transport Connectivity को उद्देश्य के हो?",
+      "options": [
+        "केवल हवाई मार्ग विस्तार",
+        "केवल समुद्री मार्ग विकास",
+        "सडक, रेल, जल र हवाई मार्ग सहित बहुआयामिक यातायात सम्पर्क सुदृढ गर्ने",
+        "केवल बन्दरगाह विकास"
+      ],
+      "answer": 2,
+      "explanation": "BIMSTEC Master Plan for Transport Connectivity ले बहुआयामिक यातायात सम्पर्क नेटवर्क विकास गर्ने लक्ष्य राखेको छ।"
+    },
+    {
+      "q": "SAARC Social Charter कहिले अपनाइयो?",
+      "options": [
+        "सन् १९९५",
+        "सन् २०००",
+        "सन् २००२",
+        "जनवरी ४, २००४"
+      ],
+      "answer": 3,
+      "explanation": "SAARC Social Charter जनवरी ४, २००४ मा इस्लामाबादमा भएको १२औं SAARC शिखर सम्मेलनमा अपनाइयो।"
+    },
+    {
+      "q": "EU को 'European Green Deal' के हो र कहिले घोषणा भयो?",
+      "options": [
+        "सन् २०१९ मा घोषित; सन् २०५० सम्म EU लाई carbon-neutral बनाउने महत्वाकांक्षी योजना",
+        "सन् २०१५ मा Paris Agreement पछि",
+        "सन् २०२५ को लक्ष्य सहित",
+        "सन् २०१० को वातावरण नीति"
+      ],
+      "answer": 0,
+      "explanation": "European Green Deal सन् २०१९ मा घोषित भयो। EU लाई सन् २०५० सम्म climate-neutral बनाउने लक्ष्य छ।"
+    },
+    {
+      "q": "ASEAN को TAC (Treaty of Amity and Cooperation) मा भारत र चीनले कहिले हस्ताक्षर गरे?",
+      "options": [
+        "भारत र चीनले कहिल्यै हस्ताक्षर गरेनन्",
+        "भारत र चीन दुवैले सन् २००३ मा हस्ताक्षर गरे",
+        "भारत २०१० मा मात्र",
+        "ASEAN को रक्षा सम्झौता"
+      ],
+      "answer": 1,
+      "explanation": "TAC (१९७६) मा भारत र चीन दुवैले सन् २००३ मा हस्ताक्षर गरे।"
+    },
+    {
+      "q": "SAARC का हालसम्म कति Summits भएका छन् र पछिल्लोको थिम के थियो?",
+      "options": [
+        "१७ वटा, 'Peace and Cooperation'",
+        "१९ वटा, 'Trade for Development'",
+        "१८ वटा; 'Deeper Integration for Peace and Prosperity'",
+        "२० वटा, 'South Asia Rising'"
+      ],
+      "answer": 2,
+      "explanation": "SAARC का १८ वटा Summits भइसकेका छन्। पछिल्लो (१८औं) काठमाडौं, २०१४ मा भयो।"
+    },
+    {
+      "q": "EU को 'GDPR' कहिले लागू भयो?",
+      "options": [
+        "EU को व्यापार नियमन, सन् २०१५",
+        "EU को कृषि नीति, सन् २०१८",
+        "EU को वित्तीय नियमन, सन् २०१७",
+        "EU नागरिकको व्यक्तिगत डेटा संरक्षणको नियमन; मे २५, २०१८"
+      ],
+      "answer": 3,
+      "explanation": "GDPR (General Data Protection Regulation) मे २५, २०१८ मा लागू भयो। विश्वमा सबैभन्दा कडा Data Privacy law।"
+    },
+    {
+      "q": "नेपालले SAARC मार्फत गरेको प्रमुख उपलब्धि के हो?",
+      "options": [
+        "SAARC Secretariat काठमाडौंमा राख्न सफल; विभिन्न Convention मा सहभागिता",
+        "SAARC को अध्यक्षता सधैं नेपालसँग हुनु",
+        "SAARC मा NATO प्रवेश",
+        "SAARC को विघटन रोक्नु"
+      ],
+      "answer": 0,
+      "explanation": "नेपालले SAARC Secretariat काठमाडौंमा राख्न सफल भयो जुन ठूलो उपलब्धि हो।"
+    },
+    {
+      "q": "ASEAN Vision 2025 र 2045 को मुख्य लक्ष्य के हो?",
+      "options": [
+        "ASEAN को सैन्य विस्तार",
+        "ASEAN Community गहिरो बनाउने, डिजिटल अर्थतन्त्र, दिगो विकास र जनताकेन्द्रित ASEAN",
+        "ASEAN मुद्रा एकीकरण",
+        "ASEAN र EU विलय"
+      ],
+      "answer": 1,
+      "explanation": "ASEAN Vision 2025/2045 ले ASEAN Community गहिरो बनाउने, डिजिटल अर्थतन्त्र र दिगो विकासको लक्ष्य राखेको छ।"
+    },
+    {
+      "q": "SAARC Convention on Narcotic Drugs and Psychotropic Substances कहिले हस्ताक्षर भयो?",
+      "options": [
+        "१९८७",
+        "१९९०",
+        "नोभेम्बर १९९०",
+        "१९९५"
+      ],
+      "answer": 2,
+      "explanation": "SAARC Convention on Narcotic Drugs नोभेम्बर १९९० मा Male, Maldives मा भएको ५औं SAARC शिखर सम्मेलनमा हस्ताक्षर भयो।"
+    },
+    {
+      "q": "BIMSTEC को पहिलो Secretary General को राष्ट्रियता के थियो?",
+      "options": [
+        "नेपाली",
+        "भारतीय",
+        "बंगलादेशी",
+        "श्रीलंकाली"
+      ],
+      "answer": 3,
+      "explanation": "BIMSTEC को पहिलो Secretary General Sumith Nakandala श्रीलंकाका थिए।"
+    },
+    {
+      "q": "EU को Cohesion Policy को उद्देश्य के हो?",
+      "options": [
+        "EU सदस्यहरूबीचको आर्थिक र सामाजिक असमानता घटाउने",
+        "सैन्य खर्च",
+        "केवल कृषि अनुदान",
+        "केवल शहरी विकास"
+      ],
+      "answer": 0,
+      "explanation": "EU को Cohesion Policy ले कम विकसित EU क्षेत्रहरूको विकासमा लगानी गरी आर्थिक-सामाजिक असमानता घटाउने लक्ष्य राख्छ।"
+    },
+    {
+      "q": "ASEAN Intergovernmental Commission on Human Rights (AICHR) को स्थापना कहिले भयो?",
+      "options": [
+        "सन् २०००",
+        "सन् २००९",
+        "सन् २०१५",
+        "सन् २०१८"
+      ],
+      "answer": 1,
+      "explanation": "AICHR को स्थापना सन् २००९ मा भयो। यो ASEAN मा मानव अधिकार संरक्षणका लागि पहिलो क्षेत्रीय मञ्च हो।"
+    },
+    {
+      "q": "SAARC Arbitration Council कहाँ छ?",
+      "options": [
+        "काठमाडौं",
+        "नयाँ दिल्ली",
+        "इस्लामाबाद",
+        "ढाका"
+      ],
+      "answer": 2,
+      "explanation": "SAARC Arbitration Council इस्लामाबाद, पाकिस्तानमा छ।"
+    },
+    {
+      "q": "EU को High Representative for Foreign Affairs कसले हाल सम्हालेको छ?",
+      "options": [
+        "Federica Mogherini",
+        "Josep Borrell",
+        "Jens Stoltenberg",
+        "Kaja Kallas"
+      ],
+      "answer": 3,
+      "explanation": "Kaja Kallas ले सन् २०२४ देखि EU को High Representative for Foreign Affairs को पद सम्हालेकी छन्।"
+    },
+    {
+      "q": "BIMSTEC Technology Transfer Centre कहाँ छ?",
+      "options": [
+        "कोलम्बो",
+        "ढाका",
+        "ब्याङ्कक",
+        "काठमाडौं"
+      ],
+      "answer": 0,
+      "explanation": "BIMSTEC Technology Transfer Centre कोलम्बो, श्रीलंकामा छ।"
+    },
+    {
+      "q": "EU को ERASMUS Programme के हो?",
+      "options": [
+        "EU को सैन्य कार्यक्रम",
+        "EU विद्यार्थीहरूका लागि अन्तर्राष्ट्रिय शिक्षा आदानप्रदान कार्यक्रम",
+        "EU को कृषि कार्यक्रम",
+        "EU को जलवायु कार्यक्रम"
+      ],
+      "answer": 1,
+      "explanation": "ERASMUS (सन् १९८७ देखि) EU को शिक्षा आदानप्रदान कार्यक्रम हो। हाल ERASMUS+ नामले सञ्चालन छ।"
+    },
+    {
+      "q": "East Asia Summit को पहिलो बैठक कहाँ भएको थियो?",
+      "options": [
+        "ब्याङ्कक",
+        "जकार्ता",
+        "कुआलालम्पुर",
+        "सिंगापुर"
+      ],
+      "answer": 2,
+      "explanation": "East Asia Summit को पहिलो बैठक डिसेम्बर १४, २००५ मा कुआलालम्पुर, मलेसियामा भएको थियो।"
+    },
+    {
+      "q": "SAARC Food Bank को स्थापना कहिले भयो?",
+      "options": [
+        "सन् १९९५",
+        "सन् २०००",
+        "सन् २००४",
+        "सन् २०१२ मा पूर्ण सञ्चालन"
+      ],
+      "answer": 3,
+      "explanation": "SAARC Food Bank सन् २०१२ मा पूर्ण सञ्चालनमा आयो। यसले खाद्य संकटको समयमा सदस्यहरूलाई खाद्यान्न आपूर्ति गर्छ।"
+    },
+    {
+      "q": "ASEAN Day कहिले मनाइन्छ?",
+      "options": [
+        "अगस्त ८",
+        "जुन ६",
+        "जनवरी १",
+        "अक्टोबर २४"
+      ],
+      "answer": 0,
+      "explanation": "ASEAN Day प्रत्येक वर्ष अगस्त ८ मा मनाइन्छ।"
+    },
+    {
+      "q": "EU को आधिकारिक भाषाहरूको संख्या कति छ?",
+      "options": [
+        "१५",
+        "२४",
+        "२०",
+        "२७"
+      ],
+      "answer": 1,
+      "explanation": "EU का हाल २४ वटा आधिकारिक भाषाहरू छन्।"
+    },
+    {
+      "q": "SAARC का पहिलो महासचिव को थिए?",
+      "options": [
+        "K. Natwar Singh",
+        "Abul Ahsan",
+        "Nihal Rodrigo",
+        "Amjad Hussain B. Sial"
+      ],
+      "answer": 1,
+      "explanation": "SAARC का पहिलो महासचिव Abul Ahsan (बंगलादेश) थिए। उनले सन् १९८५-१९८९ सम्म सेवा गरे।"
+    },
+    {
+      "q": "ASEAN को Emblem मा के देखिन्छ?",
+      "options": [
+        "एक सूर्य र महासागर",
+        "दश तारा र विश्वको नक्सा",
+        "हात्ती र धान बाला",
+        "दश धानका बाला सर्कलमा"
+      ],
+      "answer": 3,
+      "explanation": "ASEAN को Emblem मा १० वटा धानका बाला सर्कलमा छन् जसले ASEAN का १० सदस्य राष्ट्रको एकतालाई जनाउँछ।"
+    },
+    {
+      "q": "EU को झण्डामा कतिवटा तारा छन्?",
+      "options": [
+        "१२ वटा सुनौला तारा",
+        "१५ वटा",
+        "२७ वटा",
+        "१० वटा"
+      ],
+      "answer": 0,
+      "explanation": "EU को झण्डामा नीलो पृष्ठभूमिमा सर्कलमा मिलाइएका १२ वटा सुनौला तारा छन्।"
+    },
+    {
+      "q": "BIMSTEC ले तटवर्ती र भूपरिवेष्टित दुवै देश समेटेको छ — कुन देश भूपरिवेष्टित सदस्य हुन्?",
+      "options": [
+        "केवल तटवर्ती देश",
+        "नेपाल र भुटान पनि सदस्य छन्",
+        "केवल ASEAN देश",
+        "केवल दक्षिण एसियाली देश"
+      ],
+      "answer": 1,
+      "explanation": "BIMSTEC ले तटवर्ती र भूपरिवेष्टित (नेपाल र भुटान) दुवै देशलाई समेटेको छ।"
+    },
+    {
+      "q": "EU को Constitutional Treaty किन असफल भयो?",
+      "options": [
+        "UK ले अस्वीकार गर्यो",
+        "जर्मनीले अस्वीकार गर्यो",
+        "फ्रान्स र नेदरल्यान्ड्स ले जनमत संग्रहमा अस्वीकार गरेकाले",
+        "EU संसदले अस्वीकार गर्यो"
+      ],
+      "answer": 2,
+      "explanation": "EU को Constitutional Treaty फ्रान्स र नेदरल्यान्ड्सको जनमत संग्रहमा अस्वीकृत भयो। त्यसपछि Lisbon Treaty बनाइयो।"
+    },
+    {
+      "q": "SAARC Programming Committee मा कसले प्रतिनिधित्व गर्छ?",
+      "options": [
+        "राष्ट्रपतिहरू",
+        "प्रधानमन्त्रीहरू",
+        "परराष्ट्र मन्त्रीहरू",
+        "Senior Officials"
+      ],
+      "answer": 3,
+      "explanation": "SAARC Programming Committee मा Senior Officials (Foreign Secretary स्तरका) ले प्रतिनिधित्व गर्छन्।"
+    },
+    {
+      "q": "ASEAN Defence Ministers' Meeting (ADMM) कहिलेदेखि सुरु भयो?",
+      "options": [
+        "सन् २००६",
+        "सन् २०००",
+        "सन् २०१०",
+        "सन् २०१५"
+      ],
+      "answer": 0,
+      "explanation": "ASEAN Defence Ministers' Meeting (ADMM) पहिलो पटक सन् २००६ मा कुआलालम्पुर, मलेसियामा भयो।"
+    },
+    {
+      "q": "EU र NATO को सम्बन्ध के हो?",
+      "options": [
+        "EU र NATO एउटै संगठन हो",
+        "EU र NATO फरक संगठन हुन्; धेरै EU सदस्य NATO मा पनि छन् तर EU आफैं NATO को सदस्य होइन",
+        "EU ले NATO लाई नियन्त्रण गर्छ",
+        "NATO EU को सुरक्षा शाखा हो"
+      ],
+      "answer": 1,
+      "explanation": "EU र NATO फरक संगठन हुन्। EU आफैं NATO को सदस्य होइन।"
+    },
+    {
+      "q": "SAARC का हालका महासचिव (अप्रिल २०२६ सम्म) को हुन्?",
+      "options": [
+        "Esala Weerakoon",
+        "Amjad Hussain B. Sial",
+        "Golam Sarwar",
+        "Mohammad Aslam Khan"
+      ],
+      "answer": 2,
+      "explanation": "Ambassador Md. Golam Sarwar (बंगलादेश) २५ अक्टोबर २०२३ देखि SAARC का महासचिव छन्।"
+    },
+    {
+      "q": "EU को 'Horizon Europe' कार्यक्रम के हो?",
+      "options": [
+        "EU को पर्यटन कार्यक्रम",
+        "EU को कृषि अनुसन्धान",
+        "EU को जलवायु नीति",
+        "EU को Research and Innovation कार्यक्रम"
+      ],
+      "answer": 3,
+      "explanation": "Horizon Europe (€95.5 billion) EU को प्रमुख Research and Innovation Programme हो (सन् २०२१-२०२७)।"
+    },
+    {
+      "q": "ASEAN Human Rights Declaration कहिले अपनाइयो?",
+      "options": [
+        "नोभेम्बर १८, २०१२",
+        "सन् २०१०",
+        "सन् २०१५",
+        "सन् २०२०"
+      ],
+      "answer": 0,
+      "explanation": "ASEAN Human Rights Declaration नोभेम्बर १८, २०१२ मा Phnom Penh, Cambodia मा अपनाइयो।"
+    },
+    {
+      "q": "EU को 'NextGenerationEU' के हो?",
+      "options": [
+        "EU को नयाँ सदस्य भर्ना योजना",
+        "COVID-19 पश्चात् EU अर्थतन्त्र पुनरुत्थानका लागि €800 billion को Recovery Fund",
+        "EU को युवा रोजगार कार्यक्रम",
+        "EU को नवीकरणीय ऊर्जा योजना"
+      ],
+      "answer": 1,
+      "explanation": "NextGenerationEU (€806.9 billion) COVID-19 महामारी पछि EU अर्थतन्त्र पुनर्निर्माणका लागि सन् २०२१ मा स्थापित Recovery Fund हो।"
+    },
+    {
+      "q": "नेपालले SAARC सम्मेलनहरूमा उठाएका प्रमुख मुद्दाहरू के हुन्?",
+      "options": [
+        "केवल व्यापार घाटा",
+        "केवल पर्यटन",
+        "भूपरिवेष्टित देशका समस्या, Transit Rights, Trade Facilitation, Connectivity र जलवायु परिवर्तनको असर",
+        "केवल जलवायु परिवर्तन"
+      ],
+      "answer": 2,
+      "explanation": "नेपालले SAARC मञ्चमा भूपरिवेष्टित देशका विशेष समस्या, Transit Rights, Connectivity र जलवायु परिवर्तनको असर नियमित रूपमा उठाउँदै आएको छ।"
+    },
+    {
+      "q": "ASEAN को 'South China Sea' विवादमा कस्तो धारणा छ?",
+      "options": [
+        "USA को पूर्ण समर्थन",
+        "चीनको पूर्ण दाबी समर्थन",
+        "सैन्य हस्तक्षेप समर्थन",
+        "International Law र UNCLOS को आधारमा शान्तिपूर्ण समाधान, COC वार्ता र Freedom of Navigation समर्थन"
+      ],
+      "answer": 3,
+      "explanation": "ASEAN South China Sea विवादमा UNCLOS को आधारमा शान्तिपूर्ण समाधान, COC वार्ता र Freedom of Navigation को समर्थन गर्छ।"
+    },
+    {
+      "q": "EU को 'Strategic Autonomy' अवधारणा के हो?",
+      "options": [
+        "US, China जस्ता शक्तिहरूमा निर्भर नभई EU ले आफ्नै विदेश, सुरक्षा, प्रविधि र आर्थिक नीति स्वतन्त्र रूपमा निर्णय लिन सक्ने क्षमता",
+        "EU को आर्थिक स्वतन्त्रता",
+        "EU देशहरूको NATO बाट बाहिर निस्कने प्रयास",
+        "EU को एकल सेना गठन"
+      ],
+      "answer": 0,
+      "explanation": "EU Strategic Autonomy भनेको EU ले आफ्नै सुरक्षा, प्रविधि र विदेश नीतिमा US वा China माथि अत्यधिक निर्भरता नगरी स्वतन्त्र निर्णय क्षमता राख्नु हो।"
+    },
+    {
+      "q": "SAARC सबैभन्दा बढी समस्याग्रस्त किन छ?",
+      "options": [
+        "वित्तीय समस्याका कारण",
+        "भारत-पाकिस्तान द्विपक्षीय तनाव र Consensus-based structure; BIMSTEC लाई विकल्पका रूपमा हेरिँदैछ",
+        "सदस्य नभेटिएकाले",
+        "काठमाडौं Secretariat को असक्षमताका कारण"
+      ],
+      "answer": 1,
+      "explanation": "SAARC को सबैभन्दा ठूलो समस्या भारत-पाकिस्तान द्विपक्षीय तनाव र Consensus-based decision structure हो। BIMSTEC लाई व्यावहारिक विकल्पका रूपमा हेरिँदैछ।"
+    },
+    {
+      "q": "EU, SAARC, BIMSTEC र ASEAN मध्ये कुनको एकीकरण स्तर सबैभन्दा उच्च छ?",
+      "options": [
+        "SAARC, किनकि सबैभन्दा पुरानो",
+        "BIMSTEC, किनकि नयाँ Charter छ",
+        "EU, किनकि साझा मुद्रा, Single Market, संसद, Court of Justice र Common Foreign Policy सहितको supranational संगठन",
+        "ASEAN, किनकि बढी देश छन्"
+      ],
+      "answer": 2,
+      "explanation": "EU विश्वकै सबैभन्दा उच्च एकीकरण स्तर भएको क्षेत्रीय संगठन हो। SAARC, BIMSTEC र ASEAN intergovernmental हुन्।"
+    },
+    {
+      "q": "ASEAN को 'ASEAN Plus Six' (East Asia Summit grouping) मा कुन-कुन देश छन्?",
+      "options": [
+        "ASEAN + चीन, जापान, दक्षिण कोरिया",
+        "ASEAN + भारत, अस्ट्रेलिया, न्युजिल्यान्ड",
+        "ASEAN + USA, Russia",
+        "ASEAN +१०+भारत, अस्ट्रेलिया, न्युजिल्यान्ड, USA र Russia = East Asia Summit का १८ सदस्य"
+      ],
+      "answer": 3,
+      "explanation": "East Asia Summit (EAS) मा ASEAN का १० देश + चीन, जापान, दक्षिण कोरिया, भारत, अस्ट्रेलिया, न्युजिल्यान्ड, USA र Russia गरी १८ देश छन्।"
+    }
+  ]
+}

@@ -1,0 +1,1081 @@
+{
+  "config": {
+    "quizId": "subjects-prabidhik-gk-1-8",
+    "quizTitle": "1.8 संयुक्त राष्ट्रसंघ र यसका विशिष्टीकृत संस्था सम्बन्धी जानकारी",
+    "displayTitle": "1.8 संयुक्त राष्ट्रसंघ र यसका विशिष्टीकृत संस्था सम्बन्धी जानकारी",
+    "topicName": "Gk",
+    "marksCorrect": 2,
+    "marksWrong": -0.4,
+    "questionsPerPage": 1,
+    "techpscPointsPerCorrect": 1
+  },
+  "questions": [
+    {
+      "q": "संयुक्त राष्ट्रसंघ (United Nations) को स्थापना कहिले भयो?",
+      "options": [
+        "अक्टोबर २४, १९४५",
+        "जनवरी १, १९४६",
+        "जुन २६, १९४५",
+        "सेप्टेम्बर १, १९४५"
+      ],
+      "answer": 0,
+      "explanation": "संयुक्त राष्ट्रसंघको आधिकारिक स्थापना अक्टोबर २४, १९४५ मा भएको हो। यही दिन UN Charter लागू भएको थियो।"
+    },
+    {
+      "q": "संयुक्त राष्ट्रसंघका हाल कति सदस्य राष्ट्रहरू छन्?",
+      "options": [
+        "१८०",
+        "१९०",
+        "१९३",
+        "१९५"
+      ],
+      "answer": 2,
+      "explanation": "संयुक्त राष्ट्रसंघमा हाल १९३ सदस्य राष्ट्रहरू छन्। दक्षिण सुडान सन् २०११ मा भर्ना भएको सबैभन्दा नयाँ सदस्य हो।"
+    },
+    {
+      "q": "नेपाल संयुक्त राष्ट्रसंघको सदस्य कहिले बन्यो?",
+      "options": [
+        "१९४५",
+        "१९५०",
+        "१९५३",
+        "१९५५"
+      ],
+      "answer": 3,
+      "explanation": "नेपाल सन् १९५५ (विसं २०१२) मा संयुक्त राष्ट्रसंघको सदस्य बन्यो।"
+    },
+    {
+      "q": "संयुक्त राष्ट्रसंघका ६ वटा मुख्य अंगहरू मध्ये कुन पहिलो हो?",
+      "options": [
+        "महासभा",
+        "सुरक्षा परिषद्",
+        "सचिवालय",
+        "अन्तर्राष्ट्रिय न्यायालय"
+      ],
+      "answer": 0,
+      "explanation": "UN को ६ मुख्य अंग: (१) महासभा, (२) सुरक्षा परिषद्, (३) ECOSOC, (४) संरक्षण परिषद्, (५) ICJ, (६) सचिवालय।"
+    },
+    {
+      "q": "संयुक्त राष्ट्रसंघको वर्तमान महासचिव (Secretary-General) को हुन्?",
+      "options": [
+        "Ban Ki-moon",
+        "António Guterres",
+        "Kofi Annan",
+        "Boutros Boutros-Ghali"
+      ],
+      "answer": 1,
+      "explanation": "António Guterres (पोर्तुगाल) सन् २०१७ देखि UN का महासचिव हुन्। उनलाई सन् २०२१ मा दोस्रो कार्यकालका लागि पुनः नियुक्त गरियो।"
+    },
+    {
+      "q": "संयुक्त राष्ट्रसंघको सुरक्षा परिषद्मा स्थायी सदस्यहरूको संख्या कति छ?",
+      "options": [
+        "३",
+        "४",
+        "५",
+        "७"
+      ],
+      "answer": 2,
+      "explanation": "सुरक्षा परिषद्मा ५ स्थायी सदस्य (P5): USA, UK, France, Russia र China छन्। यिनीहरूसँग Veto Power छ।"
+    },
+    {
+      "q": "UN Charter कहाँ हस्ताक्षर भयो?",
+      "options": [
+        "न्युयोर्क",
+        "वाशिंगटन DC",
+        "लन्डन",
+        "सान फ्रान्सिस्को"
+      ],
+      "answer": 3,
+      "explanation": "UN Charter जुन २६, १९४५ मा सान फ्रान्सिस्को, USA मा हस्ताक्षर भएको थियो। त्यसपछि अक्टोबर २४, १९४५ मा लागू भयो।"
+    },
+    {
+      "q": "WHO (World Health Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "पेरिस",
+        "रोम"
+      ],
+      "answer": 0,
+      "explanation": "WHO को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। यो UN को स्वास्थ्य सम्बन्धी विशिष्टीकृत संस्था हो।"
+    },
+    {
+      "q": "UNICEF को पूरा नाम के हो?",
+      "options": [
+        "United Nations International Child Education Fund",
+        "United Nations Children's Fund",
+        "United Nations International Children's Emergency Fund",
+        "Universal Nations Child Emergency Fund"
+      ],
+      "answer": 1,
+      "explanation": "UNICEF को हालको पूरा नाम United Nations Children's Fund हो। यसको मुख्यालय न्युयोर्कमा छ।"
+    },
+    {
+      "q": "UNESCO को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "पेरिस",
+        "भियना"
+      ],
+      "answer": 2,
+      "explanation": "UNESCO (United Nations Educational, Scientific and Cultural Organization) को मुख्यालय पेरिस, फ्रान्समा छ।"
+    },
+    {
+      "q": "FAO (Food and Agriculture Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "पेरिस",
+        "रोम"
+      ],
+      "answer": 3,
+      "explanation": "FAO को मुख्यालय रोम, इटालीमा छ। यो खाद्य र कृषि सम्बन्धी UN को विशिष्टीकृत संस्था हो।"
+    },
+    {
+      "q": "संयुक्त राष्ट्रसंघका आधिकारिक भाषाहरूको संख्या कति छ?",
+      "options": [
+        "६",
+        "५",
+        "७",
+        "४"
+      ],
+      "answer": 0,
+      "explanation": "UN का ६ आधिकारिक भाषाहरू: अरबी, चिनियाँ, अंग्रेजी, फ्रेन्च, रुसी र स्पेनिश।"
+    },
+    {
+      "q": "ILO (International Labour Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "न्युयोर्क",
+        "जेनेभा",
+        "रोम",
+        "वियना"
+      ],
+      "answer": 1,
+      "explanation": "ILO को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। यो श्रम र रोजगारी सम्बन्धी UN को पुरानो विशिष्टीकृत संस्था हो (स्थापना १९१९)।"
+    },
+    {
+      "q": "UN महासभाको साधारण अधिवेशन प्रत्येक वर्ष कहिले सुरु हुन्छ?",
+      "options": [
+        "जनवरी",
+        "जुन",
+        "सेप्टेम्बर",
+        "अक्टोबर"
+      ],
+      "answer": 2,
+      "explanation": "UN महासभाको साधारण अधिवेशन प्रत्येक वर्ष सेप्टेम्बर महिनाको तेस्रो मंगलबारबाट सुरु हुन्छ।"
+    },
+    {
+      "q": "IMF (International Monetary Fund) को मुख्यालय कहाँ छ?",
+      "options": [
+        "वाशिंगटन DC",
+        "न्युयोर्क",
+        "जेनेभा",
+        "लन्डन"
+      ],
+      "answer": 0,
+      "explanation": "IMF को मुख्यालय वाशिंगटन DC, USA मा छ।"
+    },
+    {
+      "q": "UNDP को पूरा नाम के हो?",
+      "options": [
+        "United Nations Democracy Programme",
+        "United Nations Development Programme",
+        "Universal Nations Development Plan",
+        "United Nations Disaster Prevention"
+      ],
+      "answer": 1,
+      "explanation": "UNDP को पूरा नाम United Nations Development Programme हो। यसको मुख्यालय न्युयोर्कमा छ।"
+    },
+    {
+      "q": "संयुक्त राष्ट्रसंघ दिवस (UN Day) कहिले मनाइन्छ?",
+      "options": [
+        "जनवरी १",
+        "जुन २६",
+        "अप्रिल ७",
+        "अक्टोबर २४"
+      ],
+      "answer": 3,
+      "explanation": "संयुक्त राष्ट्रसंघ दिवस (UN Day) प्रत्येक वर्ष अक्टोबर २४ मा मनाइन्छ। यो UN Charter लागू भएको दिन हो।"
+    },
+    {
+      "q": "UNHCR को पूरा नाम र कार्य के हो?",
+      "options": [
+        "UN Human Rights Council, मानव अधिकार रक्षा",
+        "UN Health Care Resource, स्वास्थ्य सेवा",
+        "UN Humanitarian Crisis Relief, मानवीय सहयोग",
+        "UN High Commissioner for Refugees, शरणार्थी संरक्षण"
+      ],
+      "answer": 3,
+      "explanation": "UNHCR (United Nations High Commissioner for Refugees) ले विश्वभरका शरणार्थीहरूको संरक्षण र सहयोग गर्छ।"
+    },
+    {
+      "q": "सुरक्षा परिषद्मा अस्थायी सदस्यहरूको संख्या र कार्यकाल के हो?",
+      "options": [
+        "१० अस्थायी सदस्य, २ वर्षको कार्यकाल",
+        "६ अस्थायी सदस्य, ३ वर्षको कार्यकाल",
+        "५ अस्थायी सदस्य, १ वर्षको कार्यकाल",
+        "१५ अस्थायी सदस्य, २ वर्षको कार्यकाल"
+      ],
+      "answer": 0,
+      "explanation": "सुरक्षा परिषद्मा १० अस्थायी सदस्य छन् जो महासभाद्वारा २ वर्षको लागि निर्वाचित हुन्छन्। कुल सदस्य संख्या १५ (५ स्थायी + १०  अस्थायी) हो।"
+    },
+    {
+      "q": "नेपालले UN शान्ति सेनामा योगदान दिन कहिलेदेखि सुरु गर्यो?",
+      "options": [
+        "१९५५",
+        "सन् १९५८",
+        "१९६५",
+        "१९७५"
+      ],
+      "answer": 1,
+      "explanation": "नेपालले UN Peacekeeping मा पहिलो पटक सन् १९५८ मा UNOGIL (Lebanon) मा भाग लिएर योगदान दिन सुरु गर्यो।"
+    },
+    {
+      "q": "UN शान्ति सेनामा सैनिक योगदानको हिसाबले नेपाल विश्वमा कुन स्थानमा छ?",
+      "options": [
+        "दोस्रो स्थान",
+        "तेस्रो स्थान",
+        "पाँचौं स्थान",
+        "आठौं स्थान"
+      ],
+      "answer": 2,
+      "explanation": "अप्रिल २०२६ सम्म UN Peacekeeping को तथ्यांक अनुसार नेपाल सैनिक तथा प्रहरी योगदानका हिसाबले विश्वको पाँचौं ठूलो योगदानकर्ता हो।"
+    },
+    {
+      "q": "UN को ECOSOC मा कति सदस्य छन् र कसरी निर्वाचित हुन्छन्?",
+      "options": [
+        "३२ सदस्य, सुरक्षा परिषद्द्वारा",
+        "४४ सदस्य, महासचिवद्वारा",
+        "२८ सदस्य, P5 ले नियुक्त गरेर",
+        "५४ सदस्य, महासभाद्वारा ३ वर्षका लागि निर्वाचित"
+      ],
+      "answer": 3,
+      "explanation": "ECOSOC मा ५४ सदस्य छन् जो UN महासभाद्वारा ३ वर्षको कार्यकालका लागि निर्वाचित हुन्छन्।"
+    },
+    {
+      "q": "अन्तर्राष्ट्रिय न्यायालय (ICJ) को मुख्यालय कहाँ छ?",
+      "options": [
+        "हेग",
+        "जेनेभा",
+        "न्युयोर्क",
+        "स्ट्र्यासबर्ग"
+      ],
+      "answer": 0,
+      "explanation": "ICJ को मुख्यालय हेग (The Hague), नेदरल्यान्ड्समा छ। यो UN को मुख्य न्यायिक अंग हो।"
+    },
+    {
+      "q": "IAEA को मुख्यालय कहाँ छ र यसले के गर्छ?",
+      "options": [
+        "जेनेभा, परमाणु हतियार नीति",
+        "भियना, परमाणु ऊर्जाको शान्तिपूर्ण प्रयोग र अप्रसार निगरानी",
+        "वाशिंगटन DC, सैन्य गठबन्धन समन्वय",
+        "रोम, खाद्य सुरक्षा कार्यक्रम"
+      ],
+      "answer": 1,
+      "explanation": "IAEA को मुख्यालय भियना, अस्ट्रियामा छ। यसले परमाणु ऊर्जाको शान्तिपूर्ण प्रयोग प्रवर्द्धन र Nuclear Non-Proliferation को निगरानी गर्छ।"
+    },
+    {
+      "q": "WTO को मुख्यालय कहाँ छ र यो UN को विशिष्टीकृत संस्था हो कि होइन?",
+      "options": [
+        "न्युयोर्क",
+        "वाशिंगटन DC",
+        "जेनेभा",
+        "रोम"
+      ],
+      "answer": 2,
+      "explanation": "WTO को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। WTO UN को विशिष्टीकृत संस्था होइन — यो एक स्वतन्त्र अन्तरसरकारी संस्था हो।"
+    },
+    {
+      "q": "UN को SDGs (Sustainable Development Goals) कति वटा छन् र कहिलेसम्मका लागि हुन्?",
+      "options": [
+        "१७ लक्ष्य, सन् २०३० सम्म",
+        "१५ लक्ष्य, सन् २०२५ सम्म",
+        "२० लक्ष्य, सन् २०४० सम्म",
+        "१२ लक्ष्य, सन् २०३५ सम्म"
+      ],
+      "answer": 0,
+      "explanation": "SDGs १७ वटा लक्ष्य र १६९ वटा उपलक्ष्यहरू सन् २०३० सम्म प्राप्त गर्ने उद्देश्यले सन् २०१५ मा अपनाइएका हुन्।"
+    },
+    {
+      "q": "UNFPA को पूरा नाम र मुख्यालय के र कहाँ हो?",
+      "options": [
+        "UN Food Programme, रोम",
+        "United Nations Population Fund, न्युयोर्क",
+        "UN Family Planning Agency, जेनेभा",
+        "UN Fertility Programme, पेरिस"
+      ],
+      "answer": 1,
+      "explanation": "UNFPA (United Nations Population Fund) को मुख्यालय न्युयोर्कमा छ। यो जनसंख्या, प्रजनन स्वास्थ्य र लैंगिक समानताका लागि काम गर्छ।"
+    },
+    {
+      "q": "UN को MDGs (Millennium Development Goals) कति वटा थिए र कहिलेसम्मका लागि थिए?",
+      "options": [
+        "१० वटा, २०१५ सम्म",
+        "१२ वटा, २०२० सम्म",
+        "८ वटा, सन् २०१५ सम्म",
+        "१५ वटा, २०१५ सम्म"
+      ],
+      "answer": 2,
+      "explanation": "MDGs ८ वटा थिए (सन् २०००-२०१५)। यिनलाई सन् २०१५ मा SDGs ले प्रतिस्थापन गर्यो।"
+    },
+    {
+      "q": "WIPO (World Intellectual Property Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "न्युयोर्क",
+        "पेरिस",
+        "लन्डन",
+        "जेनेभा"
+      ],
+      "answer": 3,
+      "explanation": "WIPO को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। यसले बौद्धिक सम्पत्ति अधिकार (Patents, Trademarks, Copyrights) को संरक्षण गर्छ।"
+    },
+    {
+      "q": "UN का Specialized Agencies UN सँग कस्तो सम्बन्धमा हुन्छन्?",
+      "options": [
+        "ECOSOC मार्फत UN सँग सम्बन्ध स्थापित गर्ने स्वतन्त्र अन्तरसरकारी संस्था",
+        "UN का प्रत्यक्ष विभाग",
+        "महासभाद्वारा सञ्चालित",
+        "सुरक्षा परिषद् अन्तर्गत"
+      ],
+      "answer": 0,
+      "explanation": "UN का Specialized Agencies स्वतन्त्र अन्तरसरकारी संस्थाहरू हुन् जो ECOSOC मार्फत UN सँग औपचारिक सम्बन्धमा छन्।"
+    },
+    {
+      "q": "IFAD (International Fund for Agricultural Development) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "रोम",
+        "वाशिंगटन DC",
+        "पेरिस"
+      ],
+      "answer": 1,
+      "explanation": "IFAD को मुख्यालय रोम, इटालीमा छ। यसले विकासशील देशहरूमा गरिब कृषकहरूको जीवन सुधार्न काम गर्छ।"
+    },
+    {
+      "q": "WFP को मुख्यालय कहाँ छ र सन् २०२० मा यसले के पुरस्कार पायो?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "रोम",
+        "पेरिस"
+      ],
+      "answer": 2,
+      "explanation": "WFP को मुख्यालय रोम, इटालीमा छ। सन् २०२० मा WFP लाई भोकमरी विरुद्धको प्रयासका लागि नोबेल शान्ति पुरस्कार प्रदान गरियो।"
+    },
+    {
+      "q": "UN महासभामा मतदान प्रणाली कस्तो छ?",
+      "options": [
+        "P5 को मात्र मत मान्य",
+        "GDP को आधारमा मत",
+        "जनसंख्याको आधारमा मत",
+        "प्रत्येक सदस्य राष्ट्रको एक मत"
+      ],
+      "answer": 3,
+      "explanation": "UN महासभामा प्रत्येक सदस्य राष्ट्रको एक मत हुन्छ। महत्वपूर्ण विषयमा दुई-तिहाइ र सामान्य विषयमा साधारण बहुमत चाहिन्छ।"
+    },
+    {
+      "q": "ICAO (International Civil Aviation Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "मन्ट्रियल",
+        "जेनेभा",
+        "न्युयोर्क",
+        "लन्डन"
+      ],
+      "answer": 0,
+      "explanation": "ICAO को मुख्यालय मन्ट्रियल, क्यानडामा छ। यसले अन्तर्राष्ट्रिय नागरिक उड्डयनका मानदण्ड र नियमहरू तय गर्छ।"
+    },
+    {
+      "q": "ITU (International Telecommunication Union) को मुख्यालय कहाँ छ?",
+      "options": [
+        "न्युयोर्क",
+        "जेनेभा",
+        "पेरिस",
+        "वाशिंगटन DC"
+      ],
+      "answer": 1,
+      "explanation": "ITU को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। यो संसारको सबैभन्दा पुरानो UN विशिष्टीकृत संस्था हो (स्थापना १८६५)।"
+    },
+    {
+      "q": "UN Human Rights Council (UNHRC) को मुख्यालय कहाँ छ?",
+      "options": [
+        "न्युयोर्क",
+        "पेरिस",
+        "जेनेभा",
+        "हेग"
+      ],
+      "answer": 2,
+      "explanation": "UNHRC को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। यसमा ४७ सदस्य राष्ट्र छन्।"
+    },
+    {
+      "q": "UN को 'Veto Power' कसको छ र यसको अर्थ के हो?",
+      "options": [
+        "सबै ५४ ECOSOC सदस्यको",
+        "UN महासचिवको",
+        "महासभाका सबै सदस्यको",
+        "सुरक्षा परिषद्का ५ स्थायी सदस्य को; प्रस्ताव रोक्ने अधिकार"
+      ],
+      "answer": 3,
+      "explanation": "Veto Power P5 (USA, UK, France, Russia, China) सँग छ। कुनै पनि P5 सदस्यले Veto गरेमा सुरक्षा परिषद्को प्रस्ताव पारित हुँदैन।"
+    },
+    {
+      "q": "WHO का हालका महानिर्देशक (Director-General) को हुन्?",
+      "options": [
+        "Dr. Tedros Adhanom Ghebreyesus",
+        "Dr. Margaret Chan",
+        "Dr. Gro Harlem Brundtland",
+        "Dr. Halfdan Mahler"
+      ],
+      "answer": 0,
+      "explanation": "Dr. Tedros Adhanom Ghebreyesus (इथियोपिया) सन् २०१७ देखि WHO का महानिर्देशक हुन्। उनी WHO को पहिलो अफ्रिकी DG हुन्।"
+    },
+    {
+      "q": "UNDP को HDI मा नेपाल सन् २०२३/२४ को रिपोर्टमा कुन स्थानमा छ?",
+      "options": [
+        "१२०औं",
+        "१४५औं",
+        "१३५औं",
+        "१५०औं"
+      ],
+      "answer": 1,
+      "explanation": "UNDP Human Development Report 2023/24 अनुसार नेपाल HDI मा १४५औं स्थानमा छ (HDI Value: 0.601, Medium Human Development)।"
+    },
+    {
+      "q": "UNSC ले 'Peacekeeping Mission' खटाउन कति मत चाहिन्छ?",
+      "options": [
+        "साधारण बहुमत",
+        "सर्वसम्मति",
+        "P5 को सहमति सहित ९ वा सोभन्दा बढी मत",
+        "दुई तिहाइ बहुमत"
+      ],
+      "answer": 2,
+      "explanation": "UNSC को substantive निर्णयका लागि कुनै P5 ले Veto नगरी कम्तीमा ९ मत चाहिन्छ।"
+    },
+    {
+      "q": "UN Women को स्थापना कहिले भयो र मुख्यालय कहाँ छ?",
+      "options": [
+        "१९९५",
+        "२०००",
+        "२००५",
+        "२०१०"
+      ],
+      "answer": 3,
+      "explanation": "UN Women को स्थापना सन् २०१० मा भयो र मुख्यालय न्युयोर्कमा छ।"
+    },
+    {
+      "q": "UN का मुख्यालयबाहेक अन्य प्रमुख कार्यालयहरू कहाँ-कहाँ छन्?",
+      "options": [
+        "जेनेभा",
+        "लन्डन",
+        "टोकियो",
+        "केपटाउन"
+      ],
+      "answer": 0,
+      "explanation": "UN का प्रमुख कार्यालयहरू: Geneva (UNOG), Vienna (UNOV) र Nairobi (UNON)।"
+    },
+    {
+      "q": "IMO (International Maritime Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "लन्डन",
+        "रोम",
+        "हेग"
+      ],
+      "answer": 1,
+      "explanation": "IMO को मुख्यालय लन्डन, बेलायतमा छ। यसले अन्तर्राष्ट्रिय समुद्री यातायातको सुरक्षा र वातावरण संरक्षणका मानदण्ड तय गर्छ।"
+    },
+    {
+      "q": "UNIDO (United Nations Industrial Development Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "रोम",
+        "जेनेभा",
+        "भियना",
+        "न्युयोर्क"
+      ],
+      "answer": 2,
+      "explanation": "UNIDO को मुख्यालय भियना, अस्ट्रियामा छ। यसले विकासशील देशहरूमा औद्योगिक विकास प्रवर्द्धन गर्छ।"
+    },
+    {
+      "q": "UN को 'Universal Periodic Review (UPR)' प्रक्रिया के हो?",
+      "options": [
+        "GDP समीक्षा प्रक्रिया",
+        "वातावरण रिपोर्टिङ",
+        "UN सदस्यता समीक्षा",
+        "प्रत्येक UN सदस्य राष्ट्रको मानव अधिकार अवस्थाको UNHRC द्वारा आवधिक समीक्षा"
+      ],
+      "answer": 3,
+      "explanation": "UPR प्रक्रिया अन्तर्गत UNHRC ले प्रत्येक UN सदस्य राष्ट्रको मानव अधिकार अवस्थाको ४.५ वर्षमा एक पटक समीक्षा गर्छ।"
+    },
+    {
+      "q": "UNCTAD (United Nations Conference on Trade and Development) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "रोम",
+        "बर्न"
+      ],
+      "answer": 0,
+      "explanation": "UNCTAD को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। यसले व्यापार र विकासमा विकासशील देशहरूको हित प्रवर्द्धन गर्छ।"
+    },
+    {
+      "q": "UN को 'Paris Agreement on Climate Change' कहिले लागू भयो?",
+      "options": [
+        "२०१५",
+        "२०१६",
+        "२०१७",
+        "२०१८"
+      ],
+      "answer": 1,
+      "explanation": "Paris Agreement सन् २०१५ मा हस्ताक्षर भई सन् २०१६ मा लागू भयो। यसले वैश्विक तापमान वृद्धिलाई १.५°C भन्दा कम राख्ने लक्ष्य राखेको छ।"
+    },
+    {
+      "q": "UN Security Council का P5 मध्ये Veto प्रयोग गरेको अवस्थामा के हुन्छ?",
+      "options": [
+        "महासभाले निर्णय गर्छ",
+        "महासचिवले निर्णय गर्छ",
+        "प्रस्ताव स्वतः असफल हुन्छ",
+        "ICJ ले समाधान खोज्छ"
+      ],
+      "answer": 2,
+      "explanation": "कुनै P5 सदस्यले Veto प्रयोग गरेमा त्यो प्रस्ताव असफल हुन्छ, चाहे बाँकी १४ सदस्यले समर्थन गरेका भए पनि।"
+    },
+    {
+      "q": "नेपाल UNHRC को सदस्य कति पटक भइसकेको छ र पछिल्लो पटक कहिले?",
+      "options": [
+        "एक पटक, २०१०-२०१२",
+        "दुई पटक, पछिल्लो २०१७-२०१९",
+        "तीन पटक, पछिल्लो २०२०-२०२२",
+        "तीन पटक, पछिल्लो २०२३-२०२५"
+      ],
+      "answer": 3,
+      "explanation": "नेपाल UNHRC को सदस्य तीन पटक भइसकेको छ। पछिल्लो पटक नेपाल २०२३-२०२५ कार्यकालका लागि UNHRC को सदस्य निर्वाचित भयो।"
+    },
+    {
+      "q": "UN का कति वटा Specialized Agencies छन्?",
+      "options": [
+        "१५ वटा",
+        "१७ वटा",
+        "१२ वटा",
+        "२० वटा"
+      ],
+      "answer": 0,
+      "explanation": "UN का हाल १५ वटा आधिकारिक Specialized Agencies छन्: ILO, FAO, UNESCO, WHO, World Bank, IMF, ICAO, ITU, WMO, IMO, WIPO, IFAD, UNIDO, UNWTO र UPU।"
+    },
+    {
+      "q": "UN को 'R2P (Responsibility to Protect)' सिद्धान्त कहिले अपनाइयो?",
+      "options": [
+        "आर्थिक विकासको जिम्मेवारी, २०००",
+        "राज्यले आफ्ना नागरिक र अन्तर्राष्ट्रिय समुदायले जनसंहारबाट संरक्षण गर्ने जिम्मेवारी, २००५",
+        "वातावरण संरक्षणको जिम्मेवारी, २०१०",
+        "खाद्य सुरक्षाको जिम्मेवारी, १९९५"
+      ],
+      "answer": 1,
+      "explanation": "R2P (Responsibility to Protect) सिद्धान्त UN World Summit 2005 मा अपनाइयो।"
+    },
+    {
+      "q": "UN को 'Uniting for Peace Resolution (Resolution 377)' के हो?",
+      "options": [
+        "पर्यावरण सम्बन्धी प्रस्ताव",
+        "आर्थिक सहयोग प्रस्ताव",
+        "सुरक्षा परिषद् Veto मा रोकिएमा महासभा आपतकालीन विशेष अधिवेशन बोलाउन सक्ने प्रावधान",
+        "UN सदस्यता विस्तार प्रस्ताव"
+      ],
+      "answer": 2,
+      "explanation": "Resolution 377 (Uniting for Peace, 1950) ले Veto का कारण Security Council ले कार्य गर्न नसकेमा महासभाले Emergency Special Session बोलाउन सक्ने व्यवस्था गर्यो।"
+    },
+    {
+      "q": "CTBTO को मुख्यालय कहाँ छ र नेपालले CTBT मा हस्ताक्षर गरेको छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "हेग",
+        "भियना"
+      ],
+      "answer": 3,
+      "explanation": "CTBTO को मुख्यालय भियना, अस्ट्रियामा छ। नेपालले CTBT मा हस्ताक्षर र अनुसमर्थन गरेको छ।"
+    },
+    {
+      "q": "UN Charter Article 2 अन्तर्गत सदस्यहरूले कस्तो सिद्धान्त पालना गर्नुपर्छ?",
+      "options": [
+        "संप्रभु समानता, अहस्तक्षेप, शान्तिपूर्ण विवाद समाधान",
+        "केवल आर्थिक सहयोग गर्नुपर्ने",
+        "अमेरिकी नेतृत्व मान्नुपर्ने",
+        "परमाणु हतियार राख्न नपाइने"
+      ],
+      "answer": 0,
+      "explanation": "UN Charter Article 2 का सिद्धान्तहरूमा Sovereign Equality, विवाद शान्तिपूर्ण समाधान, बल प्रयोग नगर्ने र अहस्तक्षेप पर्छन्।"
+    },
+    {
+      "q": "UN महासचिवको कार्यकाल र नियुक्ति प्रक्रिया के हो?",
+      "options": [
+        "१० वर्ष, महासभाले नियुक्त गर्छ",
+        "५ वर्ष, सुरक्षा परिषद्को सिफारिसमा महासभाले नियुक्त गर्छ",
+        "४ वर्ष, P5 ले नियुक्त गर्छ",
+        "६ वर्ष, ECOSOC ले नियुक्त गर्छ"
+      ],
+      "answer": 1,
+      "explanation": "UN महासचिवको कार्यकाल ५ वर्ष हो (नवीकरणयोग्य)। सुरक्षा परिषद्को सिफारिसमा महासभाले नियुक्त गर्छ।"
+    },
+    {
+      "q": "नेपाल UN सुरक्षा परिषद्को अस्थायी सदस्य कति पटक भएको छ र पछिल्लो पटक कहिले?",
+      "options": [
+        "एक पटक, १९८८-१९८९",
+        "दुई पटक, पछिल्लो १९९५-१९९६",
+        "दुई पटक, पछिल्लो २०१७-२०१८",
+        "तीन पटक, पछिल्लो २०२३-२०२४"
+      ],
+      "answer": 2,
+      "explanation": "नेपाल UN Security Council को अस्थायी सदस्य दुई पटक (१९६९-७०, २०१७-१८) भइसकेको छ।"
+    },
+    {
+      "q": "UN को 'Financing for Development' सम्बन्धी Monterrey Consensus कहाँ भयो?",
+      "options": [
+        "२०००",
+        "२०१५",
+        "२०१०",
+        "२००२"
+      ],
+      "answer": 3,
+      "explanation": "Monterrey Consensus सन् २००२ मा मोन्टेरे, मेक्सिकोमा भएको UN Financing for Development Conference मा अपनाइयो।"
+    },
+    {
+      "q": "UN को NPT (Nuclear Non-Proliferation Treaty) मा कति देशले हस्ताक्षर गरेका छन्?",
+      "options": [
+        "१९१ देश, सन् १९७०",
+        "१५० देश, सन् १९६८",
+        "१८५ देश, सन् १९८०",
+        "१७५ देश, सन् १९७५"
+      ],
+      "answer": 0,
+      "explanation": "NPT मा हाल १९१ देशले हस्ताक्षर गरेका छन् र यो सन् १९७० मा लागू भयो।"
+    },
+    {
+      "q": "UNFCCC को 'COP' भनेको के हो र पछिल्लो COP कहाँ भयो?",
+      "options": [
+        "Committee of Parties",
+        "Conference of the Parties, बेलें",
+        "Council of Presidents",
+        "Climate Organisation Protocol"
+      ],
+      "answer": 1,
+      "explanation": "COP को पूरा रूप Conference of the Parties हो। पछिल्लो COP30 बेलें, ब्राजिलमा १०-२१ नोभेम्बर २०२५ मा आयोजना भएको थियो।"
+    },
+    {
+      "q": "ICC र ICJ मा के फरक छ?",
+      "options": [
+        "ICC र ICJ एउटै हुन्",
+        "ICC राष्ट्रहरू बीचको विवाद हेर्छ",
+        "ICC व्यक्तिहरू विरुद्धका अपराध हेर्छ; ICJ राष्ट्र-राष्ट्र विवाद हेर्छ",
+        "दुवैको उस्तै काम छ"
+      ],
+      "answer": 2,
+      "explanation": "ICC व्यक्तिहरू विरुद्धका अन्तर्राष्ट्रिय अपराध (Genocide, War Crimes) हेर्छ भने ICJ राष्ट्र-राष्ट्र बीचका विवाद हेर्छ। दुवैको मुख्यालय हेगमा छ।"
+    },
+    {
+      "q": "नेपालको संविधान २०७२ को धारा ५१ (ञ) मा विदेश नीतिका बारेमा के भनिएको छ?",
+      "options": [
+        "UN बाट बाहिर निस्कने नीति",
+        "केवल SAARC सदस्यहरूसँग सम्बन्ध",
+        "UN को स्थायी सदस्यता लिने",
+        "UN सनद, अन्तर्राष्ट्रिय कानुन र विश्व शान्तिमा आधारित विदेश नीति"
+      ],
+      "answer": 3,
+      "explanation": "नेपालको संविधान २०७२ को धारा ५१ (ञ) ले UN को सनद, अन्तर्राष्ट्रिय कानुन र विश्व शान्तिमा आधारित विदेश नीति अवलम्बन गर्ने राज्यको नीति तोकेको छ।"
+    },
+    {
+      "q": "UN का 'Funds and Programmes' (Specialized Agencies भन्दा भिन्न) कुन-कुन हुन्?",
+      "options": [
+        "UNDP, UNICEF, UNFPA, UNHCR, WFP, UN Women, UNEP लगायत",
+        "केवल ३ वटा",
+        "केवल WHO र UNICEF",
+        "सबै Specialized Agencies नै Funds पनि हुन्"
+      ],
+      "answer": 0,
+      "explanation": "UN का Funds & Programmes (UNDP, UNICEF, UNFPA, UNHCR, WFP, UN Women, UNEP) Specialized Agencies भन्दा भिन्न — General Assembly/ECOSOC मातहत काम गर्छन्।"
+    },
+    {
+      "q": "UN Peacekeeping Operations सञ्चालनका मूल सिद्धान्तहरू के हुन्?",
+      "options": [
+        "केवल P5 को सहमति",
+        "Consent of parties, Impartiality, Non-use of force except in self-defence",
+        "Host Country को विरोध भए पनि सञ्चालन",
+        "Security Council को Veto बिना"
+      ],
+      "answer": 1,
+      "explanation": "UN Peacekeeping का तीन मूल सिद्धान्त: (१) Consent of the parties, (२) Impartiality, (३) Non-use of force except in self-defence and mandate."
+    },
+    {
+      "q": "UN को 'Global Compact' के हो र कसका लागि हो?",
+      "options": [
+        "राष्ट्रहरूका लागि जलवायु सम्झौता",
+        "UN का लागि बजेट सम्झौता",
+        "व्यावसायिक कम्पनीहरूका लागि मानव अधिकार, श्रम, वातावरण र भ्रष्टाचार विरोधी १० सिद्धान्त",
+        "INGO हरूका लागि नीति"
+      ],
+      "answer": 2,
+      "explanation": "UN Global Compact (1999) व्यावसायिक कम्पनीहरूका लागि मानव अधिकार, श्रम अधिकार, वातावरण र भ्रष्टाचार विरोधी १० सिद्धान्त पालना गर्ने स्वैच्छिक पहल हो।"
+    },
+    {
+      "q": "UN मा 'Observer Status' भएका मुख्य देश/संस्थाहरू कुन हुन्?",
+      "options": [
+        "नेपाल र भुटान",
+        "भारत र पाकिस्तान",
+        "चीन र रसिया",
+        "Holy See र Palestine"
+      ],
+      "answer": 3,
+      "explanation": "UN मा Holy See (Vatican City) र State of Palestine लाई Non-member Observer State को दर्जा दिइएको छ।"
+    },
+    {
+      "q": "UPU (Universal Postal Union) को मुख्यालय कहाँ छ?",
+      "options": [
+        "बर्न",
+        "जेनेभा",
+        "पेरिस",
+        "ब्रसेल्स"
+      ],
+      "answer": 0,
+      "explanation": "UPU को मुख्यालय बर्न, स्विट्जरल्यान्डमा छ। यो सन् १८७४ मा स्थापना भएको हुलाक सेवा नियमन गर्ने UN को विशिष्टीकृत संस्था हो।"
+    },
+    {
+      "q": "WMO (World Meteorological Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "पेरिस",
+        "जेनेभा",
+        "न्युयोर्क",
+        "नैरोबी"
+      ],
+      "answer": 1,
+      "explanation": "WMO को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ। यसले मौसम, जलवायु र पानी सम्बन्धी अन्तर्राष्ट्रिय सहयोगको काम गर्छ।"
+    },
+    {
+      "q": "UNWTO (UN World Tourism Organization) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "म्याड्रिड",
+        "पेरिस"
+      ],
+      "answer": 2,
+      "explanation": "UNWTO को मुख्यालय म्याड्रिड, स्पेनमा छ। यसले अन्तर्राष्ट्रिय पर्यटन प्रवर्द्धन र दिगो पर्यटनका लागि काम गर्छ।"
+    },
+    {
+      "q": "UN को 'Human Development Report (HDR)' कुन संस्थाले प्रकाशित गर्छ?",
+      "options": [
+        "World Bank",
+        "IMF",
+        "WHO",
+        "UNDP"
+      ],
+      "answer": 3,
+      "explanation": "Human Development Report (HDR) UNDP ले प्रत्येक वर्ष प्रकाशित गर्छ। यसमा HDI को तुलनात्मक तथ्याङ्क हुन्छ।"
+    },
+    {
+      "q": "UN को 'OCHA' के काम गर्छ?",
+      "options": [
+        "मानवीय संकटमा सहयोगको समन्वय गर्छ",
+        "कृषि उत्पादन बढाउँछ",
+        "परमाणु ऊर्जा नियमन गर्छ",
+        "व्यापार सहजीकरण गर्छ"
+      ],
+      "answer": 0,
+      "explanation": "OCHA ले विश्वभर मानवीय संकटहरूमा UN र अन्य साझेदार संस्थाहरूको सहयोग समन्वय गर्छ।"
+    },
+    {
+      "q": "UNODC (United Nations Office on Drugs and Crime) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "भियना",
+        "न्युयोर्क",
+        "नैरोबी"
+      ],
+      "answer": 1,
+      "explanation": "UNODC को मुख्यालय भियना, अस्ट्रियामा छ। यसले लागूपदार्थ नियन्त्रण र अन्तर्राष्ट्रिय अपराध विरुद्धको काम गर्छ।"
+    },
+    {
+      "q": "UN को Regular Budget मा सदस्यहरूको योगदानको आधार के हो?",
+      "options": [
+        "जनसंख्याको आधारमा समान योगदान",
+        "प्रत्येकले समान रकम",
+        "राष्ट्रिय आय र अन्य आर्थिक कारकहरूका आधारमा Scale of Assessments",
+        "स्वैच्छिक योगदान"
+      ],
+      "answer": 2,
+      "explanation": "UN को regular budget मा सदस्यहरूको योगदान Scale of Assessments अनुसार हुन्छ जो GNI र अन्य कारकमा आधारित छ।"
+    },
+    {
+      "q": "UNESCO को World Heritage Sites मा नेपालका कति सम्पदाहरू सूचीकृत छन्?",
+      "options": [
+        "३ वटा",
+        "४ वटा",
+        "५ वटा",
+        "१० वटा"
+      ],
+      "answer": 1,
+      "explanation": "नेपालका ४ UNESCO World Heritage properties छन्: काठमाडौं उपत्यका, लुम्बिनी, सगरमाथा राष्ट्रिय निकुञ्ज र चितवन राष्ट्रिय निकुञ्ज।"
+    },
+    {
+      "q": "OPCW (Organisation for the Prohibition of Chemical Weapons) को मुख्यालय कहाँ छ?",
+      "options": [
+        "हेग",
+        "जेनेभा",
+        "भियना",
+        "न्युयोर्क"
+      ],
+      "answer": 0,
+      "explanation": "OPCW को मुख्यालय हेग, नेदरल्यान्ड्समा छ। सन् २०१३ मा यसलाई नोबेल शान्ति पुरस्कार मिल्यो।"
+    },
+    {
+      "q": "UN को General Assembly Resolution 2758 (1971) ले के गर्यो?",
+      "options": [
+        "Nuclear Non-Proliferation Treaty पास गर्यो",
+        "Republic of China को ठाउँमा People's Republic of China लाई UN को वैध प्रतिनिधित्व दियो",
+        "South Sudan लाई सदस्यता दियो",
+        "UN का ६ भाषा स्वीकृत गर्यो"
+      ],
+      "answer": 1,
+      "explanation": "UNGA Resolution 2758 (1971) ले ROC (Taiwan) को ठाउँमा PRC (mainland China) लाई UN को वैध सदस्य मान्यता दियो।"
+    },
+    {
+      "q": "UNDRR को Sendai Framework for Disaster Risk Reduction कहिले र कहाँ अपनाइयो?",
+      "options": [
+        "२०१०",
+        "२०१२",
+        "२०१५",
+        "२०२०"
+      ],
+      "answer": 2,
+      "explanation": "Sendai Framework for DRR 2015-2030 सन् २०१५ मा सेन्डाई, जापानमा भएको UN World Conference on DRR मा अपनाइयो।"
+    },
+    {
+      "q": "UN को CEDAW (Convention on the Elimination of All Forms of Discrimination Against Women) कहिले लागू भयो?",
+      "options": [
+        "१९७०",
+        "१९७५",
+        "१९७९",
+        "१९८१"
+      ],
+      "answer": 3,
+      "explanation": "CEDAW सन् १९७९ मा UN महासभाले पारित गरी सन् १९८१ मा लागू भयो। नेपालले पनि CEDAW अनुसमर्थन गरेको छ।"
+    },
+    {
+      "q": "UNHCR को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "रोम",
+        "पेरिस"
+      ],
+      "answer": 0,
+      "explanation": "UNHCR को मुख्यालय जेनेभा, स्विट्जरल्यान्डमा छ।"
+    },
+    {
+      "q": "UN को 'Convention on the Rights of the Child (CRC)' कहिले लागू भयो?",
+      "options": [
+        "१९८०",
+        "१९९०",
+        "१९८५",
+        "१९९५"
+      ],
+      "answer": 1,
+      "explanation": "CRC (Convention on the Rights of the Child) सन् १९९० मा लागू भयो। यो इतिहासमा सर्वाधिक अनुसमर्थन भएको मानव अधिकार सन्धि हो।"
+    },
+    {
+      "q": "UN को प्रतीकचिह्न (Emblem) मा के देखिन्छ?",
+      "options": [
+        "विश्वको नक्सा र सूर्य",
+        "कबुतर र विश्व",
+        "उत्तर ध्रुवबाट हेरिएको विश्वको नक्सा जुन जैतुन शाखाले घेरिएको",
+        "हातमिलाउने र विश्वको नक्सा"
+      ],
+      "answer": 2,
+      "explanation": "UN को Emblem मा उत्तर ध्रुवबाट हेरिएको विश्वको नक्सा जुन जैतुनका दुई शाखाले घेरिएको देखिन्छ। जैतुन शान्तिको प्रतीक हो।"
+    },
+    {
+      "q": "UNICEF को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "रोम",
+        "पेरिस",
+        "न्युयोर्क"
+      ],
+      "answer": 3,
+      "explanation": "UNICEF को मुख्यालय न्युयोर्क, USA मा छ।"
+    },
+    {
+      "q": "UNESCO को पूरा नाम के हो?",
+      "options": [
+        "United Nations Educational, Scientific and Cultural Organization",
+        "United Nations Environment, Science and Culture Organization",
+        "Universal Nations Educational, Social and Cultural Organization",
+        "United Nations Education, Sport and Cultural Organisation"
+      ],
+      "answer": 0,
+      "explanation": "UNESCO को पूरा नाम United Nations Educational, Scientific and Cultural Organization हो।"
+    },
+    {
+      "q": "WHO को स्थापना कहिले भयो?",
+      "options": [
+        "जनवरी ७, १९४५",
+        "अप्रिल ७, १९४८",
+        "अक्टोबर २४, १९४५",
+        "जुन २६, १९४८"
+      ],
+      "answer": 1,
+      "explanation": "WHO को स्थापना अप्रिल ७, १९४८ मा भएको थियो। यही दिन विश्व स्वास्थ्य दिवस मनाइन्छ।"
+    },
+    {
+      "q": "UNDP को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "रोम",
+        "न्युयोर्क",
+        "वाशिंगटन DC"
+      ],
+      "answer": 2,
+      "explanation": "UNDP को मुख्यालय न्युयोर्क, USA मा छ।"
+    },
+    {
+      "q": "ILO को स्थापना कहिले भएको हो?",
+      "options": [
+        "१९४५",
+        "१९३०",
+        "१९१५",
+        "१९१९"
+      ],
+      "answer": 3,
+      "explanation": "ILO को स्थापना सन् १९१९ मा Versailles शान्ति सम्मेलन पछि भयो।"
+    },
+    {
+      "q": "UN का 'Regional Economic Commissions' कति छन् र नेपाल कुनमा पर्छ?",
+      "options": [
+        "५ वटा; ESCAP",
+        "३ वटा; ESCAP",
+        "७ वटा; ESCAP",
+        "४ वटा; ECAFE"
+      ],
+      "answer": 0,
+      "explanation": "UN का ५ वटा Regional Economic Commissions छन्: ECA, ESCAP, ECE, ECLAC, ESCWA। नेपाल ESCAP (Bangkok) अन्तर्गत पर्छ।"
+    },
+    {
+      "q": "UN को 'International Day of Peace' कहिले मनाइन्छ?",
+      "options": [
+        "अक्टोबर २४",
+        "सेप्टेम्बर २१",
+        "जुन २६",
+        "जनवरी १"
+      ],
+      "answer": 1,
+      "explanation": "UN को International Day of Peace (विश्व शान्ति दिवस) प्रत्येक वर्ष सेप्टेम्बर २१ मा मनाइन्छ।"
+    },
+    {
+      "q": "UNOPS (United Nations Office for Project Services) को मुख्यालय कहाँ छ?",
+      "options": [
+        "जेनेभा",
+        "न्युयोर्क",
+        "कोपेनहेगन",
+        "भियना"
+      ],
+      "answer": 2,
+      "explanation": "UNOPS को मुख्यालय कोपेनहेगन, डेनमार्कमा छ।"
+    },
+    {
+      "q": "CTBT (Comprehensive Nuclear-Test-Ban Treaty) लागू हुन के गर्नुपर्छ?",
+      "options": [
+        "५० देशले अनुसमर्थन गरे पुग्छ",
+        "UN महासभाले पारित गरे पुग्छ",
+        "P5 ले मात्र अनुसमर्थन गरे पुग्छ",
+        "Annex 2 मा सूचीकृत ४४ परमाणु प्रविधि भएका देश सबैले अनुसमर्थन गर्नुपर्छ"
+      ],
+      "answer": 3,
+      "explanation": "CTBT सन् १९९६ मा हस्ताक्षरका लागि खुल्यो तर Annex 2 का ४४ देश सबैले अनुसमर्थन नगरेकाले अझसम्म लागू भएको छैन।"
+    },
+    {
+      "q": "UN का 'Bretton Woods Institutions' कुन हुन्?",
+      "options": [
+        "World Bank र IMF",
+        "WHO र FAO",
+        "WTO र UNCTAD",
+        "UNDP र UNEP"
+      ],
+      "answer": 0,
+      "explanation": "Bretton Woods Institutions भनेको World Bank (IBRD) र IMF हुन्। सन् १९४४ मा Bretton Woods, USA मा स्थापनाको निर्णय भएको थियो।"
+    },
+    {
+      "q": "UN को UDHR (Universal Declaration of Human Rights) कहिले अपनाइयो?",
+      "options": [
+        "अक्टोबर २४, १९४५",
+        "डिसेम्बर १०, १९४८",
+        "जुन २६, १९४५",
+        "जनवरी १, १९५०"
+      ],
+      "answer": 1,
+      "explanation": "UDHR डिसेम्बर १०, १९४८ मा UN महासभाले पारित गर्यो। यही दिन विश्व मानव अधिकार दिवस मनाइन्छ।"
+    },
+    {
+      "q": "नेपालमा UN को कुन संस्थाहरूको कार्यालय सञ्चालनमा छन्?",
+      "options": [
+        "केवल UNICEF र WHO",
+        "केवल UNDP र WFP",
+        "UNDP, UNICEF, WHO, WFP, UNFPA, UN Women, FAO, ILO लगायत धेरै",
+        "केवल WHO र FAO"
+      ],
+      "answer": 2,
+      "explanation": "नेपालमा UNDP, UNICEF, WHO, WFP, UNFPA, UN Women, FAO, ILO, UNHCR, UNESCO, UNOCHA लगायत धेरै UN संस्थाहरूको कार्यालय छ।"
+    },
+    {
+      "q": "UN को 'Kyoto Protocol' कहिले लागू भयो?",
+      "options": [
+        "जलवायु अनुकूलन सम्झौता, २०१५",
+        "जैविक विविधता सम्झौता, १९९५",
+        "समुद्री कानुन सम्झौता, १९९२",
+        "Greenhouse Gas उत्सर्जन कटौती सम्झौता, सन् २००५"
+      ],
+      "answer": 3,
+      "explanation": "Kyoto Protocol UNFCCC अन्तर्गत विकसित देशहरूका लागि Greenhouse Gas उत्सर्जन कटौतीको बाध्यकारी लक्ष्य तय गर्ने सम्झौता हो। यो सन् २००५ मा लागू भयो।"
+    },
+    {
+      "q": "UN को 'TPNW (Treaty on the Prohibition of Nuclear Weapons)' कहिले लागू भयो?",
+      "options": [
+        "जनवरी २२, २०२१; ९३+ देश",
+        "जनवरी २२, २०२०; ५० देश",
+        "मार्च १, २०२१; १०० देश",
+        "अक्टोबर २४, २०२०; ७५ देश"
+      ],
+      "answer": 0,
+      "explanation": "TPNW जनवरी २२, २०२१ मा लागू भयो। हाल ९३+ देशले हस्ताक्षर गरेका छन्। P5 लगायत परमाणु शक्ति राष्ट्रहरूले यसमा सहभागी छैनन्।"
+    },
+    {
+      "q": "UN को 'Trusteeship Council' को वर्तमान अवस्था के हो?",
+      "options": [
+        "अझै सक्रिय रूपमा काम गर्दैछ",
+        "सन् १९९४ देखि निलम्बन मा छ किनकि सबै Trust Territories स्वतन्त्र भइसके",
+        "विघटन भइसकेको छ",
+        "P5 मात्रको अधिकारमा छ"
+      ],
+      "answer": 1,
+      "explanation": "Trusteeship Council को अन्तिम Trust Territory (Palau) सन् १९९४ मा स्वतन्त्र भएपछि यो निलम्बनमा छ। UN को एकमात्र निष्क्रिय मुख्य अंग हो।"
+    },
+    {
+      "q": "Nepal ले SDGs मध्ये कुन लक्ष्यहरूमा सर्वाधिक प्रगति गरेको छ?",
+      "options": [
+        "SDG 8 र SDG 17 मात्र",
+        "SDG 1 मात्र",
+        "SDG 3, SDG 4 र SDG 6 मा राम्रो प्रगति",
+        "SDG 13 र SDG 14 मात्र"
+      ],
+      "answer": 2,
+      "explanation": "नेपालले SDG 3 (मातृशिशु मृत्युदर घटाउने), SDG 4 (साक्षरता) र SDG 6 (खानेपानी पहुँच) मा उल्लेखनीय प्रगति गरेको छ।"
+    },
+    {
+      "q": "UN Security Council Reform सम्बन्धी नेपालको धारणा के छ?",
+      "options": [
+        "P5 विघटन गर्नुपर्छ",
+        "सदस्य संख्या घटाउनुपर्छ",
+        "कुनै सुधार आवश्यक छैन",
+        "विकासशील देशहरूको बढी प्रतिनिधित्व सहित सुरक्षा परिषद् विस्तार र Veto अधिकारको सुधार"
+      ],
+      "answer": 3,
+      "explanation": "नेपालले UN Security Council Reform को समर्थन गर्दै विकासशील र साना देशहरूको प्रतिनिधित्व र Veto प्रणालीको सुधारको पक्षमा आफ्नो धारणा राख्दै आएको छ।"
+    }
+  ]
+}
