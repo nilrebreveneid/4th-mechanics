@@ -1576,9 +1576,7 @@
 
 
 
-
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -2319,16 +2317,12 @@
                 flex-direction: column;
                 align-items: start;
             }
-
             .controls-top { align-items: start; }
         }
 
         @media (max-width: 540px) {
             .card-grid { grid-template-columns: 1fr; }
-            .hero-card,
-            .side-panel,
-            .controls,
-            .section-shell { border-radius: 20px; }
+            .hero-card, .side-panel, .controls, .section-shell { border-radius: 20px; }
             .filter-row { gap: 0.55rem; }
 
             .filter-btn {
@@ -2339,9 +2333,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            *,
-            *::before,
-            *::after {
+            *, *::before, *::after {
                 animation: none !important;
                 transition: none !important;
             }
@@ -2369,11 +2361,10 @@
         <main>
             <section class="hero" aria-labelledby="hero-title">
                 <div class="hero-card">
-                    <div class="hero-badge">Fast interface. Clear structure. Future-ready revision.</div>
+                    <div class="hero-badge">Fast interface. Clear structure. Quiz engine ready.</div>
                     <h1 id="hero-title">Prepare smarter for Junior Mechanics L4.</h1>
                     <p>
-                        Practice topic-wise MCQs, jump into full mock tests, and focus on the sections that matter most in the exam.
-                        This homepage is built to stay light, fast, mobile-friendly, and easy to scan even during quick revision sessions.
+                        Practice topic-wise MCQs, jump into full mock tests, and open GitHub-hosted GK and public JSON sets directly in your full quiz webpage.
                     </p>
                     <div class="hero-actions">
                         <a class="primary-action" href="#topics">Start Topic Practice</a>
@@ -2382,15 +2373,15 @@
                     <div class="hero-stats" aria-label="Portal stats">
                         <div class="stat">
                             <strong>23</strong>
-                            <span>Technical practice sets</span>
+                            <span>Technical sets</span>
                         </div>
                         <div class="stat">
-                            <strong>18</strong>
-                            <span>Core mechanics subjects</span>
+                            <strong>4</strong>
+                            <span>JSON-powered GK/Public sets</span>
                         </div>
                         <div class="stat">
                             <strong>9</strong>
-                            <span>GK, public, and mixed revision sets</span>
+                            <span>Mock and mixed revision sets</span>
                         </div>
                     </div>
                 </div>
@@ -2398,20 +2389,20 @@
                 <aside class="side-panel" aria-labelledby="strategy-title">
                     <h2 id="strategy-title">Best way to use this portal</h2>
                     <p>
-                        Move from topic practice to timed mocks. Start with weak areas, then use GK and public content to improve overall exam balance.
+                        Start with topic-wise technical revision, then strengthen GK and public management using JSON-powered quiz sets hosted in the same repo.
                     </p>
                     <div class="priority-list">
                         <div class="priority-item">
                             <strong>Step 1: Build fundamentals</strong>
-                            <span>Use the core topic cards below to revise one system at a time and cover the expected exam-weight technical sections.</span>
+                            <span>Use the core topic cards below to revise the main technical sections one system at a time.</span>
                         </div>
                         <div class="priority-item">
                             <strong>Step 2: Add support content</strong>
-                            <span>Practice GK and public management core sets to strengthen the non-technical portion of your preparation.</span>
+                            <span>Open GK and public sets through the shared quiz engine so the experience stays consistent.</span>
                         </div>
                         <div class="priority-item">
-                            <strong>Step 3: Repeat fast</strong>
-                            <span>Use search and filters to jump directly to the exact chapter, JSON practice set, or mock test you want.</span>
+                            <strong>Step 3: Repeat with mocks</strong>
+                            <span>Use mixed mocks and past-style sets to test speed, recall, and full-paper readiness.</span>
                         </div>
                     </div>
                 </aside>
@@ -2419,19 +2410,19 @@
 
             <section class="status-strip" aria-label="Portal overview">
                 <div>
-                    <strong>Designed for quick revision on phone and desktop</strong>
-                    <p>Lightweight code, responsive cards, clean links, and GitHub-hosted JSON support.</p>
+                    <strong>Built for GitHub Pages + full quiz engine loading</strong>
+                    <p>JSON files no longer open as raw text when linked through <code>quiz.html?quiz=...</code>.</p>
                 </div>
-                <div class="pill">GitHub Pages ready</div>
+                <div class="pill">JSON quiz-ready</div>
             </section>
 
             <section class="controls" aria-labelledby="controls-title">
                 <div class="controls-top">
                     <div>
                         <h2 id="controls-title">Find your next practice set fast</h2>
-                        <p>Search by topic, system, mock test, public management, or GK.</p>
+                        <p>Search by topic, system, GK, public management, or mock test.</p>
                     </div>
-                    <div class="pill" id="result-count">Showing 32 sets</div>
+                    <div class="pill" id="result-count">Showing 36 sets</div>
                 </div>
 
                 <label class="search-wrap" for="topic-search">
@@ -2459,7 +2450,7 @@
                             <h3 id="topics-title">Core Mechanics Topics</h3>
                             <p>Topic-wise MCQs for the technical sections of the Junior Mechanics Level 4 exam.</p>
                         </div>
-                        <div class="count-chip">18 technical topics + 5 mechanical mocks</div>
+                        <div class="count-chip">18 technical topics + 5 core mocks</div>
                     </div>
 
                     <div class="card-grid">
@@ -2653,42 +2644,42 @@
                     <div class="section-head">
                         <div>
                             <h3 id="core-support-title">GK and Public Core Content</h3>
-                            <p>These GitHub-hosted JSON practice sets are useful for general knowledge, public management, and mixed support preparation.</p>
+                            <p>These sets open through your shared quiz webpage, so JSON files render like a proper MCQ experience instead of raw text.</p>
                         </div>
-                        <div class="count-chip">GitHub JSON-linked sets</div>
+                        <div class="count-chip">Quiz-engine powered</div>
                     </div>
 
                     <div class="card-grid">
-                        <article class="topic-card" data-group="gk" data-tags="gk general knowledge core github json">
+                        <article class="topic-card" data-group="gk" data-tags="gk general knowledge json quiz engine">
                             <div class="topic-top"><span class="number-tag">G1</span><span class="track-tag">GK Core</span></div>
                             <h4>GK Core Content Set 1</h4>
-                            <p>Open the first GitHub-hosted GK JSON set for quick practice and revision.</p>
-                            <div class="meta-row"><span class="meta-chip"><strong>JSON</strong> source</span><span class="meta-chip"><strong>GK</strong> core</span></div>
-                            <a class="open-link" href="./1.1.json" target="_blank" rel="noopener">Open GK JSON</a>
+                            <p>Open the GitHub-hosted GK JSON using your full quiz webpage and quiz engine.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>JSON</strong> powered</span><span class="meta-chip"><strong>GK</strong> core</span></div>
+                            <a class="open-link" href="./quiz.html?quiz=./1.1.json">Open GK Quiz</a>
                         </article>
 
-                        <article class="topic-card" data-group="gk" data-tags="gk second json github core">
+                        <article class="topic-card" data-group="gk" data-tags="gk second set json future">
                             <div class="topic-top"><span class="number-tag">G2</span><span class="track-tag">GK Core</span></div>
                             <h4>GK Core Content Set 2</h4>
-                            <p>Use another hosted GK JSON set here once you add the second file into this repo.</p>
-                            <div class="meta-row"><span class="meta-chip"><strong>Add</strong> next file</span><span class="meta-chip"><strong>GK</strong> support</span></div>
-                            <a class="open-link" href="./1.1.json" target="_blank" rel="noopener">Open GK JSON</a>
+                            <p>Point this card to your next GK JSON file once you upload another one to the repo.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>Ready</strong> to map</span><span class="meta-chip"><strong>GK</strong> support</span></div>
+                            <a class="open-link" href="./quiz.html?quiz=./1.1.json">Open GK Quiz</a>
                         </article>
 
-                        <article class="topic-card" data-group="public" data-tags="public management core github json">
+                        <article class="topic-card" data-group="public" data-tags="public management json quiz engine">
                             <div class="topic-top"><span class="number-tag">P1</span><span class="track-tag">Public Core</span></div>
                             <h4>Public Management Core Set 1</h4>
-                            <p>Link your first public management JSON file here for direct browser opening from GitHub Pages.</p>
-                            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> core</span><span class="meta-chip"><strong>JSON</strong> hosted</span></div>
-                            <a class="open-link" href="./1.1.json" target="_blank" rel="noopener">Open Public JSON</a>
+                            <p>Link your public management JSON here to load it through the same MCQ quiz webpage.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> core</span><span class="meta-chip"><strong>Quiz</strong> view</span></div>
+                            <a class="open-link" href="./quiz.html?quiz=./1.1.json">Open Public Quiz</a>
                         </article>
 
-                        <article class="topic-card" data-group="public" data-tags="public management set 2 github json">
+                        <article class="topic-card" data-group="public" data-tags="public management second set json future">
                             <div class="topic-top"><span class="number-tag">P2</span><span class="track-tag">Public Core</span></div>
                             <h4>Public Management Core Set 2</h4>
-                            <p>Use this card for the second public management JSON file after you upload it into the repo.</p>
-                            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> revision</span><span class="meta-chip"><strong>Ready</strong> to map</span></div>
-                            <a class="open-link" href="./1.1.json" target="_blank" rel="noopener">Open Public JSON</a>
+                            <p>Add your next public JSON file later and map it here with the same quiz loader format.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>Ready</strong> to map</span><span class="meta-chip"><strong>Public</strong> support</span></div>
+                            <a class="open-link" href="./quiz.html?quiz=./1.1.json">Open Public Quiz</a>
                         </article>
                     </div>
                 </section>
@@ -2855,3 +2846,4 @@
     </script>
 </body>
 </html>
+
