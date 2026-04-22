@@ -7,6 +7,7 @@
    - quizzes/1.1.json
    - full absolute URLs
    ══════════════════════════════════════════════════════════════════════════ */
+
 var QUIZ_ID = 'public-1';
 var QUIZ_TITLE = 'Quiz';
 var DISPLAY_TITLE = 'Quiz';
@@ -28,7 +29,7 @@ var timerInterval = null;
 var timerSeconds = 0;
 var timerRunning = false;
 var quizData = [];
-var MASTER_TEMPLATE_VERSION = '20260422-root-json';
+var MASTER_TEMPLATE_VERSION = '20260422-root-json-v2';
 
 function deriveDisplayTitle(fullTitle) {
     var title = String(fullTitle || '').trim();
@@ -80,25 +81,25 @@ function addCandidatePath(list, seen, path) {
 
     if (!bare) return;
 
-    // Explicit site path
     if (bare.indexOf('quiz-system/') === 0) {
         pushUniqueCandidate(list, seen, origin + '/' + bare);
         pushUniqueCandidate(list, seen, new URL(bare.replace(/^quiz-system\//, ''), baseUrl).href);
         return;
     }
 
-    // Explicit quizzes/ path
     if (bare.indexOf('quizzes/') === 0) {
         pushUniqueCandidate(list, seen, new URL(bare, baseUrl).href);
         pushUniqueCandidate(list, seen, origin + '/' + bare);
         return;
     }
 
-    // NEW: repo-root candidate first
+    // Root-level file first: /4th-mechanics/1.1.json
     pushUniqueCandidate(list, seen, new URL(bare, baseUrl).href);
+
+    // Absolute origin fallback: /1.1.json
     pushUniqueCandidate(list, seen, origin + '/' + bare);
 
-    // Legacy fallback: quizzes/ folder
+    // Legacy quizzes/ fallback
     pushUniqueCandidate(list, seen, new URL('quizzes/' + bare, baseUrl).href);
     pushUniqueCandidate(list, seen, origin + '/quizzes/' + bare);
 }
@@ -173,19 +174,33 @@ function buildQuizUrlCandidates(raw) {
 }
 
 function formatCandidateSummary(candidates) {
-    return candidates.map(function (candidate) { return candidate.pathname; }).join(' | ');
+    return candidates.map(function (candidate) {
+        return candidate.pathname;
+    }).join(' | ');
 }
 
 function normalizeQuizPayload(payload) {
-    if (Array.isArray(payload)) return { config: {}, questions: payload };
-    if (payload && Array.isArray(payload.questions)) return { config: payload.config || payload.meta || {}, questions: payload.questions };
-    if (payload && Array.isArray(payload.quizData)) return { config: payload.config || payload.meta || {}, questions: payload.quizData };
-    if (payload && Array.isArray(payload.mcqs)) return { config: payload.config || payload.meta || {}, questions: payload.mcqs };
-    return { config: payload && (payload.config || payload.meta || {}) || {}, questions: [] };
+    if (Array.isArray(payload)) {
+        return { config: {}, questions: payload };
+    }
+    if (payload && Array.isArray(payload.questions)) {
+        return { config: payload.config || payload.meta || {}, questions: payload.questions };
+    }
+    if (payload && Array.isArray(payload.quizData)) {
+        return { config: payload.config || payload.meta || {}, questions: payload.quizData };
+    }
+    if (payload && Array.isArray(payload.mcqs)) {
+        return { config: payload.config || payload.meta || {}, questions: payload.mcqs };
+    }
+    return {
+        config: payload && (payload.config || payload.meta || {}) || {},
+        questions: []
+    };
 }
 
 function applyQuizConfig(config, resolvedUrl) {
     var cfg = config || {};
+
     QUIZ_ID = String(cfg.quizId || cfg.id || resolvedUrl.pathname || 'public-1')
         .replace(/[^a-z0-9_-]+/gi, '-')
         .replace(/^-+|-+$/g, '') || 'public-1';
@@ -257,7 +272,10 @@ function loadQuizPayload() {
         return Promise.reject(new Error('Could not derive a valid quiz JSON path from: ' + raw));
     }
 
-    console.log('Master template candidate URLs:', candidates.map(function (candidate) { return candidate.href; }));
+    console.log('MASTER_TEMPLATE_VERSION:', MASTER_TEMPLATE_VERSION);
+    console.log('Master template candidate URLs:', candidates.map(function (candidate) {
+        return candidate.href;
+    }));
 
     var lastError = null;
 
@@ -267,10 +285,12 @@ function loadQuizPayload() {
                 (lastError ? lastError + '\n' : '') +
                 'Requested: ' + raw + '\n' +
                 'Tried: ' + formatCandidateSummary(candidates);
+
             return Promise.reject(new Error(detail));
         }
 
         var resolvedUrl = candidates[index];
+
         return fetch(resolvedUrl.href, { cache: 'no-store' })
             .then(function (response) {
                 if (!response.ok) {
